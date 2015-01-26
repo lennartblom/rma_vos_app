@@ -9,5 +9,156 @@
         "designer|userClassName": "achievments_frontpage"
     },
     "name": "MyContainer1",
-    "designerId": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
+    "designerId": "05c90d69-4bbe-4647-aa46-50af4f5a763f",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "docked": "bottom",
+                "height": "100%",
+                "id": "button_container",
+                "layout": "fit",
+                "styleHtmlContent": true,
+                "width": "100%"
+            },
+            "name": "MyContainer1",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "28a91d95-8a88-4a61-8123-8526b055392e",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": "",
+                        "bottom": "0px",
+                        "docked": "bottom",
+                        "height": "65px",
+                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">back</h1>",
+                        "style": [
+                            "-moz-border-radius: 46px;",
+                            "-webkit-border-radius: 46px;",
+                            "border-radius: 46px; /* border radius */",
+                            "-moz-background-clip: padding;",
+                            "-webkit-background-clip: padding-box;",
+                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
+                            "background-color: rgba(51, 73, 93, 0.9);",
+                            "display:block;",
+                            "float:left;",
+                            "font-size:11px;"
+                        ],
+                        "styleHtmlContent": true,
+                        "text": "back",
+                        "width": 65
+                    },
+                    "name": "MyButton",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "87c0e8c3-488d-4eba-a57d-8422de0b7cc7"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": "",
+                        "bottom": "0px",
+                        "centered": false,
+                        "disabled": false,
+                        "docked": null,
+                        "height": "65px",
+                        "hidden": false,
+                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">score</h1>",
+                        "right": "0px",
+                        "style": [
+                            "-moz-border-radius: 46px;",
+                            "-webkit-border-radius: 46px;",
+                            "border-radius: 46px; /* border radius */",
+                            "-moz-background-clip: padding;",
+                            "-webkit-background-clip: padding-box;",
+                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
+                            "background-color: rgba(51, 73, 93, 0.9);",
+                            "float:right;",
+                            "display:block;",
+                            "font-size:11px;"
+                        ],
+                        "styleHtmlContent": true,
+                        "text": "score",
+                        "width": 65
+                    },
+                    "name": "MyButton1",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "ebc074d3-b002-41ee-a576-e1d688d471c5"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "80%",
+                        "id": "ui_forms"
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "a1987c36-40db-40b8-b9d0-93294b690ace"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "border_bottom",
+                        "style": [
+                            "background-color:rgba(211, 83, 0, 0.9);",
+                            "display:block;",
+                            "height:5px;",
+                            "overflow:hidden;"
+                        ]
+                    },
+                    "name": "MyContainer3",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "0fe6556b-d15b-490a-aa95-a6301163dd29"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "id": "achievment_bg",
+                "src": "resources/images/background/achievements.png"
+            },
+            "name": "MyImg4",
+            "designerId": "108e67b1-9a5a-455d-8f7e-c748c825ddd5"
+        }
+    ]
 }

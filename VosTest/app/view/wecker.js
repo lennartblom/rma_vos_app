@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('VosNaviagtor.view.wecker', {
+Ext.define('MyApp.view.wecker', {
     extend: 'Ext.Container',
 
     config: {
