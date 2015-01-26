@@ -76,9 +76,6 @@
                 }
             ]
         },
-        "5badfb1c-206e-47e5-916a-2ee35a1e76a5": {
-            "id": "5badfb1c-206e-47e5-916a-2ee35a1e76a5"
-        },
         "05c90d69-4bbe-4647-aa46-50af4f5a763f": {
             "id": "05c90d69-4bbe-4647-aa46-50af4f5a763f",
             "cn": [
@@ -92,41 +89,7 @@
                             "id": "ebc074d3-b002-41ee-a576-e1d688d471c5"
                         },
                         {
-<<<<<<< HEAD
-                            "id": "a1987c36-40db-40b8-b9d0-93294b690ace",
-                            "cn": [
-                                {
-                                    "id": "ccb3c93a-7f36-42b2-9e43-0f7e326bc353",
-                                    "cn": [
-                                        {
-                                            "id": "82bf535e-d663-4c9e-9465-9ed9010a81af"
-                                        },
-                                        {
-                                            "id": "0adda1c8-0396-4882-bf68-94b01f8d8feb"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "e708768b-1ebb-4639-8866-0d031df33c47",
-                                    "cn": [
-                                        {
-                                            "id": "05d2f007-dc45-41f3-ab49-f3cd1556f82c"
-                                        },
-                                        {
-                                            "id": "94d77c5a-7442-4b7c-a6a8-f4eaf0a4ff7e"
-                                        },
-                                        {
-                                            "id": "7a668241-6b0a-4bd0-8399-736a19e9695d"
-                                        },
-                                        {
-                                            "id": "dad9e45c-839a-4204-9d2e-da208ea31727"
-                                        }
-                                    ]
-                                }
-                            ]
-=======
                             "id": "a1987c36-40db-40b8-b9d0-93294b690ace"
->>>>>>> 90a9474debad94fc42b58d39c2e45e659590ad40
                         },
                         {
                             "id": "0fe6556b-d15b-490a-aa95-a6301163dd29"
@@ -137,12 +100,9 @@
                     "id": "108e67b1-9a5a-455d-8f7e-c748c825ddd5"
                 }
             ]
-<<<<<<< HEAD
-=======
         },
         "5badfb1c-206e-47e5-916a-2ee35a1e76a5": {
             "id": "5badfb1c-206e-47e5-916a-2ee35a1e76a5"
->>>>>>> 90a9474debad94fc42b58d39c2e45e659590ad40
         },
         "store": true,
         "model": true,
@@ -161,32 +121,25 @@
         },
         "f1e90cdf-71b4-462a-9ffe-03b7a9460705": {
             "id": "f1e90cdf-71b4-462a-9ffe-03b7a9460705"
-<<<<<<< HEAD
-        },
-        "c9359703-9e97-40bf-8d8a-31520ef0746d": {
-            "id": "c9359703-9e97-40bf-8d8a-31520ef0746d"
-=======
->>>>>>> 90a9474debad94fc42b58d39c2e45e659590ad40
         }
     },
     "tabState": {
         "openTabs": [
             "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c",
 <<<<<<< HEAD
-=======
 <<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 90a9474debad94fc42b58d39c2e45e659590ad40
             "f51be895-8789-4766-a887-7c2539d2ec43",
             "5badfb1c-206e-47e5-916a-2ee35a1e76a5",
-            "05c90d69-4bbe-4647-aa46-50af4f5a763f",
-            "c9359703-9e97-40bf-8d8a-31520ef0746d"
+            "877337fc-4f11-4232-affc-055e298e53cb"
         ]
     },
     "canvasState": {
-<<<<<<< HEAD
-        "topInstance": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
+        "topInstance": "5badfb1c-206e-47e5-916a-2ee35a1e76a5"
 =======
+            "f51be895-8789-4766-a887-7c2539d2ec43"
+        ]
+    },
+    "canvasState": {
         "topInstance": "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c"
 >>>>>>> origin/master
 =======
@@ -196,7 +149,6 @@
     "canvasState": {
         "topInstance": "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c"
 >>>>>>> parent of 490cd4c... wecker
->>>>>>> 90a9474debad94fc42b58d39c2e45e659590ad40
     },
     "inspectorState": {
 <<<<<<< HEAD
