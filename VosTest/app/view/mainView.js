@@ -18,7 +18,6 @@ Ext.define('VosNaviagtor.view.mainView', {
 
     requires: [
         'Ext.Img',
-        'Ext.Label',
         'Ext.Container'
     ],
 
@@ -35,12 +34,20 @@ Ext.define('VosNaviagtor.view.mainView', {
                 src: 'resources/images/background/std_bg.png'
             },
             {
-                xtype: 'label',
-                height: 76,
-                html: '<h2>Vos - Navigator</h2>',
-                id: 'uberschrift',
-                style: 'background-color: white;\nopacity: 0.7;\ncolor: #34495e;\ntext-align:center;',
-                styleHtmlContent: true
+                xtype: 'container',
+                height: '50px',
+                id: 'logo',
+                style: 'display:block;\nbackground-color: rgba(255,255,255, 0.7);',
+                styleHtmlContent: true,
+                width: '320px',
+                items: [
+                    {
+                        xtype: 'image',
+                        height: '300%',
+                        id: 'vosLogo',
+                        src: 'resources/images/logo/vos_navigator.png'
+                    }
+                ]
             },
             {
                 xtype: 'container',
@@ -48,10 +55,10 @@ Ext.define('VosNaviagtor.view.mainView', {
                 items: [
                     {
                         xtype: 'container',
-                        height: 140,
+                        height: 160,
                         id: 'weckerButton',
                         left: '40px',
-                        top: '100px',
+                        top: 80,
                         width: 100,
                         items: [
                             {

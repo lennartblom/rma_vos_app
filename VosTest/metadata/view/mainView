@@ -33,29 +33,49 @@
             "designerId": "74297cbe-dca2-4ecc-b6fe-9b0e245e6442"
         },
         {
-            "type": "Ext.Label",
+            "type": "Ext.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "height": 76,
-                "html": "<h2>Vos - Navigator</h2>",
-                "id": "uberschrift",
+                "height": "50px",
+                "id": "logo",
                 "style": [
-                    "background-color: white;",
-                    "opacity: 0.7;",
-                    "color: #34495e;",
-                    "text-align:center;"
+                    "display:block;",
+                    "background-color: rgba(255,255,255, 0.7);"
                 ],
-                "styleHtmlContent": true
+                "styleHtmlContent": true,
+                "width": "320px"
             },
-            "name": "MyLabel",
+            "name": "MyContainer3",
             "configAlternates": {
                 "style": "object"
             },
-            "designerId": "d6f3f7f9-7a5c-452b-8cff-bc440e8c2055"
+            "designerId": "7e11776a-9705-4e09-914d-dcd3f6772d76",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": null,
+                        "height": "300%",
+                        "id": "vosLogo",
+                        "minHeight": null,
+                        "minWidth": null,
+                        "src": "resources/images/logo/vos_navigator.png",
+                        "top": null,
+                        "width": null
+                    },
+                    "name": "MyImg4",
+                    "designerId": "35fca6fa-7a7e-4463-a97e-cbd31780fc41"
+                }
+            ]
         },
         {
             "type": "Ext.Container",
@@ -78,10 +98,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 140,
+                        "height": 160,
                         "id": "weckerButton",
                         "left": "40px",
-                        "top": "100px",
+                        "top": 80,
                         "width": 100
                     },
                     "name": "MyContainer1",
