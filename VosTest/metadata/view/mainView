@@ -111,8 +111,8 @@
                     "userConfig": {
                         "height": 160,
                         "id": "weckerButton",
-                        "left": "40px",
-                        "top": 80,
+                        "left": 30,
+                        "top": 75,
                         "width": 100
                     },
                     "name": "MyContainer1",
@@ -126,7 +126,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "centered": false,
+                                "centered": true,
                                 "height": "100%",
                                 "id": "button",
                                 "src": "resources/images/button_png/Wecker.png",
@@ -144,6 +144,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
                                 "height": "100%",
                                 "hidden": true,
                                 "id": "button_inv",
@@ -182,6 +183,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
                                 "height": "100%",
                                 "hidden": false,
                                 "id": "einst_button",
@@ -199,6 +201,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
                                 "height": "100%",
                                 "hidden": true,
                                 "id": "einst_buttonInv",
@@ -218,8 +221,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "hidden": true,
-                        "id": "achievements"
+                        "docked": null,
+                        "height": 87,
+                        "hidden": false,
+                        "id": "achievements",
+                        "left": 110,
+                        "top": 400,
+                        "width": 180
                     },
                     "name": "MyContainer5",
                     "designerId": "b15b0e3c-221e-46dd-9d22-344aa3e10daf",
@@ -232,12 +240,32 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "height": 201,
+                                "centered": true,
+                                "height": "100%",
                                 "id": "achie_button",
-                                "src": "resources/images/button_png/start.png"
+                                "src": "resources/images/button_png/Achievments.png",
+                                "width": "100%"
                             },
                             "name": "MyImg6",
                             "designerId": "6ea2dc8e-e9e2-4b8a-864d-e1d4586a5f57"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "centered": true,
+                                "height": "100%",
+                                "hidden": true,
+                                "id": "achie_buttonInv",
+                                "src": "resources/images/button_png/Achievments_inv.png",
+                                "width": "100%"
+                            },
+                            "name": "MyImg11",
+                            "designerId": "6331c095-aa6d-4090-9a44-2d979dd0e1ee"
                         }
                     ]
                 },
@@ -249,8 +277,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "hidden": true,
-                        "id": "game"
+                        "height": 98,
+                        "hidden": false,
+                        "id": "game",
+                        "left": 40,
+                        "top": 335,
+                        "width": 100
                     },
                     "name": "MyContainer6",
                     "designerId": "fb1382cd-2d52-477c-b628-b390266ee960",
@@ -263,12 +295,32 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "height": 201,
+                                "centered": true,
+                                "height": "100%",
                                 "id": "game_button",
-                                "src": "resources/images/button_png/start.png"
+                                "src": "resources/images/button_png/Game.png",
+                                "width": "100%"
                             },
                             "name": "MyImg7",
                             "designerId": "461fa543-0740-4ba0-9d54-5356b2422dc4"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "centered": true,
+                                "height": "100%",
+                                "hidden": true,
+                                "id": "game_buttonInv",
+                                "src": "resources/images/button_png/Game_inv.png",
+                                "width": "100%"
+                            },
+                            "name": "MyImg10",
+                            "designerId": "be39f93b-97de-46c1-a784-ae1ee62b3f01"
                         }
                     ]
                 },

@@ -62,13 +62,13 @@ Ext.define('MyApp.view.mainView', {
                         xtype: 'container',
                         height: 160,
                         id: 'weckerButton',
-                        left: '40px',
-                        top: 80,
+                        left: 30,
+                        top: 75,
                         width: 100,
                         items: [
                             {
                                 xtype: 'image',
-                                centered: false,
+                                centered: true,
                                 height: '100%',
                                 id: 'button',
                                 width: '100%',
@@ -76,6 +76,7 @@ Ext.define('MyApp.view.mainView', {
                             },
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: '100%',
                                 hidden: true,
                                 id: 'button_inv',
@@ -94,6 +95,7 @@ Ext.define('MyApp.view.mainView', {
                         items: [
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: '100%',
                                 hidden: false,
                                 id: 'einst_button',
@@ -102,6 +104,7 @@ Ext.define('MyApp.view.mainView', {
                             },
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: '100%',
                                 hidden: true,
                                 id: 'einst_buttonInv',
@@ -112,27 +115,57 @@ Ext.define('MyApp.view.mainView', {
                     },
                     {
                         xtype: 'container',
-                        hidden: true,
+                        height: 87,
+                        hidden: false,
                         id: 'achievements',
+                        left: 110,
+                        top: 400,
+                        width: 180,
                         items: [
                             {
                                 xtype: 'image',
-                                height: 201,
+                                centered: true,
+                                height: '100%',
                                 id: 'achie_button',
-                                src: 'resources/images/button_png/start.png'
+                                width: '100%',
+                                src: 'resources/images/button_png/Achievments.png'
+                            },
+                            {
+                                xtype: 'image',
+                                centered: true,
+                                height: '100%',
+                                hidden: true,
+                                id: 'achie_buttonInv',
+                                width: '100%',
+                                src: 'resources/images/button_png/Achievments_inv.png'
                             }
                         ]
                     },
                     {
                         xtype: 'container',
-                        hidden: true,
+                        height: 98,
+                        hidden: false,
                         id: 'game',
+                        left: 40,
+                        top: 335,
+                        width: 100,
                         items: [
                             {
                                 xtype: 'image',
-                                height: 201,
+                                centered: true,
+                                height: '100%',
                                 id: 'game_button',
-                                src: 'resources/images/button_png/start.png'
+                                width: '100%',
+                                src: 'resources/images/button_png/Game.png'
+                            },
+                            {
+                                xtype: 'image',
+                                centered: true,
+                                height: '100%',
+                                hidden: true,
+                                id: 'game_buttonInv',
+                                width: '100%',
+                                src: 'resources/images/button_png/Game_inv.png'
                             }
                         ]
                     },
