@@ -1,0 +1,147 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "mainView",
+        "layout": "fit",
+        "scrollable": false
+    },
+    "name": "MyContainer",
+    "designerId": "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "height": null,
+                "hidden": false,
+                "id": "background",
+                "src": "resources/images/std_bg.png",
+                "width": "100%"
+            },
+            "name": "MyImg",
+            "designerId": "74297cbe-dca2-4ecc-b6fe-9b0e245e6442"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 76,
+                "html": "<h2>Vos - Navigator</h2>",
+                "id": "uberschrift",
+                "style": [
+                    "background-color: white;",
+                    "opacity: 0.7;",
+                    "color: #34495e;",
+                    "text-align:center;"
+                ],
+                "styleHtmlContent": true
+            },
+            "name": "MyLabel",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "d6f3f7f9-7a5c-452b-8cff-bc440e8c2055"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "button_cont"
+            },
+            "name": "MyContainer",
+            "designerId": "ca4c32a8-4af5-4020-b81c-06ddfe8e7647",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": true,
+                        "disabled": null,
+                        "docked": null,
+                        "height": 31,
+                        "hidden": false,
+                        "id": "startbutton",
+                        "itemId": "myimg1",
+                        "margin": null,
+                        "maxHeight": null,
+                        "maxWidth": null,
+                        "minHeight": "25%",
+                        "minWidth": "100%",
+                        "mode": null,
+                        "padding": null,
+                        "src": "resources/images/button_png/start.png",
+                        "styleHtmlContent": true,
+                        "top": null,
+                        "width": 163,
+                        "zIndex": null
+                    },
+                    "name": "MyImg1",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "23cc8c1b-f952-4a75-acb0-755b7f09da10"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": true,
+                        "height": 409,
+                        "hidden": true,
+                        "id": "startbuttonInv",
+                        "maxHeight": "25%",
+                        "maxWidth": "100%",
+                        "minHeight": null,
+                        "src": "resources/images/button_png/start_inv.png",
+                        "styleHtmlContent": true,
+                        "width": 451
+                    },
+                    "name": "MyImg2",
+                    "designerId": "ef553795-a393-43af-9f41-ccbb066b1217"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 160,
+                        "id": "wecker",
+                        "src": "resources/images/button_png/Wecker.png"
+                    },
+                    "name": "MyImg3",
+                    "designerId": "a0292732-b424-4d7d-a9fa-56f21ec2f7e4"
+                }
+            ]
+        }
+    ]
+}

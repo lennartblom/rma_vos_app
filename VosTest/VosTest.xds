@@ -1,0 +1,55 @@
+{
+    "name": "VosTest",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "5.1.0.26",
+            "frameworkVersion": "2.4.0.482"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone 5",
+                "builtIn": true,
+                "height": 568,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost:1841",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
+    },
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1943,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000007,
+    "framework": "touch24",
+    "viewOrderMap": {
+        "view": [
+            "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c"
+        ],
+        "store": [],
+        "controller": [
+            "f51be895-8789-4766-a887-7c2539d2ec43"
+        ],
+        "model": [],
+        "resource": [
+            "b124df83-3e9d-4941-8241-350c316f131c",
+            "f1e90cdf-71b4-462a-9ffe-03b7a9460705"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

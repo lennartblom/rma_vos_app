@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main"
+    },
+    "name": "MyController",
+    "designerId": "f51be895-8789-4766-a887-7c2539d2ec43",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "image#startbutton",
+                "designer|targetType": "Ext.Img",
+                "fn": "tapStart",
+                "implHandler": [
+                    "var img = Ext.getImg('#startbuttonInv');",
+                    "img.show();"
+                ],
+                "name": "tap"
+            },
+            "name": "tapStart",
+            "designerId": "9f4a81d6-ea3b-435f-a247-89d7d10bc1ca"
+        }
+    ]
+}

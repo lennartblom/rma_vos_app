@@ -1,0 +1,19 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Main"
+        ],
+        "name": "VosNaviagtor",
+        "views": [
+            "mainView"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}
