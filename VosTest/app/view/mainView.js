@@ -73,6 +73,62 @@ Ext.define('MyApp.view.mainView', {
                                 id: 'button',
                                 width: '100%',
                                 src: 'resources/images/button_png/Wecker.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: '100%',
+                                hidden: true,
+                                id: 'button_inv',
+                                width: '100%',
+                                src: 'resources/images/button_png/Wecker_inv.png'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'container',
+                        height: 100,
+                        hidden: false,
+                        id: 'einstellungen',
+                        left: 165,
+                        top: 130,
+                        width: 100,
+                        items: [
+                            {
+                                xtype: 'image',
+                                height: '100%',
+                                id: 'einst_button',
+                                width: '100%',
+                                src: 'resources/images/button_png/Einstellungen.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 201
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'container',
+                        hidden: true,
+                        id: 'achievements',
+                        items: [
+                            {
+                                xtype: 'image',
+                                height: 201,
+                                id: 'achie_button',
+                                src: 'resources/images/button_png/start.png'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'container',
+                        hidden: true,
+                        id: 'game',
+                        items: [
+                            {
+                                xtype: 'image',
+                                height: 201,
+                                id: 'game_button',
+                                src: 'resources/images/button_png/start.png'
                             }
                         ]
                     },
