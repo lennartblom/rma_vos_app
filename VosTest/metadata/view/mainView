@@ -26,7 +26,7 @@
                 "height": null,
                 "hidden": false,
                 "id": "background",
-                "src": "resources/images/std_bg.png",
+                "src": "resources/images/background/std_bg.png",
                 "width": "100%"
             },
             "name": "MyImg",

@@ -32,7 +32,7 @@ Ext.define('VosNaviagtor.view.mainView', {
                 hidden: false,
                 id: 'background',
                 width: '100%',
-                src: 'resources/images/std_bg.png'
+                src: 'resources/images/background/std_bg.png'
             },
             {
                 xtype: 'label',

@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /Users/Thomas/Documents/Webentwicklung/sencha/VosTest/app.js
+// @require /Users/Thomas/Documents/gitRMA/VosTest/app.js
