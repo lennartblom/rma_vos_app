@@ -13,12 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('VosNaviagtor.view.mainView', {
+Ext.define('MyApp.view.mainView', {
     extend: 'Ext.Container',
 
     requires: [
         'Ext.Img',
-        'Ext.Label',
         'Ext.Container'
     ],
 
@@ -35,48 +34,77 @@ Ext.define('VosNaviagtor.view.mainView', {
                 src: 'resources/images/background/std_bg.png'
             },
             {
-                xtype: 'label',
-                height: 76,
-                html: '<h2>Vos - Navigator</h2>',
-                id: 'uberschrift',
-                style: 'background-color: white;\nopacity: 0.7;\ncolor: #34495e;\ntext-align:center;',
-                styleHtmlContent: true
+                xtype: 'container',
+                height: '60px',
+                id: 'logo',
+                style: 'display:block;\nbackground-color: rgba(255,255,255, 0.7);\npadding:0px;\nmargin:0px;',
+                styleHtmlContent: true,
+                width: '320px',
+                items: [
+                    {
+                        xtype: 'image',
+                        docked: 'top',
+                        height: '50px',
+                        id: 'vosLogo',
+                        style: 'margin:0px;\npadding:0px;',
+                        styleHtmlContent: true,
+                        top: '5px',
+                        width: '320px',
+                        src: 'resources/images/logo/vos_navigator.png'
+                    }
+                ]
             },
             {
                 xtype: 'container',
                 id: 'button_cont',
                 items: [
                     {
-                        xtype: 'image',
-                        centered: true,
-                        docked: 'bottom',
-                        height: 31,
-                        hidden: false,
-                        id: 'startbutton',
-                        itemId: 'myimg1',
-                        minHeight: '25%',
-                        minWidth: '100%',
-                        styleHtmlContent: true,
-                        width: 163,
-                        src: 'resources/images/button_png/start.png'
-                    },
-                    {
-                        xtype: 'image',
-                        centered: true,
-                        height: 409,
-                        hidden: true,
-                        id: 'startbuttonInv',
-                        maxHeight: '25%',
-                        maxWidth: '100%',
-                        styleHtmlContent: true,
-                        width: 451,
-                        src: 'resources/images/button_png/start_inv.png'
-                    },
-                    {
-                        xtype: 'image',
+                        xtype: 'container',
                         height: 160,
-                        id: 'wecker',
-                        src: 'resources/images/button_png/Wecker.png'
+                        id: 'weckerButton',
+                        left: '40px',
+                        top: 80,
+                        width: 100,
+                        items: [
+                            {
+                                xtype: 'image',
+                                centered: false,
+                                height: '100%',
+                                id: 'button',
+                                width: '100%',
+                                src: 'resources/images/button_png/Wecker.png'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'container',
+                        height: 124,
+                        id: 'start',
+                        left: 98,
+                        top: '222px',
+                        width: 124,
+                        items: [
+                            {
+                                xtype: 'image',
+                                hidden: false,
+                                id: 'startbutton',
+                                minHeight: '100%',
+                                minWidth: '100%',
+                                styleHtmlContent: true,
+                                src: 'resources/images/button_png/start.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: '100%',
+                                hidden: true,
+                                id: 'startbuttonInv',
+                                minHeight: '100%',
+                                minWidth: '100%',
+                                styleHtmlContent: true,
+                                width: '100%',
+                                src: 'resources/images/button_png/start_inv.png'
+                            }
+                        ]
                     }
                 ]
             }

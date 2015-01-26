@@ -20,18 +20,11 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
-    views: [
-        'mainView',
-        'achievments_frontpage'
-    ],
-    controllers: [
-        'Main'
-    ],
-    name: 'VosNaviagtor',
+    name: 'MyApp',
 
     launch: function() {
 
-        Ext.create('VosNaviagtor.view.mainView', {fullscreen: true});
+        Ext.create('MyApp.view.mainView', {fullscreen: true});
     }
 
 });

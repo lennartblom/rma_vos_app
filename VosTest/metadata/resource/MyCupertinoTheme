@@ -14,7 +14,11 @@
         ]
     },
     "name": "MyCupertinoTheme",
+<<<<<<< HEAD
     "designerId": "877337fc-4f11-4232-affc-055e298e53cb",
+=======
+    "designerId": "c9359703-9e97-40bf-8d8a-31520ef0746d",
+>>>>>>> origin/master
     "storage": {
         "needsCompile": false,
         "simple": {},

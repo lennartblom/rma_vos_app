@@ -32,7 +32,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
-  "VosNaviagtor": "app"
+  "MyApp": "app"
 });
 
 Ext.ClassManager.addNameAlternateMappings({
@@ -667,10 +667,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "VosNaviagtor.controller.Main": [],
-  "VosNaviagtor.view.achievments_frontpage": [],
-  "VosNaviagtor.view.mainView": [],
-  "VosNaviagtor.view.wecker": []
+  "MyApp.controller.Main": [],
+  "MyApp.view.achievments_frontpage": [],
+  "MyApp.view.mainView": [],
+  "MyApp.view.wecker": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1402,10 +1402,10 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "VosNaviagtor.controller.Main": [],
-  "VosNaviagtor.view.achievments_frontpage": [],
-  "VosNaviagtor.view.mainView": [],
-  "VosNaviagtor.view.wecker": []
+  "MyApp.controller.Main": [],
+  "MyApp.view.achievments_frontpage": [],
+  "MyApp.view.mainView": [],
+  "MyApp.view.wecker": []
 });
 
 
