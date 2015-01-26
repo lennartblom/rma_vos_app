@@ -1,0 +1,13 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "achievments_frontpage"
+    },
+    "name": "MyContainer1",
+    "designerId": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
+}

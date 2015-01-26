@@ -49,6 +49,7 @@ Ext.define('VosNaviagtor.view.mainView', {
                     {
                         xtype: 'image',
                         centered: true,
+                        docked: 'bottom',
                         height: 31,
                         hidden: false,
                         id: 'startbutton',

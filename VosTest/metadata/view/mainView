@@ -80,7 +80,7 @@
                     "userConfig": {
                         "centered": true,
                         "disabled": null,
-                        "docked": null,
+                        "docked": "bottom",
                         "height": 31,
                         "hidden": false,
                         "id": "startbutton",

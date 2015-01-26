@@ -26,6 +26,9 @@
                 }
             ]
         },
+        "05c90d69-4bbe-4647-aa46-50af4f5a763f": {
+            "id": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
+        },
         "store": true,
         "model": true,
         "controller": true,
@@ -48,15 +51,16 @@
     "tabState": {
         "openTabs": [
             "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c",
-            "f51be895-8789-4766-a887-7c2539d2ec43"
+            "f51be895-8789-4766-a887-7c2539d2ec43",
+            "05c90d69-4bbe-4647-aa46-50af4f5a763f"
         ]
     },
     "canvasState": {
-        "topInstance": "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c"
+        "topInstance": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
     },
     "inspectorState": {
-        "topInstance": null,
-        "selectedInstance": null
+        "topInstance": "05c90d69-4bbe-4647-aa46-50af4f5a763f",
+        "selectedInstance": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
     },
     "editMode": "design",
     "userSettings": {
