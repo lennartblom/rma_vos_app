@@ -1,0 +1,13 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "wecker"
+    },
+    "name": "MyContainer1",
+    "designerId": "5badfb1c-206e-47e5-916a-2ee35a1e76a5"
+}
