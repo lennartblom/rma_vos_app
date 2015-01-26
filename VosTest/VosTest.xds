@@ -38,8 +38,8 @@
     "viewOrderMap": {
         "view": [
             "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c",
-            "05c90d69-4bbe-4647-aa46-50af4f5a763f",
-            "5badfb1c-206e-47e5-916a-2ee35a1e76a5"
+            "5badfb1c-206e-47e5-916a-2ee35a1e76a5",
+            "05c90d69-4bbe-4647-aa46-50af4f5a763f"
         ],
         "store": [],
         "controller": [
@@ -49,13 +49,10 @@
         "resource": [
             "b124df83-3e9d-4941-8241-350c316f131c",
             "f1e90cdf-71b4-462a-9ffe-03b7a9460705",
-<<<<<<< HEAD
-            "877337fc-4f11-4232-affc-055e298e53cb"
-=======
             "c9359703-9e97-40bf-8d8a-31520ef0746d"
->>>>>>> origin/master
         ],
         "app": [
+            "application",
             "application"
         ]
     }

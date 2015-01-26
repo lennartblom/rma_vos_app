@@ -6,15 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "controllers": [
-            "Main"
-        ],
-        "name": "VosNaviagtor",
-        "views": [
-            "mainView",
-            "achievments_frontpage"
-        ]
+        "name": "MyApp"
     },
-    "name": "Application",
+    "name": "Application1",
     "designerId": "application"
 }
