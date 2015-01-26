@@ -135,6 +135,140 @@
                             },
                             "name": "MyImg3",
                             "designerId": "a0292732-b424-4d7d-a9fa-56f21ec2f7e4"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "hidden": true,
+                                "id": "button_inv",
+                                "src": "resources/images/button_png/Wecker_inv.png",
+                                "width": "100%"
+                            },
+                            "name": "MyImg8",
+                            "designerId": "70b4232a-82f1-4fd1-b239-0167e409dc14"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": null,
+                        "height": 100,
+                        "hidden": false,
+                        "id": "einstellungen",
+                        "left": 165,
+                        "top": 130,
+                        "width": 100
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "e4a65362-b3df-4798-a468-8afd19a188ac",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "hidden": false,
+                                "id": "einst_button",
+                                "src": "resources/images/button_png/Einstellungen.png",
+                                "width": "100%"
+                            },
+                            "name": "MyImg5",
+                            "designerId": "4cb8cd9a-c714-4773-b51a-5138f9b817cc"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "hidden": true,
+                                "id": "einst_buttonInv",
+                                "src": "resources/images/button_png/Einstellungen_inv.png",
+                                "width": "100%"
+                            },
+                            "name": "MyImg9",
+                            "designerId": "c2861af8-0126-4090-ae5f-35153c6c4f1b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "achievements"
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "b15b0e3c-221e-46dd-9d22-344aa3e10daf",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 201,
+                                "id": "achie_button",
+                                "src": "resources/images/button_png/start.png"
+                            },
+                            "name": "MyImg6",
+                            "designerId": "6ea2dc8e-e9e2-4b8a-864d-e1d4586a5f57"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "game"
+                    },
+                    "name": "MyContainer6",
+                    "designerId": "fb1382cd-2d52-477c-b628-b390266ee960",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 201,
+                                "id": "game_button",
+                                "src": "resources/images/button_png/start.png"
+                            },
+                            "name": "MyImg7",
+                            "designerId": "461fa543-0740-4ba0-9d54-5356b2422dc4"
                         }
                     ]
                 },

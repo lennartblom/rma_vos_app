@@ -19,6 +19,8 @@ Ext.define('MyApp.view.achievments_frontpage', {
     requires: [
         'Ext.Container',
         'Ext.Button',
+        'Ext.Label',
+        'Ext.field.Checkbox',
         'Ext.Img'
     ],
 
@@ -64,12 +66,63 @@ Ext.define('MyApp.view.achievments_frontpage', {
                     {
                         xtype: 'container',
                         height: '80%',
-                        id: 'ui_forms'
+                        id: 'ui_forms',
+                        top: '50px',
+                        width: '100%',
+                        items: [
+                            {
+                                xtype: 'container',
+                                docked: 'top',
+                                height: '60px',
+                                id: 'netzerkundung_container',
+                                items: [
+                                    {
+                                        xtype: 'label',
+                                        height: '25px',
+                                        html: '<p>Netzerkundung:</p>',
+                                        id: 'netzerkundung'
+                                    },
+                                    {
+                                        xtype: 'checkboxfield',
+                                        label: 'Field'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'container',
+                                height: '80px',
+                                id: 'locations_visited_container',
+                                top: '25px',
+                                width: '100%',
+                                items: [
+                                    {
+                                        xtype: 'label',
+                                        height: '25px',
+                                        html: '<p>Orte besucht:</p>',
+                                        id: 'netzerkundung1'
+                                    },
+                                    {
+                                        xtype: 'checkboxfield',
+                                        label: 'Field'
+                                    },
+                                    {
+                                        xtype: 'checkboxfield',
+                                        label: 'Field'
+                                    },
+                                    {
+                                        xtype: 'checkboxfield',
+                                        label: 'Field'
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         xtype: 'container',
+                        bottom: '30px',
                         id: 'border_bottom',
-                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;'
+                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
+                        width: '70%'
                     }
                 ]
             },
