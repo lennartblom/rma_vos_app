@@ -48,8 +48,16 @@
         "model": [],
         "resource": [
             "b124df83-3e9d-4941-8241-350c316f131c",
+<<<<<<< HEAD
             "f1e90cdf-71b4-462a-9ffe-03b7a9460705",
             "c9359703-9e97-40bf-8d8a-31520ef0746d"
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+=======
+            "f1e90cdf-71b4-462a-9ffe-03b7a9460705"
+>>>>>>> parent of 490cd4c... wecker
+>>>>>>> 90a9474debad94fc42b58d39c2e45e659590ad40
         ],
         "app": [
             "application",
