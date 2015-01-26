@@ -1,0 +1,101 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "fahrplaner",
+        "layout": "fit"
+    },
+    "name": "MyContainer7",
+    "designerId": "b60cccb9-321a-45c4-ad9c-93f071883a5f",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": null,
+                "docked": null,
+                "height": null,
+                "id": "netzBackground",
+                "src": "resources/images/background/verbindungen.png"
+            },
+            "name": "MyImg12",
+            "designerId": "c1358de9-be9c-4ae1-8367-7f8468502c3b"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 110,
+                "id": "inputOrt",
+                "width": 320
+            },
+            "name": "MyContainer9",
+            "designerId": "8ca2ca9a-6e75-4f50-88f1-ac1c002a8678",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": true,
+                        "docked": null,
+                        "left": -7,
+                        "title": null,
+                        "width": "100%"
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "49584d01-23d5-4690-99dd-cd4caf3f2cf7",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Search",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Start",
+                                "labelWidth": null,
+                                "placeHolder": "Start",
+                                "readOnly": false,
+                                "width": null
+                            },
+                            "name": "MySearchField",
+                            "designerId": "fc5d29cd-2cba-4ed0-a72d-5fd94cb71921"
+                        },
+                        {
+                            "type": "Ext.field.Search",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoCorrect": true,
+                                "label": "Ziel",
+                                "labelWidth": "80%"
+                            },
+                            "name": "MySearchField1",
+                            "designerId": "60dd811a-5dfb-47f6-9048-d438a5c9cbfa"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

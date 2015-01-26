@@ -6,7 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "name": "MyApp"
+        "name": "MyApp",
+        "views": [
+            "fahrplaner"
+        ]
     },
     "name": "Application1",
     "designerId": "application"

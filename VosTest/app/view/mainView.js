@@ -22,6 +22,7 @@ Ext.define('MyApp.view.mainView', {
     ],
 
     config: {
+        fullscreen: true,
         layout: 'fit',
         scrollable: false,
         items: [

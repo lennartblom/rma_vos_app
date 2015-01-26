@@ -8,6 +8,7 @@
     "userConfig": {
         "designer|initialView": true,
         "designer|userClassName": "mainView",
+        "fullscreen": true,
         "layout": "fit",
         "scrollable": false
     },
