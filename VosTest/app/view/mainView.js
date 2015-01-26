@@ -35,16 +35,21 @@ Ext.define('MyApp.view.mainView', {
             },
             {
                 xtype: 'container',
-                height: '50px',
+                height: '60px',
                 id: 'logo',
-                style: 'display:block;\nbackground-color: rgba(255,255,255, 0.7);',
+                style: 'display:block;\nbackground-color: rgba(255,255,255, 0.7);\npadding:0px;\nmargin:0px;',
                 styleHtmlContent: true,
                 width: '320px',
                 items: [
                     {
                         xtype: 'image',
-                        height: '300%',
+                        docked: 'top',
+                        height: '50px',
                         id: 'vosLogo',
+                        style: 'margin:0px;\npadding:0px;',
+                        styleHtmlContent: true,
+                        top: '5px',
+                        width: '320px',
                         src: 'resources/images/logo/vos_navigator.png'
                     }
                 ]

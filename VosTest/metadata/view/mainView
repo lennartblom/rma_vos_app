@@ -40,11 +40,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "height": "50px",
+                "height": "60px",
                 "id": "logo",
                 "style": [
                     "display:block;",
-                    "background-color: rgba(255,255,255, 0.7);"
+                    "background-color: rgba(255,255,255, 0.7);",
+                    "padding:0px;",
+                    "margin:0px;"
                 ],
                 "styleHtmlContent": true,
                 "width": "320px"
@@ -64,15 +66,24 @@
                     "codeClass": null,
                     "userConfig": {
                         "centered": null,
-                        "height": "300%",
+                        "docked": "top",
+                        "height": "50px",
                         "id": "vosLogo",
                         "minHeight": null,
                         "minWidth": null,
                         "src": "resources/images/logo/vos_navigator.png",
-                        "top": null,
-                        "width": null
+                        "style": [
+                            "margin:0px;",
+                            "padding:0px;"
+                        ],
+                        "styleHtmlContent": true,
+                        "top": "5px",
+                        "width": "320px"
                     },
                     "name": "MyImg4",
+                    "configAlternates": {
+                        "style": "object"
+                    },
                     "designerId": "35fca6fa-7a7e-4463-a97e-cbd31780fc41"
                 }
             ]

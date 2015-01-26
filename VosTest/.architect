@@ -86,26 +86,16 @@
         },
         "f1e90cdf-71b4-462a-9ffe-03b7a9460705": {
             "id": "f1e90cdf-71b4-462a-9ffe-03b7a9460705"
-        },
-        "c9359703-9e97-40bf-8d8a-31520ef0746d": {
-            "id": "c9359703-9e97-40bf-8d8a-31520ef0746d"
         }
     },
     "tabState": {
         "openTabs": [
             "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c",
-<<<<<<< HEAD
-            "f51be895-8789-4766-a887-7c2539d2ec43",
-            "5badfb1c-206e-47e5-916a-2ee35a1e76a5",
-            "05c90d69-4bbe-4647-aa46-50af4f5a763f",
-            "c9359703-9e97-40bf-8d8a-31520ef0746d"
-=======
             "f51be895-8789-4766-a887-7c2539d2ec43"
->>>>>>> c00030cc2a8ce98d6d22b8eb4a225e22878a18b8
         ]
     },
     "canvasState": {
-        "topInstance": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
+        "topInstance": "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c"
     },
     "inspectorState": {
         "topInstance": null,
