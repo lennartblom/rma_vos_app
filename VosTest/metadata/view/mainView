@@ -71,75 +71,117 @@
             "designerId": "ca4c32a8-4af5-4020-b81c-06ddfe8e7647",
             "cn": [
                 {
-                    "type": "Ext.Img",
+                    "type": "Ext.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "centered": true,
-                        "disabled": null,
-                        "docked": "bottom",
-                        "height": 31,
-                        "hidden": false,
-                        "id": "startbutton",
-                        "itemId": "myimg1",
-                        "margin": null,
-                        "maxHeight": null,
-                        "maxWidth": null,
-                        "minHeight": "25%",
-                        "minWidth": "100%",
-                        "mode": null,
-                        "padding": null,
-                        "src": "resources/images/button_png/start.png",
-                        "styleHtmlContent": true,
-                        "top": null,
-                        "width": 163,
-                        "zIndex": null
+                        "height": 140,
+                        "id": "weckerButton",
+                        "left": "40px",
+                        "top": "100px",
+                        "width": 100
                     },
-                    "name": "MyImg1",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "23cc8c1b-f952-4a75-acb0-755b7f09da10"
+                    "name": "MyContainer1",
+                    "designerId": "76d4fc5d-336e-4af6-bab9-629cffa1bf71",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "centered": false,
+                                "height": "100%",
+                                "id": "button",
+                                "src": "resources/images/button_png/Wecker.png",
+                                "top": null,
+                                "width": "100%"
+                            },
+                            "name": "MyImg3",
+                            "designerId": "a0292732-b424-4d7d-a9fa-56f21ec2f7e4"
+                        }
+                    ]
                 },
                 {
-                    "type": "Ext.Img",
+                    "type": "Ext.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "centered": true,
-                        "height": 409,
-                        "hidden": true,
-                        "id": "startbuttonInv",
-                        "maxHeight": "25%",
-                        "maxWidth": "100%",
-                        "minHeight": null,
-                        "src": "resources/images/button_png/start_inv.png",
-                        "styleHtmlContent": true,
-                        "width": 451
+                        "height": 124,
+                        "id": "start",
+                        "left": 98,
+                        "top": "222px",
+                        "width": 124
                     },
-                    "name": "MyImg2",
-                    "designerId": "ef553795-a393-43af-9f41-ccbb066b1217"
-                },
-                {
-                    "type": "Ext.Img",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "height": 160,
-                        "id": "wecker",
-                        "src": "resources/images/button_png/Wecker.png"
-                    },
-                    "name": "MyImg3",
-                    "designerId": "a0292732-b424-4d7d-a9fa-56f21ec2f7e4"
+                    "name": "MyContainer2",
+                    "designerId": "df0675a3-9627-4262-a913-cb9dc3f82c20",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "centered": null,
+                                "disabled": null,
+                                "docked": null,
+                                "height": null,
+                                "hidden": false,
+                                "id": "startbutton",
+                                "itemId": null,
+                                "margin": null,
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "mode": null,
+                                "padding": null,
+                                "src": "resources/images/button_png/start.png",
+                                "styleHtmlContent": true,
+                                "top": null,
+                                "width": null,
+                                "zIndex": null
+                            },
+                            "name": "MyImg1",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "23cc8c1b-f952-4a75-acb0-755b7f09da10"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "centered": null,
+                                "height": "100%",
+                                "hidden": true,
+                                "id": "startbuttonInv",
+                                "maxHeight": null,
+                                "maxWidth": null,
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "src": "resources/images/button_png/start_inv.png",
+                                "styleHtmlContent": true,
+                                "width": "100%"
+                            },
+                            "name": "MyImg2",
+                            "designerId": "ef553795-a393-43af-9f41-ccbb066b1217"
+                        }
+                    ]
                 }
             ]
         }
