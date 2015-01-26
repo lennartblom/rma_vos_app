@@ -25,8 +25,8 @@
             "tablet",
             "desktop"
          ],
-         "theme": "Default",
-         "path": "resources/css/sencha-touch-f1e90cdf-71b4-462a-9ffe-03b7a9460705.css"
+         "theme": "Cupertino",
+         "path": "resources/css/cupertino-877337fc-4f11-4232-affc-055e298e53cb.css"
       }
    ],
    "appCache": {
