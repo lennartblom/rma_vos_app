@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('VosNaviagtor.controller.Main', {
+Ext.define('MyApp.controller.Main', {
     extend: 'Ext.app.Controller',
 
     config: {

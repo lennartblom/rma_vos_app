@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('VosNaviagtor.view.mainView', {
+Ext.define('MyApp.view.mainView', {
     extend: 'Ext.Container',
 
     requires: [

@@ -1,5 +1,5 @@
 {
-   "name": "VosNaviagtor",
+   "name": "MyApp",
    "indexHtmlPath": "index.html",
    "url": null,
    "js": [
@@ -25,8 +25,8 @@
             "tablet",
             "desktop"
          ],
-         "theme": "Default",
-         "path": "resources/css/sencha-touch-f1e90cdf-71b4-462a-9ffe-03b7a9460705.css"
+         "theme": "Cupertino",
+         "path": "resources/css/cupertino-c9359703-9e97-40bf-8d8a-31520ef0746d.css"
       }
    ],
    "appCache": {
