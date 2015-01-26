@@ -47,36 +47,52 @@ Ext.define('MyApp.view.mainView', {
                 id: 'button_cont',
                 items: [
                     {
-                        xtype: 'image',
-                        centered: true,
-                        docked: 'bottom',
-                        height: 31,
-                        hidden: false,
-                        id: 'startbutton',
-                        itemId: 'myimg1',
-                        minHeight: '25%',
-                        minWidth: '100%',
-                        styleHtmlContent: true,
-                        width: 163,
-                        src: 'resources/images/button_png/start.png'
+                        xtype: 'container',
+                        height: 140,
+                        id: 'weckerButton',
+                        left: '40px',
+                        top: '100px',
+                        width: 100,
+                        items: [
+                            {
+                                xtype: 'image',
+                                centered: false,
+                                height: '100%',
+                                id: 'button',
+                                width: '100%',
+                                src: 'resources/images/button_png/Wecker.png'
+                            }
+                        ]
                     },
                     {
-                        xtype: 'image',
-                        centered: true,
-                        height: 409,
-                        hidden: true,
-                        id: 'startbuttonInv',
-                        maxHeight: '25%',
-                        maxWidth: '100%',
-                        styleHtmlContent: true,
-                        width: 451,
-                        src: 'resources/images/button_png/start_inv.png'
-                    },
-                    {
-                        xtype: 'image',
-                        height: 160,
-                        id: 'wecker',
-                        src: 'resources/images/button_png/Wecker.png'
+                        xtype: 'container',
+                        height: 124,
+                        id: 'start',
+                        left: 98,
+                        top: '222px',
+                        width: 124,
+                        items: [
+                            {
+                                xtype: 'image',
+                                hidden: false,
+                                id: 'startbutton',
+                                minHeight: '100%',
+                                minWidth: '100%',
+                                styleHtmlContent: true,
+                                src: 'resources/images/button_png/start.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: '100%',
+                                hidden: true,
+                                id: 'startbuttonInv',
+                                minHeight: '100%',
+                                minWidth: '100%',
+                                styleHtmlContent: true,
+                                width: '100%',
+                                src: 'resources/images/button_png/start_inv.png'
+                            }
+                        ]
                     }
                 ]
             }
