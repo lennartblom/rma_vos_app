@@ -668,7 +668,9 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.viewport.WP"
   ],
   "VosNaviagtor.controller.Main": [],
-  "VosNaviagtor.view.mainView": []
+  "VosNaviagtor.view.achievments_frontpage": [],
+  "VosNaviagtor.view.mainView": [],
+  "VosNaviagtor.view.wecker": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1401,7 +1403,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
   "VosNaviagtor.controller.Main": [],
-  "VosNaviagtor.view.mainView": []
+  "VosNaviagtor.view.achievments_frontpage": [],
+  "VosNaviagtor.view.mainView": [],
+  "VosNaviagtor.view.wecker": []
 });
 
 
