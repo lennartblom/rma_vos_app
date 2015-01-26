@@ -96,25 +96,18 @@ Ext.define('MyApp.view.mainView', {
                             {
                                 xtype: 'image',
                                 height: '100%',
-<<<<<<< HEAD
                                 hidden: false,
-=======
->>>>>>> 259bf9cb48ab65f899e4227405890e6d3784e839
                                 id: 'einst_button',
                                 width: '100%',
                                 src: 'resources/images/button_png/Einstellungen.png'
                             },
                             {
                                 xtype: 'image',
-<<<<<<< HEAD
                                 height: '100%',
                                 hidden: true,
                                 id: 'einst_buttonInv',
                                 width: '100%',
                                 src: 'resources/images/button_png/Einstellungen_inv.png'
-=======
-                                height: 201
->>>>>>> 259bf9cb48ab65f899e4227405890e6d3784e839
                             }
                         ]
                     },
