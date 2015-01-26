@@ -87,7 +87,6 @@ Ext.define('MyApp.view.mainView', {
                     {
                         xtype: 'container',
                         height: 100,
-                        hidden: false,
                         id: 'einstellungen',
                         left: 165,
                         top: 130,

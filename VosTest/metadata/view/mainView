@@ -165,7 +165,7 @@
                     "userConfig": {
                         "docked": null,
                         "height": 100,
-                        "hidden": false,
+                        "hidden": null,
                         "id": "einstellungen",
                         "left": 165,
                         "top": 130,
