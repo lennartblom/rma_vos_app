@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|initialView": true,
-        "designer|userClassName": "mainView",
+        "designer|userClassName": "main",
         "fullscreen": true,
         "layout": "fit",
         "scrollable": false
@@ -335,12 +335,13 @@
                     "userConfig": {
                         "height": 124,
                         "id": "start",
+                        "itemId": null,
                         "left": 98,
                         "top": "222px",
                         "width": 124
                     },
                     "name": "MyContainer2",
-                    "designerId": "df0675a3-9627-4262-a913-cb9dc3f82c20",
+                    "designerId": "4bd388b2-0d84-4a1b-8a33-11522f710c5f",
                     "cn": [
                         {
                             "type": "Ext.Img",
@@ -374,7 +375,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "23cc8c1b-f952-4a75-acb0-755b7f09da10"
+                            "designerId": "20147da8-b16b-450a-84be-9bb74bc43e42"
                         },
                         {
                             "type": "Ext.Img",
@@ -397,7 +398,31 @@
                                 "width": "100%"
                             },
                             "name": "MyImg2",
-                            "designerId": "ef553795-a393-43af-9f41-ccbb066b1217"
+                            "designerId": "887e698e-8644-4fa6-9e6c-f8661fdb6a56"
+                        },
+                        {
+                            "type": "delegateeventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "container"
+                                ],
+                                "designer|targetType": "main",
+                                "fn": "startTab",
+                                "implHandler": [
+                                    "startbuttonInv.show();",
+                                    "alert(\"Start\");",
+                                    "startbuttonInv.hide();"
+                                ],
+                                "name": "tap",
+                                "single": null
+                            },
+                            "name": "startTab",
+                            "designerId": "29ae1ca2-e316-4e3f-aa43-c8beab741f28"
                         }
                     ]
                 }

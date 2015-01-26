@@ -17,16 +17,8 @@ Ext.define('MyApp.controller.Main', {
     extend: 'Ext.app.Controller',
 
     config: {
-        control: {
-            "image#startbutton": {
-                tap: 'tapStart'
-            }
+        refs: {
+            start: 'container#start'
         }
-    },
-
-    tapStart: function(image, e, eOpts) {
-        var img = Ext.getImg('#startbuttonInv');
-        img.show();
     }
-
 });
