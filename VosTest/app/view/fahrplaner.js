@@ -19,7 +19,9 @@ Ext.define('MyApp.view.fahrplaner', {
     requires: [
         'Ext.Img',
         'Ext.form.FieldSet',
-        'Ext.field.Search'
+        'Ext.field.Search',
+        'Ext.dataview.DataView',
+        'Ext.XTemplate'
     ],
 
     config: {
@@ -38,22 +40,71 @@ Ext.define('MyApp.view.fahrplaner', {
                 items: [
                     {
                         xtype: 'fieldset',
-                        centered: true,
-                        left: -7,
-                        width: '100%',
+                        id: 'inputfields',
                         items: [
                             {
                                 xtype: 'searchfield',
+                                id: 'startort',
                                 label: 'Start',
-                                placeHolder: 'Start',
-                                readOnly: false
+                                autoCorrect: true,
+                                placeHolder: 'Aktueller Ort'
                             },
                             {
                                 xtype: 'searchfield',
+                                id: 'ziel',
                                 label: 'Ziel',
-                                labelWidth: '80%',
-                                autoCorrect: true
+                                autoCorrect: true,
+                                placeHolder: 'Zielort'
                             }
+                        ]
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
+                docked: 'top',
+                height: 348,
+                id: 'linienInformationen',
+                top: 140,
+                width: '100%',
+                scrollable: 'horizontal',
+                items: [
+                    {
+                        xtype: 'dataview',
+                        docked: 'top',
+                        height: 100,
+                        id: 'lineOne',
+                        style: 'background-color: rgba(255,255,255, 0.6);',
+                        width: '100%',
+                        scrollable: false,
+                        itemTpl: [
+                            '<div>Data View Item {string}</div>'
+                        ]
+                    },
+                    {
+                        xtype: 'dataview',
+                        docked: 'top',
+                        height: 100,
+                        id: 'lineTwo',
+                        margin: '10 0 0 0 ',
+                        style: 'background-color: rgba(255,255,255, 0.6);',
+                        width: '100%',
+                        scrollable: false,
+                        itemTpl: [
+                            '<div>Data View Item {string}</div>'
+                        ]
+                    },
+                    {
+                        xtype: 'dataview',
+                        docked: 'top',
+                        height: 100,
+                        id: 'lineThree',
+                        margin: '10 0 0 0',
+                        style: 'background-color: rgba(255,255,255, 0.6);',
+                        width: '100%',
+                        scrollable: false,
+                        itemTpl: [
+                            '<div>Data View Item {string}</div>'
                         ]
                     }
                 ]
