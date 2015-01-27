@@ -9,7 +9,8 @@
         "name": "MyApp",
         "views": [
             "fahrplaner",
-            "MyContainer1"
+            "goals",
+            "settings"
         ]
     },
     "name": "Application1",
