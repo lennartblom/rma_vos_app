@@ -114,16 +114,6 @@ Ext.define('MyApp.view.wecker', {
             {
                 xtype: 'searchfield',
                 label: 'Field'
-            },
-            {
-                xtype: 'container',
-                items: [
-                    {
-                        xtype: 'image',
-                        centered: false,
-                        height: 201
-                    }
-                ]
             }
         ]
     }

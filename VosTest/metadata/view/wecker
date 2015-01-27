@@ -234,32 +234,6 @@
             },
             "name": "MySearchField",
             "designerId": "92c4cc53-876a-4057-b4f3-dbac855c90a1"
-        },
-        {
-            "type": "Ext.Container",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "name": "MyContainer10",
-            "designerId": "82d3026b-38d4-4198-bde0-46274e9cfe46",
-            "cn": [
-                {
-                    "type": "Ext.Img",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "centered": false,
-                        "height": 201
-                    },
-                    "name": "MyImg11",
-                    "designerId": "25800fff-ccbe-4693-b2f1-db7916eeea64"
-                }
-            ]
         }
     ]
 }
