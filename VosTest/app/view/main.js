@@ -18,7 +18,8 @@ Ext.define('MyApp.view.main', {
 
     requires: [
         'Ext.Img',
-        'Ext.Container'
+        'Ext.Container',
+        'Ext.Button'
     ],
 
     config: {
@@ -62,7 +63,7 @@ Ext.define('MyApp.view.main', {
                     {
                         xtype: 'container',
                         height: 160,
-                        id: 'weckerButton',
+                        id: 'wecker',
                         left: 30,
                         top: 75,
                         width: 100,
@@ -73,16 +74,21 @@ Ext.define('MyApp.view.main', {
                                 height: '100%',
                                 id: 'button',
                                 width: '100%',
-                                src: 'resources/images/button_png/Wecker.png'
+                                src: 'resources/images/button_line/wecker_line.png'
                             },
                             {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                hidden: true,
-                                id: 'button_inv',
-                                width: '100%',
-                                src: 'resources/images/button_png/Wecker_inv.png'
+                                xtype: 'button',
+                                handler: function(button, e) {
+                                    alert("test");
+                                },
+                                height: 70,
+                                id: 'weckerButton',
+                                left: 15,
+                                style: 'background-image: url(\'resources/images/button_png/Wecker.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                styleHtmlContent: true,
+                                top: -3,
+                                width: 70,
+                                text: ''
                             }
                         ]
                     },
@@ -101,16 +107,21 @@ Ext.define('MyApp.view.main', {
                                 hidden: false,
                                 id: 'einst_button',
                                 width: '100%',
-                                src: 'resources/images/button_png/Einstellungen.png'
+                                src: 'resources/images/button_line/setting_line.png'
                             },
                             {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                hidden: true,
-                                id: 'einst_buttonInv',
-                                width: '100%',
-                                src: 'resources/images/button_png/Einstellungen_inv.png'
+                                xtype: 'button',
+                                handler: function(button, e) {
+                                    alert("test");
+                                },
+                                height: 70,
+                                id: 'settingsButton',
+                                left: 15,
+                                style: 'background-image: url(\'resources/images/button_png/settings.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                styleHtmlContent: true,
+                                top: 0,
+                                width: 70,
+                                text: ''
                             }
                         ]
                     },
@@ -127,18 +138,23 @@ Ext.define('MyApp.view.main', {
                                 xtype: 'image',
                                 centered: true,
                                 height: '100%',
-                                id: 'achie_button',
+                                id: 'achie_button_line',
                                 width: '100%',
-                                src: 'resources/images/button_png/Achievments.png'
+                                src: 'resources/images/button_line/achievments_line.png'
                             },
                             {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                hidden: true,
-                                id: 'achie_buttonInv',
-                                width: '100%',
-                                src: 'resources/images/button_png/Achievments_inv.png'
+                                xtype: 'button',
+                                handler: function(button, e) {
+                                    alert("test");
+                                },
+                                height: 70,
+                                id: 'achieveButton',
+                                left: 110,
+                                style: 'background-image: url(\'resources/images/button_png/Achievments.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                styleHtmlContent: true,
+                                top: 20,
+                                width: 70,
+                                text: ''
                             }
                         ]
                     },
@@ -146,7 +162,7 @@ Ext.define('MyApp.view.main', {
                         xtype: 'container',
                         height: 98,
                         hidden: false,
-                        id: 'game',
+                        id: 'gameContainer',
                         left: 40,
                         top: 335,
                         width: 100,
@@ -155,18 +171,23 @@ Ext.define('MyApp.view.main', {
                                 xtype: 'image',
                                 centered: true,
                                 height: '100%',
-                                id: 'game_button',
+                                id: 'game_button_line',
                                 width: '100%',
-                                src: 'resources/images/button_png/Game.png'
+                                src: 'resources/images/button_line/game_line.png'
                             },
                             {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                hidden: true,
-                                id: 'game_buttonInv',
-                                width: '100%',
-                                src: 'resources/images/button_png/Game_inv.png'
+                                xtype: 'button',
+                                handler: function(button, e) {
+                                    alert("test");
+                                },
+                                height: 70,
+                                id: 'game',
+                                left: 6,
+                                style: 'background-image: url(\'resources/images/button_png/game.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                styleHtmlContent: true,
+                                top: 30,
+                                width: 70,
+                                text: ''
                             }
                         ]
                     },
@@ -180,43 +201,22 @@ Ext.define('MyApp.view.main', {
                         width: 124,
                         items: [
                             {
-                                xtype: 'image',
-                                hidden: false,
-                                id: 'startbutton',
-                                minHeight: '100%',
-                                minWidth: '100%',
-                                styleHtmlContent: true,
-                                src: 'resources/images/button_png/start.png'
-                            },
-                            {
-                                xtype: 'image',
+                                xtype: 'button',
+                                handler: function(button, e) {
+                                    alert("test");
+                                },
                                 height: '100%',
-                                hidden: true,
-                                id: 'startbuttonInv',
-                                minHeight: '100%',
-                                minWidth: '100%',
+                                id: 'startButton',
+                                style: 'background-image: url(\'resources/images/button_png/start.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 124px;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
                                 styleHtmlContent: true,
                                 width: '100%',
-                                src: 'resources/images/button_png/start_inv.png'
+                                text: ''
                             }
                         ]
                     }
                 ]
             }
-        ],
-        listeners: [
-            {
-                fn: 'startTab',
-                event: 'tap',
-                delegate: '#start'
-            }
         ]
-    },
-
-    startTab: function(container) {
-        startbuttonInv.show();
-        alert("Start");
-        startbuttonInv.hide();
     }
 
 });
