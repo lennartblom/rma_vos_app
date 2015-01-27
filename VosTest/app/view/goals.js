@@ -35,6 +35,7 @@ Ext.define('MyApp.view.goals', {
                 docked: 'top',
                 height: '100%',
                 id: 'container_goal_view',
+                style: 'padding-top:60px;',
                 width: '320px',
                 layout: 'fit',
                 items: [

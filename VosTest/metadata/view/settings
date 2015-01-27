@@ -1,0 +1,262 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "settings",
+        "height": "100%",
+        "id": "settings",
+        "width": "100%"
+    },
+    "name": "goals1",
+    "designerId": "03713b00-c334-4937-ad19-bcff3d4c7815",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "docked": "top",
+                "height": "100%",
+                "id": "container_settings_view",
+                "layout": "fit",
+                "style": [
+                    "padding-top:60px;"
+                ],
+                "width": "320px"
+            },
+            "name": "MyContainer11",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "3c6b4f2f-9277-4000-99a5-1091c310e05c",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "25px",
+                        "html": "<p>Einstellungen:</p>",
+                        "id": "headline_settings",
+                        "margin": "5px",
+                        "style": [
+                            "font-family:Helvetica;",
+                            "text-transform:uppercase;",
+                            "font-size:13px;"
+                        ],
+                        "top": null
+                    },
+                    "name": "MyLabel6",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "c684fd07-2c87-407f-83da-7ab1e04bb10e"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bottom": "30px",
+                        "id": "settings_border_bottom",
+                        "style": [
+                            "background-color:rgba(211, 83, 0, 0.9);",
+                            "display:block;",
+                            "height:5px;",
+                            "overflow:hidden;"
+                        ],
+                        "width": "255px"
+                    },
+                    "name": "MyContainer7",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "876e5654-2514-45a4-aa79-16fcd57d0dd3"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": "",
+                        "bottom": "0px",
+                        "centered": false,
+                        "disabled": false,
+                        "docked": "bottom",
+                        "height": "65px",
+                        "hidden": false,
+                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
+                        "id": "settings_button_back",
+                        "right": "0px",
+                        "style": [
+                            "-moz-border-radius: 46px;",
+                            "-webkit-border-radius: 46px;",
+                            "border-radius: 46px; /* border radius */",
+                            "-moz-background-clip: padding;",
+                            "-webkit-background-clip: padding-box;",
+                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
+                            "background-color: rgba(51, 73, 93, 0.9);",
+                            "float:right;",
+                            "display:block;",
+                            "font-size:11px;"
+                        ],
+                        "styleHtmlContent": true,
+                        "text": "back",
+                        "width": 65
+                    },
+                    "name": "MyButton2",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "20db8101-b5a8-4cf3-b467-a53bf8f1bc52"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": false,
+                        "id": "settings_wrapper_container",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer14",
+                    "designerId": "b32c0717-36f1-4f7f-adb6-eaa3b7c60d68"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "settings_form_wrapper",
+                        "layout": null,
+                        "top": "30px",
+                        "width": "100%"
+                    },
+                    "name": "MyContainer15",
+                    "designerId": "1c2791e0-788d-4978-aaec-8e1f91da65c3",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Toggle",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Field"
+                            },
+                            "name": "MyToggleField",
+                            "designerId": "74d8ee33-6961-476e-a27d-cb0d3ac1ad4d"
+                        },
+                        {
+                            "type": "Ext.field.Radio",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Field",
+                                "name": "field"
+                            },
+                            "name": "MyRadioButton",
+                            "designerId": "89bd824a-04f6-446b-b324-948c97427a97"
+                        },
+                        {
+                            "type": "Ext.field.Slider",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Field"
+                            },
+                            "name": "MySliderField",
+                            "designerId": "2e455bb7-62c4-4b13-a4dc-4fcf55532121"
+                        },
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySegmentedButton",
+                            "designerId": "d345e268-5008-4061-aa18-9c2276e73dc8",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "MyButton3"
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "c9891c25-32fa-4b8a-83ea-181666414b0b"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "text": "MyButton4"
+                                    },
+                                    "name": "MyButton4",
+                                    "designerId": "8d60915e-534b-4f12-b23e-e171787ae200"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "docked": "top",
+                "height": "100%",
+                "id": "goals_background1",
+                "src": "resources/images/background/achievements.png",
+                "width": "320px"
+            },
+            "name": "MyImg13",
+            "designerId": "16d9ed4d-940c-4743-9d22-5c61b26675d5"
+        }
+    ]
+}
