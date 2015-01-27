@@ -174,6 +174,7 @@ Ext.define('MyApp.view.main', {
                         xtype: 'container',
                         height: 124,
                         id: 'start',
+                        itemId: 'mycontainer2',
                         left: 98,
                         top: '222px',
                         width: 124,

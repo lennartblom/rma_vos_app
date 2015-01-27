@@ -9,5 +9,257 @@
         "designer|userClassName": "wecker"
     },
     "name": "MyContainer1",
-    "designerId": "5badfb1c-206e-47e5-916a-2ee35a1e76a5"
+    "designerId": "2c1ea315-09f3-4875-a131-ad089834757e",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "id": "wecker_bg",
+                "src": "resources/images/background/wecker.png"
+            },
+            "name": "MyImg10",
+            "designerId": "351c8c1c-1a54-4fa2-a193-ae347c611481"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "docked": "top",
+                "height": "100%",
+                "margin": "10% 0",
+                "width": "100%"
+            },
+            "name": "MyContainer9",
+            "designerId": "7b20a524-cc47-4e07-814f-952904be198b",
+            "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Wecker",
+                        "minWidth": null,
+                        "style": [
+                            "background:none;",
+                            ""
+                        ]
+                    },
+                    "name": "MySearchField1",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "921b6ce9-48fb-420e-bc70-eb1b20258872"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "height": "60%",
+                "id": "menu",
+                "width": "100%"
+            },
+            "name": "MyContainer7",
+            "designerId": "0ed177a5-0569-4786-b796-da662723d133",
+            "cn": [
+                {
+                    "type": "Ext.field.Toggle",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Wecker ein",
+                        "labelWidth": "75%",
+                        "name": "toggle_alarm",
+                        "value": 1
+                    },
+                    "name": "MyToggleField",
+                    "designerId": "7f70cc16-bd6f-488f-bb54-b82253845ac5"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "select_music",
+                        "label": "Ton",
+                        "name": "select_music"
+                    },
+                    "name": "MySelectField",
+                    "designerId": "b7b83d63-7401-4176-bd00-29bf4f310665"
+                },
+                {
+                    "type": "Ext.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "link_verbindung",
+                        "label": "Busverbindung suchen",
+                        "labelWidth": "80%",
+                        "name": "link_verbindung"
+                    },
+                    "name": "MyCheckbox3",
+                    "designerId": "4c5521e9-1850-4007-9009-52da489bd5f2"
+                },
+                {
+                    "type": "Ext.field.Toggle",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "toggle_alarmStop",
+                        "label": "Mehrfach klingeln",
+                        "labelWidth": "75%",
+                        "name": "toggle_alarmStop"
+                    },
+                    "name": "MyToggleField1",
+                    "designerId": "a39e12b0-db5b-4a87-84cc-b109b113e676"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "Alarm vor jedem Umstieg",
+                        "styleHtmlContent": true
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "5197afd3-2157-4db7-b325-228095a47df4"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "bottom",
+                        "id": "slider"
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "97c742c9-f74a-4752-a00a-5c173767f4cc",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Slider",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "",
+                                "maxValue": 2000,
+                                "style": [
+                                    "background: none;",
+                                    "margin-left: auto;",
+                                    "margin-right: auto;"
+                                ],
+                                "styleHtmlContent": true,
+                                "width": "90%"
+                            },
+                            "name": "MySliderField",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "c0175f98-e706-4179-abc7-592397a4c441"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "0 m vor dem Zielpunkt",
+                                "style": [
+                                    "text-align: center;",
+                                    ""
+                                ],
+                                "styleHtmlContent": true
+                            },
+                            "name": "MyLabel1",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "c24b02dd-990c-421a-a877-dd35747136a9"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.Search",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "label": "Field"
+            },
+            "name": "MySearchField",
+            "designerId": "92c4cc53-876a-4057-b4f3-dbac855c90a1"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer10",
+            "designerId": "82d3026b-38d4-4198-bde0-46274e9cfe46",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": false,
+                        "height": 201
+                    },
+                    "name": "MyImg11",
+                    "designerId": "25800fff-ccbe-4693-b2f1-db7916eeea64"
+                }
+            ]
+        }
+    ]
 }

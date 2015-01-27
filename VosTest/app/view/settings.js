@@ -121,7 +121,7 @@ Ext.define('MyApp.view.settings', {
                 height: '100%',
                 id: 'goals_background1',
                 width: '320px',
-                src: 'resources/images/background/achievements.png'
+                src: 'resources/images/background/settings.png'
             }
         ]
     }

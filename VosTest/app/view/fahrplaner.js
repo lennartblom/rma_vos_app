@@ -21,7 +21,8 @@ Ext.define('MyApp.view.fahrplaner', {
         'Ext.form.FieldSet',
         'Ext.field.Search',
         'Ext.dataview.DataView',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.Button'
     ],
 
     config: {
@@ -108,6 +109,30 @@ Ext.define('MyApp.view.fahrplaner', {
                         ]
                     }
                 ]
+            },
+            {
+                xtype: 'container',
+                bottom: '30px',
+                id: 'goals_border_bottom1',
+                style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
+                width: '255px'
+            },
+            {
+                xtype: 'button',
+                border: '',
+                bottom: '0px',
+                centered: false,
+                disabled: false,
+                docked: 'bottom',
+                height: '65px',
+                hidden: false,
+                html: '<h1 style="line-height:65px;font-size:15px;">zurück</h1>',
+                id: 'goals_button_back1',
+                right: '0px',
+                style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\nfloat:right;\ndisplay:block;\nfont-size:11px;',
+                styleHtmlContent: true,
+                width: 65,
+                text: 'back'
             }
         ]
     }
