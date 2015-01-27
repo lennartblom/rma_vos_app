@@ -31,7 +31,7 @@ Ext.define('MyApp.view.achievments_frontpage', {
                 centered: true,
                 docked: 'bottom',
                 height: '100%',
-                id: 'button_container',
+                id: 'container_achievments_view',
                 styleHtmlContent: true,
                 width: '100%',
                 layout: 'fit',
@@ -42,11 +42,11 @@ Ext.define('MyApp.view.achievments_frontpage', {
                         bottom: '0px',
                         docked: 'bottom',
                         height: '65px',
-                        html: '<h1 style="line-height:65px;font-size:15px;">back</h1>',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfloat:left;\nfont-size:11px;',
+                        html: '<p>zurück</p>',
+                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfloat:left;\nfont-size:13px;\nline-height:65px;',
                         styleHtmlContent: true,
                         width: 65,
-                        text: 'back'
+                        text: 'zurück'
                     },
                     {
                         xtype: 'button',
@@ -56,9 +56,9 @@ Ext.define('MyApp.view.achievments_frontpage', {
                         disabled: false,
                         height: '65px',
                         hidden: false,
-                        html: '<h1 style="line-height:65px;font-size:15px;">score</h1>',
+                        html: 'Punkte',
                         right: '0px',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\nfloat:right;\ndisplay:block;\nfont-size:11px;',
+                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\nfloat:right;\ndisplay:block;\nline-height:65px;\nfont-size:13px;\nfont-weight:normal;',
                         styleHtmlContent: true,
                         width: 65,
                         text: 'score'
@@ -66,7 +66,7 @@ Ext.define('MyApp.view.achievments_frontpage', {
                     {
                         xtype: 'container',
                         height: '80%',
-                        id: 'ui_forms',
+                        id: 'wrapper_achievments_forms',
                         top: '50px',
                         width: '100%',
                         items: [
@@ -80,7 +80,8 @@ Ext.define('MyApp.view.achievments_frontpage', {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>Netzerkundung:</p>',
-                                        id: 'netzerkundung'
+                                        id: 'netzerkundung',
+                                        margin: '5px'
                                     },
                                     {
                                         xtype: 'checkboxfield',
@@ -99,7 +100,8 @@ Ext.define('MyApp.view.achievments_frontpage', {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>Orte besucht:</p>',
-                                        id: 'netzerkundung1'
+                                        id: 'locations_visited',
+                                        margin: '5px'
                                     },
                                     {
                                         xtype: 'checkboxfield',
@@ -112,6 +114,15 @@ Ext.define('MyApp.view.achievments_frontpage', {
                                     {
                                         xtype: 'checkboxfield',
                                         label: 'Field'
+                                    },
+                                    {
+                                        xtype: 'label',
+                                        height: '25px',
+                                        html: '<p>Bisher erreichte Erfolge und erledigte Aufgaben</p>',
+                                        id: 'achievments_description',
+                                        margin: '5px',
+                                        style: 'font-size:13px;\ntext-align:center;',
+                                        top: '150px'
                                     }
                                 ]
                             }
@@ -120,9 +131,11 @@ Ext.define('MyApp.view.achievments_frontpage', {
                     {
                         xtype: 'container',
                         bottom: '30px',
+                        docked: 'bottom',
                         id: 'border_bottom',
+                        left: '65px',
                         style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
-                        width: '70%'
+                        width: '190px'
                     }
                 ]
             },

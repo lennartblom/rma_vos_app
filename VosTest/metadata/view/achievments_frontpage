@@ -22,7 +22,7 @@
                 "centered": true,
                 "docked": "bottom",
                 "height": "100%",
-                "id": "button_container",
+                "id": "container_achievments_view",
                 "layout": "fit",
                 "styleHtmlContent": true,
                 "width": "100%"
@@ -45,7 +45,7 @@
                         "bottom": "0px",
                         "docked": "bottom",
                         "height": "65px",
-                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">back</h1>",
+                        "html": "<p>zurück</p>",
                         "style": [
                             "-moz-border-radius: 46px;",
                             "-webkit-border-radius: 46px;",
@@ -56,10 +56,11 @@
                             "background-color: rgba(51, 73, 93, 0.9);",
                             "display:block;",
                             "float:left;",
-                            "font-size:11px;"
+                            "font-size:13px;",
+                            "line-height:65px;"
                         ],
                         "styleHtmlContent": true,
-                        "text": "back",
+                        "text": "zurück",
                         "width": 65
                     },
                     "name": "MyButton",
@@ -83,7 +84,7 @@
                         "docked": null,
                         "height": "65px",
                         "hidden": false,
-                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">score</h1>",
+                        "html": "Punkte",
                         "right": "0px",
                         "style": [
                             "-moz-border-radius: 46px;",
@@ -95,7 +96,9 @@
                             "background-color: rgba(51, 73, 93, 0.9);",
                             "float:right;",
                             "display:block;",
-                            "font-size:11px;"
+                            "line-height:65px;",
+                            "font-size:13px;",
+                            "font-weight:normal;"
                         ],
                         "styleHtmlContent": true,
                         "text": "score",
@@ -116,7 +119,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": "80%",
-                        "id": "ui_forms",
+                        "id": "wrapper_achievments_forms",
+                        "margin": null,
                         "top": "50px",
                         "width": "100%"
                     },
@@ -149,6 +153,7 @@
                                         "height": "25px",
                                         "html": "<p>Netzerkundung:</p>",
                                         "id": "netzerkundung",
+                                        "margin": "5px",
                                         "top": null
                                     },
                                     "name": "MyLabel",
@@ -195,7 +200,8 @@
                                     "userConfig": {
                                         "height": "25px",
                                         "html": "<p>Orte besucht:</p>",
-                                        "id": "netzerkundung1",
+                                        "id": "locations_visited",
+                                        "margin": "5px",
                                         "top": null
                                     },
                                     "name": "MyLabel",
@@ -239,6 +245,30 @@
                                     },
                                     "name": "MyCheckbox2",
                                     "designerId": "dad9e45c-839a-4204-9d2e-da208ea31727"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": "25px",
+                                        "html": "<p>Bisher erreichte Erfolge und erledigte Aufgaben</p>",
+                                        "id": "achievments_description",
+                                        "margin": "5px",
+                                        "style": [
+                                            "font-size:13px;",
+                                            "text-align:center;"
+                                        ],
+                                        "top": "150px"
+                                    },
+                                    "name": "MyLabel5",
+                                    "configAlternates": {
+                                        "style": "object"
+                                    },
+                                    "designerId": "014f640d-aa13-4a6a-b42a-46749ae001ef"
                                 }
                             ]
                         }
@@ -253,14 +283,19 @@
                     "codeClass": null,
                     "userConfig": {
                         "bottom": "30px",
+                        "docked": "bottom",
                         "id": "border_bottom",
+                        "layout": null,
+                        "left": "65px",
+                        "margin": null,
+                        "padding": null,
                         "style": [
                             "background-color:rgba(211, 83, 0, 0.9);",
                             "display:block;",
                             "height:5px;",
                             "overflow:hidden;"
                         ],
-                        "width": "70%"
+                        "width": "190px"
                     },
                     "name": "MyContainer3",
                     "configAlternates": {

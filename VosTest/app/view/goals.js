@@ -109,7 +109,7 @@ Ext.define('MyApp.view.goals', {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>6 Stunden 23 Minuten</p>',
-                                        id: 'label_daily_goals_countdown1',
+                                        id: 'daily_goals_countdown1',
                                         style: 'font-size:11px;\ntext-align:center;',
                                         top: '150px'
                                     }
