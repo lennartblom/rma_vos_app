@@ -12,24 +12,18 @@
     "designerId": "f51be895-8789-4766-a887-7c2539d2ec43",
     "cn": [
         {
-            "type": "controlleraction",
+            "type": "controllerref",
             "reference": {
-                "name": "listeners",
+                "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "image#startbutton",
-                "designer|targetType": "Ext.Img",
-                "fn": "tapStart",
-                "implHandler": [
-                    "var img = Ext.getImg('#startbuttonInv');",
-                    "img.show();"
-                ],
-                "name": "tap"
+                "ref": "start",
+                "selector": "container#start"
             },
-            "name": "tapStart",
-            "designerId": "9f4a81d6-ea3b-435f-a247-89d7d10bc1ca"
+            "name": "start",
+            "designerId": "95053a36-df21-4bca-80d9-ed5f778d0524"
         }
     ]
 }
