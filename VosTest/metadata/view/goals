@@ -1,0 +1,383 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "goals",
+        "height": "100%",
+        "id": "goals",
+        "width": "100%"
+    },
+    "name": "wecker1",
+    "designerId": "bdc6e475-08cf-4183-aff2-884bf524a593",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "docked": "top",
+                "height": "100%",
+                "id": "container_goal_view",
+                "layout": "fit",
+                "width": "320px"
+            },
+            "name": "MyContainer11",
+            "designerId": "98bdec6a-eece-4032-88c3-15d6c9bb0f33",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bottom": "30px",
+                        "id": "goals_border_bottom",
+                        "style": [
+                            "background-color:rgba(211, 83, 0, 0.9);",
+                            "display:block;",
+                            "height:5px;",
+                            "overflow:hidden;"
+                        ],
+                        "width": "255px"
+                    },
+                    "name": "MyContainer7",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "1f992054-3951-43f5-9e6d-f072b4616caa"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": "",
+                        "bottom": "0px",
+                        "centered": false,
+                        "disabled": false,
+                        "docked": "bottom",
+                        "height": "65px",
+                        "hidden": false,
+                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
+                        "id": "goals_button_back",
+                        "right": "0px",
+                        "style": [
+                            "-moz-border-radius: 46px;",
+                            "-webkit-border-radius: 46px;",
+                            "border-radius: 46px; /* border radius */",
+                            "-moz-background-clip: padding;",
+                            "-webkit-background-clip: padding-box;",
+                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
+                            "background-color: rgba(51, 73, 93, 0.9);",
+                            "float:right;",
+                            "display:block;",
+                            "font-size:11px;"
+                        ],
+                        "styleHtmlContent": true,
+                        "text": "back",
+                        "width": 65
+                    },
+                    "name": "MyButton2",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "71626c3d-a7f3-47ce-96fb-24f0fe9fc31c"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": false,
+                        "id": "goals_wrapper",
+                        "layout": "fit"
+                    },
+                    "name": "MyContainer14",
+                    "designerId": "bcd9da80-16a2-4c69-82be-6350071e8ceb",
+                    "cn": [
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "top",
+                                "height": "100px",
+                                "id": "daily_goals",
+                                "layout": "fit",
+                                "left": null,
+                                "margin": "5px",
+                                "right": null,
+                                "top": "0px",
+                                "width": "100%"
+                            },
+                            "name": "MyContainer8",
+                            "designerId": "9162ece8-cfa0-45ff-9343-21d41f5ea3b3",
+                            "cn": [
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": "25px",
+                                        "html": "<p>Tagesziel:</p>",
+                                        "id": "label_daily_goals",
+                                        "style": [
+                                            "font-family:Helvetica;",
+                                            "text-transform:uppercase;",
+                                            "font-size:13px;"
+                                        ],
+                                        "top": null
+                                    },
+                                    "name": "MyLabel",
+                                    "configAlternates": {
+                                        "style": "object"
+                                    },
+                                    "designerId": "f323cebc-43fd-4740-ba1c-939c327b623b"
+                                },
+                                {
+                                    "type": "Ext.dataview.DataView",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "emptyText": "Besuche den Löwenpudel",
+                                        "height": "100px",
+                                        "html": "<p>Besuche den Löwenpudel</p>",
+                                        "id": "dataview_daily_goals",
+                                        "maxItemCache": 3,
+                                        "top": "25px",
+                                        "width": "100%"
+                                    },
+                                    "name": "MyDataView1",
+                                    "designerId": "bb690014-0047-4a98-81b2-8e877c931d25",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    "<div>Listeneintrag Nummer {string}</div>"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "398ffe1d-ef1c-4087-82f3-013c16d1aacb"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": "25px",
+                                        "html": "<p>Verbleibende Zeit:</p>",
+                                        "id": "label_daily_goals_countdown",
+                                        "top": "125px"
+                                    },
+                                    "name": "MyLabel1",
+                                    "designerId": "2295bb90-106e-4e07-9823-ef9db3f7e1a3"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": "25px",
+                                        "html": "<p>6 Stunden 23 Minuten</p>",
+                                        "id": "label_daily_goals_countdown1",
+                                        "style": [
+                                            "font-size:11px;",
+                                            "text-align:center;"
+                                        ],
+                                        "top": "150px"
+                                    },
+                                    "name": "MyLabel4",
+                                    "configAlternates": {
+                                        "style": "object"
+                                    },
+                                    "designerId": "bbe70179-db18-48d7-a982-c43b79266e66"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "top",
+                                "height": "100px",
+                                "id": "weekly_goals",
+                                "layout": null,
+                                "left": null,
+                                "margin": "5px",
+                                "right": null,
+                                "top": "190px",
+                                "width": "100%"
+                            },
+                            "name": "MyContainer13",
+                            "designerId": "6eb7c0c5-875f-4af6-bd03-0ce7b891a4af",
+                            "cn": [
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": "25px",
+                                        "html": "<p>Wochenziele:</p>",
+                                        "id": "label_weekly_goals",
+                                        "style": [
+                                            "font-family:Helvetica;",
+                                            "text-transform:uppercase;",
+                                            "font-size:13px;"
+                                        ],
+                                        "top": null
+                                    },
+                                    "name": "MyLabel",
+                                    "configAlternates": {
+                                        "style": "object"
+                                    },
+                                    "designerId": "a9d8f61c-9fac-427e-812b-9569783da118"
+                                },
+                                {
+                                    "type": "Ext.dataview.DataView",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "emptyText": "Paintball spielen in Belm",
+                                        "height": "175px",
+                                        "html": "<p>Besuche den Löwenpudel</p>",
+                                        "id": "dataview_weekly_goals",
+                                        "maxItemCache": 5,
+                                        "top": "25px",
+                                        "width": "100%"
+                                    },
+                                    "name": "MyDataView1",
+                                    "designerId": "288a74aa-7f46-44fe-8833-871ef0b2e2a2",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "itemTpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "itemTpl",
+                                                "implHandler": [
+                                                    "<div>Data View Item {string}</div>"
+                                                ]
+                                            },
+                                            "name": "itemTpl",
+                                            "designerId": "78ca7a4c-daef-43e7-a0a8-a7b6fdd830fc"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": "25px",
+                                        "html": "<p>Verbleibende Zeit:</p>",
+                                        "id": "label_weekly_goals_countdown",
+                                        "top": "200px"
+                                    },
+                                    "name": "MyLabel2",
+                                    "designerId": "7cde9b28-1b02-4aa9-b88c-cda203ac3ef6"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "height": "25px",
+                                        "html": "<p>3 Tage 6 Stunden 23 Minuten</p>",
+                                        "id": "weekly_goals_countdown",
+                                        "style": [
+                                            "font-size:11px;",
+                                            "text-algin:center;"
+                                        ],
+                                        "top": "225px"
+                                    },
+                                    "name": "MyLabel3",
+                                    "configAlternates": {
+                                        "style": "object"
+                                    },
+                                    "designerId": "456271e1-3b0f-4521-8378-b084c7b15f0a"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "docked": "top",
+                "height": "100%",
+                "id": "goals_background",
+                "src": "resources/images/background/achievements.png",
+                "width": "320px"
+            },
+            "name": "MyImg13",
+            "designerId": "7aa3dffb-5c4d-4fcb-b982-0752facec6e3"
+        }
+    ]
+}
