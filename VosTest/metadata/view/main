@@ -499,7 +499,7 @@
                     "userConfig": {
                         "height": 124,
                         "id": "start",
-                        "itemId": "mycontainer2",
+                        "itemId": null,
                         "left": 98,
                         "top": "222px",
                         "width": 124
@@ -556,7 +556,11 @@
                                         ],
                                         "fn": "handler",
                                         "implHandler": [
-                                            "alert(\"test\");"
+                                            "Ext.Viewport.add({",
+                                            "                xtype: 'fahrplaner'",
+                                            "            });",
+                                            "alert(\"test\");",
+                                            ""
                                         ]
                                     },
                                     "name": "handler",
