@@ -8,7 +8,9 @@
     "userConfig": {
         "name": "MyApp",
         "views": [
-            "fahrplaner"
+            "fahrplaner",
+            "goals",
+            "settings"
         ]
     },
     "name": "Application1",
