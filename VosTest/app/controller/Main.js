@@ -18,7 +18,24 @@ Ext.define('MyApp.controller.Main', {
 
     config: {
         refs: {
-            start: 'container#start'
+            AchievementView: '#AchievementView',
+            FahrplanerView: '#FahrplanerView',
+            GoalsView: '#GoalsView',
+            MainView: '#MainView',
+            SettingsView: '#SettingsView',
+            WeckerView: '#WeckerView',
+            StartButton: '#StartButton'
+        },
+
+        control: {
+            "(action=start)": {
+                tap: 'onButtonTap'
+            }
         }
+    },
+
+    onButtonTap: function(button, e, eOpts) {
+        this.getFahrplanerView().animateActiveItem(0,{type:"slide", direction:"right"});
     }
+
 });

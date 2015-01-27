@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "goals",
+        "designer|userClassName": "GoalsView",
         "height": "100%",
         "id": "goals",
         "width": "100%"

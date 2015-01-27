@@ -19,11 +19,114 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "start",
-                "selector": "container#start"
+                "ref": "AchievementView",
+                "selector": "#AchievementView"
             },
-            "name": "start",
-            "designerId": "95053a36-df21-4bca-80d9-ed5f778d0524"
+            "name": "AchievementView",
+            "designerId": "51013f0b-9988-4d91-8997-7ae2b594248c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "FahrplanerView",
+                "selector": "#FahrplanerView"
+            },
+            "name": "FahrplanerView",
+            "designerId": "1acb4dae-5449-4a32-b1e8-6b7c15f44732"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "GoalsView",
+                "selector": "#GoalsView"
+            },
+            "name": "GoalsView",
+            "designerId": "b3aaf336-f7e9-45ec-ac0d-d2c1fc70c1d2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "MainView",
+                "selector": "#MainView"
+            },
+            "name": "MainView",
+            "designerId": "6eeddc28-fec9-4944-8af9-3931c13602d8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "SettingsView",
+                "selector": "#SettingsView"
+            },
+            "name": "SettingsView",
+            "designerId": "e29d9ce1-e109-4027-bc0b-e895c4978a63"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "WeckerView",
+                "selector": "#WeckerView"
+            },
+            "name": "WeckerView",
+            "designerId": "09cd4ceb-dac1-4c94-ab1b-cf6fa4015f24"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "StartButton",
+                "selector": "#StartButton"
+            },
+            "name": "StartButton",
+            "designerId": "939460cd-1805-4982-8bf2-60eb1e6f82d0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "(action=start)",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "this.getFahrplanerView().animateActiveItem(0,{type:\"slide\", direction:\"right\"});"
+                ],
+                "name": "tap"
+            },
+            "name": "onButtonTap",
+            "designerId": "599dc44f-3c89-4f23-bbb1-267a72e67c2e"
         }
     ]
 }
