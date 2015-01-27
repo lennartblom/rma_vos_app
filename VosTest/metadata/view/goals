@@ -379,7 +379,7 @@
                 "docked": "top",
                 "height": "100%",
                 "id": "goals_background",
-                "src": "resources/images/background/achievements.png",
+                "src": "resources/images/background/game.png",
                 "width": "320px"
             },
             "name": "MyImg13",
