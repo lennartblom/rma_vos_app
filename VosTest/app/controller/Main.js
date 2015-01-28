@@ -28,14 +28,14 @@ Ext.define('MyApp.controller.Main', {
         },
 
         control: {
-            "(action=start)": {
-                tap: 'onButtonTap'
+            "button#StartButton": {
+                tap: 'startButtonAction'
             }
         }
     },
 
-    onButtonTap: function(button, e, eOpts) {
-        this.getFahrplanerView().animateActiveItem(0,{type:"slide", direction:"right"});
+    startButtonAction: function(button, e, eOpts) {
+               alert("testButton");
     }
 
 });

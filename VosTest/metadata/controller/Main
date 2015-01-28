@@ -117,16 +117,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "(action=start)",
+                "designer|controlQuery": "button#StartButton",
                 "designer|targetType": "Ext.Button",
-                "fn": "onButtonTap",
+                "fn": "startButtonAction",
                 "implHandler": [
-                    "this.getFahrplanerView().animateActiveItem(0,{type:\"slide\", direction:\"right\"});"
+                    "       alert(\"testButton\");"
                 ],
                 "name": "tap"
             },
-            "name": "onButtonTap",
-            "designerId": "599dc44f-3c89-4f23-bbb1-267a72e67c2e"
+            "name": "startButtonAction",
+            "designerId": "f9b54e77-0ab4-4ba7-938b-d7684ae3a128"
         }
     ]
 }
