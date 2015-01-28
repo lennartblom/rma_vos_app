@@ -18,7 +18,6 @@ Ext.define('VosNavigator.controller.Main', {
 
     config: {
         refs: {
-<<<<<<< HEAD
             MainView: '#MainView',
             StartButton: '#StartButton',
             Init: '#InitialView',
@@ -70,9 +69,6 @@ Ext.define('VosNavigator.controller.Main', {
 
     achButton: function(button, e, eOpts) {
 
-=======
-            start: 'container#start'
-        }
->>>>>>> b2617263f04dc4f6a1446ea0207627c1b3f0ea33
     }
+
 });
