@@ -20,13 +20,29 @@ Ext.define('VosNavigator.controller.Main', {
         refs: {
             MainView: '#MainView',
             StartButton: '#StartButton',
-            FahrplanerView: '#FahrplanerView',
-            Init: '#InitialView'
+            Init: '#InitialView',
+            game: 'button#game',
+            weckerButton: 'button#weckerButton',
+            settingsButton: 'button#settingsButton',
+            achieveButton: 'button#achieveButton',
+            fahrplanerView: 'container#fahrplanerView'
         },
 
         control: {
             "button#StartButton": {
                 tap: 'startButtonAction'
+            },
+            "button#game": {
+                tap: 'gameButton'
+            },
+            "button#weckerButton": {
+                tap: 'weckerButton'
+            },
+            "button#settingsButton": {
+                tap: 'settingsButton'
+            },
+            "button#achieveButton": {
+                tap: 'achButton'
             }
         }
     },
@@ -35,7 +51,24 @@ Ext.define('VosNavigator.controller.Main', {
 
 
         this.getMainView().hide();
-        this.getFahrplanerView().show({type:"slide",direction:"left"});
+        this.getfahrplanerView().show({type:"slide",direction:"left"});
+    },
+
+    gameButton: function(button, e, eOpts) {
+         this.getMainView().hide();
+                this.getGoalView().show({type:"slide",direction:"left"});
+    },
+
+    weckerButton: function(button, e, eOpts) {
+
+    },
+
+    settingsButton: function(button, e, eOpts) {
+
+    },
+
+    achButton: function(button, e, eOpts) {
+
     }
 
 });

@@ -32,33 +32,45 @@ Ext.define('VosNavigator.view.InitialView', {
         scrollable: false,
         items: [
             {
-                xtype: 'mainScreen',
-                id: 'MainView'
-            },
-            {
-                xtype: 'fahrplanerview',
-                hidden: true,
-                id: 'FahrplanerView'
-            },
-            {
-                xtype: 'goalsview',
-                hidden: true,
-                id: 'GoalsView'
-            },
-            {
-                xtype: 'settingsview',
-                hidden: true,
-                id: 'SettingsView'
-            },
-            {
-                xtype: 'weckerview',
-                hidden: true,
-                id: 'WeckerView'
-            },
-            {
-                xtype: 'achView',
-                hidden: true,
-                id: 'AchView'
+                xtype: 'container',
+                centered: false,
+                height: 568,
+                id: 'initalWrapper',
+                width: '320px',
+                items: [
+                    {
+                        xtype: 'mainScreen',
+                        id: 'MainView'
+                    },
+                    {
+                        xtype: 'fahrplanerview',
+                        hidden: true,
+                        id: 'FahrplanerView',
+                        width: '100%'
+                    },
+                    {
+                        xtype: 'goalsview',
+                        hidden: true,
+                        id: 'GoalsView'
+                    },
+                    {
+                        xtype: 'settingsview',
+                        hidden: true,
+                        id: 'SettingsView'
+                    },
+                    {
+                        xtype: 'weckerview',
+                        hidden: true,
+                        id: 'WeckerView',
+                        width: '100%'
+                    },
+                    {
+                        xtype: 'achView',
+                        hidden: true,
+                        id: 'AchView',
+                        width: '100%'
+                    }
+                ]
             }
         ]
     }
