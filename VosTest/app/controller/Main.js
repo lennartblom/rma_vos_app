@@ -54,27 +54,27 @@ Ext.define('VosNavigator.controller.Main', {
     startButtonAction: function(button, e, eOpts) {
 
 
-        this.getMainView().hide({type:"slide",direction:"left"});
+        this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
     },
 
     gameButton: function(button, e, eOpts) {
-         this.getMainView().hide({type:"slide",direction:"left"});
-                this.getGoalView().show({type:"slide",direction:"left"});
+         this.getMainView().hide();
+         this.getGoalView().show({type:"slide",direction:"left"});
     },
 
     weckerButton: function(button, e, eOpts) {
-          this.getMainView().hide({type:"slide",direction:"left"});
+          this.getMainView().hide();
           this.getWeckerView().show({type:"slide",direction:"left"});
     },
 
     settingsButton: function(button, e, eOpts) {
-          this.getMainView().hide({type:"slide",direction:"left"});
+          this.getMainView().hide();
           this.getSettingsView().show({type:"slide",direction:"left"});
     },
 
     achButton: function(button, e, eOpts) {
-          this.getMainView().hide({type:"slide",direction:"left"});
+          this.getMainView().hide();
           this.getAchView().show({type:"slide",direction:"left"});
     }
 

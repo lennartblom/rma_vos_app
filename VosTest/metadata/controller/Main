@@ -25,7 +25,7 @@
                 "implHandler": [
                     "",
                     "",
-                    "this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
@@ -213,8 +213,8 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "gameButton",
                 "implHandler": [
-                    " this.getMainView().hide({type:\"slide\",direction:\"left\"});",
-                    "        this.getGoalView().show({type:\"slide\",direction:\"left\"});"
+                    " this.getMainView().hide();",
+                    " this.getGoalView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
             },
@@ -233,7 +233,7 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "weckerButton",
                 "implHandler": [
-                    "  this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "  this.getMainView().hide();",
                     "  this.getWeckerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
@@ -253,7 +253,7 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "settingsButton",
                 "implHandler": [
-                    "  this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "  this.getMainView().hide();",
                     "  this.getSettingsView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
@@ -273,7 +273,7 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "achButton",
                 "implHandler": [
-                    "  this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "  this.getMainView().hide();",
                     "  this.getAchView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
