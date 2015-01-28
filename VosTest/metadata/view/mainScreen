@@ -131,7 +131,7 @@
                                 "id": "weckerButton",
                                 "left": 15,
                                 "style": [
-                                    "background-image: url('resources/images/button_png/Wecker.png');",
+                                    "background-image: url('resources/images/button_png/Wecker.png') !important;",
                                     "background-repeat: no-repeat;",
                                     "background-positon: 0 0;",
                                     "background-size: 100%;",

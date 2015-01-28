@@ -75,7 +75,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 height: 70,
                                 id: 'weckerButton',
                                 left: 15,
-                                style: 'background-image: url(\'resources/images/button_png/Wecker.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                style: 'background-image: url(\'resources/images/button_png/Wecker.png\') !important;\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
                                 styleHtmlContent: true,
                                 top: -3,
                                 width: 70,
