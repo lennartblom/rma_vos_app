@@ -25,13 +25,27 @@
                 "implHandler": [
                     "",
                     "",
-                    "this.getMainView().hide();",
+                    "this.getMainView().hide({type:\"slide\",direction:\"left\"});",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
             },
             "name": "startButtonAction",
             "designerId": "a742145d-a1ec-4efa-a13c-d937ff868283"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "InitView",
+                "selector": "#InitialView"
+            },
+            "name": "InitView",
+            "designerId": "f63d2405-de2a-4b79-95bf-d4f2e98616bf"
         },
         {
             "type": "controllerref",
@@ -55,6 +69,76 @@
             },
             "codeClass": null,
             "userConfig": {
+                "ref": "FahrplanerView",
+                "selector": "#FahrplanerView"
+            },
+            "name": "FahrplanerView",
+            "designerId": "083a9873-f70f-4f26-9bd8-969240c68cf7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "GoalsView",
+                "selector": "#GoalsView"
+            },
+            "name": "GoalsView",
+            "designerId": "1c7f6404-6343-49a7-87c8-d6bf09311eb1"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "SettingsView",
+                "selector": "#SettingsView"
+            },
+            "name": "SettingsView",
+            "designerId": "ef342d4f-522e-4874-a973-894dadd353d4"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "WeckerView",
+                "selector": "#WeckerView"
+            },
+            "name": "WeckerView",
+            "designerId": "e295d2d6-9851-4a2a-a761-aadab2b33a09"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "AchView",
+                "selector": "#AchView"
+            },
+            "name": "AchView",
+            "designerId": "074ba05b-cd19-4953-92e1-f8773e37c140"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "ref": "StartButton",
                 "selector": "#StartButton"
             },
@@ -69,45 +153,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "Init",
-                "selector": "#InitialView"
-            },
-            "name": "Init",
-            "designerId": "f63d2405-de2a-4b79-95bf-d4f2e98616bf"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "game",
+                "ref": "gameButton",
                 "selector": "button#game"
             },
-            "name": "game",
-            "designerId": "2bf3a1ba-771b-4f2c-98a7-672133e43b5a"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#game",
-                "designer|targetType": "Ext.Button",
-                "fn": "gameButton",
-                "implHandler": [
-                    " this.getMainView().hide();",
-                    "        this.getGoalView().show({type:\"slide\",direction:\"left\"});"
-                ],
-                "name": "tap"
-            },
             "name": "gameButton",
-            "designerId": "db95b90c-6f82-45c2-95f3-c05cb4d0af69"
+            "designerId": "2bf3a1ba-771b-4f2c-98a7-672133e43b5a"
         },
         {
             "type": "controllerref",
@@ -124,22 +174,6 @@
             "designerId": "bf9ac320-f7a5-4b87-af97-fe86f8182ccf"
         },
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#weckerButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "weckerButton",
-                "name": "tap"
-            },
-            "name": "weckerButton",
-            "designerId": "e37da975-5802-403a-97bb-428eb3c55c99"
-        },
-        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -152,22 +186,6 @@
             },
             "name": "settingsButton",
             "designerId": "c5c08036-1f3c-410f-b7fd-d563f9185fab"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#settingsButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "settingsButton",
-                "name": "tap"
-            },
-            "name": "settingsButton",
-            "designerId": "010a02cb-636e-4085-86cf-b62d51c7ea7f"
         },
         {
             "type": "controllerref",
@@ -191,27 +209,77 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#achieveButton",
+                "designer|controlQuery": "button#game",
                 "designer|targetType": "Ext.Button",
-                "fn": "achButton",
+                "fn": "gameButton",
+                "implHandler": [
+                    " this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "        this.getGoalView().show({type:\"slide\",direction:\"left\"});"
+                ],
                 "name": "tap"
             },
-            "name": "achButton",
-            "designerId": "a99645ab-f8cd-4b70-92c3-1d03d6ee24d6"
+            "name": "gameButton",
+            "designerId": "db95b90c-6f82-45c2-95f3-c05cb4d0af69"
         },
         {
-            "type": "controllerref",
+            "type": "controlleraction",
             "reference": {
-                "name": "items",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "fahrplanerView",
-                "selector": "#FahrplanerView"
+                "designer|controlQuery": "button#weckerButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "weckerButton",
+                "implHandler": [
+                    "  this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "  this.getWeckerView().show({type:\"slide\",direction:\"left\"});"
+                ],
+                "name": "tap"
             },
-            "name": "fahrplanerView",
-            "designerId": "083a9873-f70f-4f26-9bd8-969240c68cf7"
+            "name": "weckerButton",
+            "designerId": "e37da975-5802-403a-97bb-428eb3c55c99"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#settingsButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "settingsButton",
+                "implHandler": [
+                    "  this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "  this.getSettingsView().show({type:\"slide\",direction:\"left\"});"
+                ],
+                "name": "tap"
+            },
+            "name": "settingsButton",
+            "designerId": "010a02cb-636e-4085-86cf-b62d51c7ea7f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#achieveButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "achButton",
+                "implHandler": [
+                    "  this.getMainView().hide({type:\"slide\",direction:\"left\"});",
+                    "  this.getAchView().show({type:\"slide\",direction:\"left\"});"
+                ],
+                "name": "tap"
+            },
+            "name": "achButton",
+            "designerId": "a99645ab-f8cd-4b70-92c3-1d03d6ee24d6"
         }
     ]
 }

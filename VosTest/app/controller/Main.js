@@ -18,15 +18,18 @@ Ext.define('VosNavigator.controller.Main', {
 
     config: {
         refs: {
+            InitView: '#InitialView',
             MainView: '#MainView',
+            FahrplanerView: '#FahrplanerView',
+            GoalsView: '#GoalsView',
+            SettingsView: '#SettingsView',
+            WeckerView: '#WeckerView',
+            AchView: '#AchView',
             StartButton: '#StartButton',
-            Init: '#InitialView',
-            game: 'button#game',
+            gameButton: 'button#game',
             weckerButton: 'button#weckerButton',
             settingsButton: 'button#settingsButton',
-            achieveButton: 'button#achieveButton',
-            fahrplanerView: '#FahrplanerView'
-
+            achieveButton: 'button#achieveButton'
         },
 
         control: {
@@ -51,25 +54,28 @@ Ext.define('VosNavigator.controller.Main', {
     startButtonAction: function(button, e, eOpts) {
 
 
-        this.getMainView().hide();
+        this.getMainView().hide({type:"slide",direction:"left"});
         this.getFahrplanerView().show({type:"slide",direction:"left"});
     },
 
     gameButton: function(button, e, eOpts) {
-         this.getMainView().hide();
-        this.getGoalView().show({type:"slide",direction:"left"});
+         this.getMainView().hide({type:"slide",direction:"left"});
+                this.getGoalView().show({type:"slide",direction:"left"});
     },
 
     weckerButton: function(button, e, eOpts) {
-
+          this.getMainView().hide({type:"slide",direction:"left"});
+          this.getWeckerView().show({type:"slide",direction:"left"});
     },
 
     settingsButton: function(button, e, eOpts) {
-
+          this.getMainView().hide({type:"slide",direction:"left"});
+          this.getSettingsView().show({type:"slide",direction:"left"});
     },
 
     achButton: function(button, e, eOpts) {
-
+          this.getMainView().hide({type:"slide",direction:"left"});
+          this.getAchView().show({type:"slide",direction:"left"});
     }
 
 });
