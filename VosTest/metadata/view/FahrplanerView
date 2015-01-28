@@ -283,7 +283,7 @@
                 "height": "65px",
                 "hidden": false,
                 "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
-                "id": "goals_button_back1",
+                "id": "BackButton",
                 "right": "0px",
                 "style": [
                     "-moz-border-radius: 46px;",
