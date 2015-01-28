@@ -26,8 +26,7 @@
                     "",
                     "",
                     "this.getMainView().hide();",
-                    "this.getFahrplanerView().show();",
-                    ""
+                    "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
             },

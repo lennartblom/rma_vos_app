@@ -35,8 +35,7 @@ Ext.define('VosNavigator.controller.Main', {
 
 
         this.getMainView().hide();
-        this.getFahrplanerView().show();
-
+        this.getFahrplanerView().show({type:"slide",direction:"left"});
     }
 
 });
