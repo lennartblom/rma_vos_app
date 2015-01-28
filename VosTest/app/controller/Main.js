@@ -25,11 +25,8 @@ Ext.define('VosNavigator.controller.Main', {
             weckerButton: 'button#weckerButton',
             settingsButton: 'button#settingsButton',
             achieveButton: 'button#achieveButton',
-<<<<<<< HEAD
-            fahrplanerView: 'container#fahrplanerView'
-=======
             fahrplanerView: '#FahrplanerView'
->>>>>>> 5779dcff63d00a2a96576cfd33fa36e69cd1ce07
+
         },
 
         control: {
@@ -55,16 +52,12 @@ Ext.define('VosNavigator.controller.Main', {
 
 
         this.getMainView().hide();
-<<<<<<< HEAD
-        this.getfahrplanerView().show({type:"slide",direction:"left"});
-=======
         this.getFahrplanerView().show({type:"slide",direction:"left"});
->>>>>>> 5779dcff63d00a2a96576cfd33fa36e69cd1ce07
     },
 
     gameButton: function(button, e, eOpts) {
          this.getMainView().hide();
-                this.getGoalView().show({type:"slide",direction:"left"});
+        this.getGoalView().show({type:"slide",direction:"left"});
     },
 
     weckerButton: function(button, e, eOpts) {
