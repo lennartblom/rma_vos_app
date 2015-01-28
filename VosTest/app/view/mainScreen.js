@@ -72,9 +72,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
-                                handler: function(button, e) {
-                                    alert("test");
-                                },
                                 height: 70,
                                 id: 'weckerButton',
                                 left: 15,
@@ -96,9 +93,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
-                                handler: function(button, e) {
-                                    alert("test");
-                                },
                                 height: 70,
                                 id: 'settingsButton',
                                 left: 15,
@@ -121,9 +115,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
-                                handler: function(button, e) {
-                                    alert("test");
-                                },
                                 height: 70,
                                 id: 'achieveButton',
                                 left: 110,
