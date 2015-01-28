@@ -30,7 +30,8 @@ Ext.application({
         'mainScreen'
     ],
     controllers: [
-        'Main'
+        'Main',
+        'Fahrplaner'
     ],
     name: 'VosNavigator',
 

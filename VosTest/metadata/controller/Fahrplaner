@@ -1,0 +1,77 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Fahrplaner"
+    },
+    "name": "MyController",
+    "designerId": "58f13f6b-eafa-4b74-b9dc-6b1ad6681e46",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "MainView",
+                "selector": "#MainView"
+            },
+            "name": "MainView",
+            "designerId": "13ab4542-b9a3-4220-b83d-287b2e155967"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "backButton",
+                "selector": "#BackButton"
+            },
+            "name": "backButton",
+            "designerId": "c7b6cefc-1cee-4152-8cdf-bb2efc8d117f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#BackButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "goalsBackButton",
+                "implHandler": [
+                    "this.getFahrplanerView().hide();",
+                    "this.getMainView().show();"
+                ],
+                "name": "tap"
+            },
+            "name": "goalsBackButton",
+            "designerId": "c2f2dc05-a9cc-4ca0-b990-83239b09ab4d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "FahrplanerView",
+                "selector": "#FahrplanerView"
+            },
+            "name": "FahrplanerView",
+            "designerId": "df3bf0db-0393-4b7d-8d0c-1b004cf3a9b3"
+        }
+    ]
+}
