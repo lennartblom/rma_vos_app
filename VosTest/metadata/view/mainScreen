@@ -112,31 +112,13 @@
                     "userConfig": {
                         "height": 160,
                         "id": "wecker",
-                        "left": 30,
-                        "top": 75,
+                        "left": 5,
+                        "top": 35,
                         "width": 100
                     },
                     "name": "MyContainer1",
                     "designerId": "74aba71d-ef14-44be-a848-a83c03adce6e",
                     "cn": [
-                        {
-                            "type": "Ext.Img",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "centered": true,
-                                "height": "100%",
-                                "id": "button",
-                                "src": "resources/images/button_line/wecker_line.png",
-                                "top": null,
-                                "width": "100%"
-                            },
-                            "name": "MyImg3",
-                            "designerId": "92abe058-eb38-4b89-96d3-19dfccc8a8da"
-                        },
                         {
                             "type": "Ext.Button",
                             "reference": {
@@ -211,30 +193,12 @@
                         "hidden": null,
                         "id": "einstellungen",
                         "left": 165,
-                        "top": 130,
+                        "top": 70,
                         "width": 100
                     },
                     "name": "MyContainer4",
                     "designerId": "c9119f86-8e5d-4bd1-9c43-932fd0a5c8f9",
                     "cn": [
-                        {
-                            "type": "Ext.Img",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "centered": true,
-                                "height": "100%",
-                                "hidden": false,
-                                "id": "einst_button",
-                                "src": "resources/images/button_line/setting_line.png",
-                                "width": "100%"
-                            },
-                            "name": "MyImg5",
-                            "designerId": "7ca14f77-2574-4821-b2e7-0a3723cc2253"
-                        },
                         {
                             "type": "Ext.Button",
                             "reference": {
@@ -308,30 +272,13 @@
                         "height": 87,
                         "hidden": false,
                         "id": "achievements",
-                        "left": 110,
-                        "top": 400,
+                        "left": 90,
+                        "top": 365,
                         "width": 180
                     },
                     "name": "MyContainer5",
                     "designerId": "e590bffc-8272-4fa7-bd3b-8b2aa5ee13d3",
                     "cn": [
-                        {
-                            "type": "Ext.Img",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "centered": true,
-                                "height": "100%",
-                                "id": "achie_button_line",
-                                "src": "resources/images/button_line/achievments_line.png",
-                                "width": "100%"
-                            },
-                            "name": "MyImg6",
-                            "designerId": "48fdf991-cb2a-4d0d-8693-5a6e709801cb"
-                        },
                         {
                             "type": "Ext.Button",
                             "reference": {
@@ -404,30 +351,13 @@
                         "height": 98,
                         "hidden": false,
                         "id": "gameContainer",
-                        "left": 40,
-                        "top": 335,
+                        "left": 10,
+                        "top": 300,
                         "width": 100
                     },
                     "name": "MyContainer6",
                     "designerId": "11c3ef66-501a-4b41-89b0-d5c70e829a8a",
                     "cn": [
-                        {
-                            "type": "Ext.Img",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "centered": true,
-                                "height": "100%",
-                                "id": "game_button_line",
-                                "src": "resources/images/button_line/game_line.png",
-                                "width": "100%"
-                            },
-                            "name": "MyImg7",
-                            "designerId": "93c7432d-34e7-4d37-a7cd-d2dae8d50512"
-                        },
                         {
                             "type": "Ext.Button",
                             "reference": {
@@ -501,7 +431,7 @@
                         "id": "start",
                         "itemId": null,
                         "left": 98,
-                        "top": "222px",
+                        "top": 195,
                         "width": 124
                     },
                     "name": "MyContainer2",

@@ -66,18 +66,10 @@ Ext.define('VosNavigator.view.mainScreen', {
                         xtype: 'container',
                         height: 160,
                         id: 'wecker',
-                        left: 30,
-                        top: 75,
+                        left: 5,
+                        top: 35,
                         width: 100,
                         items: [
-                            {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                id: 'button',
-                                width: '100%',
-                                src: 'resources/images/button_line/wecker_line.png'
-                            },
                             {
                                 xtype: 'button',
                                 handler: function(button, e) {
@@ -99,18 +91,9 @@ Ext.define('VosNavigator.view.mainScreen', {
                         height: 100,
                         id: 'einstellungen',
                         left: 165,
-                        top: 130,
+                        top: 70,
                         width: 100,
                         items: [
-                            {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                hidden: false,
-                                id: 'einst_button',
-                                width: '100%',
-                                src: 'resources/images/button_line/setting_line.png'
-                            },
                             {
                                 xtype: 'button',
                                 handler: function(button, e) {
@@ -132,18 +115,10 @@ Ext.define('VosNavigator.view.mainScreen', {
                         height: 87,
                         hidden: false,
                         id: 'achievements',
-                        left: 110,
-                        top: 400,
+                        left: 90,
+                        top: 365,
                         width: 180,
                         items: [
-                            {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                id: 'achie_button_line',
-                                width: '100%',
-                                src: 'resources/images/button_line/achievments_line.png'
-                            },
                             {
                                 xtype: 'button',
                                 handler: function(button, e) {
@@ -165,18 +140,10 @@ Ext.define('VosNavigator.view.mainScreen', {
                         height: 98,
                         hidden: false,
                         id: 'gameContainer',
-                        left: 40,
-                        top: 335,
+                        left: 10,
+                        top: 300,
                         width: 100,
                         items: [
-                            {
-                                xtype: 'image',
-                                centered: true,
-                                height: '100%',
-                                id: 'game_button_line',
-                                width: '100%',
-                                src: 'resources/images/button_line/game_line.png'
-                            },
                             {
                                 xtype: 'button',
                                 handler: function(button, e) {
@@ -198,7 +165,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                         height: 124,
                         id: 'start',
                         left: 98,
-                        top: '222px',
+                        top: 195,
                         width: 124,
                         items: [
                             {
