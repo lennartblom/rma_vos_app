@@ -1,0 +1,77 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Wecker"
+    },
+    "name": "MyController",
+    "designerId": "a983e413-1f50-4b47-b18a-b92e8e18eab4",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerBackButton",
+                "selector": "button#weckerBackButton"
+            },
+            "name": "weckerBackButton",
+            "designerId": "160ca1b9-dcd2-4e5f-baad-a6569ec71964"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#weckerBackButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "weckerBackButton",
+                "implHandler": [
+                    "this.getWeckerView().hide();",
+                    "this.getMainView().show();"
+                ],
+                "name": "tap"
+            },
+            "name": "weckerBackButton",
+            "designerId": "9a0b9858-cd1a-4565-9f61-4ad7e00e2775"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "MainView",
+                "selector": "container#MainView"
+            },
+            "name": "MainView",
+            "designerId": "fdbfff51-3f59-43b0-a921-e95859660158"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerView",
+                "selector": "container#mycontainer1"
+            },
+            "name": "weckerView",
+            "designerId": "3a280f06-082a-4e53-ba7d-7267ac91a42b"
+        }
+    ]
+}

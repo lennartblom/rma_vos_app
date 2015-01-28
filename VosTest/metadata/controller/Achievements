@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Fahrplaner"
+        "designer|userClassName": "Achievements"
     },
     "name": "MyController",
-    "designerId": "58f13f6b-eafa-4b74-b9dc-6b1ad6681e46",
+    "designerId": "09d61032-2b70-40d9-88d3-bc520197186c",
     "cn": [
         {
             "type": "controllerref",
@@ -19,11 +19,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "MainView",
-                "selector": "#MainView"
+                "ref": "achView",
+                "selector": "#AchView"
             },
-            "name": "MainView",
-            "designerId": "13ab4542-b9a3-4220-b83d-287b2e155967"
+            "name": "achView",
+            "designerId": "0d00898c-dfc5-4cb5-b8a2-11e29ef4300c"
         },
         {
             "type": "controllerref",
@@ -33,11 +33,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "fahrplanerBackButton",
-                "selector": "#fahrplanerBackButton"
+                "ref": "achBackButton",
+                "selector": "button#achBackButton"
             },
-            "name": "fahrplanerBackButton",
-            "designerId": "c7b6cefc-1cee-4152-8cdf-bb2efc8d117f"
+            "name": "achBackButton",
+            "designerId": "f59b3f74-1a64-479a-8e87-c39833ba308e"
         },
         {
             "type": "controlleraction",
@@ -47,17 +47,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#fahrplanerBackButton",
+                "designer|controlQuery": "button#achBackButton",
                 "designer|targetType": "Ext.Button",
-                "fn": "fahrplanerBackButton",
+                "fn": "achBackButton",
                 "implHandler": [
-                    "this.getFahrplanerView().hide();",
+                    "this.getAchView().hide();",
                     "this.getMainView().show();"
                 ],
                 "name": "tap"
             },
-            "name": "fahrplanerBackButton",
-            "designerId": "c2f2dc05-a9cc-4ca0-b990-83239b09ab4d"
+            "name": "achBackButton",
+            "designerId": "c9dc4365-b6e7-43d7-a2d6-a8ac0dca7119"
         },
         {
             "type": "controllerref",
@@ -67,11 +67,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "FahrplanerView",
-                "selector": "#FahrplanerView"
+                "ref": "mainView",
+                "selector": "container#MainView"
             },
-            "name": "FahrplanerView",
-            "designerId": "df3bf0db-0393-4b7d-8d0c-1b004cf3a9b3"
+            "name": "mainView",
+            "designerId": "74128081-ec57-4eed-87f4-9ebab5b03028"
         }
     ]
 }

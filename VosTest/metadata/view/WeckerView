@@ -8,7 +8,8 @@
     "userConfig": {
         "designer|userAlias": "weckerview",
         "designer|userClassName": "weckerView",
-        "id": null
+        "id": null,
+        "itemId": "mycontainer1"
     },
     "name": "MyContainer1",
     "designerId": "2c1ea315-09f3-4875-a131-ad089834757e",
@@ -236,6 +237,88 @@
             },
             "name": "MySearchField",
             "designerId": "92c4cc53-876a-4057-b4f3-dbac855c90a1"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bottom": 0,
+                "height": 65,
+                "id": "backButtonContainer1",
+                "width": "100%"
+            },
+            "name": "MyContainer",
+            "designerId": "645a0f91-b4df-4a0f-a4b0-5684589043c5",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": "",
+                        "bottom": "0px",
+                        "centered": false,
+                        "disabled": false,
+                        "docked": "bottom",
+                        "height": "65px",
+                        "hidden": false,
+                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
+                        "id": "weckerBackButton",
+                        "right": "0px",
+                        "style": [
+                            "-moz-border-radius: 46px;",
+                            "-webkit-border-radius: 46px;",
+                            "border-radius: 46px; /* border radius */",
+                            "-moz-background-clip: padding;",
+                            "-webkit-background-clip: padding-box;",
+                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
+                            "background-color: rgba(51, 73, 93, 0.9);",
+                            "float:right;",
+                            "display:block;",
+                            "font-size:11px;"
+                        ],
+                        "styleHtmlContent": true,
+                        "text": "back",
+                        "width": 65
+                    },
+                    "name": "MyButton3",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "82726f8b-eb78-4e2c-b36b-427c0f9173ae"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bottom": "30px",
+                        "id": "goals_border_bottom2",
+                        "style": [
+                            "background-color:rgba(211, 83, 0, 0.9);",
+                            "display:block;",
+                            "height:5px;",
+                            "overflow:hidden;"
+                        ],
+                        "width": "255px"
+                    },
+                    "name": "MyContainer12",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "fd9ba5de-b126-4610-a639-0f05ab50a63c"
+                }
+            ]
         }
     ]
 }

@@ -24,10 +24,12 @@ Ext.define('VosNavigator.view.weckerView', {
         'Ext.field.Toggle',
         'Ext.field.Select',
         'Ext.field.Checkbox',
-        'Ext.Label'
+        'Ext.Label',
+        'Ext.Button'
     ],
 
     config: {
+        itemId: 'mycontainer1',
         items: [
             {
                 xtype: 'image',
@@ -115,6 +117,39 @@ Ext.define('VosNavigator.view.weckerView', {
             {
                 xtype: 'searchfield',
                 label: 'Field'
+            },
+            {
+                xtype: 'container',
+                bottom: 0,
+                height: 65,
+                id: 'backButtonContainer1',
+                width: '100%',
+                items: [
+                    {
+                        xtype: 'button',
+                        border: '',
+                        bottom: '0px',
+                        centered: false,
+                        disabled: false,
+                        docked: 'bottom',
+                        height: '65px',
+                        hidden: false,
+                        html: '<h1 style="line-height:65px;font-size:15px;">zurück</h1>',
+                        id: 'weckerBackButton',
+                        right: '0px',
+                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\nfloat:right;\ndisplay:block;\nfont-size:11px;',
+                        styleHtmlContent: true,
+                        width: 65,
+                        text: 'back'
+                    },
+                    {
+                        xtype: 'container',
+                        bottom: '30px',
+                        id: 'goals_border_bottom2',
+                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
+                        width: '255px'
+                    }
+                ]
             }
         ]
     }

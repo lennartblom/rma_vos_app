@@ -214,7 +214,7 @@
                 "fn": "gameButton",
                 "implHandler": [
                     " this.getMainView().hide();",
-                    " this.getGoalView().show({type:\"slide\",direction:\"left\"});"
+                    " this.getGoalsView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
             },

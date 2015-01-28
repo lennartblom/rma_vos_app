@@ -146,9 +146,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
-                                handler: function(button, e) {
-                                    alert("test");
-                                },
                                 height: 70,
                                 id: 'game',
                                 left: 6,

@@ -31,7 +31,11 @@ Ext.application({
     ],
     controllers: [
         'Main',
-        'Fahrplaner'
+        'Fahrplaner',
+        'Goals',
+        'Settings',
+        'Wecker',
+        'Achievements'
     ],
     name: 'VosNavigator',
 

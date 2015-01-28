@@ -8,7 +8,11 @@
     "userConfig": {
         "controllers": [
             "Main",
-            "Fahrplaner"
+            "Fahrplaner",
+            "Goals",
+            "Settings",
+            "Wecker",
+            "Achievements"
         ],
         "name": "VosNavigator",
         "views": [

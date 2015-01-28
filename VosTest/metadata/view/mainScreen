@@ -393,29 +393,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "31c7c3e1-c992-46e6-9491-5cc723d9db06",
-                            "cn": [
-                                {
-                                    "type": "fixedfunction",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "designer|params": [
-                                            "button",
-                                            "e"
-                                        ],
-                                        "fn": "handler",
-                                        "implHandler": [
-                                            "alert(\"test\");"
-                                        ]
-                                    },
-                                    "name": "handler",
-                                    "designerId": "a75acac0-9ba1-402e-b8a8-8382272a4da0"
-                                }
-                            ]
+                            "designerId": "31c7c3e1-c992-46e6-9491-5cc723d9db06"
                         }
                     ]
                 },

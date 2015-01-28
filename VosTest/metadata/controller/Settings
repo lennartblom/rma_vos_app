@@ -1,0 +1,77 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Settings"
+    },
+    "name": "MyController",
+    "designerId": "5a2d0285-bcdd-4f2d-b8e7-ea4dc093e8fe",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "settingsBackButton",
+                "selector": "button#settingsBackButton"
+            },
+            "name": "settingsBackButton",
+            "designerId": "2f4c5c93-4e5f-4b36-bfaf-402aabbd3ef4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#settingsBackButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "settingsBackButton",
+                "implHandler": [
+                    "this.getSettingsView().hide();",
+                    "this.getMainView().show();"
+                ],
+                "name": "tap"
+            },
+            "name": "settingsBackButton",
+            "designerId": "d8c338a1-8778-492e-9efc-8c909510ec75"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "MainView",
+                "selector": "container#MainView"
+            },
+            "name": "MainView",
+            "designerId": "6357a747-647c-44c3-9f77-73fb3f76fdfc"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "settingsView",
+                "selector": "container#goals1"
+            },
+            "name": "settingsView",
+            "designerId": "af598928-6fc3-460c-b7e3-f45199219591"
+        }
+    ]
+}

@@ -60,7 +60,7 @@ Ext.define('VosNavigator.controller.Main', {
 
     gameButton: function(button, e, eOpts) {
          this.getMainView().hide();
-         this.getGoalView().show({type:"slide",direction:"left"});
+         this.getGoalsView().show({type:"slide",direction:"left"});
     },
 
     weckerButton: function(button, e, eOpts) {

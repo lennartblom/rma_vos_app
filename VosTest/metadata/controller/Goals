@@ -1,0 +1,77 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Goals"
+    },
+    "name": "MyController",
+    "designerId": "077834b7-114b-4f4d-887e-e802f056a810",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "goalsBackButton",
+                "selector": "button#goalsBackButton"
+            },
+            "name": "goalsBackButton",
+            "designerId": "ca664d67-8c15-4109-a546-a5fb29b1a968"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#goalsBackButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "goalsBackButton",
+                "implHandler": [
+                    "this.getGoalsView().hide();",
+                    "this.getMainView().show();"
+                ],
+                "name": "tap"
+            },
+            "name": "goalsBackButton",
+            "designerId": "34f6099f-a68b-4b65-bc16-b6162a861f62"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "MainView",
+                "selector": "container#MainView"
+            },
+            "name": "MainView",
+            "designerId": "4e7942ac-cb44-4820-82bb-8293170a22f8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "goalsView",
+                "selector": "container#GoalsView"
+            },
+            "name": "goalsView",
+            "designerId": "a410344b-c258-405a-9c84-2ae89477ac1e"
+        }
+    ]
+}
