@@ -9,49 +9,26 @@
         "designer|userClassName": "Main"
     },
     "name": "MyController",
-    "designerId": "f51be895-8789-4766-a887-7c2539d2ec43",
+    "designerId": "dfe36321-a954-4fa2-8811-bdae0f1fac79",
     "cn": [
         {
-            "type": "controllerref",
+            "type": "controlleraction",
             "reference": {
-                "name": "items",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "AchievementView",
-                "selector": "#AchievementView"
+                "designer|controlQuery": "button#StartButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "startButtonAction",
+                "implHandler": [
+                    "alert(\"Startbutton\");"
+                ],
+                "name": "tap"
             },
-            "name": "AchievementView",
-            "designerId": "51013f0b-9988-4d91-8997-7ae2b594248c"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "FahrplanerView",
-                "selector": "#FahrplanerView"
-            },
-            "name": "FahrplanerView",
-            "designerId": "1acb4dae-5449-4a32-b1e8-6b7c15f44732"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "GoalsView",
-                "selector": "#GoalsView"
-            },
-            "name": "GoalsView",
-            "designerId": "b3aaf336-f7e9-45ec-ac0d-d2c1fc70c1d2"
+            "name": "startButtonAction",
+            "designerId": "a742145d-a1ec-4efa-a13c-d937ff868283"
         },
         {
             "type": "controllerref",
@@ -65,35 +42,7 @@
                 "selector": "#MainView"
             },
             "name": "MainView",
-            "designerId": "6eeddc28-fec9-4944-8af9-3931c13602d8"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "SettingsView",
-                "selector": "#SettingsView"
-            },
-            "name": "SettingsView",
-            "designerId": "e29d9ce1-e109-4027-bc0b-e895c4978a63"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "WeckerView",
-                "selector": "#WeckerView"
-            },
-            "name": "WeckerView",
-            "designerId": "09cd4ceb-dac1-4c94-ab1b-cf6fa4015f24"
+            "designerId": "4d18e334-cbba-4628-85ff-b2e699f6c66d"
         },
         {
             "type": "controllerref",
@@ -107,26 +56,7 @@
                 "selector": "#StartButton"
             },
             "name": "StartButton",
-            "designerId": "939460cd-1805-4982-8bf2-60eb1e6f82d0"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#StartButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "startButtonAction",
-                "implHandler": [
-                    "       alert(\"testButton\");"
-                ],
-                "name": "tap"
-            },
-            "name": "startButtonAction",
-            "designerId": "f9b54e77-0ab4-4ba7-938b-d7684ae3a128"
+            "designerId": "d3a68d87-16dd-4e7e-9b4c-052fbf1ad6bb"
         }
     ]
 }

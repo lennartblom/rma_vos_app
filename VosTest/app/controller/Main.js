@@ -18,12 +18,7 @@ Ext.define('MyApp.controller.Main', {
 
     config: {
         refs: {
-            AchievementView: '#AchievementView',
-            FahrplanerView: '#FahrplanerView',
-            GoalsView: '#GoalsView',
             MainView: '#MainView',
-            SettingsView: '#SettingsView',
-            WeckerView: '#WeckerView',
             StartButton: '#StartButton'
         },
 
@@ -35,7 +30,7 @@ Ext.define('MyApp.controller.Main', {
     },
 
     startButtonAction: function(button, e, eOpts) {
-               alert("testButton");
+        alert("Startbutton");
     }
 
 });
