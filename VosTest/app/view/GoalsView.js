@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.GoalsView', {
+Ext.define('VosNavigator.view.GoalsView', {
     extend: 'Ext.Container',
 
     requires: [

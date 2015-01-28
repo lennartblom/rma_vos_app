@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.SettingsView', {
+Ext.define('VosNavigator.view.SettingsView', {
     extend: 'Ext.Container',
 
     requires: [

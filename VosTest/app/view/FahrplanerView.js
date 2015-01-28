@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.FahrplanerView', {
+Ext.define('VosNavigator.view.FahrplanerView', {
     extend: 'Ext.Container',
 
     requires: [

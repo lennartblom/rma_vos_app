@@ -23,16 +23,19 @@ Ext.application({
     views: [
         'FahrplanerView',
         'GoalsView',
-        'SettingsView'
+        'SettingsView',
+        'MainView',
+        'AchievementView',
+        'WeckerView'
     ],
     controllers: [
         'Main'
     ],
-    name: 'MyApp',
+    name: 'VosNavigator',
 
     launch: function() {
 
-        Ext.create('MyApp.view.MainView', {fullscreen: true});
+        Ext.create('VosNavigator.view.MainView', {fullscreen: true});
     }
 
 });

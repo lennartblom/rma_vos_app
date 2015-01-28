@@ -9,11 +9,14 @@
         "controllers": [
             "Main"
         ],
-        "name": "MyApp",
+        "name": "VosNavigator",
         "views": [
-            "fahrplaner",
-            "goals",
-            "settings"
+            "FahrplanerView",
+            "GoalsView",
+            "SettingsView",
+            "MainView",
+            "AchievementView",
+            "WeckerView"
         ]
     },
     "name": "Application1",

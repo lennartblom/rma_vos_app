@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.view.WeckerView', {
+Ext.define('VosNavigator.view.WeckerView', {
     extend: 'Ext.Container',
 
     requires: [

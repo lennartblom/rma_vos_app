@@ -13,13 +13,14 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('MyApp.controller.Main', {
+Ext.define('VosNavigator.controller.Main', {
     extend: 'Ext.app.Controller',
 
     config: {
         refs: {
             MainView: '#MainView',
-            StartButton: '#StartButton'
+            StartButton: '#StartButton',
+            FahrplanerView: '#FahrplanerView'
         },
 
         control: {
@@ -31,6 +32,7 @@ Ext.define('MyApp.controller.Main', {
 
     startButtonAction: function(button, e, eOpts) {
         alert("Startbutton");
+        this.getFahrplanerView().animateActiveItem(0,{type:"slide", direction:"right"});
     }
 
 });
