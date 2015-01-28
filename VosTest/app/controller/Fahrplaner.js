@@ -32,7 +32,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     goalsBackButton: function(button, e, eOpts) {
         this.getFahrplanerView().hide();
-        this.getMainView().show({type:"slide",direction:"right"});
+        this.getMainView().show();
     }
 
 });

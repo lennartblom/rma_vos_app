@@ -52,7 +52,7 @@
                 "fn": "goalsBackButton",
                 "implHandler": [
                     "this.getFahrplanerView().hide();",
-                    "this.getMainView().show({type:\"slide\",direction:\"right\"});"
+                    "this.getMainView().show();"
                 ],
                 "name": "tap"
             },
