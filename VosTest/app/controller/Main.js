@@ -18,25 +18,7 @@ Ext.define('VosNavigator.controller.Main', {
 
     config: {
         refs: {
-            MainView: '#MainView',
-            StartButton: '#StartButton',
-            FahrplanerView: '#FahrplanerView',
-            Init: '#InitialView'
-        },
-
-        control: {
-            "button#StartButton": {
-                tap: 'startButtonAction'
-            }
+            start: 'container#start'
         }
-    },
-
-    startButtonAction: function(button, e, eOpts) {
-
-
-        this.getMainView().hide();
-        this.getFahrplanerView().show();
-
     }
-
 });
