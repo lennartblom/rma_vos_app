@@ -26,7 +26,7 @@
                     "",
                     "",
                     "this.getMainView().hide();",
-                    "this.getfahrplanerView().show({type:\"slide\",direction:\"left\"});"
+                    "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
             },
@@ -208,7 +208,7 @@
             "codeClass": null,
             "userConfig": {
                 "ref": "fahrplanerView",
-                "selector": "container#fahrplanerView"
+                "selector": "#FahrplanerView"
             },
             "name": "fahrplanerView",
             "designerId": "083a9873-f70f-4f26-9bd8-969240c68cf7"

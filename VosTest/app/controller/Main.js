@@ -25,7 +25,7 @@ Ext.define('VosNavigator.controller.Main', {
             weckerButton: 'button#weckerButton',
             settingsButton: 'button#settingsButton',
             achieveButton: 'button#achieveButton',
-            fahrplanerView: 'container#fahrplanerView'
+            fahrplanerView: '#FahrplanerView'
         },
 
         control: {
@@ -51,7 +51,7 @@ Ext.define('VosNavigator.controller.Main', {
 
 
         this.getMainView().hide();
-        this.getfahrplanerView().show({type:"slide",direction:"left"});
+        this.getFahrplanerView().show({type:"slide",direction:"left"});
     },
 
     gameButton: function(button, e, eOpts) {
