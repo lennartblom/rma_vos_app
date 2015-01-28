@@ -6,8 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "WeckerView",
-        "id": "WeckerView"
+        "designer|userAlias": "weckerview",
+        "designer|userClassName": "weckerView",
+        "id": null
     },
     "name": "MyContainer1",
     "designerId": "2c1ea315-09f3-4875-a131-ad089834757e",

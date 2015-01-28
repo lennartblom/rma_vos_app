@@ -6,7 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "FahrplanerView",
+        "designer|userAlias": "fahrplanerview",
+        "designer|userClassName": "fahrplanerView",
         "layout": "fit"
     },
     "name": "MyContainer7",

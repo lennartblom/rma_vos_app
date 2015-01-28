@@ -20,7 +20,8 @@ Ext.define('VosNavigator.controller.Main', {
         refs: {
             MainView: '#MainView',
             StartButton: '#StartButton',
-            FahrplanerView: '#FahrplanerView'
+            FahrplanerView: '#FahrplanerView',
+            Init: '#InitialView'
         },
 
         control: {
@@ -31,8 +32,11 @@ Ext.define('VosNavigator.controller.Main', {
     },
 
     startButtonAction: function(button, e, eOpts) {
-        alert("Startbutton");
-        this.getFahrplanerView().animateActiveItem(0,{type:"slide", direction:"right"});
+
+
+        this.getMainView().hide();
+        this.getFahrplanerView().show();
+
     }
 
 });

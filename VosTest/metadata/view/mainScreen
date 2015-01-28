@@ -6,16 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
-        "designer|userAlias": null,
-        "designer|userClassName": "MainView",
-        "fullscreen": true,
-        "id": "MainView",
-        "layout": "fit",
-        "scrollable": false,
-        "singleton": null
+        "designer|userAlias": "mainScreen",
+        "designer|userClassName": "mainScreen",
+        "height": "100%",
+        "id": "mainWrapper",
+        "width": "100%"
     },
-    "designerId": "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c",
+    "name": "MyContainer16",
+    "designerId": "99b84eac-f89b-4db2-ba01-7e44b989abf6",
     "cn": [
         {
             "type": "Ext.Img",
@@ -26,7 +24,7 @@
             "codeClass": null,
             "userConfig": {
                 "centered": false,
-                "height": null,
+                "height": "100%",
                 "hidden": false,
                 "id": "background",
                 "src": "resources/images/background/std_bg.png",
@@ -119,7 +117,7 @@
                         "width": 100
                     },
                     "name": "MyContainer1",
-                    "designerId": "a511603e-234d-4fef-8540-36785bbface0",
+                    "designerId": "74aba71d-ef14-44be-a848-a83c03adce6e",
                     "cn": [
                         {
                             "type": "Ext.Img",
@@ -137,7 +135,7 @@
                                 "width": "100%"
                             },
                             "name": "MyImg3",
-                            "designerId": "e89c3b97-e9b9-4808-b5e5-b72972a82471"
+                            "designerId": "92abe058-eb38-4b89-96d3-19dfccc8a8da"
                         },
                         {
                             "type": "Ext.Button",
@@ -174,7 +172,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "850580a4-4ca3-41c3-a0ce-7daae3719a1d",
+                            "designerId": "8f5e120c-7569-4117-b689-1b705ae5f4d2",
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -194,7 +192,7 @@
                                         ]
                                     },
                                     "name": "handler",
-                                    "designerId": "92051a3e-8c6c-4800-ad97-2ca5b8a1623e"
+                                    "designerId": "31f57f7c-8975-4ce8-bc1e-bc45c868b150"
                                 }
                             ]
                         }
@@ -217,7 +215,7 @@
                         "width": 100
                     },
                     "name": "MyContainer4",
-                    "designerId": "0934e006-5afa-4333-bf33-36fa9e388dd9",
+                    "designerId": "c9119f86-8e5d-4bd1-9c43-932fd0a5c8f9",
                     "cn": [
                         {
                             "type": "Ext.Img",
@@ -235,7 +233,7 @@
                                 "width": "100%"
                             },
                             "name": "MyImg5",
-                            "designerId": "549f3479-a6b3-4cb8-be9f-323e1e7887ec"
+                            "designerId": "7ca14f77-2574-4821-b2e7-0a3723cc2253"
                         },
                         {
                             "type": "Ext.Button",
@@ -272,7 +270,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "7343969e-eb83-401e-b337-ee886fc1ff5a",
+                            "designerId": "f001e964-93f6-45af-995d-3f4b140ca8ef",
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -292,7 +290,7 @@
                                         ]
                                     },
                                     "name": "handler",
-                                    "designerId": "816c2069-3beb-4511-847c-d6b93149c813"
+                                    "designerId": "90da09c5-e276-49d6-ac22-3462cec655bf"
                                 }
                             ]
                         }
@@ -315,7 +313,7 @@
                         "width": 180
                     },
                     "name": "MyContainer5",
-                    "designerId": "3c3fd55c-8b49-45a1-9df6-d57b14628bc6",
+                    "designerId": "e590bffc-8272-4fa7-bd3b-8b2aa5ee13d3",
                     "cn": [
                         {
                             "type": "Ext.Img",
@@ -332,7 +330,7 @@
                                 "width": "100%"
                             },
                             "name": "MyImg6",
-                            "designerId": "904f1f0c-6644-4f3f-aaa0-6436d571a32b"
+                            "designerId": "48fdf991-cb2a-4d0d-8693-5a6e709801cb"
                         },
                         {
                             "type": "Ext.Button",
@@ -369,7 +367,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "eb611d2d-ce9f-4233-8ca5-66e978903fa3",
+                            "designerId": "e804e05f-22b3-4279-8a30-26c90ebaab24",
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -389,7 +387,7 @@
                                         ]
                                     },
                                     "name": "handler",
-                                    "designerId": "449f0f24-a3c2-43c1-a072-4462acb1f124"
+                                    "designerId": "29acf884-f5e5-4713-9f58-5d72a2cc4c9a"
                                 }
                             ]
                         }
@@ -411,7 +409,7 @@
                         "width": 100
                     },
                     "name": "MyContainer6",
-                    "designerId": "8e944721-1be9-4f33-bea4-29c480b38a25",
+                    "designerId": "11c3ef66-501a-4b41-89b0-d5c70e829a8a",
                     "cn": [
                         {
                             "type": "Ext.Img",
@@ -428,7 +426,7 @@
                                 "width": "100%"
                             },
                             "name": "MyImg7",
-                            "designerId": "aaa94044-1538-4c41-81eb-9d37f8a9056f"
+                            "designerId": "93c7432d-34e7-4d37-a7cd-d2dae8d50512"
                         },
                         {
                             "type": "Ext.Button",
@@ -465,7 +463,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "ca555b93-e4f9-489d-aecc-d9c59680aaa7",
+                            "designerId": "31c7c3e1-c992-46e6-9491-5cc723d9db06",
                             "cn": [
                                 {
                                     "type": "fixedfunction",
@@ -485,7 +483,7 @@
                                         ]
                                     },
                                     "name": "handler",
-                                    "designerId": "8570526e-9752-4c35-9d41-fc55ad87128d"
+                                    "designerId": "a75acac0-9ba1-402e-b8a8-8382272a4da0"
                                 }
                             ]
                         }
@@ -507,7 +505,7 @@
                         "width": 124
                     },
                     "name": "MyContainer2",
-                    "designerId": "de8c5568-50c9-44e2-b03c-5d077245306d",
+                    "designerId": "86a8b9ce-574b-44b4-b179-d6aafbca3813",
                     "cn": [
                         {
                             "type": "Ext.Button",
@@ -543,7 +541,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "ab131ba9-387a-4a23-84fd-cb28b395355b",
+                            "designerId": "1f86f39d-17d1-499d-97c9-19d59d84d5a1",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",

@@ -21,12 +21,13 @@ Ext.Loader.setConfig({
 
 Ext.application({
     views: [
-        'FahrplanerView',
-        'GoalsView',
-        'SettingsView',
-        'MainView',
-        'AchievementView',
-        'WeckerView'
+        'fahrplanerView',
+        'goalsView',
+        'settingsView',
+        'InitialView',
+        'achView',
+        'weckerView',
+        'mainScreen'
     ],
     controllers: [
         'Main'
@@ -35,7 +36,7 @@ Ext.application({
 
     launch: function() {
 
-        Ext.create('VosNavigator.view.MainView', {fullscreen: true});
+        Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
     }
 
 });

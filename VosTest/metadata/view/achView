@@ -6,7 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "AchievementView"
+        "designer|userAlias": "achView",
+        "designer|userClassName": "achView"
     },
     "name": "MyContainer1",
     "designerId": "05c90d69-4bbe-4647-aa46-50af4f5a763f",

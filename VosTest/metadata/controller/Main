@@ -23,8 +23,11 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "startButtonAction",
                 "implHandler": [
-                    "alert(\"Startbutton\");",
-                    "this.getFahrplanerView().animateActiveItem(0,{type:\"slide\", direction:\"right\"});"
+                    "",
+                    "",
+                    "this.getMainView().hide();",
+                    "this.getFahrplanerView().show();",
+                    ""
                 ],
                 "name": "tap"
             },
@@ -72,6 +75,20 @@
             },
             "name": "FahrplanerView",
             "designerId": "42058118-9895-456d-b205-445c9e348f6e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "Init",
+                "selector": "#InitialView"
+            },
+            "name": "Init",
+            "designerId": "f63d2405-de2a-4b79-95bf-d4f2e98616bf"
         }
     ]
 }

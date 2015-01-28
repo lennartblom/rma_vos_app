@@ -11,12 +11,13 @@
         ],
         "name": "VosNavigator",
         "views": [
-            "FahrplanerView",
-            "GoalsView",
-            "SettingsView",
-            "MainView",
-            "AchievementView",
-            "WeckerView"
+            "fahrplanerView",
+            "goalsView",
+            "settingsView",
+            "InitialView",
+            "achView",
+            "weckerView",
+            "mainScreen"
         ]
     },
     "name": "Application1",

@@ -1,0 +1,110 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": null,
+        "designer|userClassName": "InitialView",
+        "fullscreen": true,
+        "id": null,
+        "layout": "fit",
+        "scrollable": false,
+        "singleton": null
+    },
+    "designerId": "28f7d3c9-ea7e-476d-83b9-ed76e8e5956c",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "MainView"
+            },
+            "name": "mainscreen",
+            "designerId": "158edf32-6da2-4b52-9aec-adfb7292c325",
+            "masterInstanceId": "99b84eac-f89b-4db2-ba01-7e44b989abf6"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": "FahrplanerView"
+            },
+            "name": "fahrplanerview2",
+            "designerId": "a306303a-2d35-421b-98e2-72fe821223d7",
+            "masterInstanceId": "b60cccb9-321a-45c4-ad9c-93f071883a5f"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": "GoalsView"
+            },
+            "name": "goalsview2",
+            "designerId": "3cce19c2-3477-469a-9b7b-b00f2fd0d0c9",
+            "masterInstanceId": "bdc6e475-08cf-4183-aff2-884bf524a593"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": "SettingsView"
+            },
+            "name": "settingsview3",
+            "designerId": "5fea5093-aef7-4d1a-a103-9bf6f72ac6d4",
+            "masterInstanceId": "03713b00-c334-4937-ad19-bcff3d4c7815"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": "WeckerView"
+            },
+            "name": "weckerview2",
+            "designerId": "3e6b8009-9526-4b19-a6aa-f66592c5a0c5",
+            "masterInstanceId": "2c1ea315-09f3-4875-a131-ad089834757e"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "id": "AchView"
+            },
+            "name": "achview",
+            "designerId": "352abbff-2c15-4b46-a53e-ac136995b23d",
+            "masterInstanceId": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
+        }
+    ]
+}

@@ -6,9 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "SettingsView",
+        "designer|userAlias": "settingsview",
+        "designer|userClassName": "settingsView",
         "height": "100%",
-        "id": "SettingsView",
+        "id": null,
         "width": "100%"
     },
     "name": "goals1",
