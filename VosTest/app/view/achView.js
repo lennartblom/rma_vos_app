@@ -45,7 +45,7 @@ Ext.define('VosNavigator.view.achView', {
                         height: '65px',
                         html: '<p>zurück</p>',
                         id: 'achBackButton',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfloat:left;\nfont-size:13px;\nline-height:65px;',
+                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\ndisplay:block;\nfloat:left;\nfont-size:13px;\nline-height:65px;',
                         styleHtmlContent: true,
                         width: 65,
                         text: 'zurück'
@@ -61,7 +61,7 @@ Ext.define('VosNavigator.view.achView', {
                         html: 'Punkte',
                         id: 'scoreButton',
                         right: '0px',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\nfloat:right;\ndisplay:block;\nline-height:65px;\nfont-size:13px;\nfont-weight:normal;',
+                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\nfloat:right;\ndisplay:block;\nline-height:65px;\nfont-size:13px;\nfont-weight:normal;',
                         styleHtmlContent: true,
                         width: 65,
                         text: 'score'
