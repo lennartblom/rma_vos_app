@@ -26,9 +26,10 @@
                     "",
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
-                    "navigator.notification.beep();",
+                    "var myMedia = new Media(\"resources/tones/beep.mp3\");",
+                    "myMedia.play();",
                     "navigator.notification.vibrate();",
-                    "navigator.notification.superMario();"
+                    ""
                 ],
                 "name": "tap"
             },

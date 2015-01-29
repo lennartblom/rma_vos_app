@@ -96,6 +96,7 @@ Ext.define('VosNavigator.view.weckerView', {
                             {
                                 xtype: 'sliderfield',
                                 id: 'weckRadius',
+                                itemId: 'mysliderfield',
                                 style: 'background: none;\nmargin-left: auto;\nmargin-right: auto;',
                                 styleHtmlContent: true,
                                 width: '90%',

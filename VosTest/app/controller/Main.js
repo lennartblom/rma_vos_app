@@ -65,9 +65,10 @@ Ext.define('VosNavigator.controller.Main', {
 
         this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
-        navigator.notification.beep();
+        var myMedia = new Media("resources/tones/beep.mp3");
+        myMedia.play();
         navigator.notification.vibrate();
-        navigator.notification.superMario();
+
     },
 
     gameButton: function(button, e, eOpts) {
