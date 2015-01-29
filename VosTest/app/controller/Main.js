@@ -63,9 +63,9 @@ Ext.define('VosNavigator.controller.Main', {
 
     startButtonAction: function(button, e, eOpts) {
 
-        naviagtor.notification.beep(2);
         this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
+        navigator.notification.beep();
     },
 
     gameButton: function(button, e, eOpts) {
