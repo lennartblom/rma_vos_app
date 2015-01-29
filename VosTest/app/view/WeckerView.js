@@ -20,7 +20,6 @@ Ext.define('VosNavigator.view.weckerView', {
     requires: [
         'Ext.Img',
         'Ext.Container',
-        'Ext.field.Search',
         'Ext.field.Toggle',
         'Ext.field.Select',
         'Ext.field.Checkbox',
@@ -43,14 +42,7 @@ Ext.define('VosNavigator.view.weckerView', {
                 docked: 'top',
                 height: '100%',
                 margin: '10% 0',
-                width: '100%',
-                items: [
-                    {
-                        xtype: 'searchfield',
-                        style: 'background:none;',
-                        label: 'Wecker'
-                    }
-                ]
+                width: '100%'
             },
             {
                 xtype: 'container',
@@ -75,7 +67,7 @@ Ext.define('VosNavigator.view.weckerView', {
                     {
                         xtype: 'checkboxfield',
                         id: 'link_verbindung',
-                        label: 'Busverbindung suchen',
+                        label: 'Kürzester Weg',
                         labelWidth: '80%',
                         name: 'link_verbindung'
                     },
@@ -106,17 +98,13 @@ Ext.define('VosNavigator.view.weckerView', {
                             },
                             {
                                 xtype: 'label',
-                                html: '0 m vor dem Zielpunkt',
+                                html: '200 m vor dem Zielpunkt',
                                 style: 'text-align: center;',
                                 styleHtmlContent: true
                             }
                         ]
                     }
                 ]
-            },
-            {
-                xtype: 'searchfield',
-                label: 'Field'
             },
             {
                 xtype: 'container',

@@ -44,30 +44,7 @@
                 "width": "100%"
             },
             "name": "MyContainer9",
-            "designerId": "7b20a524-cc47-4e07-814f-952904be198b",
-            "cn": [
-                {
-                    "type": "Ext.field.Search",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "label": "Wecker",
-                        "minWidth": null,
-                        "style": [
-                            "background:none;",
-                            ""
-                        ]
-                    },
-                    "name": "MySearchField1",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "921b6ce9-48fb-420e-bc70-eb1b20258872"
-                }
-            ]
+            "designerId": "7b20a524-cc47-4e07-814f-952904be198b"
         },
         {
             "type": "Ext.Container",
@@ -125,7 +102,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "link_verbindung",
-                        "label": "Busverbindung suchen",
+                        "label": "Kürzester Weg",
                         "labelWidth": "80%",
                         "name": "link_verbindung"
                     },
@@ -208,7 +185,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "html": "0 m vor dem Zielpunkt",
+                                "html": "200 m vor dem Zielpunkt",
                                 "style": [
                                     "text-align: center;",
                                     ""
@@ -224,19 +201,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "type": "Ext.field.Search",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "label": "Field"
-            },
-            "name": "MySearchField",
-            "designerId": "92c4cc53-876a-4057-b4f3-dbac855c90a1"
         },
         {
             "type": "Ext.Container",
