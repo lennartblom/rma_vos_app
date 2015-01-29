@@ -29,7 +29,17 @@ Ext.define('VosNavigator.controller.Main', {
             gameButton: 'button#game',
             weckerButton: 'button#weckerButton',
             settingsButton: 'button#settingsButton',
-            achieveButton: 'button#achieveButton'
+            achieveButton: 'button#achieveButton',
+            startImageInv: 'image#StartImageInv',
+            startImage: 'image#StartImage',
+            gameImageInv: 'image#GameImageInv',
+            gameImage: 'image#GameImage',
+            achImageInv: 'image#AchImageInv',
+            achImage: 'image#AchImage',
+            settingsImageInv: 'image#SettingsImageInv',
+            settingsImage: 'image#SettingsImage',
+            weckerImageInv: 'image#WeckerImageInv',
+            weckerImage: 'image#WeckerImage'
         },
 
         control: {
@@ -53,8 +63,9 @@ Ext.define('VosNavigator.controller.Main', {
 
     startButtonAction: function(button, e, eOpts) {
 
-
+        this.getStartImageInv().show();
         this.getMainView().hide();
+        this.getStartImageInv().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
     },
 

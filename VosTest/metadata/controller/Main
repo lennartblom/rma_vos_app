@@ -24,8 +24,9 @@
                 "fn": "startButtonAction",
                 "implHandler": [
                     "",
-                    "",
+                    "this.getStartImageInv().show();",
                     "this.getMainView().hide();",
+                    "this.getStartImageInv().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
@@ -280,6 +281,161 @@
             },
             "name": "achButton",
             "designerId": "a99645ab-f8cd-4b70-92c3-1d03d6ee24d6"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "startImageInv",
+                "selector": "image#StartImageInv"
+            },
+            "name": "startImageInv",
+            "designerId": "8305c607-0d09-4ded-94df-3d59faba3d7b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "startImage",
+                "selector": "image#StartImage"
+            },
+            "name": "startImage",
+            "designerId": "c950df50-ac7b-4181-b9db-85360eaa66a2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "gameImageInv",
+                "selector": "image#GameImageInv"
+            },
+            "name": "gameImageInv",
+            "designerId": "210e559b-1b36-4f4d-aa93-0d3cd5856c93"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "gameImage",
+                "selector": "image#GameImage"
+            },
+            "name": "gameImage",
+            "designerId": "4f161b9c-7403-47cd-bf57-082118d826f0"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "achImageInv",
+                "selector": "image#AchImageInv"
+            },
+            "name": "achImageInv",
+            "designerId": "d7a5db47-f1fb-4125-bd76-45edec79bb00"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "achImage",
+                "selector": "image#AchImage"
+            },
+            "name": "achImage",
+            "designerId": "52643d06-404f-4b32-b023-c4cc76dbad1f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "settingsImageInv",
+                "selector": "image#SettingsImageInv"
+            },
+            "name": "settingsImageInv",
+            "designerId": "3944a5fa-9a86-4768-a6d3-199c14385d3c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "settingsImage",
+                "selector": "image#SettingsImage"
+            },
+            "name": "settingsImage",
+            "designerId": "bea46fb9-6d93-4303-9bf5-9ad78df4add0"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerImageInv",
+                "selector": "image#WeckerImageInv"
+            },
+            "name": "weckerImageInv",
+            "designerId": "87f1d92d-0327-43b6-aa0b-c087dcca75dc"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerImage",
+                "selector": "image#WeckerImage"
+            },
+            "name": "weckerImage",
+            "designerId": "cc7c7109-a320-4bee-8699-2888289e4057"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#StartButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "startButtonPressed"
+            },
+            "name": "startButtonPressed",
+            "designerId": "8a40e0d1-f3ae-48e0-a9aa-efdcf96f75ed"
         }
     ]
 }
