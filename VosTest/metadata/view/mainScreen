@@ -140,7 +140,7 @@
                                     "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.0;"
+                                    "opacity:0.3;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -194,7 +194,7 @@
                                     "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.0;"
+                                    "opacity:0.3;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -248,7 +248,7 @@
                                     "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.0;"
+                                    "opacity:0.3;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -301,7 +301,7 @@
                                     "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.0;"
+                                    "opacity:0.3;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -343,6 +343,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "action": "start",
+                                "centered": true,
                                 "height": 120,
                                 "id": "StartButton",
                                 "left": 1,
@@ -355,7 +356,7 @@
                                     "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.0;"
+                                    "opacity:0.3;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",

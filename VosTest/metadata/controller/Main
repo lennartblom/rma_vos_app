@@ -24,9 +24,8 @@
                 "fn": "startButtonAction",
                 "implHandler": [
                     "",
-                    "this.getStartImageInv().show();",
+                    "naviagtor.notification.beep(2);",
                     "this.getMainView().hide();",
-                    "this.getStartImageInv().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"

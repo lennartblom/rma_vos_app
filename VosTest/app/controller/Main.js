@@ -63,9 +63,8 @@ Ext.define('VosNavigator.controller.Main', {
 
     startButtonAction: function(button, e, eOpts) {
 
-        this.getStartImageInv().show();
+        naviagtor.notification.beep(2);
         this.getMainView().hide();
-        this.getStartImageInv().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
     },
 
