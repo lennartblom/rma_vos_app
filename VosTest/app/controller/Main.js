@@ -66,6 +66,8 @@ Ext.define('VosNavigator.controller.Main', {
         this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
         navigator.notification.beep();
+        navigator.notification.vibrate();
+        navigator.notification.superMario();
     },
 
     gameButton: function(button, e, eOpts) {

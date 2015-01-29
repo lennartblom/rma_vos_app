@@ -53,6 +53,7 @@ Ext.define('VosNavigator.view.weckerView', {
                 items: [
                     {
                         xtype: 'togglefield',
+                        itemId: 'mytogglefield',
                         label: 'Wecker ein',
                         labelWidth: '75%',
                         name: 'toggle_alarm',
@@ -61,12 +62,14 @@ Ext.define('VosNavigator.view.weckerView', {
                     {
                         xtype: 'selectfield',
                         id: 'select_music',
+                        itemId: 'myselectfield',
                         label: 'Ton',
                         name: 'select_music'
                     },
                     {
                         xtype: 'checkboxfield',
                         id: 'link_verbindung',
+                        itemId: 'mycheckbox3',
                         label: 'Kürzester Weg',
                         labelWidth: '80%',
                         name: 'link_verbindung'
@@ -74,6 +77,7 @@ Ext.define('VosNavigator.view.weckerView', {
                     {
                         xtype: 'togglefield',
                         id: 'toggle_alarmStop',
+                        itemId: 'mytogglefield1',
                         label: 'Mehrfach klingeln',
                         labelWidth: '75%',
                         name: 'toggle_alarmStop'
@@ -90,6 +94,7 @@ Ext.define('VosNavigator.view.weckerView', {
                         items: [
                             {
                                 xtype: 'sliderfield',
+                                itemId: 'mysliderfield',
                                 style: 'background: none;\nmargin-left: auto;\nmargin-right: auto;',
                                 styleHtmlContent: true,
                                 width: '90%',

@@ -70,13 +70,26 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "mytogglefield",
                         "label": "Wecker ein",
                         "labelWidth": "75%",
                         "name": "toggle_alarm",
                         "value": 1
                     },
                     "name": "MyToggleField",
-                    "designerId": "7f70cc16-bd6f-488f-bb54-b82253845ac5"
+                    "designerId": "7f70cc16-bd6f-488f-bb54-b82253845ac5",
+                    "cn": [
+                        {
+                            "type": "delegateeventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "DelegateEventBinding",
+                            "designerId": "fa152255-c459-4a03-82de-ae360450c96b"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.field.Select",
@@ -87,11 +100,24 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "select_music",
+                        "itemId": "myselectfield",
                         "label": "Ton",
                         "name": "select_music"
                     },
                     "name": "MySelectField",
-                    "designerId": "b7b83d63-7401-4176-bd00-29bf4f310665"
+                    "designerId": "b7b83d63-7401-4176-bd00-29bf4f310665",
+                    "cn": [
+                        {
+                            "type": "delegateeventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "DelegateEventBinding3",
+                            "designerId": "44c64ec3-42d1-434d-9420-80a63b977b5c"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.field.Checkbox",
@@ -102,12 +128,25 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "link_verbindung",
+                        "itemId": "mycheckbox3",
                         "label": "Kürzester Weg",
                         "labelWidth": "80%",
                         "name": "link_verbindung"
                     },
                     "name": "MyCheckbox3",
-                    "designerId": "4c5521e9-1850-4007-9009-52da489bd5f2"
+                    "designerId": "4c5521e9-1850-4007-9009-52da489bd5f2",
+                    "cn": [
+                        {
+                            "type": "delegateeventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "DelegateEventBinding2",
+                            "designerId": "850e77fe-cefd-4151-8235-d9f34948815c"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.field.Toggle",
@@ -118,12 +157,25 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "toggle_alarmStop",
+                        "itemId": "mytogglefield1",
                         "label": "Mehrfach klingeln",
                         "labelWidth": "75%",
                         "name": "toggle_alarmStop"
                     },
                     "name": "MyToggleField1",
-                    "designerId": "a39e12b0-db5b-4a87-84cc-b109b113e676"
+                    "designerId": "a39e12b0-db5b-4a87-84cc-b109b113e676",
+                    "cn": [
+                        {
+                            "type": "delegateeventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "DelegateEventBinding1",
+                            "designerId": "85efcf20-be6c-41a9-ac56-f5066f36eaad"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.Label",
@@ -161,6 +213,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "itemId": "mysliderfield",
                                 "label": "",
                                 "maxValue": 2000,
                                 "style": [
@@ -175,7 +228,19 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "c0175f98-e706-4179-abc7-592397a4c441"
+                            "designerId": "c0175f98-e706-4179-abc7-592397a4c441",
+                            "cn": [
+                                {
+                                    "type": "delegateeventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "name": "DelegateEventBinding4",
+                                    "designerId": "00ddfc12-3879-4cbc-87bd-c49c1f79b4ce"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.Label",
