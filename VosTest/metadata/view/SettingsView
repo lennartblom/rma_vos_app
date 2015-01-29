@@ -164,6 +164,20 @@
                     "designerId": "1c2791e0-788d-4978-aaec-8e1f91da65c3",
                     "cn": [
                         {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "mybutton",
+                                "text": "MyButton"
+                            },
+                            "name": "MyButton",
+                            "designerId": "6f81168e-b45a-494a-8ffe-5d9e19625a0e"
+                        },
+                        {
                             "type": "Ext.field.Toggle",
                             "reference": {
                                 "name": "items",
@@ -198,48 +212,31 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "label": "Field"
+                                "id": "slider_id",
+                                "itemId": "mysliderfield",
+                                "label": "Field",
+                                "value": [
+                                    24
+                                ]
                             },
                             "name": "MySliderField",
                             "designerId": "2e455bb7-62c4-4b13-a4dc-4fcf55532121"
                         },
                         {
-                            "type": "Ext.SegmentedButton",
+                            "type": "Ext.Label",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
-                            "name": "MySegmentedButton",
-                            "designerId": "d345e268-5008-4061-aa18-9c2276e73dc8",
-                            "cn": [
-                                {
-                                    "type": "Ext.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "text": "MyButton3"
-                                    },
-                                    "name": "MyButton3",
-                                    "designerId": "c9891c25-32fa-4b8a-83ea-181666414b0b"
-                                },
-                                {
-                                    "type": "Ext.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "text": "MyButton4"
-                                    },
-                                    "name": "MyButton4",
-                                    "designerId": "8d60915e-534b-4f12-b23e-e171787ae200"
-                                }
-                            ]
+                            "userConfig": {
+                                "designer|displayName": "",
+                                "html": "",
+                                "id": "label_settings",
+                                "margin": "5px"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "bdaabb9a-4509-415a-bee7-2b3079aa2035"
                         }
                     ]
                 }

@@ -37,8 +37,10 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "settingsBackButton",
                 "implHandler": [
+                    "",
                     "this.getSettingsView().hide();",
-                    "this.getMainView().show();"
+                    "this.getMainView().show();",
+                    ""
                 ],
                 "name": "tap"
             },
@@ -72,6 +74,71 @@
             },
             "name": "settingsView",
             "designerId": "af598928-6fc3-460c-b7e3-f45199219591"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mybutton",
+                "selector": "button#mybutton"
+            },
+            "name": "mybutton",
+            "designerId": "e8023632-bfc0-47a6-85f4-faea8e610187"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mysliderfield",
+                "selector": "sliderfield#mysliderfield"
+            },
+            "name": "mysliderfield",
+            "designerId": "2ce431ba-5194-4e54-b10e-89fdfc635372"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#mybutton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "var slider = Ext.getCmp('slider_id');",
+                    "var label = Ext.getCmp('label_settings');",
+                    "var value = slider.getValue();",
+                    "",
+                    "label.setHtml(\"Lautstärke \" + value + \"%\");"
+                ],
+                "name": "tap"
+            },
+            "name": "onButtonTap",
+            "designerId": "e40382bf-e6ee-4d0a-8812-2c04a61a6925"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "labelsettings",
+                "selector": "label#label_settings"
+            },
+            "name": "labelsettings",
+            "designerId": "b15e8846-9dd3-4057-9913-41646db45af3"
         }
     ]
 }

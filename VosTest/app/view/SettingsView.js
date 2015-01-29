@@ -18,11 +18,11 @@ Ext.define('VosNavigator.view.settingsView', {
     alias: 'widget.settingsview',
 
     requires: [
+        'Ext.Container',
         'Ext.Label',
         'Ext.Button',
         'Ext.field.Toggle',
         'Ext.field.Radio',
-        'Ext.SegmentedButton',
         'Ext.Img'
     ],
 
@@ -86,6 +86,11 @@ Ext.define('VosNavigator.view.settingsView', {
                         width: '100%',
                         items: [
                             {
+                                xtype: 'button',
+                                itemId: 'mybutton',
+                                text: 'MyButton'
+                            },
+                            {
                                 xtype: 'togglefield',
                                 label: 'Field'
                             },
@@ -96,20 +101,18 @@ Ext.define('VosNavigator.view.settingsView', {
                             },
                             {
                                 xtype: 'sliderfield',
-                                label: 'Field'
+                                id: 'slider_id',
+                                itemId: 'mysliderfield',
+                                label: 'Field',
+                                value: [
+                                    24
+                                ]
                             },
                             {
-                                xtype: 'segmentedbutton',
-                                items: [
-                                    {
-                                        xtype: 'button',
-                                        text: 'MyButton3'
-                                    },
-                                    {
-                                        xtype: 'button',
-                                        text: 'MyButton4'
-                                    }
-                                ]
+                                xtype: 'label',
+                                html: '',
+                                id: 'label_settings',
+                                margin: '5px'
                             }
                         ]
                     }

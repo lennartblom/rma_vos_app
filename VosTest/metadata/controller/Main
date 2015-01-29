@@ -24,6 +24,9 @@
                 "fn": "startButtonAction",
                 "implHandler": [
                     "",
+                    "naviagtor.notification.beep(2);",
+=======
+>>>>>>> 2394880299f969cceb00372b074329d8ed14d3a8
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
                     "var myMedia = new Media(\"resources/tones/beep.mp3\");",
