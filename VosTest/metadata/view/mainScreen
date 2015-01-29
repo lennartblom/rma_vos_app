@@ -128,22 +128,19 @@
                             "codeClass": null,
                             "userConfig": {
                                 "height": 70,
+                                "hidden": false,
                                 "id": "weckerButton",
                                 "left": 15,
                                 "style": [
-                                    "background-image: url('resources/images/button_png/Wecker.png') !important;",
-                                    "background-repeat: no-repeat;",
-                                    "background-positon: 0 0;",
-                                    "background-size: 100%;",
-                                    "background-opacity:0.9;",
+                                    "",
                                     "-webkit-border-radius: 100%;",
                                     "border-radius: 100%; /* border radius */",
                                     "-webkit-background-clip: padding-box;",
                                     "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: rgba(51, 73, 93, 0.9);",
+                                    "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.9;"
+                                    "opacity:0.0;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -155,6 +152,56 @@
                                 "style": "object"
                             },
                             "designerId": "8f5e120c-7569-4117-b689-1b705ae5f4d2"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": false,
+                                "id": "WeckerImage",
+                                "left": 15,
+                                "src": "resources/images/button_png/wecker.png",
+                                "style": [
+                                    "oacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg1",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "a20fa893-f9c4-4c0a-b5bc-e637cfefcdea"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": true,
+                                "id": "WeckerImageInv",
+                                "left": 15,
+                                "src": "resources/images/button_png/wecker_inv.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg7",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "877d5281-b0b5-493b-b43d-6cd10c0b3fed"
                         }
                     ]
                 },
@@ -189,19 +236,15 @@
                                 "id": "settingsButton",
                                 "left": 15,
                                 "style": [
-                                    "background-image: url('resources/images/button_png/settings.png');",
-                                    "background-repeat: no-repeat;",
-                                    "background-positon: 0 0;",
-                                    "background-size: 100%;",
-                                    "background-opacity:0.9;",
+                                    "",
                                     "-webkit-border-radius: 100%;",
                                     "border-radius: 100%; /* border radius */",
                                     "-webkit-background-clip: padding-box;",
                                     "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: rgba(51, 73, 93, 0.9);",
+                                    "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.9;"
+                                    "opacity:0.0;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -213,6 +256,56 @@
                                 "style": "object"
                             },
                             "designerId": "f001e964-93f6-45af-995d-3f4b140ca8ef"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": false,
+                                "id": "SettingsImage",
+                                "left": 15,
+                                "src": "resources/images/button_png/settings.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": null,
+                                "width": 70
+                            },
+                            "name": "MyImg8",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "891c6773-7138-4ed3-bdbd-aa07cc93ded4"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": true,
+                                "id": "SettingsImageInv",
+                                "left": 15,
+                                "src": "resources/images/button_png/settings_inv.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": null,
+                                "width": 70
+                            },
+                            "name": "MyImg9",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "a54ea131-f0de-49ce-bb18-2befd6b8e565"
                         }
                     ]
                 },
@@ -247,19 +340,15 @@
                                 "id": "achieveButton",
                                 "left": 110,
                                 "style": [
-                                    "background-image: url('resources/images/button_png/Achievments.png');",
-                                    "background-repeat: no-repeat;",
-                                    "background-positon: 0 0;",
-                                    "background-size: 100%;",
-                                    "background-opacity:0.9;",
+                                    "",
                                     "-webkit-border-radius: 100%;",
                                     "border-radius: 100%; /* border radius */",
                                     "-webkit-background-clip: padding-box;",
                                     "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: rgba(51, 73, 93, 0.9);",
+                                    "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.9;"
+                                    "opacity:0.0;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -271,6 +360,56 @@
                                 "style": "object"
                             },
                             "designerId": "e804e05f-22b3-4279-8a30-26c90ebaab24"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": false,
+                                "id": "AchImage",
+                                "left": 15,
+                                "src": "resources/images/button_png/ach.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg11",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "335618aa-bc00-4c0b-b48c-ec77b870066b"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": false,
+                                "id": "AchImageInv",
+                                "left": 15,
+                                "src": "resources/images/button_png/ach_inv.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg14",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "b5e0fd30-c7eb-44b5-ba0d-2d7f6358e0c9"
                         }
                     ]
                 },
@@ -304,19 +443,15 @@
                                 "id": "game",
                                 "left": 6,
                                 "style": [
-                                    "background-image: url('resources/images/button_png/game.png');",
-                                    "background-repeat: no-repeat;",
-                                    "background-positon: 0 0;",
-                                    "background-size: 100%;",
-                                    "background-opacity:0.9;",
+                                    "",
                                     "-webkit-border-radius: 100%;",
                                     "border-radius: 100%; /* border radius */",
                                     "-webkit-background-clip: padding-box;",
                                     "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: rgba(51, 73, 93, 0.9);",
+                                    "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.9;"
+                                    "opacity:0.0;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -328,6 +463,56 @@
                                 "style": "object"
                             },
                             "designerId": "31c7c3e1-c992-46e6-9491-5cc723d9db06"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": true,
+                                "id": "GameImage",
+                                "left": 15,
+                                "src": "resources/images/button_png/game.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg15",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "cfa9ee90-e465-4994-ad18-5f0ec929dbd5"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": true,
+                                "id": "GameImageInv",
+                                "left": 15,
+                                "src": "resources/images/button_png/game_inv.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg16",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "8a4ef32f-1bd1-4b48-b07b-761776cc5d2d"
                         }
                     ]
                 },
@@ -361,19 +546,15 @@
                                 "height": "100%",
                                 "id": "StartButton",
                                 "style": [
-                                    "background-image: url('resources/images/button_png/start.png');",
-                                    "background-repeat: no-repeat;",
-                                    "background-positon: 0 0;",
-                                    "background-size: 124px;",
-                                    "background-opacity:0.9;",
+                                    "",
                                     "-webkit-border-radius: 100%;",
                                     "border-radius: 100%; /* border radius */",
                                     "-webkit-background-clip: padding-box;",
                                     "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: rgba(51, 73, 93, 0.9);",
+                                    "background-color: fff;",
                                     "display:block;",
                                     "font-size:11px;",
-                                    "opacity:0.9;"
+                                    "opacity:0.0;"
                                 ],
                                 "styleHtmlContent": true,
                                 "text": "",
@@ -391,6 +572,56 @@
                                     "type": "string"
                                 }
                             ]
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": true,
+                                "id": "StartImage",
+                                "left": 15,
+                                "src": "resources/images/button_png/start.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg17",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "768115b4-0b1e-46ee-97f3-a80bbfec9d09"
+                        },
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": 70,
+                                "hidden": true,
+                                "id": "StartImageInv",
+                                "left": 15,
+                                "src": "resources/images/button_png/start_inv.png",
+                                "style": [
+                                    "opacity:0.9;"
+                                ],
+                                "top": -3,
+                                "width": 70
+                            },
+                            "name": "MyImg18",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "db303048-d20b-43e1-9d15-9a35adf7e80c"
                         }
                     ]
                 }

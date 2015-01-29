@@ -73,13 +73,36 @@ Ext.define('VosNavigator.view.mainScreen', {
                             {
                                 xtype: 'button',
                                 height: 70,
+                                hidden: false,
                                 id: 'weckerButton',
                                 left: 15,
-                                style: 'background-image: url(\'resources/images/button_png/Wecker.png\') !important;\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
                                 styleHtmlContent: true,
                                 top: -3,
                                 width: 70,
                                 text: ''
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: false,
+                                id: 'WeckerImage',
+                                left: 15,
+                                style: 'oacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/wecker.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'WeckerImageInv',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/wecker_inv.png'
                             }
                         ]
                     },
@@ -96,11 +119,31 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 height: 70,
                                 id: 'settingsButton',
                                 left: 15,
-                                style: 'background-image: url(\'resources/images/button_png/settings.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
                                 styleHtmlContent: true,
                                 top: 0,
                                 width: 70,
                                 text: ''
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: false,
+                                id: 'SettingsImage',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                width: 70,
+                                src: 'resources/images/button_png/settings.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'SettingsImageInv',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                width: 70,
+                                src: 'resources/images/button_png/settings_inv.png'
                             }
                         ]
                     },
@@ -118,11 +161,33 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 height: 70,
                                 id: 'achieveButton',
                                 left: 110,
-                                style: 'background-image: url(\'resources/images/button_png/Achievments.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
                                 styleHtmlContent: true,
                                 top: 20,
                                 width: 70,
                                 text: ''
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: false,
+                                id: 'AchImage',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/ach.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: false,
+                                id: 'AchImageInv',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/ach_inv.png'
                             }
                         ]
                     },
@@ -140,11 +205,33 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 height: 70,
                                 id: 'game',
                                 left: 6,
-                                style: 'background-image: url(\'resources/images/button_png/game.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 100%;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
                                 styleHtmlContent: true,
                                 top: 30,
                                 width: 70,
                                 text: ''
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'GameImage',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/game.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'GameImageInv',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/game_inv.png'
                             }
                         ]
                     },
@@ -161,10 +248,32 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 action: 'start',
                                 height: '100%',
                                 id: 'StartButton',
-                                style: 'background-image: url(\'resources/images/button_png/start.png\');\nbackground-repeat: no-repeat;\nbackground-positon: 0 0;\nbackground-size: 124px;\nbackground-opacity:0.9;\n-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: rgba(51, 73, 93, 0.9);\ndisplay:block;\nfont-size:11px;\nopacity:0.9;',
+                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
                                 styleHtmlContent: true,
                                 width: '100%',
                                 text: ''
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'StartImage',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/start.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'StartImageInv',
+                                left: 15,
+                                style: 'opacity:0.9;',
+                                top: -3,
+                                width: 70,
+                                src: 'resources/images/button_png/start_inv.png'
                             }
                         ]
                     }
