@@ -54,6 +54,7 @@ Ext.define('VosNavigator.view.weckerView', {
                     {
                         xtype: 'togglefield',
                         itemId: 'mytogglefield',
+                        width: '100%',
                         label: 'Wecker ein',
                         labelWidth: '75%',
                         name: 'toggle_alarm',
@@ -94,16 +95,18 @@ Ext.define('VosNavigator.view.weckerView', {
                         items: [
                             {
                                 xtype: 'sliderfield',
-                                itemId: 'mysliderfield',
+                                id: 'weckRadius',
                                 style: 'background: none;\nmargin-left: auto;\nmargin-right: auto;',
                                 styleHtmlContent: true,
                                 width: '90%',
                                 label: '',
-                                maxValue: 2000
+                                maxValue: 2000,
+                                minValue: 200
                             },
                             {
                                 xtype: 'label',
                                 html: '200 m vor dem Zielpunkt',
+                                id: 'sliderValueLabel',
                                 style: 'text-align: center;',
                                 styleHtmlContent: true
                             }

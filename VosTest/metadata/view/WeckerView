@@ -74,7 +74,8 @@
                         "label": "Wecker ein",
                         "labelWidth": "75%",
                         "name": "toggle_alarm",
-                        "value": 1
+                        "value": 1,
+                        "width": "100%"
                     },
                     "name": "MyToggleField",
                     "designerId": "7f70cc16-bd6f-488f-bb54-b82253845ac5",
@@ -213,9 +214,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "itemId": "mysliderfield",
+                                "id": "weckRadius",
+                                "itemId": null,
                                 "label": "",
                                 "maxValue": 2000,
+                                "minValue": 200,
                                 "style": [
                                     "background: none;",
                                     "margin-left: auto;",
@@ -251,6 +254,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "html": "200 m vor dem Zielpunkt",
+                                "id": "sliderValueLabel",
                                 "style": [
                                     "text-align: center;",
                                     ""
