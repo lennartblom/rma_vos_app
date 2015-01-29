@@ -127,6 +127,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
+                                "disabled": null,
                                 "height": 70,
                                 "hidden": false,
                                 "id": "WeckerImage",
@@ -152,6 +154,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": false,
                                 "height": 70,
                                 "hidden": true,
                                 "id": "WeckerImageInv",
@@ -232,6 +235,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
                                 "height": 70,
                                 "hidden": false,
                                 "id": "SettingsImage",
@@ -336,6 +340,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
                                 "height": 70,
                                 "hidden": false,
                                 "id": "AchImage",
@@ -439,6 +444,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
                                 "height": 70,
                                 "hidden": false,
                                 "id": "GameImage",
@@ -542,13 +548,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "centered": true,
                                 "height": "100%",
                                 "hidden": false,
                                 "id": "StartImage",
                                 "left": null,
                                 "src": "resources/images/button_png/start.png",
                                 "style": [
-                                    "opacity:0.9;"
+                                    "opacity:0.9;",
+                                    "display:block;"
                                 ],
                                 "top": 0,
                                 "width": "100%"
