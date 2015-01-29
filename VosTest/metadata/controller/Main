@@ -24,7 +24,7 @@
                 "fn": "startButtonAction",
                 "implHandler": [
                     "",
-                    "",
+                    "naviagtor.notification.beep(2);",
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
