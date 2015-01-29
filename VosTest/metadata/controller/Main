@@ -24,9 +24,8 @@
                 "fn": "startButtonAction",
                 "implHandler": [
                     "",
-                    "this.getStartImageInv().show();",
+                    "",
                     "this.getMainView().hide();",
-                    "this.getStartImageInv().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
