@@ -71,18 +71,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                         width: 100,
                         items: [
                             {
-                                xtype: 'button',
-                                height: 70,
-                                hidden: false,
-                                id: 'weckerButton',
-                                left: 15,
-                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
-                                styleHtmlContent: true,
-                                top: -3,
-                                width: 70,
-                                text: ''
-                            },
-                            {
                                 xtype: 'image',
                                 height: 70,
                                 hidden: false,
@@ -103,6 +91,18 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 top: -3,
                                 width: 70,
                                 src: 'resources/images/button_png/wecker_inv.png'
+                            },
+                            {
+                                xtype: 'button',
+                                height: 70,
+                                hidden: false,
+                                id: 'weckerButton',
+                                left: 15,
+                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
+                                styleHtmlContent: true,
+                                top: -3,
+                                width: 70,
+                                text: ''
                             }
                         ]
                     },
@@ -114,17 +114,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                         top: 70,
                         width: 100,
                         items: [
-                            {
-                                xtype: 'button',
-                                height: 70,
-                                id: 'settingsButton',
-                                left: 15,
-                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
-                                styleHtmlContent: true,
-                                top: 0,
-                                width: 70,
-                                text: ''
-                            },
                             {
                                 xtype: 'image',
                                 height: 70,
@@ -144,6 +133,17 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 style: 'opacity:0.9;',
                                 width: 70,
                                 src: 'resources/images/button_png/settings_inv.png'
+                            },
+                            {
+                                xtype: 'button',
+                                height: 70,
+                                id: 'settingsButton',
+                                left: 15,
+                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
+                                styleHtmlContent: true,
+                                top: 0,
+                                width: 70,
+                                text: ''
                             }
                         ]
                     },
@@ -157,6 +157,28 @@ Ext.define('VosNavigator.view.mainScreen', {
                         width: 180,
                         items: [
                             {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: false,
+                                id: 'AchImage',
+                                left: 110,
+                                style: 'opacity:0.9;',
+                                top: 20,
+                                width: 70,
+                                src: 'resources/images/button_png/ach.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'AchImageInv',
+                                left: 110,
+                                style: 'opacity:0.9;',
+                                top: 20,
+                                width: 70,
+                                src: 'resources/images/button_png/ach_inv.png'
+                            },
+                            {
                                 xtype: 'button',
                                 height: 70,
                                 id: 'achieveButton',
@@ -166,28 +188,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 top: 20,
                                 width: 70,
                                 text: ''
-                            },
-                            {
-                                xtype: 'image',
-                                height: 70,
-                                hidden: false,
-                                id: 'AchImage',
-                                left: 15,
-                                style: 'opacity:0.9;',
-                                top: -3,
-                                width: 70,
-                                src: 'resources/images/button_png/ach.png'
-                            },
-                            {
-                                xtype: 'image',
-                                height: 70,
-                                hidden: false,
-                                id: 'AchImageInv',
-                                left: 15,
-                                style: 'opacity:0.9;',
-                                top: -3,
-                                width: 70,
-                                src: 'resources/images/button_png/ach_inv.png'
                             }
                         ]
                     },
@@ -201,6 +201,28 @@ Ext.define('VosNavigator.view.mainScreen', {
                         width: 100,
                         items: [
                             {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: false,
+                                id: 'GameImage',
+                                left: 6,
+                                style: 'opacity:0.9;',
+                                top: 30,
+                                width: 70,
+                                src: 'resources/images/button_png/game.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: 70,
+                                hidden: true,
+                                id: 'GameImageInv',
+                                left: 6,
+                                style: 'opacity:0.9;',
+                                top: 30,
+                                width: 70,
+                                src: 'resources/images/button_png/game_inv.png'
+                            },
+                            {
                                 xtype: 'button',
                                 height: 70,
                                 id: 'game',
@@ -210,28 +232,6 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 top: 30,
                                 width: 70,
                                 text: ''
-                            },
-                            {
-                                xtype: 'image',
-                                height: 70,
-                                hidden: true,
-                                id: 'GameImage',
-                                left: 15,
-                                style: 'opacity:0.9;',
-                                top: -3,
-                                width: 70,
-                                src: 'resources/images/button_png/game.png'
-                            },
-                            {
-                                xtype: 'image',
-                                height: 70,
-                                hidden: true,
-                                id: 'GameImageInv',
-                                left: 15,
-                                style: 'opacity:0.9;',
-                                top: -3,
-                                width: 70,
-                                src: 'resources/images/button_png/game_inv.png'
                             }
                         ]
                     },
@@ -244,36 +244,35 @@ Ext.define('VosNavigator.view.mainScreen', {
                         width: 124,
                         items: [
                             {
+                                xtype: 'image',
+                                height: '100%',
+                                hidden: false,
+                                id: 'StartImage',
+                                style: 'opacity:0.9;',
+                                top: 0,
+                                width: '100%',
+                                src: 'resources/images/button_png/start.png'
+                            },
+                            {
+                                xtype: 'image',
+                                height: '100%',
+                                hidden: true,
+                                id: 'StartImageInv',
+                                style: 'opacity:0.9;',
+                                top: 0,
+                                width: '100%',
+                                src: 'resources/images/button_png/start_inv.png'
+                            },
+                            {
                                 xtype: 'button',
                                 action: 'start',
                                 height: '100%',
                                 id: 'StartButton',
                                 style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.0;',
                                 styleHtmlContent: true,
+                                top: 0,
                                 width: '100%',
                                 text: ''
-                            },
-                            {
-                                xtype: 'image',
-                                height: 70,
-                                hidden: true,
-                                id: 'StartImage',
-                                left: 15,
-                                style: 'opacity:0.9;',
-                                top: -3,
-                                width: 70,
-                                src: 'resources/images/button_png/start.png'
-                            },
-                            {
-                                xtype: 'image',
-                                height: 70,
-                                hidden: true,
-                                id: 'StartImageInv',
-                                left: 15,
-                                style: 'opacity:0.9;',
-                                top: -3,
-                                width: 70,
-                                src: 'resources/images/button_png/start_inv.png'
                             }
                         ]
                     }
