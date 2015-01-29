@@ -20,19 +20,35 @@ Ext.define('VosNavigator.controller.Settings', {
         refs: {
             settingsBackButton: 'button#settingsBackButton',
             MainView: 'container#MainView',
-            settingsView: 'container#goals1'
+            settingsView: 'container#goals1',
+            mybutton: 'button#mybutton',
+            mysliderfield: 'sliderfield#mysliderfield',
+            labelsettings: 'label#label_settings'
         },
 
         control: {
             "button#settingsBackButton": {
                 tap: 'settingsBackButton'
+            },
+            "button#mybutton": {
+                tap: 'onButtonTap'
             }
         }
     },
 
     settingsBackButton: function(button, e, eOpts) {
+
         this.getSettingsView().hide();
         this.getMainView().show();
+
+    },
+
+    onButtonTap: function(button, e, eOpts) {
+        var slider = Ext.getCmp('slider_id');
+        var label = Ext.getCmp('label_settings');
+        var value = slider.getValue();
+
+        label.setHtml("Lautstärke " + value + "%");
     }
 
 });
