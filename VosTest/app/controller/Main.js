@@ -63,11 +63,7 @@ Ext.define('VosNavigator.controller.Main', {
 
     startButtonAction: function(button, e, eOpts) {
 
-<<<<<<< HEAD
         naviagtor.notification.beep(2);
-=======
-
->>>>>>> c5165dfccb72f6edcb7abee19203d49d7b77c3a4
         this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
     },

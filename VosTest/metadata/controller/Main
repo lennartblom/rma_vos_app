@@ -24,6 +24,7 @@
                 "fn": "startButtonAction",
                 "implHandler": [
                     "",
+<<<<<<< HEAD
                     "naviagtor.notification.beep(2);",
 =======
                     "",
