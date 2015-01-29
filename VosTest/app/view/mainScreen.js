@@ -72,6 +72,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: 70,
                                 hidden: false,
                                 id: 'WeckerImage',
@@ -83,6 +84,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                             },
                             {
                                 xtype: 'image',
+                                centered: false,
                                 height: 70,
                                 hidden: true,
                                 id: 'WeckerImageInv',
@@ -116,6 +118,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: 70,
                                 hidden: false,
                                 id: 'SettingsImage',
@@ -158,6 +161,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: 70,
                                 hidden: false,
                                 id: 'AchImage',
@@ -202,6 +206,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: 70,
                                 hidden: false,
                                 id: 'GameImage',
@@ -245,10 +250,11 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'image',
+                                centered: true,
                                 height: '100%',
                                 hidden: false,
                                 id: 'StartImage',
-                                style: 'opacity:0.9;',
+                                style: 'opacity:0.9;\ndisplay:block;',
                                 top: 0,
                                 width: '100%',
                                 src: 'resources/images/button_png/start.png'
