@@ -20,12 +20,17 @@ Ext.define('VosNavigator.controller.Wecker', {
         refs: {
             weckerBackButton: 'button#weckerBackButton',
             MainView: 'container#MainView',
-            weckerView: 'container#mycontainer1'
+            weckerView: 'container#mycontainer1',
+            weckRadius: 'sliderfield#weckRadius',
+            sliderValueLabel: 'label#sliderValueLabel'
         },
 
         control: {
             "button#weckerBackButton": {
                 tap: 'weckerBackButton'
+            },
+            "sliderfield#weckRadius": {
+                change: 'setWeckRadius'
             }
         }
     },
@@ -33,6 +38,14 @@ Ext.define('VosNavigator.controller.Wecker', {
     weckerBackButton: function(button, e, eOpts) {
         this.getWeckerView().hide();
         this.getMainView().show();
+    },
+
+    setWeckRadius: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        var slider = Ext.getCmp('weckRadius');
+        var label = Ext.getCmp('sliderValueLabel');
+        var value = slider.getValue();
+
+        label.setHtml(value + "m vor dem Zielpunkt");
     }
 
 });

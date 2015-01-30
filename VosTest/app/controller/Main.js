@@ -66,8 +66,14 @@ Ext.define('VosNavigator.controller.Main', {
         this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
         var myMedia = new Media("resources/tones/beep.mp3");
+        for(var i=0;i<20;i++){
+            navigator.vibrate(5000);
+        }
         myMedia.play();
-        navigator.notification.vibrate();
+        navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
+        for(var i=0;i<20;i++){
+            navigator.vibrate(5000);
+        }
 
     },
 

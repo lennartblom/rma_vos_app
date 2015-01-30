@@ -103,7 +103,10 @@
                         "id": "select_music",
                         "itemId": "myselectfield",
                         "label": "Ton",
-                        "name": "select_music"
+                        "name": "select_music",
+                        "options": [
+                            "[{text:\"Super Mario Tune\", value: 0},{text:\"The Legend of Zelda  Tune\", value: 1},{text:\"Tune\", value: 2}]"
+                        ]
                     },
                     "name": "MySelectField",
                     "designerId": "b7b83d63-7401-4176-bd00-29bf4f310665",

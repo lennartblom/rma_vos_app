@@ -72,6 +72,57 @@
             },
             "name": "weckerView",
             "designerId": "3a280f06-082a-4e53-ba7d-7267ac91a42b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckRadius",
+                "selector": "sliderfield#weckRadius"
+            },
+            "name": "weckRadius",
+            "designerId": "a3dad416-3c41-437a-9912-2a191985d5b7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "sliderValueLabel",
+                "selector": "label#sliderValueLabel"
+            },
+            "name": "sliderValueLabel",
+            "designerId": "0dd17fb4-f434-4a24-a302-04ce6fbc0419"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#weckRadius",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "setWeckRadius",
+                "implHandler": [
+                    "var slider = Ext.getCmp('weckRadius');",
+                    "var label = Ext.getCmp('sliderValueLabel');",
+                    "var value = slider.getValue();",
+                    "",
+                    "label.setHtml(value + \"m vor dem Zielpunkt\");"
+                ],
+                "name": "change"
+            },
+            "name": "setWeckRadius",
+            "designerId": "e74452d1-adb6-4c40-91f1-12266b233aa4"
         }
     ]
 }

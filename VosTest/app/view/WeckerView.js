@@ -65,7 +65,21 @@ Ext.define('VosNavigator.view.weckerView', {
                         id: 'select_music',
                         itemId: 'myselectfield',
                         label: 'Ton',
-                        name: 'select_music'
+                        name: 'select_music',
+                        options: [
+                            {
+                                text: 'Super Mario Tune',
+                                value: 0
+                            },
+                            {
+                                text: 'The Legend of Zelda  Tune',
+                                value: 1
+                            },
+                            {
+                                text: 'Tune',
+                                value: 2
+                            }
+                        ]
                     },
                     {
                         xtype: 'checkboxfield',
