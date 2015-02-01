@@ -213,7 +213,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "slider_id",
-                                "itemId": "mysliderfield",
+                                "itemId": "slider_id",
                                 "label": "Field",
                                 "value": [
                                     24

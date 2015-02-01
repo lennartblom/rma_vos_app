@@ -139,6 +139,48 @@
             },
             "name": "labelsettings",
             "designerId": "b15e8846-9dd3-4057-9913-41646db45af3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#slider_id",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "onSliderDrag",
+                "implHandler": [
+                    "var slider = Ext.getCmp('slider_id');",
+                    "var label = Ext.getCmp('label_settings');",
+                    "var value = slider.getValue();",
+                    "",
+                    "label.setHtml(\"Lautstärke \" + value + \"%\");"
+                ],
+                "name": "drag"
+            },
+            "name": "onSliderDrag",
+            "designerId": "5f33f922-0db6-4b40-b922-e2781298a8b2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#slider_id",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "onSliderChange",
+                "implHandler": [
+                    "me.up(\"#slider_id\").down(\"#label_settings\").setHtml(newValue);"
+                ],
+                "name": "change"
+            },
+            "name": "onSliderChange",
+            "designerId": "302bc4ee-13d2-493a-af31-f5c78007d557"
         }
     ]
 }

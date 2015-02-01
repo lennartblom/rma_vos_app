@@ -102,7 +102,7 @@ Ext.define('VosNavigator.view.settingsView', {
                             {
                                 xtype: 'sliderfield',
                                 id: 'slider_id',
-                                itemId: 'mysliderfield',
+                                itemId: 'slider_id',
                                 label: 'Field',
                                 value: [
                                     24

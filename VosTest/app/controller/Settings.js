@@ -32,6 +32,10 @@ Ext.define('VosNavigator.controller.Settings', {
             },
             "button#mybutton": {
                 tap: 'onButtonTap'
+            },
+            "sliderfield#slider_id": {
+                drag: 'onSliderDrag',
+                change: 'onSliderChange'
             }
         }
     },
@@ -49,6 +53,18 @@ Ext.define('VosNavigator.controller.Settings', {
         var value = slider.getValue();
 
         label.setHtml("Lautstärke " + value + "%");
+    },
+
+    onSliderDrag: function(sliderfield, sl, thumb, e, eOpts) {
+        var slider = Ext.getCmp('slider_id');
+        var label = Ext.getCmp('label_settings');
+        var value = slider.getValue();
+
+        label.setHtml("Lautstärke " + value + "%");
+    },
+
+    onSliderChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        me.up("#slider_id").down("#label_settings").setHtml(newValue);
     }
 
 });
