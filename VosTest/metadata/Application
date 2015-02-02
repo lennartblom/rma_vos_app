@@ -14,7 +14,13 @@
             "Wecker",
             "Achievements"
         ],
+        "models": [
+            "stop"
+        ],
         "name": "VosNavigator",
+        "stores": [
+            "stops"
+        ],
         "views": [
             "fahrplanerView",
             "goalsView",
@@ -22,7 +28,8 @@
             "InitialView",
             "achView",
             "weckerView",
-            "mainScreen"
+            "mainScreen",
+            "MySearchField"
         ]
     },
     "name": "Application1",

@@ -20,12 +20,17 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         refs: {
             MainView: '#MainView',
             fahrplanerBackButton: '#fahrplanerBackButton',
-            FahrplanerView: '#FahrplanerView'
+            FahrplanerView: '#FahrplanerView',
+            mybutton: 'button#mybutton',
+            lineOne: 'dataview#lineOne'
         },
 
         control: {
             "button#fahrplanerBackButton": {
                 tap: 'fahrplanerBackButton'
+            },
+            "button#mybutton": {
+                tap: 'storeTest'
             }
         }
     },
@@ -33,6 +38,10 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     fahrplanerBackButton: function(button, e, eOpts) {
         this.getFahrplanerView().hide();
         this.getMainView().show();
+    },
+
+    storeTest: function(button, e, eOpts) {
+        this.stops.filter("id", 250);
     }
 
 });

@@ -72,6 +72,53 @@
             },
             "name": "FahrplanerView",
             "designerId": "df3bf0db-0393-4b7d-8d0c-1b004cf3a9b3"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mybutton",
+                "selector": "button#mybutton"
+            },
+            "name": "mybutton",
+            "designerId": "45b698a7-2d84-461e-b11d-30dc02a52e28"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#mybutton",
+                "designer|targetType": "Ext.Button",
+                "fn": "storeTest",
+                "implHandler": [
+                    "this.stops.filter(\"id\", 250);"
+                ],
+                "name": "tap"
+            },
+            "name": "storeTest",
+            "designerId": "186e2bc3-1083-41d2-8557-e7676e21d121"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "lineOne",
+                "selector": "dataview#lineOne"
+            },
+            "name": "lineOne",
+            "designerId": "d0bb6b69-cc7a-4985-986c-7029cf6058e9"
         }
     ]
 }
