@@ -161,8 +161,9 @@
                     "this.shortestPath = true;",
                     "this.weckerKlingeltMehrfach=false;",
                     "this.tune = \"superMario.mp3\";",
-                    "this.geo = {latitude:0.0,",
-                    "            longitude:0.0};",
+                    "this.geo = null;",
+                    "this.lat = 0.0;",
+                    "this.lng = 0.0;",
                     "this.trackingId = 0;",
                     "this.activeInterval=0;"
                 ]
@@ -299,47 +300,6 @@
             "codeClass": null,
             "userConfig": {
                 "designer|params": [
-                    "position"
-                ],
-                "fn": "onSuccess",
-                "implHandler": [
-                    "console.log(\"position latitude \"+position.coords.latitude);",
-                    "this.geo.latitude = position.coords.latitude;",
-                    "this.geo.longitude = position.coords.longitude;",
-                    ""
-                ]
-            },
-            "name": "onSuccess",
-            "designerId": "899d5432-5ac6-4d8e-b622-6f0c71185949"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "error"
-                ],
-                "fn": "onError",
-                "implHandler": [
-                    "alert(\"geo error!!\");"
-                ]
-            },
-            "name": "onError",
-            "designerId": "b7a2d8f8-43b6-47d8-9281-533643aa268b"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
                     "isTracking"
                 ],
                 "fn": "getGeo",
@@ -372,12 +332,28 @@
                 ],
                 "fn": "setupGeoTimer",
                 "implHandler": [
-                    "this.activeInterval = setInterval(function(){",
-                    "    navigator.geolocation.getCurrentPosition(",
+                    "this.activeInterval = setInterval(saveGeo,interval);"
+                ]
+            },
+            "name": "setupGeoTimer",
+            "designerId": "b51606a9-f243-415a-997c-a233c5cbc4a8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "saveGeo",
+                "implHandler": [
+                    "console.log(\"saveGeo wurde aufgerufen.\");",
+                    "var geoObject = navigator.geolocation.getCurrentPosition(",
                     "        function(){",
-                    "        this.geo.lat = position.coords.latitude;",
-                    "        this.geo.lng = position.coords.longitude;",
-                    "        console.log(\"aktueller Pace lat: \"+this.geo.lat+\"/naktueller pace lng: \"+this.geo.lng);",
+                    "            console.log(position.coords.latitude);",
+                    "            console.log(position.coords.longitude);",
+                    "",
                     "        },",
                     "        function(){",
                     "            console.log(\"error while paceing\");",
@@ -385,11 +361,11 @@
                     "        {",
                     "            enableHighAccuracy: true",
                     "        });",
-                    "},interval);"
+                    "console.log(geoObject);"
                 ]
             },
-            "name": "setupGeoTimer",
-            "designerId": "b51606a9-f243-415a-997c-a233c5cbc4a8"
+            "name": "saveGeo",
+            "designerId": "01fb4c26-0acf-45a9-a492-ca0c192e948c"
         }
     ]
 }

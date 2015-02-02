@@ -79,8 +79,9 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.shortestPath = true;
         this.weckerKlingeltMehrfach=false;
         this.tune = "superMario.mp3";
-        this.geo = {latitude:0.0,
-                    longitude:0.0};
+        this.geo = null;
+        this.lat = 0.0;
+        this.lng = 0.0;
         this.trackingId = 0;
         this.activeInterval=0;
     },
@@ -97,17 +98,6 @@ Ext.define('VosNavigator.controller.Wecker', {
         navigator.vibrate(1);
     },
 
-    onSuccess: function(position) {
-        console.log("position latitude "+position.coords.latitude);
-        this.geo.latitude = position.coords.latitude;
-        this.geo.longitude = position.coords.longitude;
-
-    },
-
-    onError: function(error) {
-        alert("geo error!!");
-    },
-
     getGeo: function(isTracking) {
         var pace = this.getApplication().getController('Settings').sliderPace;
 
@@ -122,12 +112,16 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     setupGeoTimer: function(interval) {
-        this.activeInterval = setInterval(function(){
-            navigator.geolocation.getCurrentPosition(
+        this.activeInterval = setInterval(saveGeo,interval);
+    },
+
+    saveGeo: function() {
+        console.log("saveGeo wurde aufgerufen.");
+        var geoObject = navigator.geolocation.getCurrentPosition(
                 function(){
-                this.geo.lat = position.coords.latitude;
-                this.geo.lng = position.coords.longitude;
-                console.log("aktueller Pace lat: "+this.geo.lat+"/naktueller pace lng: "+this.geo.lng);
+                    console.log(position.coords.latitude);
+                    console.log(position.coords.longitude);
+
                 },
                 function(){
                     console.log("error while paceing");
@@ -135,7 +129,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                 {
                     enableHighAccuracy: true
                 });
-        },interval);
+        console.log(geoObject);
     }
 
 });
