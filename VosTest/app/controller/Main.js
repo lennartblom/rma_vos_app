@@ -62,10 +62,11 @@ Ext.define('VosNavigator.controller.Main', {
     },
 
     startButtonAction: function(button, e, eOpts) {
-
+        var selectedTune = this.getController("Wecker").tune;
         this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
-        var myMedia = new Media("resources/tones/beep.mp3");
+        var resource = "resources/tones" + selectedTune;
+        var myMedia = new Media(resource);
         for(var i=0;i<20;i++){
             navigator.vibrate(5000);
         }

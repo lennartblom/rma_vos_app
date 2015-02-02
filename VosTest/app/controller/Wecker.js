@@ -22,7 +22,11 @@ Ext.define('VosNavigator.controller.Wecker', {
             MainView: 'container#MainView',
             weckerView: 'container#mycontainer1',
             weckRadius: 'sliderfield#weckRadius',
-            sliderValueLabel: 'label#sliderValueLabel'
+            sliderValueLabel: 'label#sliderValueLabel',
+            weckerOnOffSwitch: 'togglefield#weckerOnOffSwitch',
+            selectTune: 'selectfield#selectTune',
+            shortestPath: 'checkboxfield#shortestPath',
+            mehrfachKlingelnOnOffSwitch: 'togglefield#mehrfachKlingelnOnOffSwitch'
         },
 
         control: {
@@ -31,6 +35,12 @@ Ext.define('VosNavigator.controller.Wecker', {
             },
             "sliderfield#weckRadius": {
                 change: 'setWeckRadius'
+            },
+            "togglefield": {
+                change: 'onTogglefieldChange'
+            },
+            "selectfield": {
+                change: 'onSelectfieldChange'
             }
         }
     },
@@ -41,11 +51,26 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     setWeckRadius: function(me, sl, thumb, newValue, oldValue, eOpts) {
-        var slider = Ext.getCmp('weckRadius');
-        var label = Ext.getCmp('sliderValueLabel');
-        var value = slider.getValue();
 
-        label.setHtml(value + "m vor dem Zielpunkt");
+        this.sliderValue = newValue;
+        Ext.getCmp('sliderValueLabel').setHtml(this.sliderValue + "m vor dem Zielpunkt");
+    },
+
+    onTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
+        this.weckerIsOn=newValue;
+
+    },
+
+    onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
+        this.tune = newValue;
+    },
+
+    init: function(application) {
+        this.sliderValue = 200;
+        this.weckerIsOn = true;
+        this.shortestPath = true;
+        this.weckerKlingeltMehrfach=false;
+        this.tune = "superMario.mp3";
     }
 
 });

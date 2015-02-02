@@ -23,10 +23,11 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "startButtonAction",
                 "implHandler": [
-                    "",
+                    "var selectedTune = this.getController(\"Wecker\").tune;",
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
-                    "var myMedia = new Media(\"resources/tones/beep.mp3\");",
+                    "var resource = \"resources/tones\" + selectedTune;",
+                    "var myMedia = new Media(resource);",
                     "for(var i=0;i<20;i++){",
                     "    navigator.vibrate(5000);",
                     "}",
@@ -429,21 +430,6 @@
             },
             "name": "weckerImage",
             "designerId": "cc7c7109-a320-4bee-8699-2888289e4057"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#StartButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "startButtonPressed"
-            },
-            "name": "startButtonPressed",
-            "designerId": "8a40e0d1-f3ae-48e0-a9aa-efdcf96f75ed"
         }
     ]
 }

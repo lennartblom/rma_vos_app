@@ -53,7 +53,7 @@ Ext.define('VosNavigator.view.weckerView', {
                 items: [
                     {
                         xtype: 'togglefield',
-                        itemId: 'mytogglefield',
+                        id: 'weckerOnOffSwitch',
                         width: '100%',
                         label: 'Wecker ein',
                         labelWidth: '75%',
@@ -62,37 +62,33 @@ Ext.define('VosNavigator.view.weckerView', {
                     },
                     {
                         xtype: 'selectfield',
-                        id: 'select_music',
-                        itemId: 'myselectfield',
+                        id: 'selectTune',
                         label: 'Ton',
-                        name: 'select_music',
                         options: [
                             {
                                 text: 'Super Mario Tune',
-                                value: 0
+                                value: 'superMario.mp3'
                             },
                             {
-                                text: 'The Legend of Zelda  Tune',
-                                value: 1
+                                text: 'The Legend of Zelda Tune',
+                                value: 'zelda.mp3'
                             },
                             {
-                                text: 'Tune',
-                                value: 2
+                                text: 'Monkey Island Tune',
+                                value: 'monkeyIsland.mp3'
                             }
                         ]
                     },
                     {
                         xtype: 'checkboxfield',
-                        id: 'link_verbindung',
-                        itemId: 'mycheckbox3',
+                        id: 'shortestPath',
                         label: 'Kürzester Weg',
                         labelWidth: '80%',
                         name: 'link_verbindung'
                     },
                     {
                         xtype: 'togglefield',
-                        id: 'toggle_alarmStop',
-                        itemId: 'mytogglefield1',
+                        id: 'mehrfachKlingelnOnOffSwitch',
                         label: 'Mehrfach klingeln',
                         labelWidth: '75%',
                         name: 'toggle_alarmStop'
@@ -100,6 +96,7 @@ Ext.define('VosNavigator.view.weckerView', {
                     {
                         xtype: 'label',
                         html: 'Alarm vor jedem Umstieg',
+                        id: 'schriftzug',
                         styleHtmlContent: true
                     },
                     {

@@ -113,16 +113,132 @@
                 "designer|targetType": "Ext.field.Slider",
                 "fn": "setWeckRadius",
                 "implHandler": [
-                    "var slider = Ext.getCmp('weckRadius');",
-                    "var label = Ext.getCmp('sliderValueLabel');",
-                    "var value = slider.getValue();",
                     "",
-                    "label.setHtml(value + \"m vor dem Zielpunkt\");"
+                    "this.sliderValue = newValue;",
+                    "Ext.getCmp('sliderValueLabel').setHtml(this.sliderValue + \"m vor dem Zielpunkt\");"
                 ],
                 "name": "change"
             },
             "name": "setWeckRadius",
             "designerId": "e74452d1-adb6-4c40-91f1-12266b233aa4"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.sliderValue = 200;",
+                    "this.weckerIsOn = true;",
+                    "this.shortestPath = true;",
+                    "this.weckerKlingeltMehrfach=false;",
+                    "this.tune = \"superMario.mp3\";"
+                ]
+            },
+            "name": "init",
+            "designerId": "2b03c1d5-c1cc-4b1b-a16a-b3db4ec100e3"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerOnOffSwitch",
+                "selector": "togglefield#weckerOnOffSwitch"
+            },
+            "name": "weckerOnOffSwitch",
+            "designerId": "83f12b91-1c87-4558-ab22-dec83cb30791"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "selectTune",
+                "selector": "selectfield#selectTune"
+            },
+            "name": "selectTune",
+            "designerId": "20a5c0c2-5b93-4cae-8df3-5b473ac54b4b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "shortestPath",
+                "selector": "checkboxfield#shortestPath"
+            },
+            "name": "shortestPath",
+            "designerId": "e10aacb2-ce32-4a46-a1aa-876d0b18d6b5"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mehrfachKlingelnOnOffSwitch",
+                "selector": "togglefield#mehrfachKlingelnOnOffSwitch"
+            },
+            "name": "mehrfachKlingelnOnOffSwitch",
+            "designerId": "f51d98ae-c6b6-442f-a8d3-97c1e8d5b9c0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "togglefield",
+                "designer|targetType": "Ext.field.Toggle",
+                "fn": "onTogglefieldChange",
+                "implHandler": [
+                    "this.weckerIsOn=newValue;",
+                    ""
+                ],
+                "name": "change"
+            },
+            "name": "onTogglefieldChange",
+            "designerId": "b78c47aa-e429-403c-bd38-d6a662e7648c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "selectfield",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onSelectfieldChange",
+                "implHandler": [
+                    "this.tune = newValue;"
+                ],
+                "name": "change"
+            },
+            "name": "onSelectfieldChange",
+            "designerId": "fc26925e-ad75-4530-985d-996fa028860c"
         }
     ]
 }
