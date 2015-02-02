@@ -75,7 +75,6 @@
                         "label": "Wecker ein",
                         "labelWidth": "75%",
                         "name": "toggle_alarm",
-                        "value": 1,
                         "width": "100%"
                     },
                     "name": "MyToggleField",

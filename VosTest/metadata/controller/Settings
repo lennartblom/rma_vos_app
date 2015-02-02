@@ -104,29 +104,6 @@
             "designerId": "2ce431ba-5194-4e54-b10e-89fdfc635372"
         },
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#mybutton",
-                "designer|targetType": "Ext.Button",
-                "fn": "onButtonTap",
-                "implHandler": [
-                    "var slider = Ext.getCmp('slider_id');",
-                    "var label = Ext.getCmp('label_settings');",
-                    "var value = slider.getValue();",
-                    "",
-                    "label.setHtml(\"Lautstärke \" + value + \"%\");"
-                ],
-                "name": "tap"
-            },
-            "name": "onButtonTap",
-            "designerId": "e40382bf-e6ee-4d0a-8812-2c04a61a6925"
-        },
-        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -139,6 +116,46 @@
             },
             "name": "labelsettings",
             "designerId": "b15e8846-9dd3-4057-9913-41646db45af3"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.sliderPace = 30;"
+                ]
+            },
+            "name": "init",
+            "designerId": "2fa0a79d-8463-4e65-88ea-6f7cb23e047e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#gpsPace",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "getPace",
+                "implHandler": [
+                    "this.sliderPace = newValue;",
+                    "var label = Ext.getCmp('label_settings');",
+                    "label.setHtml(\"Aktuelle Position wird im \"+this.sliderPace+\" Sekunden Takt überprüft.\");"
+                ],
+                "name": "change"
+            },
+            "name": "getPace",
+            "designerId": "094449c1-4b7c-4773-87f3-7176f7cb66bb"
         }
     ]
 }

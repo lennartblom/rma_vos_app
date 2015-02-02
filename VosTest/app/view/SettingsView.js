@@ -86,11 +86,6 @@ Ext.define('VosNavigator.view.settingsView', {
                         width: '100%',
                         items: [
                             {
-                                xtype: 'button',
-                                itemId: 'mybutton',
-                                text: 'MyButton'
-                            },
-                            {
                                 xtype: 'togglefield',
                                 label: 'Field'
                             },
@@ -101,18 +96,26 @@ Ext.define('VosNavigator.view.settingsView', {
                             },
                             {
                                 xtype: 'sliderfield',
-                                id: 'slider_id',
-                                itemId: 'mysliderfield',
-                                label: 'Field',
+                                id: 'gpsPace',
+                                label: 'GPS Pace',
                                 value: [
-                                    24
-                                ]
+                                    30
+                                ],
+                                maxValue: 120,
+                                minValue: 5
                             },
                             {
                                 xtype: 'label',
-                                html: '',
+                                html: 'Aktuelle Position wird im 30 Sekunden Takt überprüft.',
                                 id: 'label_settings',
                                 margin: '5px'
+                            },
+                            {
+                                xtype: 'label',
+                                html: '<p>Je häufiger die Position überprüft wird, desto mehr Strom wird verbraucht.</p>',
+                                id: 'info',
+                                margin: '5px',
+                                style: 'opacity:0.7;'
                             }
                         ]
                     }

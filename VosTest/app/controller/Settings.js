@@ -30,8 +30,8 @@ Ext.define('VosNavigator.controller.Settings', {
             "button#settingsBackButton": {
                 tap: 'settingsBackButton'
             },
-            "button#mybutton": {
-                tap: 'onButtonTap'
+            "sliderfield#gpsPace": {
+                change: 'getPace'
             }
         }
     },
@@ -43,12 +43,14 @@ Ext.define('VosNavigator.controller.Settings', {
 
     },
 
-    onButtonTap: function(button, e, eOpts) {
-        var slider = Ext.getCmp('slider_id');
+    getPace: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        this.sliderPace = newValue;
         var label = Ext.getCmp('label_settings');
-        var value = slider.getValue();
+        label.setHtml("Aktuelle Position wird im "+this.sliderPace+" Sekunden Takt überprüft.");
+    },
 
-        label.setHtml("Lautstärke " + value + "%");
+    init: function(application) {
+        this.sliderPace = 30;
     }
 
 });

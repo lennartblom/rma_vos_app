@@ -136,10 +136,11 @@
                 "fn": "init",
                 "implHandler": [
                     "this.sliderValue = 200;",
-                    "this.weckerIsOn = true;",
+                    "this.weckerIsOn = false;",
                     "this.shortestPath = true;",
                     "this.weckerKlingeltMehrfach=false;",
-                    "this.tune = \"superMario.mp3\";"
+                    "this.tune = \"superMario.mp3\";",
+                    "this.geo = null;"
                 ]
             },
             "name": "init",
@@ -214,7 +215,9 @@
                 "fn": "onTogglefieldChange",
                 "implHandler": [
                     "this.weckerIsOn=newValue;",
-                    ""
+                    "if(this.weckerIsOn){",
+                    "    this.getGeo();",
+                    "}"
                 ],
                 "name": "change"
             },
@@ -263,6 +266,26 @@
             },
             "name": "wecken",
             "designerId": "80917b31-04d4-497e-9e12-2f5163310ecb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getGeo",
+                "implHandler": [
+                    "this.geo = navigator.geolocation.getCurrentPosition();",
+                    "if(this.weckerIsOn){",
+                    "    setTimeout(this.getGeo(), this.getApplication().getController('Settings').sliderPace*1000);",
+                    "    alert(this.geo.coords.latitude);",
+                    "}"
+                ]
+            },
+            "name": "getGeo",
+            "designerId": "272e5b59-9315-4f57-aee7-c12889896990"
         }
     ]
 }

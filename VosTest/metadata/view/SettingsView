@@ -164,20 +164,6 @@
                     "designerId": "1c2791e0-788d-4978-aaec-8e1f91da65c3",
                     "cn": [
                         {
-                            "type": "Ext.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemId": "mybutton",
-                                "text": "MyButton"
-                            },
-                            "name": "MyButton",
-                            "designerId": "6f81168e-b45a-494a-8ffe-5d9e19625a0e"
-                        },
-                        {
                             "type": "Ext.field.Toggle",
                             "reference": {
                                 "name": "items",
@@ -212,11 +198,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "slider_id",
-                                "itemId": "mysliderfield",
-                                "label": "Field",
+                                "id": "gpsPace",
+                                "itemId": null,
+                                "label": "GPS Pace",
+                                "maxValue": 120,
+                                "minValue": 5,
                                 "value": [
-                                    24
+                                    30
                                 ]
                             },
                             "name": "MySliderField",
@@ -231,12 +219,35 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|displayName": "",
-                                "html": "",
+                                "html": "Aktuelle Position wird im 30 Sekunden Takt überprüft.",
                                 "id": "label_settings",
                                 "margin": "5px"
                             },
                             "name": "MyLabel",
                             "designerId": "bdaabb9a-4509-415a-bee7-2b3079aa2035"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "",
+                                "html": "<p>Je häufiger die Position überprüft wird, desto mehr Strom wird verbraucht.</p>",
+                                "id": "info",
+                                "margin": "5px",
+                                "style": [
+                                    "opacity:0.7;",
+                                    ""
+                                ]
+                            },
+                            "name": "MyLabel3",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "ee4990f5-8f4b-445d-8196-943afdcd26a3"
                         }
                     ]
                 }

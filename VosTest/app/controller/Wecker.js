@@ -58,7 +58,9 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     onTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
         this.weckerIsOn=newValue;
-
+        if(this.weckerIsOn){
+            this.getGeo();
+        }
     },
 
     onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
@@ -67,10 +69,11 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     init: function(application) {
         this.sliderValue = 200;
-        this.weckerIsOn = true;
+        this.weckerIsOn = false;
         this.shortestPath = true;
         this.weckerKlingeltMehrfach=false;
         this.tune = "superMario.mp3";
+        this.geo = null;
     },
 
     wecken: function() {
@@ -83,6 +86,14 @@ Ext.define('VosNavigator.controller.Wecker', {
         navigator.vibrate(1);
         navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
         navigator.vibrate(1);
+    },
+
+    getGeo: function() {
+        this.geo = navigator.geolocation.getCurrentPosition();
+        if(this.weckerIsOn){
+            setTimeout(this.getGeo(), this.getApplication().getController('Settings').sliderPace*1000);
+            alert(this.geo.coords.latitude);
+        }
     }
 
 });

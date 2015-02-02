@@ -57,8 +57,7 @@ Ext.define('VosNavigator.view.weckerView', {
                         width: '100%',
                         label: 'Wecker ein',
                         labelWidth: '75%',
-                        name: 'toggle_alarm',
-                        value: 1
+                        name: 'toggle_alarm'
                     },
                     {
                         xtype: 'selectfield',
