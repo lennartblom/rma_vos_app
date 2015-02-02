@@ -148,7 +148,8 @@
                 "designer|targetType": "Ext.field.Slider",
                 "fn": "getPace",
                 "implHandler": [
-                    "me.up(\"#mysliderfield\").down(\"#label_settings\").setHtml(\"Aktuelle Position wird im \"+newValue+\" Sekunden Takt überprüft.\");"
+                    "me.up(\"#mysliderfield\").down(\"#label_settings\").setHtml(\"Aktuelle Position wird im \"+newValue+\" Sekunden Takt überprüft.\");",
+                    "this.sliderPace = newValue;"
                 ],
                 "name": "change"
             },
@@ -169,7 +170,8 @@
                 "implHandler": [
                     "var slider = sliderfield.getComponent();",
                     "var label = Ext.getCmp('label_settings');",
-                    "label.setHtml(\"Aktuelle Position wird im \"+slider.getValue()+\" Sekunden Takt überprüft.\");"
+                    "label.setHtml(\"Aktuelle Position wird im \"+slider.getValue()+\" Sekunden Takt überprüft.\");",
+                    "this.sliderPace = slider.getValue();"
                 ],
                 "name": "drag"
             },

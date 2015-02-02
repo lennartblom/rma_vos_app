@@ -113,14 +113,35 @@
                 "designer|targetType": "Ext.field.Slider",
                 "fn": "setWeckRadius",
                 "implHandler": [
-                    "",
-                    "this.sliderValue = newValue;",
-                    "Ext.getCmp('sliderValueLabel').setHtml(this.sliderValue + \"m vor dem Zielpunkt\");"
+                    "me.up(\"#weckradius\").down(\"#sliderValueLabel\").setHtml(newValue + \"m vor dem Ziel\");",
+                    "this.sliderValue = newValue;"
                 ],
                 "name": "change"
             },
             "name": "setWeckRadius",
             "designerId": "e74452d1-adb6-4c40-91f1-12266b233aa4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#weckRadius",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "onSliderfieldDrag",
+                "implHandler": [
+                    "var slider = sliderfield.getComponent();",
+                    "var label = Ext.getCmp('sliderValueLabel');",
+                    "label.setHtml(slider.getValue()+\"m vor dem Zielpunkt\");",
+                    "this.sliderValue = slider.getValue();"
+                ],
+                "name": "drag"
+            },
+            "name": "onSliderfieldDrag",
+            "designerId": "06b3bd79-2abd-43d7-a29e-c4bfe792174b"
         },
         {
             "type": "fixedfunction",

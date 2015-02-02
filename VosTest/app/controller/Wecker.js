@@ -34,7 +34,8 @@ Ext.define('VosNavigator.controller.Wecker', {
                 tap: 'weckerBackButton'
             },
             "sliderfield#weckRadius": {
-                change: 'setWeckRadius'
+                change: 'setWeckRadius',
+                drag: 'onSliderfieldDrag'
             },
             "togglefield": {
                 change: 'onTogglefieldChange'
@@ -51,9 +52,15 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     setWeckRadius: function(me, sl, thumb, newValue, oldValue, eOpts) {
-
+        me.up("#weckradius").down("#sliderValueLabel").setHtml(newValue + "m vor dem Ziel");
         this.sliderValue = newValue;
-        Ext.getCmp('sliderValueLabel').setHtml(this.sliderValue + "m vor dem Zielpunkt");
+    },
+
+    onSliderfieldDrag: function(sliderfield, sl, thumb, e, eOpts) {
+        var slider = sliderfield.getComponent();
+        var label = Ext.getCmp('sliderValueLabel');
+        label.setHtml(slider.getValue()+"m vor dem Zielpunkt");
+        this.sliderValue = slider.getValue();
     },
 
     onTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
