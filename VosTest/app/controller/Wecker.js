@@ -88,14 +88,14 @@ Ext.define('VosNavigator.controller.Wecker', {
         navigator.vibrate(1);
     },
 
-    safeGeo: function(position) {
+    onSucces: function(position) {
         console.log("position latitude "+position.coords.latitude);
         this.geo.latitude = position.coords.latitude;
         this.geo.longitude = position.coords.longitude;
 
     },
 
-    onGeoError: function(error) {
+    onError: function(error) {
         alert("geo error!!");
     },
 
@@ -104,9 +104,8 @@ Ext.define('VosNavigator.controller.Wecker', {
         var pace = this.getApplication().getController('Settings').sliderPace;
         if(isTracking){
             console.log("device is tracking");
-            this.trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:
-            pace*1000, enableHighAccuracy: true});
-            console.log("first Track");
+            this.trackingID = navigator.geolocation.watchPosition(onSuccess, onError,{frequency:1000});
+            console.log("first Track succesfull");
         }else{
             navigator.geolocation.clear(this.trackingID);
         }

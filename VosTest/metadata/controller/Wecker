@@ -278,7 +278,7 @@
                 "designer|params": [
                     "position"
                 ],
-                "fn": "safeGeo",
+                "fn": "onSucces",
                 "implHandler": [
                     "console.log(\"position latitude \"+position.coords.latitude);",
                     "this.geo.latitude = position.coords.latitude;",
@@ -286,7 +286,7 @@
                     ""
                 ]
             },
-            "name": "safeGeo",
+            "name": "onSucces",
             "designerId": "899d5432-5ac6-4d8e-b622-6f0c71185949"
         },
         {
@@ -300,12 +300,12 @@
                 "designer|params": [
                     "error"
                 ],
-                "fn": "onGeoError",
+                "fn": "onError",
                 "implHandler": [
                     "alert(\"geo error!!\");"
                 ]
             },
-            "name": "onGeoError",
+            "name": "onError",
             "designerId": "b7a2d8f8-43b6-47d8-9281-533643aa268b"
         },
         {
@@ -325,9 +325,8 @@
                     "var pace = this.getApplication().getController('Settings').sliderPace;",
                     "if(isTracking){",
                     "    console.log(\"device is tracking\");",
-                    "    this.trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:",
-                    "    pace*1000, enableHighAccuracy: true});",
-                    "    console.log(\"first Track\");",
+                    "    this.trackingID = navigator.geolocation.watchPosition(onSuccess, onError,{frequency:1000});",
+                    "    console.log(\"first Track succesfull\");",
                     "}else{",
                     "    navigator.geolocation.clear(this.trackingID);",
                     "}"
