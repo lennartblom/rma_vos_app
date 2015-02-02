@@ -58,6 +58,7 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     onTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
         this.weckerIsOn=newValue;
+        console.log("Toggle Field value: "+newValue);
         this.getGeo(newValue);
     },
 
@@ -71,7 +72,8 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.shortestPath = true;
         this.weckerKlingeltMehrfach=false;
         this.tune = "superMario.mp3";
-        this.geo = null;
+        this.geo = {latitude:null,longitude:null};
+        this.trackingId = 0;
     },
 
     wecken: function() {
@@ -88,8 +90,8 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     safeGeo: function(position) {
         this.geo.latitude = position.coords.latitude;
-        this.geo.longtitude = position.coords.longitude;
-        alert(this.geo.latitude+"/n"+this.geo.latitude);
+        this.geo.longitude = position.coords.longitude;
+        alert(this.geo.latitude+"/n"+this.geo.longitude);
     },
 
     onGeoError: function(error) {
@@ -97,13 +99,14 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     getGeo: function(isTracking) {
+        alert("geotracking enaled");
         var pace = this.getApplication().getController('Settings').sliderPace;
-        var trackingID =0;
         if(isTracking){
-            trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:
+            alert("device is tracking");
+            this.trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:
             pace*1000, enableHighAccuracy: true});
         }else{
-            navigator.geolocation.clear(trackingID);
+            navigator.geolocation.clear(this.trackingID);
         }
     }
 

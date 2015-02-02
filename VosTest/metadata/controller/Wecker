@@ -140,7 +140,8 @@
                     "this.shortestPath = true;",
                     "this.weckerKlingeltMehrfach=false;",
                     "this.tune = \"superMario.mp3\";",
-                    "this.geo = null;"
+                    "this.geo = {latitude:null,longitude:null};",
+                    "this.trackingId = 0;"
                 ]
             },
             "name": "init",
@@ -215,6 +216,7 @@
                 "fn": "onTogglefieldChange",
                 "implHandler": [
                     "this.weckerIsOn=newValue;",
+                    "console.log(\"Toggle Field value: \"+newValue);",
                     "this.getGeo(newValue);"
                 ],
                 "name": "change"
@@ -279,8 +281,8 @@
                 "fn": "safeGeo",
                 "implHandler": [
                     "this.geo.latitude = position.coords.latitude;",
-                    "this.geo.longtitude = position.coords.longitude;",
-                    "alert(this.geo.latitude+\"/n\"+this.geo.latitude);"
+                    "this.geo.longitude = position.coords.longitude;",
+                    "alert(this.geo.latitude+\"/n\"+this.geo.longitude);"
                 ]
             },
             "name": "safeGeo",
@@ -318,13 +320,14 @@
                 ],
                 "fn": "getGeo",
                 "implHandler": [
+                    "alert(\"geotracking enaled\");",
                     "var pace = this.getApplication().getController('Settings').sliderPace;",
-                    "var trackingID =0;",
                     "if(isTracking){",
-                    "    trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:",
+                    "    alert(\"device is tracking\");",
+                    "    this.trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:",
                     "    pace*1000, enableHighAccuracy: true});",
                     "}else{",
-                    "    navigator.geolocation.clear(trackingID);",
+                    "    navigator.geolocation.clear(this.trackingID);",
                     "}"
                 ]
             },
