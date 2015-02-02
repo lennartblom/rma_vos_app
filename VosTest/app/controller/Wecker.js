@@ -20,12 +20,27 @@ Ext.define('VosNavigator.controller.Wecker', {
         refs: {
             weckerBackButton: 'button#weckerBackButton',
             MainView: 'container#MainView',
-            weckerView: 'container#mycontainer1'
+            weckerView: 'container#mycontainer1',
+            weckRadius: 'sliderfield#weckRadius',
+            sliderValueLabel: 'label#sliderValueLabel',
+            weckerOnOffSwitch: 'togglefield#weckerOnOffSwitch',
+            selectTune: 'selectfield#selectTune',
+            shortestPath: 'checkboxfield#shortestPath',
+            mehrfachKlingelnOnOffSwitch: 'togglefield#mehrfachKlingelnOnOffSwitch'
         },
 
         control: {
             "button#weckerBackButton": {
                 tap: 'weckerBackButton'
+            },
+            "sliderfield#weckRadius": {
+                change: 'setWeckRadius'
+            },
+            "togglefield": {
+                change: 'onTogglefieldChange'
+            },
+            "selectfield": {
+                change: 'onSelectfieldChange'
             }
         }
     },
@@ -33,6 +48,67 @@ Ext.define('VosNavigator.controller.Wecker', {
     weckerBackButton: function(button, e, eOpts) {
         this.getWeckerView().hide();
         this.getMainView().show();
+    },
+
+    setWeckRadius: function(me, sl, thumb, newValue, oldValue, eOpts) {
+
+        this.sliderValue = newValue;
+        Ext.getCmp('sliderValueLabel').setHtml(this.sliderValue + "m vor dem Zielpunkt");
+    },
+
+    onTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
+        this.weckerIsOn=newValue;
+        console.log("Toggle Field value: "+newValue);
+        this.getGeo(newValue);
+    },
+
+    onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
+        this.tune = newValue;
+    },
+
+    init: function(application) {
+        this.sliderValue = 200;
+        this.weckerIsOn = false;
+        this.shortestPath = true;
+        this.weckerKlingeltMehrfach=false;
+        this.tune = "superMario.mp3";
+        this.geo = {latitude:null,longitude:null};
+        this.trackingId = 0;
+    },
+
+    wecken: function() {
+        navigator.vibrate(1);
+        var resource = "resources/tones/" + this.tune;
+        navigator.vibrate(1);
+        var myMedia = new Media(resource);
+        navigator.vibrate(1);
+        myMedia.play();
+        navigator.vibrate(1);
+        navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
+        navigator.vibrate(1);
+    },
+
+    onSucces: function(position) {
+        console.log("position latitude "+position.coords.latitude);
+        this.geo.latitude = position.coords.latitude;
+        this.geo.longitude = position.coords.longitude;
+
+    },
+
+    onError: function(error) {
+        alert("geo error!!");
+    },
+
+    getGeo: function(isTracking) {
+        console.log("geotracking enabled");
+        var pace = this.getApplication().getController('Settings').sliderPace;
+        if(isTracking){
+            console.log("device is tracking");
+            this.trackingID = navigator.geolocation.watchPosition(onSuccess, onError,{frequency:1000});
+            console.log("first Track succesfull");
+        }else{
+            navigator.geolocation.clear(this.trackingID);
+        }
     }
 
 });

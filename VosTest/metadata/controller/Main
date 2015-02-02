@@ -23,15 +23,9 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "startButtonAction",
                 "implHandler": [
-                    "",
-                    "naviagtor.notification.beep(2);",
-=======
->>>>>>> 2394880299f969cceb00372b074329d8ed14d3a8
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
-                    "navigator.notification.beep();",
-                    "navigator.notification.vibrate();",
-                    "navigator.notification.superMario();"
+                    "this.getApplication().getController('Wecker').wecken();"
                 ],
                 "name": "tap"
             },
@@ -425,21 +419,6 @@
             },
             "name": "weckerImage",
             "designerId": "cc7c7109-a320-4bee-8699-2888289e4057"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#StartButton",
-                "designer|targetType": "Ext.Button",
-                "fn": "startButtonPressed"
-            },
-            "name": "startButtonPressed",
-            "designerId": "8a40e0d1-f3ae-48e0-a9aa-efdcf96f75ed"
         }
     ]
 }

@@ -72,6 +72,268 @@
             },
             "name": "weckerView",
             "designerId": "3a280f06-082a-4e53-ba7d-7267ac91a42b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckRadius",
+                "selector": "sliderfield#weckRadius"
+            },
+            "name": "weckRadius",
+            "designerId": "a3dad416-3c41-437a-9912-2a191985d5b7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "sliderValueLabel",
+                "selector": "label#sliderValueLabel"
+            },
+            "name": "sliderValueLabel",
+            "designerId": "0dd17fb4-f434-4a24-a302-04ce6fbc0419"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#weckRadius",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "setWeckRadius",
+                "implHandler": [
+                    "",
+                    "this.sliderValue = newValue;",
+                    "Ext.getCmp('sliderValueLabel').setHtml(this.sliderValue + \"m vor dem Zielpunkt\");"
+                ],
+                "name": "change"
+            },
+            "name": "setWeckRadius",
+            "designerId": "e74452d1-adb6-4c40-91f1-12266b233aa4"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.sliderValue = 200;",
+                    "this.weckerIsOn = false;",
+                    "this.shortestPath = true;",
+                    "this.weckerKlingeltMehrfach=false;",
+                    "this.tune = \"superMario.mp3\";",
+                    "this.geo = {latitude:null,longitude:null};",
+                    "this.trackingId = 0;"
+                ]
+            },
+            "name": "init",
+            "designerId": "2b03c1d5-c1cc-4b1b-a16a-b3db4ec100e3"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerOnOffSwitch",
+                "selector": "togglefield#weckerOnOffSwitch"
+            },
+            "name": "weckerOnOffSwitch",
+            "designerId": "83f12b91-1c87-4558-ab22-dec83cb30791"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "selectTune",
+                "selector": "selectfield#selectTune"
+            },
+            "name": "selectTune",
+            "designerId": "20a5c0c2-5b93-4cae-8df3-5b473ac54b4b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "shortestPath",
+                "selector": "checkboxfield#shortestPath"
+            },
+            "name": "shortestPath",
+            "designerId": "e10aacb2-ce32-4a46-a1aa-876d0b18d6b5"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mehrfachKlingelnOnOffSwitch",
+                "selector": "togglefield#mehrfachKlingelnOnOffSwitch"
+            },
+            "name": "mehrfachKlingelnOnOffSwitch",
+            "designerId": "f51d98ae-c6b6-442f-a8d3-97c1e8d5b9c0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "togglefield",
+                "designer|targetType": "Ext.field.Toggle",
+                "fn": "onTogglefieldChange",
+                "implHandler": [
+                    "this.weckerIsOn=newValue;",
+                    "console.log(\"Toggle Field value: \"+newValue);",
+                    "this.getGeo(newValue);"
+                ],
+                "name": "change"
+            },
+            "name": "onTogglefieldChange",
+            "designerId": "b78c47aa-e429-403c-bd38-d6a662e7648c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "selectfield",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onSelectfieldChange",
+                "implHandler": [
+                    "this.tune = newValue;"
+                ],
+                "name": "change"
+            },
+            "name": "onSelectfieldChange",
+            "designerId": "fc26925e-ad75-4530-985d-996fa028860c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "wecken",
+                "implHandler": [
+                    "navigator.vibrate(1);",
+                    "var resource = \"resources/tones/\" + this.tune;",
+                    "navigator.vibrate(1);",
+                    "var myMedia = new Media(resource);",
+                    "navigator.vibrate(1);",
+                    "myMedia.play();",
+                    "navigator.vibrate(1);",
+                    "navigator.notification.alert(\"Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe\",function(){myMedia.stop();},\"Zielort Erreicht!\");",
+                    "navigator.vibrate(1);"
+                ]
+            },
+            "name": "wecken",
+            "designerId": "80917b31-04d4-497e-9e12-2f5163310ecb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "position"
+                ],
+                "fn": "onSucces",
+                "implHandler": [
+                    "console.log(\"position latitude \"+position.coords.latitude);",
+                    "this.geo.latitude = position.coords.latitude;",
+                    "this.geo.longitude = position.coords.longitude;",
+                    ""
+                ]
+            },
+            "name": "onSucces",
+            "designerId": "899d5432-5ac6-4d8e-b622-6f0c71185949"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "error"
+                ],
+                "fn": "onError",
+                "implHandler": [
+                    "alert(\"geo error!!\");"
+                ]
+            },
+            "name": "onError",
+            "designerId": "b7a2d8f8-43b6-47d8-9281-533643aa268b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "isTracking"
+                ],
+                "fn": "getGeo",
+                "implHandler": [
+                    "console.log(\"geotracking enabled\");",
+                    "var pace = this.getApplication().getController('Settings').sliderPace;",
+                    "if(isTracking){",
+                    "    console.log(\"device is tracking\");",
+                    "    this.trackingID = navigator.geolocation.watchPosition(onSuccess, onError,{frequency:1000});",
+                    "    console.log(\"first Track succesfull\");",
+                    "}else{",
+                    "    navigator.geolocation.clear(this.trackingID);",
+                    "}"
+                ]
+            },
+            "name": "getGeo",
+            "designerId": "d88c41a1-f8e9-4ad9-ac6e-cc82ce8bb391"
         }
     ]
 }

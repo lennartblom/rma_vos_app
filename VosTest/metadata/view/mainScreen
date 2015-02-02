@@ -347,6 +347,7 @@
                                 "height": 120,
                                 "id": "StartButton",
                                 "left": 1,
+                                "scope": null,
                                 "style": [
                                     "",
                                     "-webkit-border-radius: 100%;",
