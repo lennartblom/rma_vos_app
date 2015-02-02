@@ -52,7 +52,7 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     setWeckRadius: function(me, sl, thumb, newValue, oldValue, eOpts) {
-        me.up("#weckradius").down("#sliderValueLabel").setHtml(newValue + "m vor dem Ziel");
+        Ext.getCmp('sliderValueLabel').setHtml(newValue+" vor dem Zielpunkt");
         this.sliderValue = newValue;
     },
 

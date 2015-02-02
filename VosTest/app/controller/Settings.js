@@ -45,7 +45,7 @@ Ext.define('VosNavigator.controller.Settings', {
     },
 
     getPace: function(me, sl, thumb, newValue, oldValue, eOpts) {
-        me.up("#mysliderfield").down("#label_settings").setHtml("Aktuelle Position wird im "+newValue+" Sekunden Takt überprüft.");
+        Ext.getCmp('label_settings').setHtml("Aktuelle Position wird im "+newValue+" Sekunden Takt überprüft.");
         this.sliderPace = newValue;
     },
 

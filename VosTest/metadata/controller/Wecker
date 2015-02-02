@@ -113,7 +113,7 @@
                 "designer|targetType": "Ext.field.Slider",
                 "fn": "setWeckRadius",
                 "implHandler": [
-                    "me.up(\"#weckradius\").down(\"#sliderValueLabel\").setHtml(newValue + \"m vor dem Ziel\");",
+                    "Ext.getCmp('sliderValueLabel').setHtml(newValue+\" vor dem Zielpunkt\");",
                     "this.sliderValue = newValue;"
                 ],
                 "name": "change"
