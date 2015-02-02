@@ -280,9 +280,10 @@
                 ],
                 "fn": "safeGeo",
                 "implHandler": [
+                    "console.log(\"position latitude \"+position.coords.latitude);",
                     "this.geo.latitude = position.coords.latitude;",
                     "this.geo.longitude = position.coords.longitude;",
-                    "alert(this.geo.latitude+\"/n\"+this.geo.longitude);"
+                    ""
                 ]
             },
             "name": "safeGeo",
@@ -320,12 +321,13 @@
                 ],
                 "fn": "getGeo",
                 "implHandler": [
-                    "alert(\"geotracking enaled\");",
+                    "console.log(\"geotracking enabled\");",
                     "var pace = this.getApplication().getController('Settings').sliderPace;",
                     "if(isTracking){",
-                    "    alert(\"device is tracking\");",
+                    "    console.log(\"device is tracking\");",
                     "    this.trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:",
                     "    pace*1000, enableHighAccuracy: true});",
+                    "    console.log(\"first Track\");",
                     "}else{",
                     "    navigator.geolocation.clear(this.trackingID);",
                     "}"
