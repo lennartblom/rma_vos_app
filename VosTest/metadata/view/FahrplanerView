@@ -38,71 +38,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "height": 110,
-                "id": "inputOrt",
-                "width": 320
-            },
-            "name": "MyContainer9",
-            "designerId": "8ca2ca9a-6e75-4f50-88f1-ac1c002a8678",
-            "cn": [
-                {
-                    "type": "Ext.form.FieldSet",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "inputfields",
-                        "title": null
-                    },
-                    "name": "MyFieldSet",
-                    "designerId": "4a2c8506-0b1a-4737-ae61-dd8eed59521e",
-                    "cn": [
-                        {
-                            "type": "Ext.field.Search",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "autoCorrect": true,
-                                "id": "startort",
-                                "label": "Start",
-                                "placeHolder": "Aktueller Ort"
-                            },
-                            "name": "MySearchField",
-                            "designerId": "9693234a-8730-42a7-aa17-61ad1b333f5f"
-                        },
-                        {
-                            "type": "Ext.field.Search",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "autoCorrect": true,
-                                "id": "ziel",
-                                "label": "Ziel",
-                                "placeHolder": "Zielort"
-                            },
-                            "name": "MySearchField2",
-                            "designerId": "e33ff910-f64c-4b69-8e42-1f195d2b89da"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Ext.Container",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "docked": "top",
                 "height": 348,
                 "id": "linienInformationen",
@@ -124,7 +59,7 @@
                         "docked": "top",
                         "height": 100,
                         "id": "lineOne",
-                        "scrollable": false,
+                        "store": "stops",
                         "style": [
                             "background-color: rgba(255,255,255, 0.6);"
                         ],
@@ -138,6 +73,47 @@
                     "designerId": "1ca23dfb-b354-4aac-9e7b-d6636267d23d",
                     "cn": [
                         {
+                            "type": "Ext.field.Search",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "mysearchfield1",
+                                "label": "Field"
+                            },
+                            "name": "MySearchField1",
+                            "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMysearchfield1Action",
+                                        "implHandler": [
+                                            "var value = textfield.getValue();",
+                                            "var store = Ext.getStore('stops');",
+                                            "store.filter('name', value);",
+                                            "",
+                                            "var dataView = Ext.getComponent(\"#lineOne\");",
+                                            "",
+                                            "dataView.refresh();",
+                                            "",
+                                            "alert(\"Search refresh with: \"+value);"
+                                        ],
+                                        "name": "action"
+                                    },
+                                    "name": "onMysearchfield1Action",
+                                    "designerId": "853426c9-8c42-4a41-b383-240f8f2f3185"
+                                }
+                            ]
+                        },
+                        {
                             "type": "Ext.XTemplate",
                             "reference": {
                                 "name": "itemTpl",
@@ -147,7 +123,7 @@
                             "userConfig": {
                                 "designer|displayName": "itemTpl",
                                 "implHandler": [
-                                    "<div>Data View Item {string}</div>"
+                                    "<div>Haltestelle: {name}</div>"
                                 ]
                             },
                             "name": "itemTpl",

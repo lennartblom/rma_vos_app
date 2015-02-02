@@ -1,0 +1,113 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "stop"
+    },
+    "name": "MyModel",
+    "designerId": "f17f8412-ff16-44f2-911e-dc4781194b7f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "name": "field",
+            "designerId": "6c640b96-5de5-4475-8ce5-a3df43b958e0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "type": "string"
+            },
+            "name": "field1",
+            "designerId": "56cfc155-3ce3-4721-88ab-26e58cba722d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "longitudeOSM",
+                "type": "float"
+            },
+            "name": "field2",
+            "designerId": "347e47db-c3a7-465c-bf41-7715ee95fda3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "latitudeOSM",
+                "type": "float"
+            },
+            "name": "field3",
+            "designerId": "6ec92b43-5ebc-4f87-a240-00dc97510a35"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "longitude",
+                "type": "float"
+            },
+            "name": "field4",
+            "designerId": "a556d2a9-c83b-4dfd-a4d3-0790673ef6b6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "latitude",
+                "type": "float"
+            },
+            "name": "field5",
+            "designerId": "528c42f5-6b5f-49eb-88e4-a57973406e5f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lines",
+                "type": "auto"
+            },
+            "name": "field6",
+            "designerId": "8cf71fd4-e2ff-4c38-a3c2-a55d7690e85f"
+        }
+    ]
+}

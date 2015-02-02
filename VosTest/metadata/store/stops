@@ -1,0 +1,46 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "stops",
+        "model": "stop",
+        "storeId": "stops"
+    },
+    "name": "MyStore",
+    "designerId": "5f10bac9-71a8-42b8-a5b7-4047ad520981",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "resources/json/stops.json"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "ec362767-1c67-4237-8c3a-17eb96174dce",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "stops"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "1eb7d6fa-7bdb-49a8-ac37-2a89006161c6"
+                }
+            ]
+        }
+    ]
+}

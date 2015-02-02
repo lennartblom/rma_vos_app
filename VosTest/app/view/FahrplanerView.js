@@ -19,9 +19,8 @@ Ext.define('VosNavigator.view.fahrplanerView', {
 
     requires: [
         'Ext.Img',
-        'Ext.form.FieldSet',
-        'Ext.field.Search',
         'Ext.dataview.DataView',
+        'Ext.field.Search',
         'Ext.XTemplate',
         'Ext.Button'
     ],
@@ -33,34 +32,6 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 xtype: 'image',
                 id: 'netzBackground',
                 src: 'resources/images/background/verbindungen.png'
-            },
-            {
-                xtype: 'container',
-                height: 110,
-                id: 'inputOrt',
-                width: 320,
-                items: [
-                    {
-                        xtype: 'fieldset',
-                        id: 'inputfields',
-                        items: [
-                            {
-                                xtype: 'searchfield',
-                                id: 'startort',
-                                label: 'Start',
-                                autoCorrect: true,
-                                placeHolder: 'Aktueller Ort'
-                            },
-                            {
-                                xtype: 'searchfield',
-                                id: 'ziel',
-                                label: 'Ziel',
-                                autoCorrect: true,
-                                placeHolder: 'Zielort'
-                            }
-                        ]
-                    }
-                ]
             },
             {
                 xtype: 'container',
@@ -78,9 +49,16 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         id: 'lineOne',
                         style: 'background-color: rgba(255,255,255, 0.6);',
                         width: '100%',
-                        scrollable: false,
                         itemTpl: [
-                            '<div>Data View Item {string}</div>'
+                            '<div>Haltestelle: {name}</div>'
+                        ],
+                        store: 'stops',
+                        items: [
+                            {
+                                xtype: 'searchfield',
+                                itemId: 'mysearchfield1',
+                                label: 'Field'
+                            }
                         ]
                     },
                     {
@@ -141,7 +119,26 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                     }
                 ]
             }
+        ],
+        listeners: [
+            {
+                fn: 'onMysearchfield1Action',
+                event: 'action',
+                delegate: '#mysearchfield1'
+            }
         ]
+    },
+
+    onMysearchfield1Action: function(textfield, e, eOpts) {
+        var value = textfield.getValue();
+        var store = Ext.getStore('stops');
+        store.filter('name', value);
+
+        var dataView = Ext.getComponent("#lineOne");
+
+        dataView.refresh();
+
+        alert("Search refresh with: "+value);
     }
 
 });

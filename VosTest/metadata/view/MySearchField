@@ -1,0 +1,14 @@
+{
+    "type": "Ext.field.Search",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MySearchField",
+        "label": "Field"
+    },
+    "name": "MySearchField",
+    "designerId": "f32e5cd8-582a-4f8c-bb4a-e9f069d61886"
+}
