@@ -23,20 +23,9 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "startButtonAction",
                 "implHandler": [
-                    "var selectedTune = this.getController(\"Wecker\").tune;",
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
-                    "var resource = \"resources/tones\" + selectedTune;",
-                    "var myMedia = new Media(resource);",
-                    "for(var i=0;i<20;i++){",
-                    "    navigator.vibrate(5000);",
-                    "}",
-                    "myMedia.play();",
-                    "navigator.notification.alert(\"Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe\",function(){myMedia.stop();},\"Zielort Erreicht!\");",
-                    "for(var i=0;i<20;i++){",
-                    "    navigator.vibrate(5000);",
-                    "}",
-                    ""
+                    "this.getApplication().getController('Wecker').wecken();"
                 ],
                 "name": "tap"
             },

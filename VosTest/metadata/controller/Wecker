@@ -239,6 +239,30 @@
             },
             "name": "onSelectfieldChange",
             "designerId": "fc26925e-ad75-4530-985d-996fa028860c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "wecken",
+                "implHandler": [
+                    "navigator.vibrate(1);",
+                    "var resource = \"resources/tones/\" + this.tune;",
+                    "navigator.vibrate(1);",
+                    "var myMedia = new Media(resource);",
+                    "navigator.vibrate(1);",
+                    "myMedia.play();",
+                    "navigator.vibrate(1);",
+                    "navigator.notification.alert(\"Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe\",function(){myMedia.stop();},\"Zielort Erreicht!\");",
+                    "navigator.vibrate(1);"
+                ]
+            },
+            "name": "wecken",
+            "designerId": "80917b31-04d4-497e-9e12-2f5163310ecb"
         }
     ]
 }

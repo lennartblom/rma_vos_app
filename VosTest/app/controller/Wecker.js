@@ -71,6 +71,18 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.shortestPath = true;
         this.weckerKlingeltMehrfach=false;
         this.tune = "superMario.mp3";
+    },
+
+    wecken: function() {
+        navigator.vibrate(1);
+        var resource = "resources/tones/" + this.tune;
+        navigator.vibrate(1);
+        var myMedia = new Media(resource);
+        navigator.vibrate(1);
+        myMedia.play();
+        navigator.vibrate(1);
+        navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
+        navigator.vibrate(1);
     }
 
 });
