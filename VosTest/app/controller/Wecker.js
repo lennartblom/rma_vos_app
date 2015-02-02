@@ -92,6 +92,10 @@ Ext.define('VosNavigator.controller.Wecker', {
         alert(this.geo.latitude+"/n"+this.geo.latitude);
     },
 
+    onGeoError: function(error) {
+        alert("geo error!!");
+    },
+
     getGeo: function(isTracking) {
         var pace = this.getApplication().getController('Settings').sliderPace;
         var trackingID =0;

@@ -295,6 +295,25 @@
             "codeClass": null,
             "userConfig": {
                 "designer|params": [
+                    "error"
+                ],
+                "fn": "onGeoError",
+                "implHandler": [
+                    "alert(\"geo error!!\");"
+                ]
+            },
+            "name": "onGeoError",
+            "designerId": "b7a2d8f8-43b6-47d8-9281-533643aa268b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
                     "isTracking"
                 ],
                 "fn": "getGeo",
