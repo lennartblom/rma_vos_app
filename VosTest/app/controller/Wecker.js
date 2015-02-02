@@ -81,6 +81,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.tune = "superMario.mp3";
         this.geo = {latitude:null,longitude:null};
         this.trackingId = 0;
+        this.activeInterval=0;
     },
 
     wecken: function() {
@@ -95,7 +96,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         navigator.vibrate(1);
     },
 
-    onSucces: function(position) {
+    onSuccess: function(position) {
         console.log("position latitude "+position.coords.latitude);
         this.geo.latitude = position.coords.latitude;
         this.geo.longitude = position.coords.longitude;
@@ -111,11 +112,17 @@ Ext.define('VosNavigator.controller.Wecker', {
         var pace = this.getApplication().getController('Settings').sliderPace;
         if(isTracking){
             console.log("device is tracking");
-            this.trackingID = navigator.geolocation.watchPosition(onSuccess, onError,{frequency:1000});
+            this.setupGeoTimer(pace*1000);
             console.log("first Track succesfull");
         }else{
-            navigator.geolocation.clear(this.trackingID);
+            clearInterval(this.activeInterval);
         }
+    },
+
+    setupGeoTimer: function(interval) {
+        this.activeInterval = setInterval(function(){
+            navigator.geolocation.getCurrentPosition(this.onSuccess,this.onError,{enableHighAccuracy: true});
+        },interval);
     }
 
 });
