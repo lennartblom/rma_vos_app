@@ -79,8 +79,10 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.shortestPath = true;
         this.weckerKlingeltMehrfach=false;
         this.tune = "superMario.mp3";
-        this.geo = {latitude:null,longitude:null};
+        this.geo = {latitude:0.0,
+                    longitude:0.0};
         this.trackingId = 0;
+        this.activeInterval=0;
     },
 
     wecken: function() {
@@ -95,7 +97,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         navigator.vibrate(1);
     },
 
-    onSucces: function(position) {
+    onSuccess: function(position) {
         console.log("position latitude "+position.coords.latitude);
         this.geo.latitude = position.coords.latitude;
         this.geo.longitude = position.coords.longitude;
@@ -107,15 +109,33 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     getGeo: function(isTracking) {
-        console.log("geotracking enabled");
         var pace = this.getApplication().getController('Settings').sliderPace;
+
         if(isTracking){
             console.log("device is tracking");
-            this.trackingID = navigator.geolocation.watchPosition(onSuccess, onError,{frequency:1000});
-            console.log("first Track succesfull");
+            this.setupGeoTimer(pace*1000);
+
         }else{
-            navigator.geolocation.clear(this.trackingID);
+            clearInterval(this.activeInterval);
+            console.log("pace disabled");
         }
+    },
+
+    setupGeoTimer: function(interval) {
+        this.activeInterval = setInterval(function(){
+            navigator.geolocation.getCurrentPosition(
+                function(){
+                this.geo.lat = position.coords.latitude;
+                this.geo.lng = position.coords.longitude;
+                console.log("aktueller Pace lat: "+this.geo.lat+"/naktueller pace lng: "+this.geo.lng);
+                },
+                function(){
+                    console.log("error while paceing");
+                },
+                {
+                    enableHighAccuracy: true
+                });
+        },interval);
     }
 
 });

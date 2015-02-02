@@ -161,8 +161,10 @@
                     "this.shortestPath = true;",
                     "this.weckerKlingeltMehrfach=false;",
                     "this.tune = \"superMario.mp3\";",
-                    "this.geo = {latitude:null,longitude:null};",
-                    "this.trackingId = 0;"
+                    "this.geo = {latitude:0.0,",
+                    "            longitude:0.0};",
+                    "this.trackingId = 0;",
+                    "this.activeInterval=0;"
                 ]
             },
             "name": "init",
@@ -299,7 +301,7 @@
                 "designer|params": [
                     "position"
                 ],
-                "fn": "onSucces",
+                "fn": "onSuccess",
                 "implHandler": [
                     "console.log(\"position latitude \"+position.coords.latitude);",
                     "this.geo.latitude = position.coords.latitude;",
@@ -307,7 +309,7 @@
                     ""
                 ]
             },
-            "name": "onSucces",
+            "name": "onSuccess",
             "designerId": "899d5432-5ac6-4d8e-b622-6f0c71185949"
         },
         {
@@ -342,19 +344,52 @@
                 ],
                 "fn": "getGeo",
                 "implHandler": [
-                    "console.log(\"geotracking enabled\");",
                     "var pace = this.getApplication().getController('Settings').sliderPace;",
+                    "",
                     "if(isTracking){",
                     "    console.log(\"device is tracking\");",
-                    "    this.trackingID = navigator.geolocation.watchPosition(onSuccess, onError,{frequency:1000});",
-                    "    console.log(\"first Track succesfull\");",
+                    "    this.setupGeoTimer(pace*1000);",
+                    "    ",
                     "}else{",
-                    "    navigator.geolocation.clear(this.trackingID);",
+                    "    clearInterval(this.activeInterval);",
+                    "    console.log(\"pace disabled\");",
                     "}"
                 ]
             },
             "name": "getGeo",
             "designerId": "d88c41a1-f8e9-4ad9-ac6e-cc82ce8bb391"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "interval"
+                ],
+                "fn": "setupGeoTimer",
+                "implHandler": [
+                    "this.activeInterval = setInterval(function(){",
+                    "    navigator.geolocation.getCurrentPosition(",
+                    "        function(){",
+                    "        this.geo.lat = position.coords.latitude;",
+                    "        this.geo.lng = position.coords.longitude;",
+                    "        console.log(\"aktueller Pace lat: \"+this.geo.lat+\"/naktueller pace lng: \"+this.geo.lng);",
+                    "        },",
+                    "        function(){",
+                    "            console.log(\"error while paceing\");",
+                    "        },",
+                    "        {",
+                    "            enableHighAccuracy: true",
+                    "        });",
+                    "},interval);"
+                ]
+            },
+            "name": "setupGeoTimer",
+            "designerId": "b51606a9-f243-415a-997c-a233c5cbc4a8"
         }
     ]
 }
