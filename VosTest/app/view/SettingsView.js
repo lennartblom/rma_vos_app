@@ -96,20 +96,16 @@ Ext.define('VosNavigator.view.settingsView', {
                             },
                             {
                                 xtype: 'sliderfield',
-                                id: 'slider_id',
-                                itemId: 'slider_id',
-                                label: 'Field',
                                 id: 'gpsPace',
                                 label: 'GPS Pace',
                                 value: [
-                                    24
-                                ]
+                                    30
+                                ],
                                 maxValue: 120,
                                 minValue: 5
                             },
                             {
                                 xtype: 'label',
-                                html: '',
                                 html: 'Aktuelle Position wird im 30 Sekunden Takt überprüft.',
                                 id: 'label_settings',
                                 margin: '5px'
