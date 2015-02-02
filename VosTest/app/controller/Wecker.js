@@ -58,9 +58,7 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     onTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
         this.weckerIsOn=newValue;
-        if(this.weckerIsOn){
-            this.getGeo();
-        }
+        this.getGeo(newValue);
     },
 
     onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
@@ -88,11 +86,20 @@ Ext.define('VosNavigator.controller.Wecker', {
         navigator.vibrate(1);
     },
 
-    getGeo: function() {
-        this.geo = navigator.geolocation.getCurrentPosition();
-        if(this.weckerIsOn){
-            setTimeout(this.getGeo(), this.getApplication().getController('Settings').sliderPace*1000);
-            alert(this.geo.coords.latitude);
+    safeGeo: function(position) {
+        this.geo.latitude = position.coords.latitude;
+        this.geo.longtitude = position.coords.longitude;
+        alert(this.geo.latitude+"/n"+this.geo.latitude);
+    },
+
+    getGeo: function(isTracking) {
+        var pace = this.getApplication().getController('Settings').sliderPace;
+        var trackingID =0;
+        if(isTracking){
+            trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:
+            pace*1000, enableHighAccuracy: true});
+        }else{
+            navigator.geolocation.clear(trackingID);
         }
     }
 

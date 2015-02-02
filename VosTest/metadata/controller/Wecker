@@ -215,9 +215,7 @@
                 "fn": "onTogglefieldChange",
                 "implHandler": [
                     "this.weckerIsOn=newValue;",
-                    "if(this.weckerIsOn){",
-                    "    this.getGeo();",
-                    "}"
+                    "this.getGeo(newValue);"
                 ],
                 "name": "change"
             },
@@ -275,17 +273,44 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|params": [
+                    "position"
+                ],
+                "fn": "safeGeo",
+                "implHandler": [
+                    "this.geo.latitude = position.coords.latitude;",
+                    "this.geo.longtitude = position.coords.longitude;",
+                    "alert(this.geo.latitude+\"/n\"+this.geo.latitude);"
+                ]
+            },
+            "name": "safeGeo",
+            "designerId": "899d5432-5ac6-4d8e-b622-6f0c71185949"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "isTracking"
+                ],
                 "fn": "getGeo",
                 "implHandler": [
-                    "this.geo = navigator.geolocation.getCurrentPosition();",
-                    "if(this.weckerIsOn){",
-                    "    setTimeout(this.getGeo(), this.getApplication().getController('Settings').sliderPace*1000);",
-                    "    alert(this.geo.coords.latitude);",
+                    "var pace = this.getApplication().getController('Settings').sliderPace;",
+                    "var trackingID =0;",
+                    "if(isTracking){",
+                    "    trackingID = navigator.geolocation.watchPosition(safeGeo, onGeoError, { timeout:",
+                    "    pace*1000, enableHighAccuracy: true});",
+                    "}else{",
+                    "    navigator.geolocation.clear(trackingID);",
                     "}"
                 ]
             },
             "name": "getGeo",
-            "designerId": "272e5b59-9315-4f57-aee7-c12889896990"
+            "designerId": "d88c41a1-f8e9-4ad9-ac6e-cc82ce8bb391"
         }
     ]
 }
