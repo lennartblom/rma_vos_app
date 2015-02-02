@@ -30,12 +30,9 @@ Ext.define('VosNavigator.controller.Settings', {
             "button#settingsBackButton": {
                 tap: 'settingsBackButton'
             },
-            "button#mybutton": {
-                tap: 'onButtonTap'
-            },
-            "sliderfield#slider_id": {
-                drag: 'onSliderDrag',
-                change: 'onSliderChange'
+            "sliderfield#gpsPace": {
+                change: 'getPace',
+                drag: 'onSliderfieldDrag'
             }
         }
     },
@@ -47,24 +44,18 @@ Ext.define('VosNavigator.controller.Settings', {
 
     },
 
-    onButtonTap: function(button, e, eOpts) {
-        var slider = Ext.getCmp('slider_id');
-        var label = Ext.getCmp('label_settings');
-        var value = slider.getValue();
-
-        label.setHtml("Lautstärke " + value + "%");
+    getPace: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        me.up("#mysliderfield").down("#label_settings").setHtml("Aktuelle Position wird im "+newValue+" Sekunden Takt überprüft.");
     },
 
-    onSliderDrag: function(sliderfield, sl, thumb, e, eOpts) {
-        var slider = Ext.getCmp('slider_id');
+    onSliderfieldDrag: function(sliderfield, sl, thumb, e, eOpts) {
+        var slider = sliderfield.getComponent();
         var label = Ext.getCmp('label_settings');
-        var value = slider.getValue();
-
-        label.setHtml("Lautstärke " + value + "%");
+        label.setHtml("Aktuelle Position wird im "+slider.getValue()+" Sekunden Takt überprüft.");
     },
 
-    onSliderChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
-        me.up("#slider_id").down("#label_settings").setHtml(newValue);
+    init: function(application) {
+        this.sliderPace = 30;
     }
 
 });

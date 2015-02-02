@@ -133,8 +133,6 @@
                     "this.sliderPace = 30;"
                 ]
             },
-            "name": "labelsettings",
-            "designerId": "b15e8846-9dd3-4057-9913-41646db45af3"
             "name": "init",
             "designerId": "2fa0a79d-8463-4e65-88ea-6f7cb23e047e"
         },
@@ -146,20 +144,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "sliderfield#slider_id",
+                "designer|controlQuery": "sliderfield#gpsPace",
                 "designer|targetType": "Ext.field.Slider",
-                "fn": "onSliderDrag",
+                "fn": "getPace",
                 "implHandler": [
-                    "var slider = Ext.getCmp('slider_id');",
-                    "var label = Ext.getCmp('label_settings');",
-                    "var value = slider.getValue();",
-                    "",
-                    "label.setHtml(\"Lautstärke \" + value + \"%\");"
+                    "me.up(\"#mysliderfield\").down(\"#label_settings\").setHtml(\"Aktuelle Position wird im \"+newValue+\" Sekunden Takt überprüft.\");"
                 ],
-                "name": "drag"
+                "name": "change"
             },
-            "name": "onSliderDrag",
-            "designerId": "5f33f922-0db6-4b40-b922-e2781298a8b2"
+            "name": "getPace",
+            "designerId": "094449c1-4b7c-4773-87f3-7176f7cb66bb"
         },
         {
             "type": "controlleraction",
@@ -169,28 +163,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "sliderfield#slider_id",
-                "designer|targetType": "Ext.field.Slider",
-                "fn": "onSliderChange",
-                "implHandler": [
-                    "me.up(\"#slider_id\").down(\"#label_settings\").setHtml(newValue);"
-                ],
-                "name": "change"
-            },
-            "name": "onSliderChange",
-            "designerId": "302bc4ee-13d2-493a-af31-f5c78007d557"
                 "designer|controlQuery": "sliderfield#gpsPace",
                 "designer|targetType": "Ext.field.Slider",
-                "fn": "getPace",
+                "fn": "onSliderfieldDrag",
                 "implHandler": [
-                    "this.sliderPace = newValue;",
+                    "var slider = sliderfield.getComponent();",
                     "var label = Ext.getCmp('label_settings');",
-                    "label.setHtml(\"Aktuelle Position wird im \"+this.sliderPace+\" Sekunden Takt überprüft.\");"
+                    "label.setHtml(\"Aktuelle Position wird im \"+slider.getValue()+\" Sekunden Takt überprüft.\");"
                 ],
-                "name": "change"
+                "name": "drag"
             },
-            "name": "getPace",
-            "designerId": "094449c1-4b7c-4773-87f3-7176f7cb66bb"
+            "name": "onSliderfieldDrag",
+            "designerId": "a60e0128-e0cb-4289-aaf1-a03122e5c3a4"
         }
     ]
 }
