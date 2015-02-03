@@ -19,45 +19,94 @@ Ext.define('VosNavigator.view.fahrplanerView', {
 
     requires: [
         'Ext.Img',
-        'Ext.dataview.DataView',
+        'Ext.Button',
+        'Ext.form.FieldSet',
         'Ext.field.Search',
-        'Ext.XTemplate',
-        'Ext.Button'
+        'Ext.dataview.List',
+        'Ext.Label',
+        'Ext.XTemplate'
     ],
 
     config: {
+        height: '100%',
+        width: '100%',
         layout: 'fit',
         items: [
             {
                 xtype: 'image',
+                height: '100%',
                 id: 'netzBackground',
+                width: '100%',
                 src: 'resources/images/background/verbindungen.png'
+            },
+            {
+                xtype: 'button',
+                border: '',
+                bottom: '0px',
+                centered: false,
+                disabled: false,
+                docked: 'bottom',
+                height: '65px',
+                hidden: false,
+                html: '<h1 style="line-height:65px;font-size:15px;">zurück</h1>',
+                id: 'fahrplanerBackButton',
+                right: '0px',
+                style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\nfloat:right;\ndisplay:block;\nfont-size:11px;',
+                styleHtmlContent: true,
+                width: 65,
+                text: 'back'
+            },
+            {
+                xtype: 'fieldset',
+                height: '140px',
+                id: 'search_field_set',
+                title: 'Haltestellen',
+                items: [
+                    {
+                        xtype: 'searchfield',
+                        itemId: 'mysearchfield1',
+                        label: 'Von'
+                    },
+                    {
+                        xtype: 'searchfield',
+                        label: 'Nach'
+                    }
+                ]
             },
             {
                 xtype: 'container',
                 docked: 'top',
                 height: 348,
                 id: 'linienInformationen',
-                top: 140,
+                top: '150px',
                 width: '100%',
                 scrollable: 'horizontal',
                 items: [
                     {
-                        xtype: 'dataview',
+                        xtype: 'list',
                         docked: 'top',
-                        height: 100,
+                        height: 140,
                         id: 'lineOne',
-                        style: 'background-color: rgba(255,255,255, 0.6);',
-                        width: '100%',
+                        itemId: 'mylist',
                         itemTpl: [
-                            '<div>Haltestelle: {name}</div>'
+                            '<div>{name}</div>'
                         ],
                         store: 'stops',
                         items: [
                             {
-                                xtype: 'searchfield',
-                                itemId: 'mysearchfield1',
-                                label: 'Field'
+                                xtype: 'label',
+                                docked: 'top',
+                                height: '25px',
+                                html: '<p style="font-size:11px;">Suchergebnisse</p>',
+                                id: 'search_label'
+                            }
+                        ],
+                        listeners: [
+                            {
+                                fn: function(element, eOpts) {
+
+                                },
+                                event: 'painted'
                             }
                         ]
                     },
@@ -86,38 +135,21 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         itemTpl: [
                             '<div>Data View Item {string}</div>'
                         ]
+                    },
+                    {
+                        xtype: 'button',
+                        docked: 'top',
+                        id: 'reset_button',
+                        text: 'reset'
                     }
                 ]
             },
             {
                 xtype: 'container',
-                id: 'backButtonContainer',
-                items: [
-                    {
-                        xtype: 'button',
-                        border: '',
-                        bottom: '0px',
-                        centered: false,
-                        disabled: false,
-                        docked: 'bottom',
-                        height: '65px',
-                        hidden: false,
-                        html: '<h1 style="line-height:65px;font-size:15px;">zurück</h1>',
-                        id: 'fahrplanerBackButton',
-                        right: '0px',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\nfloat:right;\ndisplay:block;\nfont-size:11px;',
-                        styleHtmlContent: true,
-                        width: 65,
-                        text: 'back'
-                    },
-                    {
-                        xtype: 'container',
-                        bottom: '30px',
-                        id: 'goals_border_bottom1',
-                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
-                        width: '255px'
-                    }
-                ]
+                bottom: '30px',
+                id: 'goals_border_bottom1',
+                style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
+                width: '255px'
             }
         ],
         listeners: [

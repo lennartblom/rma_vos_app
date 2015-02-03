@@ -22,7 +22,8 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             fahrplanerBackButton: '#fahrplanerBackButton',
             FahrplanerView: '#FahrplanerView',
             mybutton: 'button#mybutton',
-            lineOne: 'dataview#lineOne'
+            lineOne: 'dataview#lineOne',
+            lineTwo: 'dataview#lineTwo'
         },
 
         control: {
@@ -31,6 +32,12 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             },
             "button#mybutton": {
                 tap: 'storeTest'
+            },
+            "#lineOne": {
+                itemtap: 'onLineOneItemTap'
+            },
+            "button#reset_button": {
+                tap: 'onButtonTap'
             }
         }
     },
@@ -42,6 +49,20 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     storeTest: function(button, e, eOpts) {
         this.stops.filter("id", 250);
+    },
+
+    onLineOneItemTap: function(list, index, item, record) {
+        var dataView = this.getLineTwo();
+
+        var myPanel = Ext.create('Ext.Panel', {
+            html: "<div style=\"float:left;width:50%;background-color:green;\">"+ record.get('id')+ "</div><div style=\"background-color:#5e5e5e;float:left;width:50%;\">"+ record.get('name')+ "</div>"
+        });
+
+        dataView.add([myPanel]);
+    },
+
+    onButtonTap: function(button, e, eOpts) {
+        this.getLineTwo().removeAll();
     }
 
 });

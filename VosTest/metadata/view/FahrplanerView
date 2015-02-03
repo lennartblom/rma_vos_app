@@ -8,7 +8,9 @@
     "userConfig": {
         "designer|userAlias": "fahrplanerview",
         "designer|userClassName": "fahrplanerView",
-        "layout": "fit"
+        "height": "100%",
+        "layout": "fit",
+        "width": "100%"
     },
     "name": "MyContainer7",
     "designerId": "b60cccb9-321a-45c4-ad9c-93f071883a5f",
@@ -23,12 +25,127 @@
             "userConfig": {
                 "centered": null,
                 "docked": null,
-                "height": null,
+                "height": "100%",
                 "id": "netzBackground",
-                "src": "resources/images/background/verbindungen.png"
+                "src": "resources/images/background/verbindungen.png",
+                "width": "100%"
             },
             "name": "MyImg12",
             "designerId": "c1358de9-be9c-4ae1-8367-7f8468502c3b"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": "",
+                "bottom": "0px",
+                "centered": false,
+                "disabled": false,
+                "docked": "bottom",
+                "height": "65px",
+                "hidden": false,
+                "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
+                "id": "fahrplanerBackButton",
+                "right": "0px",
+                "style": [
+                    "-moz-border-radius: 46px;",
+                    "-webkit-border-radius: 46px;",
+                    "border-radius: 46px; /* border radius */",
+                    "-moz-background-clip: padding;",
+                    "-webkit-background-clip: padding-box;",
+                    "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
+                    "background-color: #3d4f5e;",
+                    "opacity: 0.9;",
+                    "color:#fff;",
+                    "line-height:65px;",
+                    "float:right;",
+                    "display:block;",
+                    "font-size:11px;"
+                ],
+                "styleHtmlContent": true,
+                "text": "back",
+                "width": 65
+            },
+            "name": "MyButton3",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "97790e7f-aac1-43c9-9eb5-4c1aa818f9e2"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "140px",
+                "id": "search_field_set",
+                "title": "Haltestellen"
+            },
+            "name": "MyFieldSet",
+            "designerId": "1f724a52-39ce-4f1c-b40b-99ae29b9ad4b",
+            "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mysearchfield1",
+                        "label": "Von"
+                    },
+                    "name": "MySearchField1",
+                    "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMysearchfield1Action",
+                                "implHandler": [
+                                    "var value = textfield.getValue();",
+                                    "var store = Ext.getStore('stops');",
+                                    "store.filter('name', value);",
+                                    "",
+                                    "var dataView = Ext.getComponent(\"#lineOne\");",
+                                    "",
+                                    "dataView.refresh();",
+                                    "",
+                                    "alert(\"Search refresh with: \"+value);"
+                                ],
+                                "name": "action"
+                            },
+                            "name": "onMysearchfield1Action",
+                            "designerId": "853426c9-8c42-4a41-b383-240f8f2f3185"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Nach"
+                    },
+                    "name": "MySearchField2",
+                    "designerId": "d4120d0d-0fe8-4729-adc0-700a02aa624a"
+                }
+            ]
         },
         {
             "type": "Ext.Container",
@@ -42,14 +159,14 @@
                 "height": 348,
                 "id": "linienInformationen",
                 "scrollable": "horizontal",
-                "top": 140,
+                "top": "150px",
                 "width": "100%"
             },
             "name": "MyContainer10",
             "designerId": "40a965cf-13c0-4d29-8b88-15889d11e859",
             "cn": [
                 {
-                    "type": "Ext.dataview.DataView",
+                    "type": "Ext.dataview.List",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -57,61 +174,29 @@
                     "codeClass": null,
                     "userConfig": {
                         "docked": "top",
-                        "height": 100,
+                        "height": 140,
                         "id": "lineOne",
-                        "store": "stops",
-                        "style": [
-                            "background-color: rgba(255,255,255, 0.6);"
-                        ],
-                        "top": null,
-                        "width": "100%"
+                        "itemId": "mylist",
+                        "store": "stops"
                     },
-                    "name": "MyDataView",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "1ca23dfb-b354-4aac-9e7b-d6636267d23d",
+                    "name": "MyList",
+                    "designerId": "61c5d93a-72b4-48ee-a250-5a5b7834c932",
                     "cn": [
                         {
-                            "type": "Ext.field.Search",
+                            "type": "Ext.Label",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "itemId": "mysearchfield1",
-                                "label": "Field"
+                                "docked": "top",
+                                "height": "25px",
+                                "html": "<p style=\"font-size:11px;\">Suchergebnisse</p>",
+                                "id": "search_label"
                             },
-                            "name": "MySearchField1",
-                            "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7",
-                            "cn": [
-                                {
-                                    "type": "basiceventbinding",
-                                    "reference": {
-                                        "name": "listeners",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "fn": "onMysearchfield1Action",
-                                        "implHandler": [
-                                            "var value = textfield.getValue();",
-                                            "var store = Ext.getStore('stops');",
-                                            "store.filter('name', value);",
-                                            "",
-                                            "var dataView = Ext.getComponent(\"#lineOne\");",
-                                            "",
-                                            "dataView.refresh();",
-                                            "",
-                                            "alert(\"Search refresh with: \"+value);"
-                                        ],
-                                        "name": "action"
-                                    },
-                                    "name": "onMysearchfield1Action",
-                                    "designerId": "853426c9-8c42-4a41-b383-240f8f2f3185"
-                                }
-                            ]
+                            "name": "MyLabel1",
+                            "designerId": "5f79b77f-bde3-4239-ad5a-e0a52ef1f074"
                         },
                         {
                             "type": "Ext.XTemplate",
@@ -123,11 +208,28 @@
                             "userConfig": {
                                 "designer|displayName": "itemTpl",
                                 "implHandler": [
-                                    "<div>Haltestelle: {name}</div>"
+                                    "<div>{name}</div>"
                                 ]
                             },
                             "name": "itemTpl",
-                            "designerId": "b8507e28-b6f8-415d-9776-18bc46fc7b52"
+                            "designerId": "e81104f3-da09-4667-bca7-f74cc40031f8"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLineOnePainted",
+                                "implHandler": [
+                                    ""
+                                ],
+                                "name": "painted"
+                            },
+                            "name": "onLineOnePainted",
+                            "designerId": "75e810bc-5358-41e0-99af-fd00990621b4"
                         }
                     ]
                 },
@@ -216,6 +318,22 @@
                             "designerId": "ddba0dc0-ce54-4362-ba95-ffd9288da4fa"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "reset",
+                        "docked": "top",
+                        "id": "reset_button",
+                        "text": "reset"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "e5b14b4e-4f98-4a3c-88bc-608e234de2c1"
                 }
             ]
         },
@@ -227,79 +345,21 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "backButtonContainer"
+                "bottom": "30px",
+                "id": "goals_border_bottom1",
+                "style": [
+                    "background-color:rgba(211, 83, 0, 0.9);",
+                    "display:block;",
+                    "height:5px;",
+                    "overflow:hidden;"
+                ],
+                "width": "255px"
             },
-            "name": "MyContainer16",
-            "designerId": "4ea96646-e655-46a6-8e34-90804a536f06",
-            "cn": [
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "border": "",
-                        "bottom": "0px",
-                        "centered": false,
-                        "disabled": false,
-                        "docked": "bottom",
-                        "height": "65px",
-                        "hidden": false,
-                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
-                        "id": "fahrplanerBackButton",
-                        "right": "0px",
-                        "style": [
-                            "-moz-border-radius: 46px;",
-                            "-webkit-border-radius: 46px;",
-                            "border-radius: 46px; /* border radius */",
-                            "-moz-background-clip: padding;",
-                            "-webkit-background-clip: padding-box;",
-                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                            "background-color: #3d4f5e;",
-                            "opacity: 0.9;",
-                            "color:#fff;",
-                            "line-height:65px;",
-                            "float:right;",
-                            "display:block;",
-                            "font-size:11px;"
-                        ],
-                        "styleHtmlContent": true,
-                        "text": "back",
-                        "width": 65
-                    },
-                    "name": "MyButton3",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "97790e7f-aac1-43c9-9eb5-4c1aa818f9e2"
-                },
-                {
-                    "type": "Ext.Container",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "bottom": "30px",
-                        "id": "goals_border_bottom1",
-                        "style": [
-                            "background-color:rgba(211, 83, 0, 0.9);",
-                            "display:block;",
-                            "height:5px;",
-                            "overflow:hidden;"
-                        ],
-                        "width": "255px"
-                    },
-                    "name": "MyContainer12",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "5afb5780-7aae-4ad6-8e16-0f6822b31e07"
-                }
-            ]
+            "name": "MyContainer12",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "5afb5780-7aae-4ad6-8e16-0f6822b31e07"
         }
     ]
 }

@@ -119,6 +119,70 @@
             },
             "name": "lineOne",
             "designerId": "d0bb6b69-cc7a-4985-986c-7029cf6058e9"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "lineTwo",
+                "selector": "dataview#lineTwo"
+            },
+            "name": "lineTwo",
+            "designerId": "63181ebe-f44e-4a3f-b1b0-1a8227df382d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#lineOne",
+                "designer|params": [
+                    "list",
+                    "index",
+                    "item",
+                    "record"
+                ],
+                "designer|targetType": "MyList",
+                "fn": "onLineOneItemTap",
+                "implHandler": [
+                    "var dataView = this.getLineTwo();",
+                    "",
+                    "var myPanel = Ext.create('Ext.Panel', {",
+                    "    html: \"<div style=\\\"float:left;width:50%;background-color:green;\\\">\"+ record.get('id')+ \"</div><div style=\\\"background-color:#5e5e5e;float:left;width:50%;\\\">\"+ record.get('name')+ \"</div>\"",
+                    "});",
+                    "",
+                    "dataView.add([myPanel]);"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onLineOneItemTap",
+            "designerId": "833ccafe-2627-4af5-abbe-a869bfaa3c55"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#reset_button",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "this.getLineTwo().removeAll();"
+                ],
+                "name": "tap"
+            },
+            "name": "onButtonTap",
+            "designerId": "4b114a89-8681-40ec-988b-94f1338e891a"
         }
     ]
 }
