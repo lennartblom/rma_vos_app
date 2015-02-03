@@ -67,7 +67,6 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.weckerIsOn=newValue;
         console.log("Toggle Field value: "+newValue);
         this.getGeo(newValue);
-
     },
 
     onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
@@ -85,7 +84,6 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.lng = 0.0;
         this.trackingId = 0;
         this.activeInterval=0;
-        this.bgGeo = null;
     },
 
     wecken: function() {
@@ -104,37 +102,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         var pace = this.getApplication().getController('Settings').sliderPace;
 
         if(isTracking){
-            this.setupBackgroundGeo();
             console.log("device is tracking");
-            this.setupGeoTimer(pace*1000);
-            bgGeo.start();
-
-        }else{
-            clearInterval(this.activeInterval);
-            bgGeo.stop();
-            console.log("pace disabled");
-        }
-    },
-
-    setupGeoTimer: function(interval) {
-        this.activeInterval = setInterval(this.saveGeo,interval);
-    },
-
-    saveGeo: function() {
-        console.log("saveGeo wurde aufgerufen.");
-        var geoObject = navigator.geolocation.getCurrentPosition(
-                geoCallback(position),
-            geoError, {enableHighAccuracy:true});
-        console.log(geoObject);
-    },
-
-    setupBackgroundGeo: function() {
-
-                // Your app must execute AT LEAST ONE call for the current position via standard Cordova geolocation,
-                //  in order to prompt the user for Location permission.
-                window.navigator.geolocation.getCurrentPosition(function(location) {
-                    console.log('Location from Phonegap');
-                });
             this.saveGeo(pace*1000);
             this.setupBackgroundPace();
         }else{
@@ -192,14 +160,13 @@ Ext.define('VosNavigator.controller.Wecker', {
                     // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
                     //
                     //
-                    bgGeo.finish();
+                    this.bgGeo.finish();
                 };
 
                 /**
                 * This callback will be executed every time a geolocation is recorded in the background.
                 */
                 var callbackFn = function(location) {
-                    console.log('[js] BackgroundGeoLocation callback:  ' + location.latitudue + ',' + location.longitude);
                     console.log("background track: "+location.latitude + " "+ location.longitude);
                     this.lat=location.latitude;
                     this.lng=location.longitude;
@@ -216,26 +183,12 @@ Ext.define('VosNavigator.controller.Wecker', {
 
                 // BackgroundGeoLocation is highly configurable.
                 this.bgGeo.configure(callbackFn, failureFn, {
-                    url: 'http://only.for.android.com/update_location.json', // <-- only required for Android; ios allows javascript callbacks for your http
-                    params: {                                               // HTTP POST params sent to your server when persisting locations.
-                        auth_token: 'user_secret_auth_token',
-                        foo: 'bar'
-                    },
-                    headers: {
-                        'X-Foo': 'bar'
-                    },
-                    desiredAccuracy: 10,
-                    stationaryRadius: 20,
-                    distanceFilter: 30,
-                    notificationTitle: 'Background tracking',   // <-- android only, customize the title of the notification
-                    notificationText: 'ENABLED',                // <-- android only, customize the text of the notification
-                    activityType: "AutomotiveNavigation",       // <-- iOS-only
-                    debug: true     // <-- enable this hear sounds for background-geolocation life-cycle.
                     locationTimeout: 5,
                     desiredAccuracy: 0,
                     stationaryRadius: 0,
                     distanceFilter: 0,
-                    activityType: "AutomotiveNavigation",       // <-- iOS-only
+                    activityType: "AutomotiveNavigation",
+                    stopOnTerminate: true,// <-- iOS-only
                     debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
                 });
 
@@ -244,18 +197,6 @@ Ext.define('VosNavigator.controller.Wecker', {
 
                 // If you wish to turn OFF background-tracking, call the #stop method.
                 // bgGeo.stop()
-
-    },
-
-    geoCallback: function(position) {
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
-        this.lat=position.coords.latitude;
-        this.lng=position.coords.longitude;
-    },
-
-    geoError: function() {
-        console.log("error while paceing");
     }
 
 });
