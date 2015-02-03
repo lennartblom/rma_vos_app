@@ -142,11 +142,11 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     setupBackgroundPace: function() {
-                window.navigator.geolocation.getCurrentPosition(function(location) {
+               /* window.navigator.geolocation.getCurrentPosition(function(location) {
                     console.log("background init: "+location.coords.latitude + " "+ location.coords.longitude);
                     this.lat=location.coords.latitude;
                     this.lng=location.coords.longitude;
-                });
+                });*/
 
                 this.bgGeo = window.plugins.backgroundGeoLocation;
 
@@ -170,6 +170,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                     console.log("background track: "+location.latitude + " "+ location.longitude);
                     this.lat=location.latitude;
                     this.lng=location.longitude;
+                    //navigator.notification.alert("Aktuelle Position: "+this.lat+" "+this.lng,"Alert");
                     // Do your HTTP request here to POST location to your server.
                     //
                     //
@@ -182,11 +183,12 @@ Ext.define('VosNavigator.controller.Wecker', {
 
                 // BackgroundGeoLocation is highly configurable.
                 this.bgGeo.configure(callbackFn, failureFn, {
+                    locationTimeout: 5,
                     desiredAccuracy: 0,
-                    stationaryRadius: 10,
-                    distanceFilter: 10,
+                    stationaryRadius: 0,
+                    distanceFilter: 0,
                     activityType: "AutomotiveNavigation",       // <-- iOS-only
-                    debug: true     // <-- enable this hear sounds for background-geolocation life-cycle.
+                    debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
                 });
 
                 // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
