@@ -116,16 +116,17 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     saveGeo: function() {
-        console.log("saveGeo wurde aufgerufen.");
-        var geoObject = navigator.geolocation.getCurrentPosition(
-                function(){
+        var geoCallback = function(position){
                     console.log(position.coords.latitude);
                     console.log(position.coords.longitude);
-
-                },
-                function(){
-                    console.log("error while paceing");
-                },
+                };
+        var geoError = function(error){
+                        console.log("error while paceing");
+        };
+        console.log("saveGeo wurde aufgerufen.");
+        var geoObject = navigator.geolocation.getCurrentPosition(
+                geoCallback,
+                geoError,
                 {
                     enableHighAccuracy: true
                 });
