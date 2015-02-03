@@ -107,8 +107,9 @@ Ext.define('VosNavigator.controller.Wecker', {
             this.setupBackgroundPace();
         }else{
             clearInterval(this.activeInterval);
-            console.log("pace disabled");
             this.bgGeo.stop();
+               console.log("pace disabled");
+
         }
     },
 
@@ -123,6 +124,8 @@ Ext.define('VosNavigator.controller.Wecker', {
         var geoCallback = function(position){
                     console.log(position.coords.latitude);
                     console.log(position.coords.longitude);
+                    console.log('[JS] Koordinaten: '+position.coords.latitude+
+                        ' '+position.coords.longitude);
                 };
         var geoError = function(error){
                         console.log("error while paceing");
@@ -164,9 +167,9 @@ Ext.define('VosNavigator.controller.Wecker', {
                 * This callback will be executed every time a geolocation is recorded in the background.
                 */
                 var callbackFn = function(location) {
-                    console.log("background track: "+location.coords.latitude + " "+ location.coords.longitude);
-                    this.lat=location.coords.latitude;
-                    this.lng=location.coords.longitude;
+                    console.log("background track: "+location.latitude + " "+ location.longitude);
+                    this.lat=location.latitude;
+                    this.lng=location.longitude;
                     // Do your HTTP request here to POST location to your server.
                     //
                     //
@@ -183,7 +186,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                     stationaryRadius: 10,
                     distanceFilter: 10,
                     activityType: "AutomotiveNavigation",       // <-- iOS-only
-                    debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
+                    debug: true     // <-- enable this hear sounds for background-geolocation life-cycle.
                 });
 
                 // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
