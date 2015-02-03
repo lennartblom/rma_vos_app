@@ -149,7 +149,8 @@
                 "fn": "getPace",
                 "implHandler": [
                     "Ext.getCmp('label_settings').setHtml(\"Aktuelle Position wird im \"+newValue+\" Sekunden Takt überprüft.\");",
-                    "this.sliderPace = newValue;"
+                    "this.sliderPace = newValue;",
+                    "this.getApplication().getController('Wecker').resetGeoTimer(newValue);"
                 ],
                 "name": "change"
             },
@@ -171,7 +172,9 @@
                     "var slider = sliderfield.getComponent();",
                     "var label = Ext.getCmp('label_settings');",
                     "label.setHtml(\"Aktuelle Position wird im \"+slider.getValue()+\" Sekunden Takt überprüft.\");",
-                    "this.sliderPace = slider.getValue();"
+                    "this.sliderPace = slider.getValue();",
+                    "this.getApplication().getController('Wecker').resetGeoTimer(slider.getValue());",
+                    ""
                 ],
                 "name": "drag"
             },

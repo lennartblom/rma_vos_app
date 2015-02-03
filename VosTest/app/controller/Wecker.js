@@ -135,6 +135,50 @@ Ext.define('VosNavigator.controller.Wecker', {
                 window.navigator.geolocation.getCurrentPosition(function(location) {
                     console.log('Location from Phonegap');
                 });
+            this.saveGeo(pace*1000);
+            this.setupBackgroundPace();
+        }else{
+            clearInterval(this.activeInterval);
+            this.bgGeo.stop();
+               console.log("pace disabled");
+
+        }
+    },
+
+    resetGeoTimer: function(interval) {
+        if(this.weckerIsOn){
+            clearInterval(this.activeInterval);
+            this.saveGeo(interval*1000);
+        }
+    },
+
+    saveGeo: function(interval) {
+        var geoCallback = function(position){
+                    console.log(position.coords.latitude);
+                    console.log(position.coords.longitude);
+                    console.log('[JS] Koordinaten: '+position.coords.latitude+
+                        ' '+position.coords.longitude);
+                };
+        var geoError = function(error){
+                        console.log("error while paceing");
+        };
+        console.log("saveGeo wurde aufgerufen.");
+        function getGeoObject(){ navigator.geolocation.getCurrentPosition(
+                geoCallback,
+                geoError,
+                {
+                    enableHighAccuracy: true
+                });
+        }
+        this.activeInterval = setInterval(getGeoObject,interval);
+    },
+
+    setupBackgroundPace: function() {
+               /* window.navigator.geolocation.getCurrentPosition(function(location) {
+                    console.log("background init: "+location.coords.latitude + " "+ location.coords.longitude);
+                    this.lat=location.coords.latitude;
+                    this.lng=location.coords.longitude;
+                });*/
 
                 this.bgGeo = window.plugins.backgroundGeoLocation;
 
@@ -156,6 +200,10 @@ Ext.define('VosNavigator.controller.Wecker', {
                 */
                 var callbackFn = function(location) {
                     console.log('[js] BackgroundGeoLocation callback:  ' + location.latitudue + ',' + location.longitude);
+                    console.log("background track: "+location.latitude + " "+ location.longitude);
+                    this.lat=location.latitude;
+                    this.lng=location.longitude;
+                    //navigator.notification.alert("Aktuelle Position: "+this.lat+" "+this.lng,"Alert");
                     // Do your HTTP request here to POST location to your server.
                     //
                     //
@@ -183,6 +231,12 @@ Ext.define('VosNavigator.controller.Wecker', {
                     notificationText: 'ENABLED',                // <-- android only, customize the text of the notification
                     activityType: "AutomotiveNavigation",       // <-- iOS-only
                     debug: true     // <-- enable this hear sounds for background-geolocation life-cycle.
+                    locationTimeout: 5,
+                    desiredAccuracy: 0,
+                    stationaryRadius: 0,
+                    distanceFilter: 0,
+                    activityType: "AutomotiveNavigation",       // <-- iOS-only
+                    debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
                 });
 
                 // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
