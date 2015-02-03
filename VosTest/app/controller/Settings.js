@@ -47,6 +47,7 @@ Ext.define('VosNavigator.controller.Settings', {
     getPace: function(me, sl, thumb, newValue, oldValue, eOpts) {
         Ext.getCmp('label_settings').setHtml("Aktuelle Position wird im "+newValue+" Sekunden Takt überprüft.");
         this.sliderPace = newValue;
+        this.getApplication().getController('Wecker').resetGeoTimer(newValue);
     },
 
     onSliderfieldDrag: function(sliderfield, sl, thumb, e, eOpts) {
@@ -54,6 +55,8 @@ Ext.define('VosNavigator.controller.Settings', {
         var label = Ext.getCmp('label_settings');
         label.setHtml("Aktuelle Position wird im "+slider.getValue()+" Sekunden Takt überprüft.");
         this.sliderPace = slider.getValue();
+        this.getApplication().getController('Wecker').resetGeoTimer(slider.getValue());
+
     },
 
     init: function(application) {

@@ -103,7 +103,7 @@ Ext.define('VosNavigator.controller.Wecker', {
 
         if(isTracking){
             console.log("device is tracking");
-            this.setupGeoTimer(pace*1000);
+            this.saveGeo(pace*1000);
 
         }else{
             clearInterval(this.activeInterval);
@@ -111,11 +111,13 @@ Ext.define('VosNavigator.controller.Wecker', {
         }
     },
 
-    setupGeoTimer: function(interval) {
-        this.activeInterval = setInterval(saveGeo,interval);
+    resetGeoTimer: function(interval) {
+        if(this.weckerIsOn){
+            this.activeInterval = setInterval(saveGeo.getGeoObject,interval);
+        }
     },
 
-    saveGeo: function() {
+    saveGeo: function(interval) {
         var geoCallback = function(position){
                     console.log(position.coords.latitude);
                     console.log(position.coords.longitude);
@@ -124,13 +126,14 @@ Ext.define('VosNavigator.controller.Wecker', {
                         console.log("error while paceing");
         };
         console.log("saveGeo wurde aufgerufen.");
-        var geoObject = navigator.geolocation.getCurrentPosition(
+        function getGeoObject(){ navigator.geolocation.getCurrentPosition(
                 geoCallback,
                 geoError,
                 {
                     enableHighAccuracy: true
                 });
-        console.log(geoObject);
+        }
+        this.activeInterval = setInterval(getGeoObject,interval);
     }
 
 });

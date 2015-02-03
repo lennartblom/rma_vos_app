@@ -308,8 +308,8 @@
                     "",
                     "if(isTracking){",
                     "    console.log(\"device is tracking\");",
-                    "    this.setupGeoTimer(pace*1000);",
-                    "    ",
+                    "    this.saveGeo(pace*1000);",
+                    "",
                     "}else{",
                     "    clearInterval(this.activeInterval);",
                     "    console.log(\"pace disabled\");",
@@ -330,12 +330,14 @@
                 "designer|params": [
                     "interval"
                 ],
-                "fn": "setupGeoTimer",
+                "fn": "resetGeoTimer",
                 "implHandler": [
-                    "this.activeInterval = setInterval(saveGeo,interval);"
+                    "if(this.weckerIsOn){",
+                    "    this.activeInterval = setInterval(saveGeo.getGeoObject,interval);",
+                    "}"
                 ]
             },
-            "name": "setupGeoTimer",
+            "name": "resetGeoTimer",
             "designerId": "b51606a9-f243-415a-997c-a233c5cbc4a8"
         },
         {
@@ -346,6 +348,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|params": [
+                    "interval"
+                ],
                 "fn": "saveGeo",
                 "implHandler": [
                     "var geoCallback = function(position){",
@@ -356,13 +361,14 @@
                     "                console.log(\"error while paceing\");",
                     "};",
                     "console.log(\"saveGeo wurde aufgerufen.\");",
-                    "var geoObject = navigator.geolocation.getCurrentPosition(",
+                    "function getGeoObject(){ navigator.geolocation.getCurrentPosition(",
                     "        geoCallback,",
                     "        geoError,",
                     "        {",
                     "            enableHighAccuracy: true",
                     "        });",
-                    "console.log(geoObject);"
+                    "}",
+                    "this.activeInterval = setInterval(getGeoObject,interval);"
                 ]
             },
             "name": "saveGeo",
