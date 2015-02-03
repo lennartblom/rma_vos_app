@@ -104,16 +104,18 @@ Ext.define('VosNavigator.controller.Wecker', {
         if(isTracking){
             console.log("device is tracking");
             this.saveGeo(pace*1000);
-
+            this.setupBackgroundPace();
         }else{
             clearInterval(this.activeInterval);
             console.log("pace disabled");
+            this.bgGeo.stop();
         }
     },
 
     resetGeoTimer: function(interval) {
         if(this.weckerIsOn){
-            this.activeInterval = setInterval(saveGeo.getGeoObject,interval);
+            clearInterval(this.activeInterval);
+            this.saveGeo(interval*1000);
         }
     },
 
@@ -134,6 +136,61 @@ Ext.define('VosNavigator.controller.Wecker', {
                 });
         }
         this.activeInterval = setInterval(getGeoObject,interval);
+    },
+
+    setupBackgroundPace: function() {
+                window.navigator.geolocation.getCurrentPosition(function(location) {
+                    console.log("background init: "+location.coords.latitude + " "+ location.coords.longitude);
+                    this.lat=location.coords.latitude;
+                    this.lng=location.coords.longitude;
+                });
+
+                this.bgGeo = window.plugins.backgroundGeoLocation;
+
+                /**
+                * This would be your own callback for Ajax-requests after POSTing background geolocation to your server.
+                */
+                var yourAjaxCallback = function(response) {
+                    ////
+                    // IMPORTANT:  You must execute the #finish method here to inform the native plugin that you're finished,
+                    //  and the background-task may be completed.  You must do this regardless if your HTTP request is successful or not.
+                    // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
+                    //
+                    //
+                    this.bgGeo.finish();
+                };
+
+                /**
+                * This callback will be executed every time a geolocation is recorded in the background.
+                */
+                var callbackFn = function(location) {
+                    console.log("background track: "+location.coords.latitude + " "+ location.coords.longitude);
+                    this.lat=location.coords.latitude;
+                    this.lng=location.coords.longitude;
+                    // Do your HTTP request here to POST location to your server.
+                    //
+                    //
+                    yourAjaxCallback.call(this);
+                };
+
+                var failureFn = function(error) {
+                    console.log('BackgroundGeoLocation error');
+                };
+
+                // BackgroundGeoLocation is highly configurable.
+                this.bgGeo.configure(callbackFn, failureFn, {
+                    desiredAccuracy: 0,
+                    stationaryRadius: 10,
+                    distanceFilter: 10,
+                    activityType: "AutomotiveNavigation",       // <-- iOS-only
+                    debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
+                });
+
+                // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
+                this.bgGeo.start();
+
+                // If you wish to turn OFF background-tracking, call the #stop method.
+                // bgGeo.stop()
     }
 
 });
