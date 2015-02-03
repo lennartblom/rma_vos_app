@@ -84,6 +84,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.lng = 0.0;
         this.trackingId = 0;
         this.activeInterval=0;
+        this.bgGeo=null;
     },
 
     wecken: function() {
@@ -142,25 +143,26 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     setupBackgroundPace: function() {
-               /* window.navigator.geolocation.getCurrentPosition(function(location) {
+                window.navigator.geolocation.getCurrentPosition(function(location) {
                     console.log("background init: "+location.coords.latitude + " "+ location.coords.longitude);
                     this.lat=location.coords.latitude;
                     this.lng=location.coords.longitude;
-                });*/
+                });
 
-                this.bgGeo = window.plugins.backgroundGeoLocation;
+               var bgGeo  = window.plugins.backgroundGeoLocation;
 
                 /**
                 * This would be your own callback for Ajax-requests after POSTing background geolocation to your server.
                 */
                 var yourAjaxCallback = function(response) {
+                    console.log("ajaxCallBack");
                     ////
                     // IMPORTANT:  You must execute the #finish method here to inform the native plugin that you're finished,
                     //  and the background-task may be completed.  You must do this regardless if your HTTP request is successful or not.
                     // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
                     //
                     //
-                    this.bgGeo.finish();
+                    bgGeo.finish();
                 };
 
                 /**
@@ -182,19 +184,20 @@ Ext.define('VosNavigator.controller.Wecker', {
                 };
 
                 // BackgroundGeoLocation is highly configurable.
-                this.bgGeo.configure(callbackFn, failureFn, {
+                bgGeo.configure(callbackFn, failureFn, {
                     locationTimeout: 5,
-                    desiredAccuracy: 0,
-                    stationaryRadius: 0,
-                    distanceFilter: 0,
-                    activityType: "AutomotiveNavigation",
-                    stopOnTerminate: true,// <-- iOS-only
+                    desiredAccuracy: 10,
+                    stationaryRadius: 10,
+                    distanceFilter: 10,
+                    activityType: "Fitness",
+                    stopOnTerminate: false,// <-- iOS-only
                     debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
                 });
 
                 // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
-                this.bgGeo.start();
-
+                bgGeo.start();
+                //bgGeo.changePace(true);
+                this.bgGeo = bgGeo;
                 // If you wish to turn OFF background-tracking, call the #stop method.
                 // bgGeo.stop()
     }
