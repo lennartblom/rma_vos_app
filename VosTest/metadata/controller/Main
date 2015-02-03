@@ -25,7 +25,7 @@
                 "implHandler": [
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
-                    "this.getApplication().getController('Wecker').wecken();"
+                    "//this.getApplication().getController('Wecker').wecken();"
                 ],
                 "name": "tap"
             },

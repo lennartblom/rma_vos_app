@@ -123,10 +123,12 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     saveGeo: function(interval) {
         var geoCallback = function(position){
-                    console.log(position.coords.latitude);
-                    console.log(position.coords.longitude);
+                    this.lat=position.coords.latitude;
+                    this.lng = position.coords.longitude;
                     console.log('[JS] Koordinaten: '+position.coords.latitude+
                         ' '+position.coords.longitude);
+                    this.checkDistance();
+
                 };
         var geoError = function(error){
                         console.log("error while paceing");
@@ -172,6 +174,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                     console.log("background track: "+location.latitude + " "+ location.longitude);
                     this.lat=location.latitude;
                     this.lng=location.longitude;
+                    this.checkDistance();
                     //navigator.notification.alert("Aktuelle Position: "+this.lat+" "+this.lng,"Alert");
                     // Do your HTTP request here to POST location to your server.
                     //
@@ -196,10 +199,32 @@ Ext.define('VosNavigator.controller.Wecker', {
 
                 // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
                 bgGeo.start();
-                //bgGeo.changePace(true);
+                bgGeo.changePace(true);
                 this.bgGeo = bgGeo;
                 // If you wish to turn OFF background-tracking, call the #stop method.
                 // bgGeo.stop()
+    },
+
+    entfernungZumZiel: function() {
+        var latCurrent =this.lat;
+        var lngCurrent =this.lng;
+        var latDestination =this.lat;
+        var lngDestination =this.lng;
+        var distance = 0.0;
+        var deltaX = 71.5 * (lngCurrent-lngDestination);
+        var deltaY = 111.3 * (latCurrent-latDestination);
+        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
+        return distance;
+
+
+
+    },
+
+    checkDistance: function() {
+        var weckRadius = this.sliderValue;
+        if(this.entfernungZumZiel()<=weckRadius){
+            this.wecken();
+        }
     }
 
 });
