@@ -103,34 +103,7 @@
                         "label": "Von"
                     },
                     "name": "MySearchField1",
-                    "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7",
-                    "cn": [
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onMysearchfield1Action",
-                                "implHandler": [
-                                    "var value = textfield.getValue();",
-                                    "var store = Ext.getStore('stops');",
-                                    "store.filter('name', value);",
-                                    "",
-                                    "var dataView = Ext.getComponent(\"#lineOne\");",
-                                    "",
-                                    "dataView.refresh();",
-                                    "",
-                                    "alert(\"Search refresh with: \"+value);"
-                                ],
-                                "name": "action"
-                            },
-                            "name": "onMysearchfield1Action",
-                            "designerId": "853426c9-8c42-4a41-b383-240f8f2f3185"
-                        }
-                    ]
+                    "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7"
                 },
                 {
                     "type": "Ext.field.Search",
@@ -245,7 +218,7 @@
                         "height": 100,
                         "id": "lineTwo",
                         "margin": "10 0 0 0 ",
-                        "scrollable": false,
+                        "scrollable": "vertical",
                         "style": [
                             "background-color: rgba(255,255,255, 0.6);"
                         ],

@@ -121,6 +121,35 @@
             "designerId": "d0bb6b69-cc7a-4985-986c-7029cf6058e9"
         },
         {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "data"
+                ],
+                "fn": "getLines",
+                "implHandler": [
+                    "var len = data.length;",
+                    "var content = '';",
+                    "",
+                    "for(var i=0;i<len;i++){",
+                    "    content += data[i]['LineId'];",
+                    "    if(i != len-1){",
+                    "        content += \", \";",
+                    "    }",
+                    "}",
+                    "",
+                    "return content;"
+                ]
+            },
+            "name": "getLines",
+            "designerId": "1c7ac032-cde5-4bb5-8629-9ac71f1d2b8f"
+        },
+        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -153,9 +182,13 @@
                 "fn": "onLineOneItemTap",
                 "implHandler": [
                     "var dataView = this.getLineTwo();",
+                    "var linesData = record.get('lines');",
+                    "//var quantity = linesArray.getCount();",
+                    "",
+                    "",
                     "",
                     "var myPanel = Ext.create('Ext.Panel', {",
-                    "    html: \"<div style=\\\"float:left;width:50%;background-color:green;\\\">\"+ record.get('id')+ \"</div><div style=\\\"background-color:#5e5e5e;float:left;width:50%;\\\">\"+ record.get('name')+ \"</div>\"",
+                    "    html: \"<div style=\\\"float:left;width:50%;background-color:green;\\\"><div style=\\\"float:left;width:15px;height:15px;background-image:url(resources/images/icons/bus-icon-150x150.png);background-size:15px 15px;\\\"></div> \" + this.getLines(linesData) + \"</div><div style=\\\"background-color:#5e5e5e;float:left;width:50%;\\\">\"+ record.get('name')+ \"</div>\"",
                     "});",
                     "",
                     "dataView.add([myPanel]);"
@@ -183,6 +216,47 @@
             },
             "name": "onButtonTap",
             "designerId": "4b114a89-8681-40ec-988b-94f1338e891a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#mysearchfield1",
+                "designer|targetType": "MySearchField1",
+                "fn": "onMysearchfield1Action",
+                "implHandler": [
+                    "var value = this.getMysearchfield1().getValue();",
+                    "var store = Ext.getStore('stops');",
+                    "store.filter('name', value);",
+                    "",
+                    "var dataView = this.getLineOne();",
+                    "",
+                    "dataView.refresh();",
+                    "",
+                    "console.log(\"Search refresh with: \"+value);"
+                ],
+                "name": "action"
+            },
+            "name": "onMysearchfield1Action",
+            "designerId": "eac20c00-2cd0-4d80-9112-4d16ba5ceac2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mysearchfield1",
+                "selector": "searchfield#mysearchfield1"
+            },
+            "name": "mysearchfield1",
+            "designerId": "55220e19-5b69-4ab6-b188-b123156af6e7"
         }
     ]
 }
