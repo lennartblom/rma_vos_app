@@ -166,7 +166,8 @@
                     "this.lng = 0.0;",
                     "this.trackingId = 0;",
                     "this.activeInterval=0;",
-                    "this.bgGeo=null;"
+                    "this.bgGeo=null;",
+                    "this.weckerInterval=0;"
                 ]
             },
             "name": "init",
@@ -311,8 +312,10 @@
                     "    console.log(\"device is tracking\");",
                     "    this.saveGeo(pace*1000);",
                     "    this.setupBackgroundPace();",
+                    "    this.checkDistance();",
                     "}else{",
                     "    clearInterval(this.activeInterval);",
+                    "    clearInterval(this.weckerInterval);",
                     "    this.bgGeo.stop();",
                     "       console.log(\"pace disabled\");",
                     "",
@@ -362,7 +365,6 @@
                     "            this.lng = position.coords.longitude;",
                     "            console.log('[JS] Koordinaten: '+position.coords.latitude+",
                     "                ' '+position.coords.longitude);",
-                    "            this.checkDistance();",
                     "",
                     "        };",
                     "var geoError = function(error){",
@@ -376,7 +378,8 @@
                     "            enableHighAccuracy: true",
                     "        });",
                     "}",
-                    "this.activeInterval = setInterval(getGeoObject,interval);"
+                    "this.activeInterval = setInterval(getGeoObject,interval);",
+                    ""
                 ]
             },
             "name": "saveGeo",
@@ -421,7 +424,6 @@
                     "            console.log(\"background track: \"+location.latitude + \" \"+ location.longitude);",
                     "            this.lat=location.latitude;",
                     "            this.lng=location.longitude;",
-                    "            this.checkDistance();",
                     "            //navigator.notification.alert(\"Aktuelle Position: \"+this.lat+\" \"+this.lng,\"Alert\");",
                     "            // Do your HTTP request here to POST location to your server.",
                     "            //",
@@ -463,8 +465,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "entfernungZumZiel",
+                "fn": "entfernung",
                 "implHandler": [
+                    "console.log(\"distance Berechnung\");",
                     "var latCurrent =this.lat;",
                     "var lngCurrent =this.lng;",
                     "var latDestination =this.lat;",
@@ -472,14 +475,20 @@
                     "var distance = 0.0;",
                     "var deltaX = 71.5 * (lngCurrent-lngDestination);",
                     "var deltaY = 111.3 * (latCurrent-latDestination);",
+                    "var radius = 200;",
+                    "if(deltaX>0||deltaY>0){",
                     "distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;",
-                    "return distance;",
-                    "",
+                    "}",
+                    "console.log(distance);",
+                    "console.log(radius);",
+                    "if(distance<=radius){",
+                    "    this.wecken();",
+                    "}",
                     "",
                     ""
                 ]
             },
-            "name": "entfernungZumZiel",
+            "name": "entfernung",
             "designerId": "8ffb137c-3878-48d0-831b-e0e1140cc851"
         },
         {
@@ -492,10 +501,9 @@
             "userConfig": {
                 "fn": "checkDistance",
                 "implHandler": [
-                    "var weckRadius = this.sliderValue;",
-                    "if(this.entfernungZumZiel()<=weckRadius){",
-                    "    this.wecken();",
-                    "}"
+                    "",
+                    "this.weckerInterval = setInterval(this.entfernung,7000);",
+                    ""
                 ]
             },
             "name": "checkDistance",

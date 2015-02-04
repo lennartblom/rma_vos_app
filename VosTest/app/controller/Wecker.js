@@ -85,6 +85,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.trackingId = 0;
         this.activeInterval=0;
         this.bgGeo=null;
+        this.weckerInterval=0;
     },
 
     wecken: function() {
@@ -106,8 +107,10 @@ Ext.define('VosNavigator.controller.Wecker', {
             console.log("device is tracking");
             this.saveGeo(pace*1000);
             this.setupBackgroundPace();
+            this.checkDistance();
         }else{
             clearInterval(this.activeInterval);
+            clearInterval(this.weckerInterval);
             this.bgGeo.stop();
                console.log("pace disabled");
 
@@ -127,7 +130,6 @@ Ext.define('VosNavigator.controller.Wecker', {
                     this.lng = position.coords.longitude;
                     console.log('[JS] Koordinaten: '+position.coords.latitude+
                         ' '+position.coords.longitude);
-                    this.checkDistance();
 
                 };
         var geoError = function(error){
@@ -142,6 +144,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                 });
         }
         this.activeInterval = setInterval(getGeoObject,interval);
+
     },
 
     setupBackgroundPace: function() {
@@ -174,7 +177,6 @@ Ext.define('VosNavigator.controller.Wecker', {
                     console.log("background track: "+location.latitude + " "+ location.longitude);
                     this.lat=location.latitude;
                     this.lng=location.longitude;
-                    this.checkDistance();
                     //navigator.notification.alert("Aktuelle Position: "+this.lat+" "+this.lng,"Alert");
                     // Do your HTTP request here to POST location to your server.
                     //
@@ -205,7 +207,8 @@ Ext.define('VosNavigator.controller.Wecker', {
                 // bgGeo.stop()
     },
 
-    entfernungZumZiel: function() {
+    entfernung: function() {
+        console.log("distance Berechnung");
         var latCurrent =this.lat;
         var lngCurrent =this.lng;
         var latDestination =this.lat;
@@ -213,18 +216,23 @@ Ext.define('VosNavigator.controller.Wecker', {
         var distance = 0.0;
         var deltaX = 71.5 * (lngCurrent-lngDestination);
         var deltaY = 111.3 * (latCurrent-latDestination);
+        var radius = 200;
+        if(deltaX>0||deltaY>0){
         distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
-        return distance;
-
+        }
+        console.log(distance);
+        console.log(radius);
+        if(distance<=radius){
+            this.wecken();
+        }
 
 
     },
 
     checkDistance: function() {
-        var weckRadius = this.sliderValue;
-        if(this.entfernungZumZiel()<=weckRadius){
-            this.wecken();
-        }
+
+        this.weckerInterval = setInterval(this.entfernung,7000);
+
     }
 
 });
