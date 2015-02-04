@@ -118,7 +118,7 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         margin: '10 0 0 0 ',
                         style: 'background-color: rgba(255,255,255, 0.6);',
                         width: '100%',
-                        scrollable: false,
+                        scrollable: 'vertical',
                         itemTpl: [
                             '<div>Data View Item {string}</div>'
                         ]
@@ -151,26 +151,7 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
                 width: '255px'
             }
-        ],
-        listeners: [
-            {
-                fn: 'onMysearchfield1Action',
-                event: 'action',
-                delegate: '#mysearchfield1'
-            }
         ]
-    },
-
-    onMysearchfield1Action: function(textfield, e, eOpts) {
-        var value = textfield.getValue();
-        var store = Ext.getStore('stops');
-        store.filter('name', value);
-
-        var dataView = Ext.getComponent("#lineOne");
-
-        dataView.refresh();
-
-        alert("Search refresh with: "+value);
     }
 
 });

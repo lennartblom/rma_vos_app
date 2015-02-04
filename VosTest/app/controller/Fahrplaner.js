@@ -23,7 +23,8 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             FahrplanerView: '#FahrplanerView',
             mybutton: 'button#mybutton',
             lineOne: 'dataview#lineOne',
-            lineTwo: 'dataview#lineTwo'
+            lineTwo: 'dataview#lineTwo',
+            mysearchfield1: 'searchfield#mysearchfield1'
         },
 
         control: {
@@ -38,6 +39,9 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             },
             "button#reset_button": {
                 tap: 'onButtonTap'
+            },
+            "searchfield#mysearchfield1": {
+                action: 'onMysearchfield1Action'
             }
         }
     },
@@ -53,9 +57,13 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     onLineOneItemTap: function(list, index, item, record) {
         var dataView = this.getLineTwo();
+        var linesData = record.get('lines');
+        //var quantity = linesArray.getCount();
+
+
 
         var myPanel = Ext.create('Ext.Panel', {
-            html: "<div style=\"float:left;width:50%;background-color:green;\">"+ record.get('id')+ "</div><div style=\"background-color:#5e5e5e;float:left;width:50%;\">"+ record.get('name')+ "</div>"
+            html: "<div style=\"float:left;width:50%;background-color:green;\"><div style=\"float:left;width:15px;height:15px;background-image:url(resources/images/icons/bus-icon-150x150.png);background-size:15px 15px;\"></div> " + this.getLines(linesData) + "</div><div style=\"background-color:#5e5e5e;float:left;width:50%;\">"+ record.get('name')+ "</div>"
         });
 
         dataView.add([myPanel]);
@@ -63,6 +71,32 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     onButtonTap: function(button, e, eOpts) {
         this.getLineTwo().removeAll();
+    },
+
+    onMysearchfield1Action: function() {
+        var value = this.getMysearchfield1().getValue();
+        var store = Ext.getStore('stops');
+        store.filter('name', value);
+
+        var dataView = this.getLineOne();
+
+        dataView.refresh();
+
+        console.log("Search refresh with: "+value);
+    },
+
+    getLines: function(data) {
+        var len = data.length;
+        var content = '';
+
+        for(var i=0;i<len;i++){
+            content += data[i]['LineId'];
+            if(i != len-1){
+                content += ", ";
+            }
+        }
+
+        return content;
     }
 
 });
