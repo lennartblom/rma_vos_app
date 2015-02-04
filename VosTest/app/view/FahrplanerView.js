@@ -22,13 +22,13 @@ Ext.define('VosNavigator.view.fahrplanerView', {
         'Ext.Button',
         'Ext.form.FieldSet',
         'Ext.field.Search',
-        'Ext.dataview.List',
-        'Ext.Label',
+        'Ext.dataview.DataView',
         'Ext.XTemplate'
     ],
 
     config: {
         height: '100%',
+        itemId: 'mycontainer7',
         width: '100%',
         layout: 'fit',
         items: [
@@ -64,11 +64,12 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 items: [
                     {
                         xtype: 'searchfield',
-                        itemId: 'mysearchfield1',
+                        itemId: 'searchfieldStart',
                         label: 'Von'
                     },
                     {
                         xtype: 'searchfield',
+                        itemId: 'searchfieldDestination',
                         label: 'Nach'
                     }
                 ]
@@ -82,34 +83,6 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 width: '100%',
                 scrollable: 'horizontal',
                 items: [
-                    {
-                        xtype: 'list',
-                        docked: 'top',
-                        height: 140,
-                        id: 'lineOne',
-                        itemId: 'mylist',
-                        itemTpl: [
-                            '<div>{name}</div>'
-                        ],
-                        store: 'stops',
-                        items: [
-                            {
-                                xtype: 'label',
-                                docked: 'top',
-                                height: '25px',
-                                html: '<p style="font-size:11px;">Suchergebnisse</p>',
-                                id: 'search_label'
-                            }
-                        ],
-                        listeners: [
-                            {
-                                fn: function(element, eOpts) {
-
-                                },
-                                event: 'painted'
-                            }
-                        ]
-                    },
                     {
                         xtype: 'dataview',
                         docked: 'top',
@@ -135,12 +108,6 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         itemTpl: [
                             '<div>Data View Item {string}</div>'
                         ]
-                    },
-                    {
-                        xtype: 'button',
-                        docked: 'top',
-                        id: 'reset_button',
-                        text: 'reset'
                     }
                 ]
             },
