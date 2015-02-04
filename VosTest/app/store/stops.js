@@ -23,7 +23,6 @@ Ext.define('VosNavigator.store.stops', {
     ],
 
     config: {
-        autoLoad: true,
         model: 'VosNavigator.model.stop',
         storeId: 'stops',
         proxy: {
