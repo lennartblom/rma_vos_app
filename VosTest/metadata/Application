@@ -7,11 +7,12 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
-            "Main",
             "Fahrplaner",
             "Goals",
             "Settings",
+            "Achievements",
             "Wecker",
+            "Main"
             "Achievements",
             "searchViewController"
         ],
@@ -23,11 +24,11 @@
             "stops"
         ],
         "views": [
-            "fahrplanerView",
-            "goalsView",
             "settingsView",
-            "InitialView",
+            "goalsView",
             "achView",
+            "InitialView",
+            "fahrplanerView",
             "weckerView",
             "mainScreen",
             "MySearchField",
