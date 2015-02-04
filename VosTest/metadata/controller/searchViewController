@@ -118,6 +118,42 @@
             },
             "name": "FahrplanerView",
             "designerId": "d0a0e593-759c-4914-a6d2-95ce707ab8d5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#searchResultList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListPainted",
+                "implHandler": [
+                    ""
+                ],
+                "name": "painted"
+            },
+            "name": "onListPainted",
+            "designerId": "251e230f-1dbe-40ec-bbe8-4de64c242437"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.getStore('stops').load();",
+                    "console.log(\"Store wurde geladen.\");"
+                ]
+            },
+            "name": "launch",
+            "designerId": "23c2d8b7-9113-4187-810d-c5f213c305a7"
         }
     ]
 }

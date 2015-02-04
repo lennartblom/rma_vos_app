@@ -29,7 +29,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
                 keyup: 'onSearchfieldKeyup'
             },
             "list#searchResultList": {
-                itemtap: 'onListItemTap'
+                itemtap: 'onListItemTap',
+                painted: 'onListPainted'
             }
         }
     },
@@ -54,6 +55,15 @@ Ext.define('VosNavigator.controller.searchViewController', {
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
         this.getSearchView().hide();
         this.getFahrplanerView().show();
+    },
+
+    onListPainted: function(element, eOpts) {
+
+    },
+
+    launch: function() {
+        Ext.getStore('stops').load();
+        console.log("Store wurde geladen.");
     }
 
 });
