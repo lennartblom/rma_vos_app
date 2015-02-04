@@ -34,7 +34,8 @@ Ext.define('VosNavigator.view.searchView', {
                 id: 'searchTitle',
                 tpl: [
                     '{title}haltestelle'
-                ]
+                ],
+                width: '100%'
             },
             {
                 xtype: 'searchfield',

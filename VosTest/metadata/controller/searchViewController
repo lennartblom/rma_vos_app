@@ -148,8 +148,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "Ext.getStore('stops').load();",
-                    "console.log(\"Store wurde geladen.\");"
+                    ""
                 ]
             },
             "name": "launch",

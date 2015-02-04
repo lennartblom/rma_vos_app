@@ -7,12 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
+            "Main",
             "Fahrplaner",
             "Goals",
             "Settings",
-            "Achievements",
             "Wecker",
-            "Main"
             "Achievements",
             "searchViewController"
         ],
@@ -24,11 +23,11 @@
             "stops"
         ],
         "views": [
-            "settingsView",
-            "goalsView",
-            "achView",
-            "InitialView",
             "fahrplanerView",
+            "goalsView",
+            "settingsView",
+            "InitialView",
+            "achView",
             "weckerView",
             "mainScreen",
             "MySearchField",
@@ -36,5 +35,24 @@
         ]
     },
     "name": "Application",
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.getStore('stops').load();",
+                    "console.log(\"Store wurde geladen.\");"
+                ]
+            },
+            "name": "launch",
+            "designerId": "514db327-a630-455f-a357-671df10ca6c8"
+        }
+    ]
 }

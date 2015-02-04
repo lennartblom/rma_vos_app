@@ -23,7 +23,8 @@
             "userConfig": {
                 "docked": "top",
                 "height": "30px",
-                "id": "searchTitle"
+                "id": "searchTitle",
+                "width": "100%"
             },
             "name": "MyLabel7",
             "designerId": "8ea5d999-a188-4fc3-b49e-8134b6fa483c",

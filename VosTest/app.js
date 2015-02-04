@@ -27,30 +27,30 @@ Ext.application({
         'stops'
     ],
     views: [
-        'settingsView',
-        'goalsView',
-        'achView',
-        'InitialView',
         'fahrplanerView',
+        'goalsView',
+        'settingsView',
+        'InitialView',
+        'achView',
         'weckerView',
         'mainScreen',
         'MySearchField',
         'searchView'
     ],
     controllers: [
+        'Main',
         'Fahrplaner',
         'Goals',
         'Settings',
-        'Achievements',
         'Wecker',
-        'Main',
         'Achievements',
         'searchViewController'
     ],
     name: 'VosNavigator',
 
     launch: function() {
-
+        Ext.getStore('stops').load();
+        console.log("Store wurde geladen.");
         Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
     }
 

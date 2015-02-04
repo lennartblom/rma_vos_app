@@ -62,8 +62,7 @@ Ext.define('VosNavigator.controller.searchViewController', {
     },
 
     launch: function() {
-        Ext.getStore('stops').load();
-        console.log("Store wurde geladen.");
+
     }
 
 });
