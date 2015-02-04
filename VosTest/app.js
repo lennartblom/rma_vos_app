@@ -43,7 +43,7 @@ Ext.application({
         'Settings',
         'Achievements',
         'Wecker',
-        'Main'
+        'Main',
         'Achievements',
         'searchViewController'
     ],
