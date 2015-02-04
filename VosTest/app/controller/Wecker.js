@@ -37,7 +37,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                 change: 'setWeckRadius',
                 drag: 'onSliderfieldDrag'
             },
-            "togglefield": {
+            "togglefield#weckerOnOffSwitch": {
                 change: 'onTogglefieldChange'
             },
             "selectfield": {
@@ -67,6 +67,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.weckerIsOn=newValue;
         console.log("Toggle Field value: "+newValue);
         this.getGeo(newValue);
+        //this.getApplication().getController('Wecker').wecken();
     },
 
     onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
@@ -89,6 +90,7 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     wecken: function() {
+        console.log("wecker Weckt jetzt");
         navigator.vibrate(1);
         var resource = "resources/tones/" + this.tune;
         navigator.vibrate(1);
@@ -107,7 +109,7 @@ Ext.define('VosNavigator.controller.Wecker', {
             console.log("device is tracking");
             this.saveGeo(pace*1000);
             this.setupBackgroundPace();
-            this.checkDistance();
+            //this.checkDistance();
         }else{
             clearInterval(this.activeInterval);
             clearInterval(this.weckerInterval);
@@ -130,6 +132,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                     this.lng = position.coords.longitude;
                     console.log('[JS] Koordinaten: '+position.coords.latitude+
                         ' '+position.coords.longitude);
+                    //this.checkDistance();
 
                 };
         var geoError = function(error){
@@ -148,10 +151,11 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     setupBackgroundPace: function() {
-                window.navigator.geolocation.getCurrentPosition(function(location) {
+
+            window.navigator.geolocation.getCurrentPosition(function(location) {
                     console.log("background init: "+location.coords.latitude + " "+ location.coords.longitude);
-                    this.lat=location.coords.latitude;
-                    this.lng=location.coords.longitude;
+                    //this.lat=location.coords.latitude;
+                    //this.lng=location.coords.longitude;
                 });
 
                var bgGeo  = window.plugins.backgroundGeoLocation;
@@ -177,6 +181,8 @@ Ext.define('VosNavigator.controller.Wecker', {
                     console.log("background track: "+location.latitude + " "+ location.longitude);
                     this.lat=location.latitude;
                     this.lng=location.longitude;
+                    console.log("zugriff auf this.lat "+this.lat);
+                    checkBGDist();
                     //navigator.notification.alert("Aktuelle Position: "+this.lat+" "+this.lng,"Alert");
                     // Do your HTTP request here to POST location to your server.
                     //
@@ -188,6 +194,36 @@ Ext.define('VosNavigator.controller.Wecker', {
                     console.log('BackgroundGeoLocation error');
                 };
 
+                function checkBGDist(){
+                    console.log("distance Berechnung");
+                    var latCurrent =this.lat;
+                    var lngCurrent =this.lng;
+                    var latDestination =this.lat;
+                    var lngDestination =this.lng;
+                    var distance = 0.0;
+                    var deltaX = 71.5 * (lngCurrent-lngDestination);
+                    var deltaY = 111.3 * (latCurrent-latDestination);
+                    var radius = 200;
+                    if(deltaX!==0||deltaY!==0){
+                        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
+                    }
+                    console.log(distance);
+                    console.log(radius);
+                    if(distance<=radius){
+                    console.log("distance<radius");
+                    console.log("wecker Weckt jetzt");
+                    navigator.vibrate(1);
+                    var resource = "resources/tones/" + this.tune;
+                    navigator.vibrate(1);
+                    var myMedia = new Media(resource);
+                    navigator.vibrate(1);
+                    myMedia.play();
+                    navigator.vibrate(1);
+                    navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
+                    navigator.vibrate(1);
+                 }
+
+                }
                 // BackgroundGeoLocation is highly configurable.
                 bgGeo.configure(callbackFn, failureFn, {
                     locationTimeout: 5,
@@ -217,21 +253,20 @@ Ext.define('VosNavigator.controller.Wecker', {
         var deltaX = 71.5 * (lngCurrent-lngDestination);
         var deltaY = 111.3 * (latCurrent-latDestination);
         var radius = 200;
-        if(deltaX>0||deltaY>0){
+        if(deltaX!==0||deltaY!==0){
         distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
         }
         console.log(distance);
         console.log(radius);
         if(distance<=radius){
-            this.wecken();
+            console.log("distance<radius");
+            this.getApplication().getController('Wecker').wecken();
         }
-
 
     },
 
     checkDistance: function() {
-
-        this.weckerInterval = setInterval(this.entfernung,7000);
+        this.entfernung();
 
     }
 
