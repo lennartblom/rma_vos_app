@@ -42,7 +42,7 @@
                 "hidden": true,
                 "id": "FahrplanerView"
             },
-            "name": "fahrplanerview2",
+            "name": "fahrplanerview",
             "designerId": "a306303a-2d35-421b-98e2-72fe821223d7",
             "masterInstanceId": "b60cccb9-321a-45c4-ad9c-93f071883a5f"
         },
@@ -57,7 +57,7 @@
                 "hidden": true,
                 "id": "GoalsView"
             },
-            "name": "goalsview2",
+            "name": "goalsview",
             "designerId": "3cce19c2-3477-469a-9b7b-b00f2fd0d0c9",
             "masterInstanceId": "bdc6e475-08cf-4183-aff2-884bf524a593"
         },
@@ -72,7 +72,7 @@
                 "hidden": true,
                 "id": "SettingsView"
             },
-            "name": "settingsview3",
+            "name": "settingsview",
             "designerId": "5fea5093-aef7-4d1a-a103-9bf6f72ac6d4",
             "masterInstanceId": "03713b00-c334-4937-ad19-bcff3d4c7815"
         },
@@ -87,7 +87,7 @@
                 "hidden": true,
                 "id": "WeckerView"
             },
-            "name": "weckerview2",
+            "name": "weckerview",
             "designerId": "3e6b8009-9526-4b19-a6aa-f66592c5a0c5",
             "masterInstanceId": "2c1ea315-09f3-4875-a131-ad089834757e"
         },
@@ -105,6 +105,20 @@
             "name": "achview",
             "designerId": "352abbff-2c15-4b46-a53e-ac136995b23d",
             "masterInstanceId": "05c90d69-4bbe-4647-aa46-50af4f5a763f"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true
+            },
+            "name": "searchview1",
+            "designerId": "63d203c6-5c41-408e-b353-09d328a6880b",
+            "masterInstanceId": "ca4ff710-0750-4c3d-b612-b2d0d625222d"
         }
     ]
 }

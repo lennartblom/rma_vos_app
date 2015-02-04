@@ -24,7 +24,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             mybutton: 'button#mybutton',
             lineOne: 'dataview#lineOne',
             lineTwo: 'dataview#lineTwo',
-            mysearchfield1: 'searchfield#mysearchfield1'
+            searchView: '#searchView'
         },
 
         control: {
@@ -37,11 +37,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             "#lineOne": {
                 itemtap: 'onLineOneItemTap'
             },
-            "button#reset_button": {
-                tap: 'onButtonTap'
+            "searchfield#searchfieldStart": {
+                focus: 'onFocusSearchfieldStart'
             },
-            "searchfield#mysearchfield1": {
-                action: 'onMysearchfield1Action'
+            "searchfield#searchfieldDestination": {
+                focus: 'onFocusSearchfieldDestination'
             }
         }
     },
@@ -63,38 +63,38 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
 
         var myPanel = Ext.create('Ext.Panel', {
-            html: "<div style=\"float:left;width:50%;background-color:green;\"><div style=\"float:left;width:15px;height:15px;background-image:url(resources/images/icons/bus-icon-150x150.png);background-size:15px 15px;\"></div> " + this.getLines(linesData) + "</div><div style=\"background-color:#5e5e5e;float:left;width:50%;\">"+ record.get('name')+ "</div>"
+            html: "<div class=\"buslineWrapper\"><div class=\"buslinesBoxLeft\"><div class=\"busIcon\" stlye=\"background-image:url(resources/images/icons/bus-icon-150x150.png)\"></div> " + this.getLines(linesData) + "</div><div class=\"buslinesBoxRight\">"+ record.get('name')+ "</div><div class=\"clearing\"></div></div>"
         });
 
+        dataView.removeAll();
         dataView.add([myPanel]);
     },
 
-    onButtonTap: function(button, e, eOpts) {
-        this.getLineTwo().removeAll();
+    onFocusSearchfieldStart: function(textfield, e, eOpts) {
+        this.getFahrplanerView().hide();
+        this.getSearchView().setData({title:"Start"});
+        this.getSearchView().show();
     },
 
-    onMysearchfield1Action: function() {
-        var value = this.getMysearchfield1().getValue();
-        var store = Ext.getStore('stops');
-        store.filter('name', value);
-
-        var dataView = this.getLineOne();
-
-        dataView.refresh();
-
-        console.log("Search refresh with: "+value);
+    onFocusSearchfieldDestination: function(textfield, e, eOpts) {
+        this.getFahrplanerView().hide();
+        this.getSearchView().setData({title:"Ziel"});
+        this.getSearchView().show();
     },
 
     getLines: function(data) {
         var len = data.length;
         var content = '';
+        content += '<div class="busline">';
 
         for(var i=0;i<len;i++){
+            content += '<a href="#">';
             content += data[i]['LineId'];
-            if(i != len-1){
-                content += ", ";
-            }
+            content += '</a>';
+
         }
+
+        content += '</div>';
 
         return content;
     }

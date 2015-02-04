@@ -12,7 +12,8 @@
             "Goals",
             "Settings",
             "Wecker",
-            "Achievements"
+            "Achievements",
+            "searchViewController"
         ],
         "models": [
             "stop"
@@ -29,7 +30,8 @@
             "achView",
             "weckerView",
             "mainScreen",
-            "MySearchField"
+            "MySearchField",
+            "MyContainer"
         ]
     },
     "name": "Application",

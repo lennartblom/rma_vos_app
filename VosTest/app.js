@@ -34,7 +34,8 @@ Ext.application({
         'achView',
         'weckerView',
         'mainScreen',
-        'MySearchField'
+        'MySearchField',
+        'searchView'
     ],
     controllers: [
         'Main',
@@ -42,7 +43,8 @@ Ext.application({
         'Goals',
         'Settings',
         'Wecker',
-        'Achievements'
+        'Achievements',
+        'searchViewController'
     ],
     name: 'VosNavigator',
 

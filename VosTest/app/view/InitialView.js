@@ -23,6 +23,7 @@ Ext.define('VosNavigator.view.InitialView', {
         'VosNavigator.view.settingsView',
         'VosNavigator.view.weckerView',
         'VosNavigator.view.achView',
+        'VosNavigator.view.searchView',
         'Ext.Container'
     ],
 
@@ -59,6 +60,10 @@ Ext.define('VosNavigator.view.InitialView', {
                 xtype: 'achView',
                 hidden: true,
                 id: 'AchView'
+            },
+            {
+                xtype: 'searchview',
+                hidden: true
             }
         ]
     }

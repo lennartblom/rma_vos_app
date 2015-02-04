@@ -135,13 +135,16 @@
                 "implHandler": [
                     "var len = data.length;",
                     "var content = '';",
+                    "content += '<div class=\"busline\">';",
                     "",
                     "for(var i=0;i<len;i++){",
+                    "    content += '<a href=\"#\">';",
                     "    content += data[i]['LineId'];",
-                    "    if(i != len-1){",
-                    "        content += \", \";",
-                    "    }",
+                    "    content += '</a>';",
+                    "",
                     "}",
+                    "",
+                    "content += '</div>';",
                     "",
                     "return content;"
                 ]
@@ -188,9 +191,10 @@
                     "",
                     "",
                     "var myPanel = Ext.create('Ext.Panel', {",
-                    "    html: \"<div style=\\\"float:left;width:50%;background-color:green;\\\"><div style=\\\"float:left;width:15px;height:15px;background-image:url(resources/images/icons/bus-icon-150x150.png);background-size:15px 15px;\\\"></div> \" + this.getLines(linesData) + \"</div><div style=\\\"background-color:#5e5e5e;float:left;width:50%;\\\">\"+ record.get('name')+ \"</div>\"",
+                    "    html: \"<div class=\\\"buslineWrapper\\\"><div class=\\\"buslinesBoxLeft\\\"><div class=\\\"busIcon\\\" stlye=\\\"background-image:url(resources/images/icons/bus-icon-150x150.png)\\\"></div> \" + this.getLines(linesData) + \"</div><div class=\\\"buslinesBoxRight\\\">\"+ record.get('name')+ \"</div><div class=\\\"clearing\\\"></div></div>\"",
                     "});",
                     "",
+                    "dataView.removeAll();",
                     "dataView.add([myPanel]);"
                 ],
                 "name": "itemtap"
@@ -206,16 +210,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#reset_button",
-                "designer|targetType": "Ext.Button",
-                "fn": "onButtonTap",
+                "designer|controlQuery": "searchfield#searchfieldStart",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onFocusSearchfieldStart",
                 "implHandler": [
-                    "this.getLineTwo().removeAll();"
+                    "this.getFahrplanerView().hide();",
+                    "this.getSearchView().setData({title:\"Start\"});",
+                    "this.getSearchView().show();"
                 ],
-                "name": "tap"
+                "name": "focus"
             },
-            "name": "onButtonTap",
-            "designerId": "4b114a89-8681-40ec-988b-94f1338e891a"
+            "name": "onFocusSearchfieldStart",
+            "designerId": "d5aacebf-b760-4d1d-8650-b2a7b3fcc0a2"
         },
         {
             "type": "controlleraction",
@@ -225,24 +231,18 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "searchfield#mysearchfield1",
-                "designer|targetType": "MySearchField1",
-                "fn": "onMysearchfield1Action",
+                "designer|controlQuery": "searchfield#searchfieldDestination",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onFocusSearchfieldDestination",
                 "implHandler": [
-                    "var value = this.getMysearchfield1().getValue();",
-                    "var store = Ext.getStore('stops');",
-                    "store.filter('name', value);",
-                    "",
-                    "var dataView = this.getLineOne();",
-                    "",
-                    "dataView.refresh();",
-                    "",
-                    "console.log(\"Search refresh with: \"+value);"
+                    "this.getFahrplanerView().hide();",
+                    "this.getSearchView().setData({title:\"Ziel\"});",
+                    "this.getSearchView().show();"
                 ],
-                "name": "action"
+                "name": "focus"
             },
-            "name": "onMysearchfield1Action",
-            "designerId": "eac20c00-2cd0-4d80-9112-4d16ba5ceac2"
+            "name": "onFocusSearchfieldDestination",
+            "designerId": "310bb6c0-26e5-4a68-870d-e0fc0945a83f"
         },
         {
             "type": "controllerref",
@@ -252,11 +252,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "mysearchfield1",
-                "selector": "searchfield#mysearchfield1"
+                "ref": "searchView",
+                "selector": "#searchView"
             },
-            "name": "mysearchfield1",
-            "designerId": "55220e19-5b69-4ab6-b188-b123156af6e7"
+            "name": "searchView",
+            "designerId": "c2319d10-a84f-4b7f-971e-216bb389fa53"
         }
     ]
 }

@@ -1,0 +1,100 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "searchview",
+        "designer|userClassName": "searchView",
+        "id": "searchView"
+    },
+    "name": "MyContainer",
+    "designerId": "ca4ff710-0750-4c3d-b612-b2d0d625222d",
+    "cn": [
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "height": "30px",
+                "id": "searchTitle"
+            },
+            "name": "MyLabel7",
+            "designerId": "8ea5d999-a188-4fc3-b49e-8134b6fa483c",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "{title}haltestelle"
+                        ]
+                    },
+                    "name": "tpl",
+                    "designerId": "3117bd80-c837-46db-a8a9-b0563501d6e8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.Search",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "id": "searchField",
+                "itemId": "searchField",
+                "label": "Field"
+            },
+            "name": "MySearchField3",
+            "designerId": "023155e1-4b14-41ad-8936-9904bccaf597"
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "id": "searchResultList",
+                "itemId": "searchResultList",
+                "store": "stops"
+            },
+            "name": "MyList1",
+            "designerId": "ed6d779f-965d-4de0-a490-77270e195b8d",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>{name}</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "5333f389-3846-46a6-9001-8956b814bf86"
+                }
+            ]
+        }
+    ]
+}

@@ -9,6 +9,7 @@
         "designer|userAlias": "fahrplanerview",
         "designer|userClassName": "fahrplanerView",
         "height": "100%",
+        "itemId": "mycontainer7",
         "layout": "fit",
         "width": "100%"
     },
@@ -99,7 +100,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "mysearchfield1",
+                        "itemId": "searchfieldStart",
                         "label": "Von"
                     },
                     "name": "MySearchField1",
@@ -113,6 +114,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "searchfieldDestination",
                         "label": "Nach"
                     },
                     "name": "MySearchField2",
@@ -138,74 +140,6 @@
             "name": "MyContainer10",
             "designerId": "40a965cf-13c0-4d29-8b88-15889d11e859",
             "cn": [
-                {
-                    "type": "Ext.dataview.List",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "docked": "top",
-                        "height": 140,
-                        "id": "lineOne",
-                        "itemId": "mylist",
-                        "store": "stops"
-                    },
-                    "name": "MyList",
-                    "designerId": "61c5d93a-72b4-48ee-a250-5a5b7834c932",
-                    "cn": [
-                        {
-                            "type": "Ext.Label",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "docked": "top",
-                                "height": "25px",
-                                "html": "<p style=\"font-size:11px;\">Suchergebnisse</p>",
-                                "id": "search_label"
-                            },
-                            "name": "MyLabel1",
-                            "designerId": "5f79b77f-bde3-4239-ad5a-e0a52ef1f074"
-                        },
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "itemTpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "itemTpl",
-                                "implHandler": [
-                                    "<div>{name}</div>"
-                                ]
-                            },
-                            "name": "itemTpl",
-                            "designerId": "e81104f3-da09-4667-bca7-f74cc40031f8"
-                        },
-                        {
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onLineOnePainted",
-                                "implHandler": [
-                                    ""
-                                ],
-                                "name": "painted"
-                            },
-                            "name": "onLineOnePainted",
-                            "designerId": "75e810bc-5358-41e0-99af-fd00990621b4"
-                        }
-                    ]
-                },
                 {
                     "type": "Ext.dataview.DataView",
                     "reference": {
@@ -291,22 +225,6 @@
                             "designerId": "ddba0dc0-ce54-4362-ba95-ffd9288da4fa"
                         }
                     ]
-                },
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|displayName": "reset",
-                        "docked": "top",
-                        "id": "reset_button",
-                        "text": "reset"
-                    },
-                    "name": "MyButton4",
-                    "designerId": "e5b14b4e-4f98-4a3c-88bc-608e234de2c1"
                 }
             ]
         },

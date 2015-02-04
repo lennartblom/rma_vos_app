@@ -1,0 +1,123 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "searchViewController"
+    },
+    "name": "MyController",
+    "designerId": "5c080c39-9eb0-4ca3-80d0-df77e879fed0",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "searchResultList",
+                "selector": "list#searchResultList"
+            },
+            "name": "searchResultList",
+            "designerId": "ddd4c0c7-6c12-4936-a834-476edbb97b39"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "searchField",
+                "selector": "searchfield#searchField"
+            },
+            "name": "searchField",
+            "designerId": "cc074c7f-4043-4a7c-b870-9c615a9c07c6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#searchField",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldKeyup",
+                "implHandler": [
+                    "var value = this.getSearchField().getValue();",
+                    "var store = Ext.getStore('stops');",
+                    "var dataView = this.getSearchResultList();",
+                    "",
+                    "if(value === ''){",
+                    "    console.log('String ist leer. Filter wird geleert.');",
+                    "    store.clearFilter();",
+                    "} else {",
+                    "    console.log(\"Search refresh with: \"+value);",
+                    "    store.filter('name', value);",
+                    "}",
+                    "",
+                    "dataView.refresh();",
+                    ""
+                ],
+                "name": "keyup"
+            },
+            "name": "onSearchfieldKeyup",
+            "designerId": "c3e0a80a-bb7a-40e5-acc7-cd1e9d4504c8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#searchResultList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListItemTap",
+                "implHandler": [
+                    "this.getSearchView().hide();",
+                    "this.getFahrplanerView().show();"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onListItemTap",
+            "designerId": "05357f84-920d-43e7-a198-f96d0dfea636"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "searchView",
+                "selector": "#searchView"
+            },
+            "name": "searchView",
+            "designerId": "55f3d523-80c7-4a75-be32-267797c247e7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "FahrplanerView",
+                "selector": "#FahrplanerView"
+            },
+            "name": "FahrplanerView",
+            "designerId": "d0a0e593-759c-4914-a6d2-95ce707ab8d5"
+        }
+    ]
+}
