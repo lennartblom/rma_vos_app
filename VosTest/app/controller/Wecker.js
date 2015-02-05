@@ -30,7 +30,8 @@ Ext.define('VosNavigator.controller.Wecker', {
         trackingId: null,
         taskEngine: {
             taskGetPos: null,
-            taskCheckDistance: null
+            taskCheckDistance: null,
+            taskBackgroundGeo: null
         },
         task: null,
 
@@ -84,7 +85,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         this.setWeckerIsOn(newValue);
         console.log("Toggle Field value: "+newValue);
         this.initiateTracking(newValue);
-        //this.getApplication().getController('Wecker').wecken();
+
     },
 
     onTuneChange: function(selectfield, newValue, oldValue, eOpts) {
@@ -114,12 +115,9 @@ Ext.define('VosNavigator.controller.Wecker', {
         if(isTracking){
             this.initiateTaskManager(pace);
             console.log("device is tracking");
-            //this.setupBackgroundPace();
-            //this.checkDistance();
         }else{
             this.stopTaskManager();
-            //this.bgGeo.stop();
-               console.log("pace disabled");
+            console.log("pace disabled");
 
         }
     },
@@ -136,10 +134,11 @@ Ext.define('VosNavigator.controller.Wecker', {
     entfernung: function() {
         console.log("distance Berechnung");
         var pos = this.getAktuellePosition();
+        var destPos = this.getApplication().getController('Fahrplaner').getZielOrt();
         var latCurrent =pos.lat;
         var lngCurrent =pos.lng;
-        var latDestination =pos.lat;
-        var lngDestination =pos.lng;
+        var latDestination =destPos.lat;
+        var lngDestination =destPos.lng;
         var distance = 0.0;
         var deltaX = 71.5 * (lngCurrent-lngDestination);
         var deltaY = 111.3 * (latCurrent-latDestination);
@@ -183,6 +182,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         var taskEngine = this.getTaskEngine();
         taskEngine.taskGetPos = setInterval(Ext.bind(this.activateTracker,this),pace);
         taskEngine.taskCheckDistance = setInterval(Ext.bind(this.checkDistance,this),5000);
+        taskEngine.taskBackgroundGeo.start();
         console.log("taskmanager wurde initialisiert");
     },
 
@@ -190,6 +190,51 @@ Ext.define('VosNavigator.controller.Wecker', {
         var taskEngine = this.getTaskEngine();
         clearInterval(taskEngine.taskGetPos);
         clearInterval(taskEngine.taskCheckDistance);
+        taskEngine.taskBackgroundGeo.stop();
+    },
+
+    setupBackgroundGeo: function() {
+
+                       this.activateTracker();
+                       var bgGeo  = window.plugins.backgroundGeoLocation;
+                       var taskEngine = this.getTaskEngine();
+                        /**
+                        * This callback will be executed every time a geolocation is recorded in the background.
+                        */
+
+                        var failureFn = function(error) {
+                            console.log('BackgroundGeoLocation error');
+                        };
+
+
+                        // BackgroundGeoLocation is highly configurable.
+                        bgGeo.configure(Ext.bind(
+                            function(location) {
+                                    var pos=this.getAktuellePosition();
+                                    pos.lat=location.latitude;
+                                    pos.lng=location.longitude;
+                                    console.log("background track: "+pos.lat + " "+ pos.lng);
+                                    this.checkDistance();
+                                    bgGeo.finish();
+                        },this), failureFn, {
+                            locationTimeout: 5,
+                            desiredAccuracy: 10,
+                            stationaryRadius: 10,
+                            distanceFilter: 10,
+                            activityType: "Fitness",
+                            stopOnTerminate: false,// <-- iOS-only
+                            debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
+                        });
+
+                        // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
+                        bgGeo.changePace(true);
+                        taskEngine.taskBackgroundGeo = bgGeo;
+                        // If you wish to turn OFF background-tracking, call the #stop method.
+                        // bgGeo.stop()
+    },
+
+    launch: function() {
+        this.setupBackgroundGeo();
     }
 
 });
