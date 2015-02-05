@@ -68,7 +68,7 @@ Ext.define('VosNavigator.controller.searchViewController', {
         dataView.add([myPanel]);
 
         this.getSearchView().hide();
-        this.getFahrplanerView().show();
+        this.getFahrplanerView().show({type:"slide",direction:"down"});
     },
 
     onListPainted: function(element, eOpts) {

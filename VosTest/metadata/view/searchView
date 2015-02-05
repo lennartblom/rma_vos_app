@@ -23,7 +23,7 @@
             "userConfig": {
                 "docked": "top",
                 "height": "30px",
-                "id": "searchTitle",
+                "id": "SearchTitle",
                 "width": "100%"
             },
             "name": "MyLabel7",

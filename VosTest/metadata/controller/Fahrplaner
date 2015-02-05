@@ -215,8 +215,9 @@
                 "fn": "onFocusSearchfieldStart",
                 "implHandler": [
                     "this.getFahrplanerView().hide();",
-                    "this.getSearchView().setData({title:\"Start\"});",
-                    "this.getSearchView().show();"
+                    "var searchTitle = Ext.getCmp('SearchTitle');",
+                    "searchTitle.setData({title:\"Start\"}); // Übergabe an das Label searchTitle",
+                    "this.getSearchView().show({type:\"slide\",direction:\"up\"});"
                 ],
                 "name": "focus"
             },
@@ -236,8 +237,9 @@
                 "fn": "onFocusSearchfieldDestination",
                 "implHandler": [
                     "this.getFahrplanerView().hide();",
-                    "this.getSearchView().setData({title:\"Ziel\"});",
-                    "this.getSearchView().show();"
+                    "var searchTitle = Ext.getCmp('SearchTitle');",
+                    "searchTitle.setData({title:\"Ziel\"});  // Übergabe an das Label searchTitle",
+                    "this.getSearchView().show({type:\"slide\",direction:\"up\"});"
                 ],
                 "name": "focus"
             },
@@ -257,6 +259,20 @@
             },
             "name": "searchView",
             "designerId": "c2319d10-a84f-4b7f-971e-216bb389fa53"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "SearchTitle",
+                "selector": "label#SearchTitle"
+            },
+            "name": "SearchTitle",
+            "designerId": "bb7243c6-8851-410d-ad3d-63eb1cad31c0"
         }
     ]
 }

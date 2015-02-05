@@ -97,7 +97,7 @@
                     "dataView.add([myPanel]);",
                     "",
                     "this.getSearchView().hide();",
-                    "this.getFahrplanerView().show();"
+                    "this.getFahrplanerView().show({type:\"slide\",direction:\"down\"});"
                 ],
                 "name": "itemtap"
             },
