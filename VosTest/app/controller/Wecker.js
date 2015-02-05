@@ -28,7 +28,11 @@ Ext.define('VosNavigator.controller.Wecker', {
         },
         weckerKlingelt: false,
         trackingId: null,
-        taskEngine: null,
+        taskEngine: {
+            taskGetPos: null,
+            taskCheckDistance: null
+        },
+        task: null,
 
         refs: {
             weckerBackButton: 'button#weckerBackButton',
@@ -100,16 +104,14 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     initiateTracking: function(isTracking) {
         console.log("initiateTracking wurde aufgerufen");
-        var pace = this.getApplication().getController('Settings').getSliderPace();
-
+        var pace = this.getApplication().getController('Settings').getSliderPace()*1000;
         if(isTracking){
-            this.taskEngine = new Ext.util.DelayedTask(this.activateTracker(),this);
-            this.taskEngine.setInterval(pace*1000);
+            this.initiateTaskManager(pace);
             console.log("device is tracking");
             //this.setupBackgroundPace();
             //this.checkDistance();
         }else{
-            this.getTrackingId().clearWatch();
+            this.stopTaskManager();
             //this.bgGeo.stop();
                console.log("pace disabled");
 
@@ -118,7 +120,9 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     resetGeoTimer: function(interval) {
         if(this.getWeckerIsOn()){
-            this.getTaskEngine().setInterval(interval);
+            var taskEngine = this.getTaskEngine();
+            clearInterval(taskEngine.taskGetPos);
+            taskEngine.taskGetPos = setInterval(Ext.bind(this.activateTracker,this),interval);
             console.log("resetGeoTimer wurde aufgerufen");
         }
     },
@@ -146,28 +150,48 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     checkDistance: function() {
-        this.entfernung();
+        //this.entfernung();
 
     },
 
-    activateTracker: function(pace) {
+    activateTracker: function() {
 
         console.log("activateTracker wurde aufgerufen");
              this.trackingId = new Ext.device.Geolocation.getCurrentPosition({
                  allowHighAccuracy:true,
-                 success: Ext.bind(this.saveGeoLocation,this),
+                 success: Ext.bind(function(position){
+                                                     var pos = this.getAktuellePosition();
+                                                     pos.lat=position.coords.latitude;
+                                                     pos.lng=position.coords.longitude;
+                                   },this),
                  failure: function(){
                      console.log("Fehler beim Tracken");
                  }
              });
-        console.log("Tracker sollte gestartet sein");
+        console.log("Aktuelle Pos wurde erfasst");
+        console.log("Aktuelle Position: "+this.getAktuellePosition().lat+" "+this.getAktuellePosition().lng);
     },
 
     saveGeoLocation: function(position) {
-        this.getAktuellePosition().lat=position.coords.latitude;
-        this.getAktuellePosition().lng=position.coords.longitude;
+        console.log("saveGeo wurde aufgerufen");
+        var pos = {lat:position.coords.latitude,
+                   lng:position.coords.longitude};
+        this.setAktuellePosition(pos);
         console.log("Aktuelle Position: "+this.getAktuellePosition().lat+
                     " "+this.getAktuellePosition().lng);
+    },
+
+    initiateTaskManager: function(pace) {
+        var taskEngine = this.getTaskEngine();
+        taskEngine.taskGetPos = setInterval(Ext.bind(this.activateTracker,this),pace);
+        taskEngine.taskCheckDistance = setInterval(Ext.bind(this.checkDistance,this),5000);
+        console.log("taskmanager wurde initialisiert");
+    },
+
+    stopTaskManager: function() {
+        var taskEngine = this.getTaskEngine();
+        clearInterval(taskEngine.taskGetPos);
+        clearInterval(taskEngine.taskCheckDistance);
     }
 
 });
