@@ -96,7 +96,9 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.date = new Date();"
+                    "this.date = new Date();",
+                    "var daily = this.getDailyGoalsCounter();",
+                    "daily.setHTML(date.now());"
                 ]
             },
             "name": "launch",

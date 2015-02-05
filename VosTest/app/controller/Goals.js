@@ -41,6 +41,8 @@ Ext.define('VosNavigator.controller.Goals', {
 
     launch: function() {
         this.date = new Date();
+        var daily = this.getDailyGoalsCounter();
+        daily.setHTML(date.now());
     }
 
 });
