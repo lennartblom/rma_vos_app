@@ -41,6 +41,7 @@ Ext.define('VosNavigator.view.fahrplanerView', {
             },
             {
                 xtype: 'button',
+                baseCls: 'backButton',
                 border: '',
                 bottom: '0px',
                 centered: false,
@@ -48,10 +49,9 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 docked: 'bottom',
                 height: '65px',
                 hidden: false,
-                html: '<h1 style="line-height:65px;font-size:15px;">zurück</h1>',
+                html: '<span>zurück</span>',
                 id: 'fahrplanerBackButton',
                 right: '0px',
-                style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\nfloat:right;\ndisplay:block;\nfont-size:11px;',
                 styleHtmlContent: true,
                 width: 65,
                 text: 'back'
@@ -85,11 +85,11 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 items: [
                     {
                         xtype: 'dataview',
+                        baseCls: 'transparentWhite',
                         docked: 'top',
                         height: 100,
                         id: 'lineTwo',
                         margin: '10 0 0 0 ',
-                        style: 'background-color: rgba(255,255,255, 0.6);',
                         width: '100%',
                         scrollable: 'vertical',
                         itemTpl: [
@@ -98,11 +98,11 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                     },
                     {
                         xtype: 'dataview',
+                        baseCls: 'transparentWhite',
                         docked: 'top',
                         height: 100,
                         id: 'lineThree',
                         margin: '10 0 0 0',
-                        style: 'background-color: rgba(255,255,255, 0.6);',
                         width: '100%',
                         scrollable: false,
                         itemTpl: [
@@ -113,9 +113,10 @@ Ext.define('VosNavigator.view.fahrplanerView', {
             },
             {
                 xtype: 'container',
+                baseCls: 'orangeBorder',
                 bottom: '30px',
                 id: 'goals_border_bottom1',
-                style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
+                styleHtmlContent: true,
                 width: '255px'
             }
         ]

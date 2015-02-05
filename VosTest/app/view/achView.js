@@ -18,129 +18,118 @@ Ext.define('VosNavigator.view.achView', {
     alias: 'widget.achView',
 
     requires: [
-        'Ext.Container',
         'Ext.Button',
+        'Ext.Container',
         'Ext.Label',
         'Ext.field.Checkbox',
         'Ext.Img'
     ],
 
     config: {
+        height: '100%',
         items: [
             {
-                xtype: 'container',
-                centered: true,
+                xtype: 'button',
+                baseCls: 'backButton',
+                border: '',
+                bottom: '0px',
                 docked: 'bottom',
-                height: '100%',
-                id: 'container_achievments_view',
+                height: '65px',
+                html: 'zurück',
+                id: 'achBackButton',
                 styleHtmlContent: true,
+                width: 65,
+                text: 'zurück'
+            },
+            {
+                xtype: 'button',
+                baseCls: 'backButton',
+                border: '',
+                bottom: '0px',
+                centered: false,
+                disabled: false,
+                height: '65px',
+                hidden: false,
+                html: 'Punkte',
+                id: 'scoreButton',
+                right: '0px',
+                styleHtmlContent: true,
+                width: 65,
+                text: 'score'
+            },
+            {
+                xtype: 'container',
+                height: '80%',
+                id: 'wrapper_achievments_forms',
+                top: '50px',
                 width: '100%',
-                layout: 'fit',
                 items: [
                     {
-                        xtype: 'button',
-                        border: '',
-                        bottom: '0px',
-                        docked: 'bottom',
-                        height: '65px',
-                        html: '<p>zurück</p>',
-                        id: 'achBackButton',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\ndisplay:block;\nfloat:left;\nfont-size:13px;\nline-height:65px;',
-                        styleHtmlContent: true,
-                        width: 65,
-                        text: 'zurück'
-                    },
-                    {
-                        xtype: 'button',
-                        border: '',
-                        bottom: '0px',
-                        centered: false,
-                        disabled: false,
-                        height: '65px',
-                        hidden: false,
-                        html: 'Punkte',
-                        id: 'scoreButton',
-                        right: '0px',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\nfloat:right;\ndisplay:block;\nline-height:65px;\nfont-size:13px;\nfont-weight:normal;',
-                        styleHtmlContent: true,
-                        width: 65,
-                        text: 'score'
-                    },
-                    {
                         xtype: 'container',
-                        height: '80%',
-                        id: 'wrapper_achievments_forms',
-                        top: '50px',
-                        width: '100%',
+                        docked: 'top',
+                        height: '60px',
+                        id: 'netzerkundung_container',
                         items: [
                             {
-                                xtype: 'container',
-                                docked: 'top',
-                                height: '60px',
-                                id: 'netzerkundung_container',
-                                items: [
-                                    {
-                                        xtype: 'label',
-                                        height: '25px',
-                                        html: '<p>Netzerkundung:</p>',
-                                        id: 'netzerkundung',
-                                        margin: '5px'
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        label: 'Field'
-                                    }
-                                ]
+                                xtype: 'label',
+                                height: '25px',
+                                html: '<p>Netzerkundung:</p>',
+                                id: 'netzerkundung',
+                                margin: '5px'
                             },
                             {
-                                xtype: 'container',
-                                height: '80px',
-                                id: 'locations_visited_container',
-                                top: '25px',
-                                width: '100%',
-                                items: [
-                                    {
-                                        xtype: 'label',
-                                        height: '25px',
-                                        html: '<p>Orte besucht:</p>',
-                                        id: 'locations_visited',
-                                        margin: '5px'
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        label: 'Field'
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        label: 'Field'
-                                    },
-                                    {
-                                        xtype: 'checkboxfield',
-                                        label: 'Field'
-                                    },
-                                    {
-                                        xtype: 'label',
-                                        height: '25px',
-                                        html: '<p>Bisher erreichte Erfolge und erledigte Aufgaben</p>',
-                                        id: 'achievments_description',
-                                        margin: '5px',
-                                        style: 'font-size:13px;\ntext-align:center;',
-                                        top: '150px'
-                                    }
-                                ]
+                                xtype: 'checkboxfield',
+                                label: 'Field'
                             }
                         ]
                     },
                     {
                         xtype: 'container',
-                        bottom: '30px',
-                        docked: 'bottom',
-                        id: 'border_bottom',
-                        left: '65px',
-                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
-                        width: '190px'
+                        height: '80px',
+                        id: 'locations_visited_container',
+                        top: '25px',
+                        width: '100%',
+                        items: [
+                            {
+                                xtype: 'label',
+                                height: '25px',
+                                html: '<p>Orte besucht:</p>',
+                                id: 'locations_visited',
+                                margin: '5px'
+                            },
+                            {
+                                xtype: 'checkboxfield',
+                                label: 'Field'
+                            },
+                            {
+                                xtype: 'checkboxfield',
+                                label: 'Field'
+                            },
+                            {
+                                xtype: 'checkboxfield',
+                                label: 'Field'
+                            },
+                            {
+                                xtype: 'label',
+                                baseCls: 'achievementsTextSmall',
+                                height: '25px',
+                                html: 'Bisher erreichte Erfolge und erledigte Aufgaben',
+                                id: 'achievments_description',
+                                margin: '5px',
+                                top: '150px'
+                            }
+                        ]
                     }
                 ]
+            },
+            {
+                xtype: 'container',
+                baseCls: 'orangeBorder',
+                bottom: '30px',
+                docked: 'bottom',
+                id: 'border_bottom',
+                left: '65px',
+                width: '190px'
             },
             {
                 xtype: 'image',

@@ -58,6 +58,7 @@ Ext.define('VosNavigator.view.settingsView', {
                     },
                     {
                         xtype: 'button',
+                        baseCls: 'backButton',
                         border: '',
                         bottom: '0px',
                         centered: false,
@@ -65,7 +66,7 @@ Ext.define('VosNavigator.view.settingsView', {
                         docked: 'bottom',
                         height: '65px',
                         hidden: false,
-                        html: '<h1 style="line-height:65px;font-size:15px;">zurück</h1>',
+                        html: '<span>zurück</span>',
                         id: 'settingsBackButton',
                         right: '0px',
                         style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\nfloat:right;\ndisplay:block;\nfont-size:11px;',

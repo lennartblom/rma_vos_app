@@ -6,12 +6,71 @@
     },
     "codeClass": null,
     "userConfig": {
+        "baseCls": null,
         "designer|userAlias": "achView",
-        "designer|userClassName": "achView"
+        "designer|userClassName": "achView",
+        "height": "100%"
     },
     "name": "MyContainer1",
     "designerId": "05c90d69-4bbe-4647-aa46-50af4f5a763f",
     "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "backButton",
+                "border": "",
+                "bottom": "0px",
+                "docked": "bottom",
+                "height": "65px",
+                "html": "zurück",
+                "id": "achBackButton",
+                "itemId": null,
+                "style": null,
+                "styleHtmlContent": true,
+                "text": "zurück",
+                "width": 65
+            },
+            "name": "MyButton",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "87c0e8c3-488d-4eba-a57d-8422de0b7cc7"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "backButton",
+                "border": "",
+                "bottom": "0px",
+                "centered": false,
+                "disabled": false,
+                "docked": null,
+                "height": "65px",
+                "hidden": false,
+                "html": "Punkte",
+                "id": "scoreButton",
+                "right": "0px",
+                "style": null,
+                "styleHtmlContent": true,
+                "text": "score",
+                "width": 65
+            },
+            "name": "MyButton1",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "ebc074d3-b002-41ee-a576-e1d688d471c5"
+        },
         {
             "type": "Ext.Container",
             "reference": {
@@ -20,106 +79,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "centered": true,
-                "docked": "bottom",
-                "height": "100%",
-                "id": "container_achievments_view",
-                "layout": "fit",
-                "styleHtmlContent": true,
+                "height": "80%",
+                "id": "wrapper_achievments_forms",
+                "margin": null,
+                "top": "50px",
                 "width": "100%"
             },
-            "name": "MyContainer1",
-            "configAlternates": {
-                "style": "object"
-            },
-            "designerId": "28a91d95-8a88-4a61-8123-8526b055392e",
+            "name": "MyContainer2",
+            "designerId": "a1987c36-40db-40b8-b9d0-93294b690ace",
             "cn": [
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "border": "",
-                        "bottom": "0px",
-                        "docked": "bottom",
-                        "height": "65px",
-                        "html": "<p>zurück</p>",
-                        "id": "achBackButton",
-                        "itemId": null,
-                        "style": [
-                            "-moz-border-radius: 46px;",
-                            "-webkit-border-radius: 46px;",
-                            "border-radius: 46px; /* border radius */",
-                            "-moz-background-clip: padding;",
-                            "-webkit-background-clip: padding-box;",
-                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                            "background-color: #3d4f5e;",
-                            "opacity: 0.9;",
-                            "color:#fff;",
-                            "line-height:65px;",
-                            "display:block;",
-                            "float:left;",
-                            "font-size:13px;",
-                            "line-height:65px;"
-                        ],
-                        "styleHtmlContent": true,
-                        "text": "zurück",
-                        "width": 65
-                    },
-                    "name": "MyButton",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "87c0e8c3-488d-4eba-a57d-8422de0b7cc7"
-                },
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "border": "",
-                        "bottom": "0px",
-                        "centered": false,
-                        "disabled": false,
-                        "docked": null,
-                        "height": "65px",
-                        "hidden": false,
-                        "html": "Punkte",
-                        "id": "scoreButton",
-                        "right": "0px",
-                        "style": [
-                            "-moz-border-radius: 46px;",
-                            "-webkit-border-radius: 46px;",
-                            "border-radius: 46px; /* border radius */",
-                            "-moz-background-clip: padding;",
-                            "-webkit-background-clip: padding-box;",
-                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                            "background-color: #3d4f5e;",
-                            "opacity: 0.9;",
-                            "color:#fff;",
-                            "line-height:65px;",
-                            "float:right;",
-                            "display:block;",
-                            "line-height:65px;",
-                            "font-size:13px;",
-                            "font-weight:normal;"
-                        ],
-                        "styleHtmlContent": true,
-                        "text": "score",
-                        "width": 65
-                    },
-                    "name": "MyButton1",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "ebc074d3-b002-41ee-a576-e1d688d471c5"
-                },
                 {
                     "type": "Ext.Container",
                     "reference": {
@@ -128,159 +96,42 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": "80%",
-                        "id": "wrapper_achievments_forms",
-                        "margin": null,
-                        "top": "50px",
-                        "width": "100%"
+                        "docked": "top",
+                        "height": "60px",
+                        "id": "netzerkundung_container"
                     },
-                    "name": "MyContainer2",
-                    "designerId": "a1987c36-40db-40b8-b9d0-93294b690ace",
+                    "name": "MyContainer4",
+                    "designerId": "ccb3c93a-7f36-42b2-9e43-0f7e326bc353",
                     "cn": [
                         {
-                            "type": "Ext.Container",
+                            "type": "Ext.Label",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "docked": "top",
-                                "height": "60px",
-                                "id": "netzerkundung_container"
+                                "height": "25px",
+                                "html": "<p>Netzerkundung:</p>",
+                                "id": "netzerkundung",
+                                "margin": "5px",
+                                "top": null
                             },
-                            "name": "MyContainer4",
-                            "designerId": "ccb3c93a-7f36-42b2-9e43-0f7e326bc353",
-                            "cn": [
-                                {
-                                    "type": "Ext.Label",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "height": "25px",
-                                        "html": "<p>Netzerkundung:</p>",
-                                        "id": "netzerkundung",
-                                        "margin": "5px",
-                                        "top": null
-                                    },
-                                    "name": "MyLabel",
-                                    "designerId": "82bf535e-d663-4c9e-9465-9ed9010a81af"
-                                },
-                                {
-                                    "type": "Ext.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "label": "Field"
-                                    },
-                                    "name": "MyCheckbox",
-                                    "designerId": "0adda1c8-0396-4882-bf68-94b01f8d8feb"
-                                }
-                            ]
+                            "name": "MyLabel",
+                            "designerId": "82bf535e-d663-4c9e-9465-9ed9010a81af"
                         },
                         {
-                            "type": "Ext.Container",
+                            "type": "Ext.field.Checkbox",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "height": "80px",
-                                "id": "locations_visited_container",
-                                "top": "25px",
-                                "width": "100%"
+                                "label": "Field"
                             },
-                            "name": "MyContainer5",
-                            "designerId": "e708768b-1ebb-4639-8866-0d031df33c47",
-                            "cn": [
-                                {
-                                    "type": "Ext.Label",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "height": "25px",
-                                        "html": "<p>Orte besucht:</p>",
-                                        "id": "locations_visited",
-                                        "margin": "5px",
-                                        "top": null
-                                    },
-                                    "name": "MyLabel",
-                                    "designerId": "05d2f007-dc45-41f3-ab49-f3cd1556f82c"
-                                },
-                                {
-                                    "type": "Ext.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "label": "Field"
-                                    },
-                                    "name": "MyCheckbox",
-                                    "designerId": "94d77c5a-7442-4b7c-a6a8-f4eaf0a4ff7e"
-                                },
-                                {
-                                    "type": "Ext.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "label": "Field"
-                                    },
-                                    "name": "MyCheckbox1",
-                                    "designerId": "7a668241-6b0a-4bd0-8399-736a19e9695d"
-                                },
-                                {
-                                    "type": "Ext.field.Checkbox",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "label": "Field"
-                                    },
-                                    "name": "MyCheckbox2",
-                                    "designerId": "dad9e45c-839a-4204-9d2e-da208ea31727"
-                                },
-                                {
-                                    "type": "Ext.Label",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "height": "25px",
-                                        "html": "<p>Bisher erreichte Erfolge und erledigte Aufgaben</p>",
-                                        "id": "achievments_description",
-                                        "margin": "5px",
-                                        "style": [
-                                            "font-size:13px;",
-                                            "text-align:center;"
-                                        ],
-                                        "top": "150px"
-                                    },
-                                    "name": "MyLabel5",
-                                    "configAlternates": {
-                                        "style": "object"
-                                    },
-                                    "designerId": "014f640d-aa13-4a6a-b42a-46749ae001ef"
-                                }
-                            ]
+                            "name": "MyCheckbox",
+                            "designerId": "0adda1c8-0396-4882-bf68-94b01f8d8feb"
                         }
                     ]
                 },
@@ -292,28 +143,120 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "bottom": "30px",
-                        "docked": "bottom",
-                        "id": "border_bottom",
-                        "layout": null,
-                        "left": "65px",
-                        "margin": null,
-                        "padding": null,
-                        "style": [
-                            "background-color:rgba(211, 83, 0, 0.9);",
-                            "display:block;",
-                            "height:5px;",
-                            "overflow:hidden;"
-                        ],
-                        "width": "190px"
+                        "height": "80px",
+                        "id": "locations_visited_container",
+                        "top": "25px",
+                        "width": "100%"
                     },
-                    "name": "MyContainer3",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "0fe6556b-d15b-490a-aa95-a6301163dd29"
+                    "name": "MyContainer5",
+                    "designerId": "e708768b-1ebb-4639-8866-0d031df33c47",
+                    "cn": [
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "25px",
+                                "html": "<p>Orte besucht:</p>",
+                                "id": "locations_visited",
+                                "margin": "5px",
+                                "top": null
+                            },
+                            "name": "MyLabel",
+                            "designerId": "05d2f007-dc45-41f3-ab49-f3cd1556f82c"
+                        },
+                        {
+                            "type": "Ext.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Field"
+                            },
+                            "name": "MyCheckbox",
+                            "designerId": "94d77c5a-7442-4b7c-a6a8-f4eaf0a4ff7e"
+                        },
+                        {
+                            "type": "Ext.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Field"
+                            },
+                            "name": "MyCheckbox1",
+                            "designerId": "7a668241-6b0a-4bd0-8399-736a19e9695d"
+                        },
+                        {
+                            "type": "Ext.field.Checkbox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Field"
+                            },
+                            "name": "MyCheckbox2",
+                            "designerId": "dad9e45c-839a-4204-9d2e-da208ea31727"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "achievementsTextSmall",
+                                "height": "25px",
+                                "html": "Bisher erreichte Erfolge und erledigte Aufgaben",
+                                "id": "achievments_description",
+                                "margin": "5px",
+                                "style": null,
+                                "top": "150px"
+                            },
+                            "name": "MyLabel5",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "014f640d-aa13-4a6a-b42a-46749ae001ef"
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "orangeBorder",
+                "bottom": "30px",
+                "docked": "bottom",
+                "id": "border_bottom",
+                "layout": null,
+                "left": "65px",
+                "margin": null,
+                "padding": null,
+                "style": null,
+                "width": "190px"
+            },
+            "name": "MyContainer3",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "0fe6556b-d15b-490a-aa95-a6301163dd29"
         },
         {
             "type": "Ext.Img",

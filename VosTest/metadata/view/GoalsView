@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "alternateClassName": [
+            "backButton"
+        ],
         "designer|userAlias": "goalsview",
         "designer|userClassName": "goalsView",
         "height": "100%",
@@ -71,6 +74,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "baseCls": "backButton",
                         "border": "",
                         "bottom": "0px",
                         "centered": false,
@@ -78,24 +82,9 @@
                         "docked": "bottom",
                         "height": "65px",
                         "hidden": false,
-                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
+                        "html": "<span>zurück</span>",
                         "id": "goalsBackButton",
                         "right": "0px",
-                        "style": [
-                            "-moz-border-radius: 46px;",
-                            "-webkit-border-radius: 46px;",
-                            "border-radius: 46px; /* border radius */",
-                            "-moz-background-clip: padding;",
-                            "-webkit-background-clip: padding-box;",
-                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                            "background-color: #3d4f5e;",
-                            "opacity: 0.9;",
-                            "color:#fff;",
-                            "line-height:65px;",
-                            "float:right;",
-                            "display:block;",
-                            "font-size:11px;"
-                        ],
                         "styleHtmlContent": true,
                         "text": "back",
                         "width": 65

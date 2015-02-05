@@ -86,3 +86,37 @@
 	font-size:11px;
 }
 
+.backButton{
+  -moz-border-radius: 46px;
+  -webkit-border-radius: 46px;
+  border-radius: 46px; /* border radius */
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box; /* prevents bg color from leaking outside the border */
+  background-color: #3d4f5e;
+  opacity: 0.9;
+  float:right;
+}
+
+.achievementsTextSmall{
+  font-size:13px;
+  text-align:center;
+}
+
+.orangeBorder{
+  background-color:rgba(211, 83, 0, 0.9);
+  display:block;
+  height:5px;
+  overflow:hidden;
+}
+
+.backButton span{
+  line-height:30px;
+  font-size:9px;
+  color:#fff;
+}
+
+.transparentWhite{
+  background-color: rgba(255,255,255, 0.6);
+}
+

@@ -97,6 +97,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "baseCls": "backButton",
                         "border": "",
                         "bottom": "0px",
                         "centered": false,
@@ -104,7 +105,7 @@
                         "docked": "bottom",
                         "height": "65px",
                         "hidden": false,
-                        "html": "<h1 style=\"line-height:65px;font-size:15px;\">zurück</h1>",
+                        "html": "<span>zurück</span>",
                         "id": "settingsBackButton",
                         "right": "0px",
                         "style": [
@@ -198,9 +199,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "slider_id",
-                                "itemId": "slider_id",
-                                "label": "Field",
                                 "id": "gpsPace",
                                 "itemId": null,
                                 "label": "GPS Pace",

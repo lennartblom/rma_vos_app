@@ -116,7 +116,7 @@
             "userConfig": {
                 "hidden": true
             },
-            "name": "searchview1",
+            "name": "searchview",
             "designerId": "63d203c6-5c41-408e-b353-09d328a6880b",
             "masterInstanceId": "ca4ff710-0750-4c3d-b612-b2d0d625222d"
         }
