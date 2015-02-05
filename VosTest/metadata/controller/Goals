@@ -6,10 +6,23 @@
     },
     "codeClass": null,
     "userConfig": {
+        "date": [
+            "null"
+        ],
         "designer|userClassName": "Goals"
     },
     "name": "MyController",
+    "configAlternates": {
+        "date": "object"
+    },
     "designerId": "077834b7-114b-4f4d-887e-e802f056a810",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "date",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "controllerref",
@@ -72,6 +85,50 @@
             },
             "name": "goalsView",
             "designerId": "a410344b-c258-405a-9c84-2ae89477ac1e"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "this.date = new Date();"
+                ]
+            },
+            "name": "launch",
+            "designerId": "e7bdbdf0-77a3-43ef-b721-a3c41de59cdb"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "dailyGoalsCounter",
+                "selector": "label#dailyGoalsCounter"
+            },
+            "name": "dailyGoalsCounter",
+            "designerId": "b40342b7-07c1-4535-9c66-7b350d0bf7b3"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weeklyGoalsCounter",
+                "selector": "label#weeklyGoalsCounter"
+            },
+            "name": "weeklyGoalsCounter",
+            "designerId": "bee79f8a-bb6b-4d6a-b0e2-e24b92d67459"
         }
     ]
 }

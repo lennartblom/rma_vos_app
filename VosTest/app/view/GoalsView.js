@@ -104,14 +104,14 @@ Ext.define('VosNavigator.view.goalsView', {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
-                                        id: 'label_daily_goals_countdown',
+                                        id: 'dailyGoalsLabel',
                                         top: '125px'
                                     },
                                     {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>6 Stunden 23 Minuten</p>',
-                                        id: 'daily_goals_countdown1',
+                                        id: 'dailyGoalsCounter',
                                         style: 'font-size:11px;\ntext-align:center;',
                                         top: '150px'
                                     }
@@ -150,14 +150,14 @@ Ext.define('VosNavigator.view.goalsView', {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
-                                        id: 'label_weekly_goals_countdown',
+                                        id: 'weeklyGoalsLabel',
                                         top: '200px'
                                     },
                                     {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>3 Tage 6 Stunden 23 Minuten</p>',
-                                        id: 'weekly_goals_countdown',
+                                        id: 'weeklyGoalsCounter',
                                         style: 'font-size:11px;\ntext-algin:center;',
                                         top: '225px'
                                     }

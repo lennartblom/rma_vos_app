@@ -17,10 +17,14 @@ Ext.define('VosNavigator.controller.Goals', {
     extend: 'Ext.app.Controller',
 
     config: {
+        date: null,
+
         refs: {
             goalsBackButton: 'button#goalsBackButton',
             MainView: 'container#MainView',
-            goalsView: 'container#GoalsView'
+            goalsView: 'container#GoalsView',
+            dailyGoalsCounter: 'label#dailyGoalsCounter',
+            weeklyGoalsCounter: 'label#weeklyGoalsCounter'
         },
 
         control: {
@@ -33,6 +37,10 @@ Ext.define('VosNavigator.controller.Goals', {
     goalsBackButton: function(button, e, eOpts) {
         this.getGoalsView().hide();
         this.getMainView().show();
+    },
+
+    launch: function() {
+        this.date = new Date();
     }
 
 });
