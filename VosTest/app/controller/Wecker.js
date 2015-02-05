@@ -129,10 +129,11 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     entfernung: function() {
         console.log("distance Berechnung");
-        var latCurrent =this.lat;
-        var lngCurrent =this.lng;
-        var latDestination =this.lat;
-        var lngDestination =this.lng;
+        var pos = this.getAktuellePosition();
+        var latCurrent =pos.lat;
+        var lngCurrent =pos.lng;
+        var latDestination =pos.lat;
+        var lngDestination =pos.lng;
         var distance = 0.0;
         var deltaX = 71.5 * (lngCurrent-lngDestination);
         var deltaY = 111.3 * (latCurrent-latDestination);
@@ -144,13 +145,13 @@ Ext.define('VosNavigator.controller.Wecker', {
         console.log(radius);
         if(distance<=radius){
             console.log("distance<radius");
-            this.getApplication().getController('Wecker').wecken();
+            this.wecken();
         }
 
     },
 
     checkDistance: function() {
-        //this.entfernung();
+        this.entfernung();
 
     },
 
@@ -170,15 +171,6 @@ Ext.define('VosNavigator.controller.Wecker', {
              });
         console.log("Aktuelle Pos wurde erfasst");
         console.log("Aktuelle Position: "+this.getAktuellePosition().lat+" "+this.getAktuellePosition().lng);
-    },
-
-    saveGeoLocation: function(position) {
-        console.log("saveGeo wurde aufgerufen");
-        var pos = {lat:position.coords.latitude,
-                   lng:position.coords.longitude};
-        this.setAktuellePosition(pos);
-        console.log("Aktuelle Position: "+this.getAktuellePosition().lat+
-                    " "+this.getAktuellePosition().lng);
     },
 
     initiateTaskManager: function(pace) {

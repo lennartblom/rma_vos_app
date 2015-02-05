@@ -17,6 +17,15 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     extend: 'Ext.app.Controller',
 
     config: {
+        startOrt: {
+            lat: 0.0,
+            lng: 0.0
+        },
+        zielOrt: {
+            lat: 0.0,
+            lng: 0.0
+        },
+
         refs: {
             MainView: '#MainView',
             fahrplanerBackButton: '#fahrplanerBackButton',

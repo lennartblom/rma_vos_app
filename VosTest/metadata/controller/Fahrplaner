@@ -6,10 +6,33 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Fahrplaner"
+        "designer|userClassName": "Fahrplaner",
+        "startOrt": [
+            "{lat:0.0,lng:0.0}"
+        ],
+        "zielOrt": [
+            "{lat:0.0,",
+            "lng: 0.0}"
+        ]
     },
     "name": "MyController",
+    "configAlternates": {
+        "zielOrt": "object",
+        "startOrt": "object"
+    },
     "designerId": "58f13f6b-eafa-4b74-b9dc-6b1ad6681e46",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "startOrt",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "zielOrt",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "controllerref",

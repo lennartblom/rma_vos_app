@@ -409,10 +409,11 @@
                 "fn": "entfernung",
                 "implHandler": [
                     "console.log(\"distance Berechnung\");",
-                    "var latCurrent =this.lat;",
-                    "var lngCurrent =this.lng;",
-                    "var latDestination =this.lat;",
-                    "var lngDestination =this.lng;",
+                    "var pos = this.getAktuellePosition();",
+                    "var latCurrent =pos.lat;",
+                    "var lngCurrent =pos.lng;",
+                    "var latDestination =pos.lat;",
+                    "var lngDestination =pos.lng;",
                     "var distance = 0.0;",
                     "var deltaX = 71.5 * (lngCurrent-lngDestination);",
                     "var deltaY = 111.3 * (latCurrent-latDestination);",
@@ -424,7 +425,7 @@
                     "console.log(radius);",
                     "if(distance<=radius){",
                     "    console.log(\"distance<radius\");",
-                    "    this.getApplication().getController('Wecker').wecken();",
+                    "    this.wecken();",
                     "}",
                     ""
                 ]
@@ -442,7 +443,7 @@
             "userConfig": {
                 "fn": "checkDistance",
                 "implHandler": [
-                    "//this.entfernung();",
+                    "this.entfernung();",
                     ""
                 ]
             },
@@ -478,30 +479,6 @@
             },
             "name": "activateTracker",
             "designerId": "e0dae4de-3cb7-4f3f-9b49-171e6c865abc"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "position"
-                ],
-                "fn": "saveGeoLocation",
-                "implHandler": [
-                    "console.log(\"saveGeo wurde aufgerufen\");",
-                    "var pos = {lat:position.coords.latitude,",
-                    "           lng:position.coords.longitude};",
-                    "this.setAktuellePosition(pos);",
-                    "console.log(\"Aktuelle Position: \"+this.getAktuellePosition().lat+",
-                    "            \" \"+this.getAktuellePosition().lng);"
-                ]
-            },
-            "name": "saveGeoLocation",
-            "designerId": "6f278df8-2c71-408d-800f-c7451be109e3"
         },
         {
             "type": "basicfunction",
