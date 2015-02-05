@@ -6,10 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Settings"
+        "designer|userClassName": "Settings",
+        "sliderPace": 30
     },
     "name": "MyController",
     "designerId": "5a2d0285-bcdd-4f2d-b8e7-ea4dc093e8fe",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "sliderPace",
+            "type": "number"
+        }
+    ],
     "cn": [
         {
             "type": "controllerref",
@@ -97,44 +105,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "mysliderfield",
-                "selector": "sliderfield#mysliderfield"
-            },
-            "name": "mysliderfield",
-            "designerId": "2ce431ba-5194-4e54-b10e-89fdfc635372"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "ref": "labelsettings",
                 "selector": "label#label_settings"
             },
             "name": "labelsettings",
             "designerId": "b15e8846-9dd3-4057-9913-41646db45af3"
-        },
-        {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "application"
-                ],
-                "fn": "init",
-                "implHandler": [
-                    "this.sliderPace = 30;"
-                ]
-            },
-            "name": "init",
-            "designerId": "2fa0a79d-8463-4e65-88ea-6f7cb23e047e"
         },
         {
             "type": "controlleraction",
@@ -146,15 +121,15 @@
             "userConfig": {
                 "designer|controlQuery": "sliderfield#gpsPace",
                 "designer|targetType": "Ext.field.Slider",
-                "fn": "getPace",
+                "fn": "onGpsPaceChange",
                 "implHandler": [
                     "Ext.getCmp('label_settings').setHtml(\"Aktuelle Position wird im \"+newValue+\" Sekunden Takt überprüft.\");",
-                    "this.sliderPace = newValue;",
-                    "this.getApplication().getController('Wecker').resetGeoTimer(newValue);"
+                    "this.setSliderPace(newValue);",
+                    "this.getApplication().getController('Wecker').resetGeoTimer(newValue*1000);"
                 ],
                 "name": "change"
             },
-            "name": "getPace",
+            "name": "onGpsPaceChange",
             "designerId": "094449c1-4b7c-4773-87f3-7176f7cb66bb"
         },
         {
@@ -167,9 +142,9 @@
             "userConfig": {
                 "designer|controlQuery": "sliderfield#gpsPace",
                 "designer|targetType": "Ext.field.Slider",
-                "fn": "onSliderfieldDrag",
+                "fn": "onGpsPaceDrag",
                 "implHandler": [
-                    "var slider = sliderfield.getComponent();",
+                    "var slider = this.getGpsPace();",
                     "var label = Ext.getCmp('label_settings');",
                     "label.setHtml(\"Aktuelle Position wird im \"+slider.getValue()+\" Sekunden Takt überprüft.\");",
                     "this.sliderPace = slider.getValue();",
@@ -178,8 +153,22 @@
                 ],
                 "name": "drag"
             },
-            "name": "onSliderfieldDrag",
+            "name": "onGpsPaceDrag",
             "designerId": "a60e0128-e0cb-4289-aaf1-a03122e5c3a4"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "gpsPace",
+                "selector": "sliderfield#gpsPace"
+            },
+            "name": "gpsPace",
+            "designerId": "c422eab2-2cc6-4355-8e44-aaf0157f430f"
         }
     ]
 }

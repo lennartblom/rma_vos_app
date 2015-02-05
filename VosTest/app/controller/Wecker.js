@@ -17,6 +17,19 @@ Ext.define('VosNavigator.controller.Wecker', {
     extend: 'Ext.app.Controller',
 
     config: {
+        weckerIsOn: false,
+        sliderValue: 200,
+        shortestPath: true,
+        weckerKlingeltMehrfach: false,
+        tune: 'superMario.mp3',
+        aktuellePosition: {
+            lat: 0.0,
+            lng: 0.0
+        },
+        weckerKlingelt: false,
+        trackingId: null,
+        taskEngine: null,
+
         refs: {
             weckerBackButton: 'button#weckerBackButton',
             MainView: 'container#MainView',
@@ -31,216 +44,83 @@ Ext.define('VosNavigator.controller.Wecker', {
 
         control: {
             "button#weckerBackButton": {
-                tap: 'weckerBackButton'
+                tap: 'weckerBackButtonTap'
             },
             "sliderfield#weckRadius": {
-                change: 'setWeckRadius',
-                drag: 'onSliderfieldDrag'
+                change: 'onWeckRadiusChange',
+                drag: 'onWeckRadiusDrag'
             },
             "togglefield#weckerOnOffSwitch": {
-                change: 'onTogglefieldChange'
+                change: 'onWeckerOnOffChange'
             },
-            "selectfield": {
-                change: 'onSelectfieldChange'
+            "selectfield#selectTune": {
+                change: 'onTuneChange'
             }
         }
     },
 
-    weckerBackButton: function(button, e, eOpts) {
+    weckerBackButtonTap: function(button, e, eOpts) {
         this.getWeckerView().hide();
         this.getMainView().show();
     },
 
-    setWeckRadius: function(me, sl, thumb, newValue, oldValue, eOpts) {
+    onWeckRadiusChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
         Ext.getCmp('sliderValueLabel').setHtml(newValue+" vor dem Zielpunkt");
-        this.sliderValue = newValue;
+        this.setSliderValue(newValue);
     },
 
-    onSliderfieldDrag: function(sliderfield, sl, thumb, e, eOpts) {
-        var slider = sliderfield.getComponent();
-        var label = Ext.getCmp('sliderValueLabel');
+    onWeckRadiusDrag: function(sliderfield, sl, thumb, e, eOpts) {
+        var slider = this.getWeckRadius();
+        var label = this.getSliderValueLabel();
         label.setHtml(slider.getValue()+"m vor dem Zielpunkt");
-        this.sliderValue = slider.getValue();
+        this.setSliderValue(slider.getValue());
     },
 
-    onTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
-        this.weckerIsOn=newValue;
+    onWeckerOnOffChange: function(togglefield, newValue, oldValue, eOpts) {
+        this.setWeckerIsOn(newValue);
         console.log("Toggle Field value: "+newValue);
-        this.getGeo(newValue);
+        this.initiateTracking(newValue);
         //this.getApplication().getController('Wecker').wecken();
     },
 
-    onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
-        this.tune = newValue;
-    },
-
-    init: function(application) {
-        this.sliderValue = 200;
-        this.weckerIsOn = false;
-        this.shortestPath = true;
-        this.weckerKlingeltMehrfach=false;
-        this.tune = "superMario.mp3";
-        this.geo = null;
-        this.lat = 0.0;
-        this.lng = 0.0;
-        this.trackingId = 0;
-        this.activeInterval=0;
-        this.bgGeo=null;
-        this.weckerInterval=0;
+    onTuneChange: function(selectfield, newValue, oldValue, eOpts) {
+        this.setTune("resources/tones/"+newValue);
     },
 
     wecken: function() {
-        console.log("wecker Weckt jetzt");
         navigator.vibrate(1);
-        var resource = "resources/tones/" + this.tune;
-        navigator.vibrate(1);
-        var myMedia = new Media(resource);
-        navigator.vibrate(1);
-        myMedia.play();
-        navigator.vibrate(1);
-        navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
+        if(!this.getWeckerKlingelt()){
+            navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
+            var weckTune = new Media(this.getTune());
+            weckTune.play();
+            navigator.vibrate(1);
+        }
         navigator.vibrate(1);
     },
 
-    getGeo: function(isTracking) {
-        var pace = this.getApplication().getController('Settings').sliderPace;
+    initiateTracking: function(isTracking) {
+        console.log("initiateTracking wurde aufgerufen");
+        var pace = this.getApplication().getController('Settings').getSliderPace();
 
         if(isTracking){
+            this.taskEngine = new Ext.util.DelayedTask(this.activateTracker(),this,);
             console.log("device is tracking");
-            this.saveGeo(pace*1000);
-            this.setupBackgroundPace();
+            this.activateTracker(pace*1000);
+            //this.setupBackgroundPace();
             //this.checkDistance();
         }else{
-            clearInterval(this.activeInterval);
-            clearInterval(this.weckerInterval);
-            this.bgGeo.stop();
+            this.getTrackingId().clearWatch();
+            //this.bgGeo.stop();
                console.log("pace disabled");
 
         }
     },
 
     resetGeoTimer: function(interval) {
-        if(this.weckerIsOn){
-            clearInterval(this.activeInterval);
-            this.saveGeo(interval*1000);
+        if(this.getWeckerIsOn()){
+            this.getTrackingId().setTimeout(interval);
+            console.log("resetGeoTimer wurde aufgerufen");
         }
-    },
-
-    saveGeo: function(interval) {
-        var geoCallback = function(position){
-                    this.lat=position.coords.latitude;
-                    this.lng = position.coords.longitude;
-                    console.log('[JS] Koordinaten: '+position.coords.latitude+
-                        ' '+position.coords.longitude);
-                    //this.checkDistance();
-
-                };
-        var geoError = function(error){
-                        console.log("error while paceing");
-        };
-        console.log("saveGeo wurde aufgerufen.");
-        function getGeoObject(){ navigator.geolocation.getCurrentPosition(
-                geoCallback,
-                geoError,
-                {
-                    enableHighAccuracy: true
-                });
-        }
-        this.activeInterval = setInterval(getGeoObject,interval);
-
-    },
-
-    setupBackgroundPace: function() {
-
-            window.navigator.geolocation.getCurrentPosition(function(location) {
-                    console.log("background init: "+location.coords.latitude + " "+ location.coords.longitude);
-                    //this.lat=location.coords.latitude;
-                    //this.lng=location.coords.longitude;
-                });
-
-               var bgGeo  = window.plugins.backgroundGeoLocation;
-
-                /**
-                * This would be your own callback for Ajax-requests after POSTing background geolocation to your server.
-                */
-                var yourAjaxCallback = function(response) {
-                    console.log("ajaxCallBack");
-                    ////
-                    // IMPORTANT:  You must execute the #finish method here to inform the native plugin that you're finished,
-                    //  and the background-task may be completed.  You must do this regardless if your HTTP request is successful or not.
-                    // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
-                    //
-                    //
-                    bgGeo.finish();
-                };
-
-                /**
-                * This callback will be executed every time a geolocation is recorded in the background.
-                */
-                var callbackFn = function(location) {
-                    console.log("background track: "+location.latitude + " "+ location.longitude);
-                    this.lat=location.latitude;
-                    this.lng=location.longitude;
-                    console.log("zugriff auf this.lat "+this.lat);
-                    checkBGDist();
-                    //navigator.notification.alert("Aktuelle Position: "+this.lat+" "+this.lng,"Alert");
-                    // Do your HTTP request here to POST location to your server.
-                    //
-                    //
-                    yourAjaxCallback.call(this);
-                };
-
-                var failureFn = function(error) {
-                    console.log('BackgroundGeoLocation error');
-                };
-
-                function checkBGDist(){
-                    console.log("distance Berechnung");
-                    var latCurrent =this.lat;
-                    var lngCurrent =this.lng;
-                    var latDestination =this.lat;
-                    var lngDestination =this.lng;
-                    var distance = 0.0;
-                    var deltaX = 71.5 * (lngCurrent-lngDestination);
-                    var deltaY = 111.3 * (latCurrent-latDestination);
-                    var radius = 200;
-                    if(deltaX!==0||deltaY!==0){
-                        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
-                    }
-                    console.log(distance);
-                    console.log(radius);
-                    if(distance<=radius){
-                    console.log("distance<radius");
-                    console.log("wecker Weckt jetzt");
-                    navigator.vibrate(1);
-                    var resource = "resources/tones/" + this.tune;
-                    navigator.vibrate(1);
-                    var myMedia = new Media(resource);
-                    navigator.vibrate(1);
-                    myMedia.play();
-                    navigator.vibrate(1);
-                    navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
-                    navigator.vibrate(1);
-                 }
-
-                }
-                // BackgroundGeoLocation is highly configurable.
-                bgGeo.configure(callbackFn, failureFn, {
-                    locationTimeout: 5,
-                    desiredAccuracy: 10,
-                    stationaryRadius: 10,
-                    distanceFilter: 10,
-                    activityType: "Fitness",
-                    stopOnTerminate: false,// <-- iOS-only
-                    debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
-                });
-
-                // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
-                bgGeo.start();
-                bgGeo.changePace(true);
-                this.bgGeo = bgGeo;
-                // If you wish to turn OFF background-tracking, call the #stop method.
-                // bgGeo.stop()
     },
 
     entfernung: function() {
@@ -268,6 +148,26 @@ Ext.define('VosNavigator.controller.Wecker', {
     checkDistance: function() {
         this.entfernung();
 
+    },
+
+    activateTracker: function(pace) {
+
+        console.log("activateTracker wurde aufgerufen");
+             this.trackingId = new Ext.device.Geolocation.watchPosition({
+                 allowHighAccuracy:true,
+                 callback: Ext.bind(this.saveGeoLocation,this),
+                 failure: function(){
+                     console.log("Fehler beim Tracken");
+                 }
+             });
+        this.getTrackingId().setTimeout(pace);
+        console.log("Tracker sollte gestartet sein");
+    },
+
+    saveGeoLocation: function(position) {
+        this.getAktuellePosition().lat=position.coords.latitude;
+        this.getAktuellePosition().lng=position.coords.longitude;
+        console.log("Aktuelle Position: "+this.getAktuellePosition().lat);
     }
 
 });

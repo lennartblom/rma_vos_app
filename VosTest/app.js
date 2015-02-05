@@ -49,8 +49,8 @@ Ext.application({
     name: 'VosNavigator',
 
     launch: function() {
-        Ext.getStore('stops').load();
-        console.log("Store wurde geladen.");
+        /*Ext.getStore('stops').load();
+        console.log("Store wurde geladen Launcher app.js.");*/
         Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
     }
 

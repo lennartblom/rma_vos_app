@@ -31,7 +31,7 @@
             "weckerView",
             "mainScreen",
             "MySearchField",
-            "MyContainer"
+            "searchView"
         ]
     },
     "name": "Application",
@@ -47,8 +47,8 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "Ext.getStore('stops').load();",
-                    "console.log(\"Store wurde geladen.\");"
+                    "/*Ext.getStore('stops').load();",
+                    "console.log(\"Store wurde geladen Launcher app.js.\");*/"
                 ]
             },
             "name": "launch",

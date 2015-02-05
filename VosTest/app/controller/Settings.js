@@ -17,13 +17,15 @@ Ext.define('VosNavigator.controller.Settings', {
     extend: 'Ext.app.Controller',
 
     config: {
+        sliderPace: 30,
+
         refs: {
             settingsBackButton: 'button#settingsBackButton',
             MainView: 'container#MainView',
             settingsView: 'container#goals1',
             mybutton: 'button#mybutton',
-            mysliderfield: 'sliderfield#mysliderfield',
-            labelsettings: 'label#label_settings'
+            labelsettings: 'label#label_settings',
+            gpsPace: 'sliderfield#gpsPace'
         },
 
         control: {
@@ -31,8 +33,8 @@ Ext.define('VosNavigator.controller.Settings', {
                 tap: 'settingsBackButton'
             },
             "sliderfield#gpsPace": {
-                change: 'getPace',
-                drag: 'onSliderfieldDrag'
+                change: 'onGpsPaceChange',
+                drag: 'onGpsPaceDrag'
             }
         }
     },
@@ -44,23 +46,19 @@ Ext.define('VosNavigator.controller.Settings', {
 
     },
 
-    getPace: function(me, sl, thumb, newValue, oldValue, eOpts) {
+    onGpsPaceChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
         Ext.getCmp('label_settings').setHtml("Aktuelle Position wird im "+newValue+" Sekunden Takt überprüft.");
-        this.sliderPace = newValue;
-        this.getApplication().getController('Wecker').resetGeoTimer(newValue);
+        this.setSliderPace(newValue);
+        this.getApplication().getController('Wecker').resetGeoTimer(newValue*1000);
     },
 
-    onSliderfieldDrag: function(sliderfield, sl, thumb, e, eOpts) {
-        var slider = sliderfield.getComponent();
+    onGpsPaceDrag: function(sliderfield, sl, thumb, e, eOpts) {
+        var slider = this.getGpsPace();
         var label = Ext.getCmp('label_settings');
         label.setHtml("Aktuelle Position wird im "+slider.getValue()+" Sekunden Takt überprüft.");
         this.sliderPace = slider.getValue();
         this.getApplication().getController('Wecker').resetGeoTimer(slider.getValue());
 
-    },
-
-    init: function(application) {
-        this.sliderPace = 30;
     }
 
 });
