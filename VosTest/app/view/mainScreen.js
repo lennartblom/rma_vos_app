@@ -140,7 +140,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 xtype: 'button',
                                 height: 75,
                                 id: 'game',
-                                left: 5,
+                                left: 10,
                                 style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.3;',
                                 styleHtmlContent: true,
                                 top: 4,

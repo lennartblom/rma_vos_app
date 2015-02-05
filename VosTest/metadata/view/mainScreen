@@ -291,7 +291,7 @@
                             "userConfig": {
                                 "height": 75,
                                 "id": "game",
-                                "left": 5,
+                                "left": 10,
                                 "style": [
                                     "",
                                     "-webkit-border-radius: 100%;",
