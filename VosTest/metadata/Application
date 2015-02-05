@@ -47,8 +47,8 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "/*Ext.getStore('stops').load();",
-                    "console.log(\"Store wurde geladen Launcher app.js.\");*/"
+                    "Ext.getStore('stops').load();",
+                    "console.log(\"Store wurde geladen Launcher app.js.\");"
                 ]
             },
             "name": "launch",

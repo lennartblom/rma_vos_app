@@ -21,7 +21,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
             searchResultList: 'list#searchResultList',
             searchField: 'searchfield#searchField',
             searchView: '#searchView',
-            FahrplanerView: '#FahrplanerView'
+            FahrplanerView: '#FahrplanerView',
+            lineTwo: 'dataview#lineTwo'
         },
 
         control: {
@@ -53,8 +54,21 @@ Ext.define('VosNavigator.controller.searchViewController', {
     },
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
+        var dataView = this.getLineTwo();
+        var linesData = record.get('lines');
+        //var quantity = linesArray.getCount();
+
+
+
+        var myPanel = Ext.create('Ext.Panel', {
+            html: "<div class=\"buslineWrapper\"><div class=\"buslinesBoxLeft\"><div class=\"busIcon\" stlye=\"background-image:url(resources/images/icons/bus-icon-150x150.png)\"></div> " + this.getApplication().getController('Fahrplaner').getLines(linesData) + "</div><div class=\"buslinesBoxRight\">"+ record.get('name')+ "</div><div class=\"clearing\"></div></div>"
+        });
+
+        dataView.removeAll();
+        dataView.add([myPanel]);
+
         this.getSearchView().hide();
-        this.getFahrplanerView().show();
+        this.getFahrplanerView().show({type:"slide",direction:"down"});
     },
 
     onListPainted: function(element, eOpts) {

@@ -31,7 +31,7 @@ Ext.define('VosNavigator.view.searchView', {
                 xtype: 'label',
                 docked: 'top',
                 height: '30px',
-                id: 'searchTitle',
+                id: 'SearchTitle',
                 tpl: [
                     '{title}haltestelle'
                 ],
