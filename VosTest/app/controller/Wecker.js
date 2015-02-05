@@ -92,6 +92,7 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     wecken: function() {
+        var taskCheckDistance = this.getTaskEngine().taskCheckDistance;
         navigator.vibrate(1);
         if(!this.getWeckerKlingelt()){
             var weckTune = new Media(this.getTune());
@@ -99,7 +100,7 @@ Ext.define('VosNavigator.controller.Wecker', {
             navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",
                                          function(){
                                                     weckTune.stop();
-                                                    clearInterval(this.getTaskEngine().taskCheckDistance);
+                                                    clearInterval(taskCheckDistance);
             },"Zielort Erreicht!");
             navigator.vibrate(1);
             this.setWeckerKlingelt(true);
