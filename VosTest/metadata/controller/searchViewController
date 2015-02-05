@@ -83,7 +83,17 @@
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListItemTap",
                 "implHandler": [
-                    "var dataView = this.getLineTwo();",
+                    "var dataView;",
+                    "console.log(\"Seachtype: \" + this.getSearchType());",
+                    "if(this.getSearchType() === 'start'){",
+                    "    dataView = this.getLineTwo();",
+                    "}else if(this.getSearchType() === 'destination'){",
+                    "    dataView = this.getLineThree();",
+                    "}else{",
+                    "    console.log(\"Search Type?!?!?\");",
+                    "    return -1;",
+                    "}",
+                    "",
                     "var linesData = record.get('lines');",
                     "//var quantity = linesArray.getCount();",
                     "",
@@ -95,6 +105,11 @@
                     "",
                     "dataView.removeAll();",
                     "dataView.add([myPanel]);",
+                    "",
+                    "var store = Ext.getStore('stops');",
+                    "store.clearFilter();",
+                    "",
+                    "this.getSearchResultList().refresh();",
                     "",
                     "this.getSearchView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"down\"});"
@@ -152,22 +167,6 @@
             "designerId": "251e230f-1dbe-40ec-bbe8-4de64c242437"
         },
         {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "launch",
-                "implHandler": [
-                    ""
-                ]
-            },
-            "name": "launch",
-            "designerId": "23c2d8b7-9113-4187-810d-c5f213c305a7"
-        },
-        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -180,6 +179,75 @@
             },
             "name": "lineTwo",
             "designerId": "405e2e82-cec4-40df-9726-9a59c9c2e8d2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "lineThree",
+                "selector": "dataview#lineThree"
+            },
+            "name": "lineThree",
+            "designerId": "bbc54c7b-9948-4567-b201-252107e76c2d"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "init",
+                "implHandler": [
+                    "this.searchType = \"\";"
+                ]
+            },
+            "name": "init",
+            "designerId": "5dd25ab0-f22d-430c-9538-62af1b736a7f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "name"
+                ],
+                "fn": "setSearchType",
+                "implHandler": [
+                    "this.searchType = name;",
+                    "console.log(\"SearchType wurde neu gesetzt\");"
+                ]
+            },
+            "name": "setSearchType",
+            "designerId": "a35c0795-55c3-41dd-8612-2e2e4f5c7ce7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getSearchType",
+                "implHandler": [
+                    "return this.searchType;"
+                ]
+            },
+            "name": "getSearchType",
+            "designerId": "62f159b6-c3e4-40fd-b1e6-3dddc6536b06"
         }
     ]
 }

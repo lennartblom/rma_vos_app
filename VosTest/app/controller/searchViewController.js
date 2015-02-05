@@ -22,7 +22,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
             searchField: 'searchfield#searchField',
             searchView: '#searchView',
             FahrplanerView: '#FahrplanerView',
-            lineTwo: 'dataview#lineTwo'
+            lineTwo: 'dataview#lineTwo',
+            lineThree: 'dataview#lineThree'
         },
 
         control: {
@@ -54,7 +55,17 @@ Ext.define('VosNavigator.controller.searchViewController', {
     },
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
-        var dataView = this.getLineTwo();
+        var dataView;
+        console.log("Seachtype: " + this.getSearchType());
+        if(this.getSearchType() === 'start'){
+            dataView = this.getLineTwo();
+        }else if(this.getSearchType() === 'destination'){
+            dataView = this.getLineThree();
+        }else{
+            console.log("Search Type?!?!?");
+            return -1;
+        }
+
         var linesData = record.get('lines');
         //var quantity = linesArray.getCount();
 
@@ -67,6 +78,11 @@ Ext.define('VosNavigator.controller.searchViewController', {
         dataView.removeAll();
         dataView.add([myPanel]);
 
+        var store = Ext.getStore('stops');
+        store.clearFilter();
+
+        this.getSearchResultList().refresh();
+
         this.getSearchView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"down"});
     },
@@ -75,8 +91,17 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     },
 
-    launch: function() {
+    init: function(application) {
+        this.searchType = "";
+    },
 
+    setSearchType: function(name) {
+        this.searchType = name;
+        console.log("SearchType wurde neu gesetzt");
+    },
+
+    getSearchType: function() {
+        return this.searchType;
     }
 
 });

@@ -72,16 +72,23 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     onFocusSearchfieldStart: function(textfield, e, eOpts) {
-        this.getFahrplanerView().hide();
+
         var searchTitle = Ext.getCmp('SearchTitle');
         searchTitle.setData({title:"Start"}); // Übergabe an das Label searchTitle
+        console.log('Search Typ übergabe ::before');
+        this.getApplication().getController('searchViewController').setSearchType('start');
+        console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
+        this.getFahrplanerView().hide();
     },
 
     onFocusSearchfieldDestination: function(textfield, e, eOpts) {
         this.getFahrplanerView().hide();
         var searchTitle = Ext.getCmp('SearchTitle');
         searchTitle.setData({title:"Ziel"});  // Übergabe an das Label searchTitle
+        console.log('Search Typ übergabe ::before');
+        this.getApplication().getController('searchViewController').setSearchType('destination');
+        console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
     },
 
