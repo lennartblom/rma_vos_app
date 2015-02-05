@@ -21,7 +21,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         sliderValue: 200,
         shortestPath: true,
         weckerKlingeltMehrfach: false,
-        tune: 'superMario.mp3',
+        tune: 'resources/tones/superMario.mp3',
         aktuellePosition: {
             lat: 0.0,
             lng: 0.0
@@ -94,10 +94,15 @@ Ext.define('VosNavigator.controller.Wecker', {
     wecken: function() {
         navigator.vibrate(1);
         if(!this.getWeckerKlingelt()){
-            navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",function(){myMedia.stop();},"Zielort Erreicht!");
             var weckTune = new Media(this.getTune());
             weckTune.play();
+            navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",
+                                         function(){
+                                                    weckTune.stop();
+                                                    clearInterval(this.getTaskEngine().taskCheckDistance);
+            },"Zielort Erreicht!");
             navigator.vibrate(1);
+            this.setWeckerKlingelt(true);
         }
         navigator.vibrate(1);
     },
@@ -137,7 +142,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         var distance = 0.0;
         var deltaX = 71.5 * (lngCurrent-lngDestination);
         var deltaY = 111.3 * (latCurrent-latDestination);
-        var radius = 200;
+        var radius = this.getSliderValue();
         if(deltaX!==0||deltaY!==0){
         distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
         }
