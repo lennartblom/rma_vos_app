@@ -83,6 +83,19 @@
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListItemTap",
                 "implHandler": [
+                    "var dataView = this.getLineTwo();",
+                    "var linesData = record.get('lines');",
+                    "//var quantity = linesArray.getCount();",
+                    "",
+                    "",
+                    "",
+                    "var myPanel = Ext.create('Ext.Panel', {",
+                    "    html: \"<div class=\\\"buslineWrapper\\\"><div class=\\\"buslinesBoxLeft\\\"><div class=\\\"busIcon\\\" stlye=\\\"background-image:url(resources/images/icons/bus-icon-150x150.png)\\\"></div> \" + this.getApplication().getController('Fahrplaner').getLines(linesData) + \"</div><div class=\\\"buslinesBoxRight\\\">\"+ record.get('name')+ \"</div><div class=\\\"clearing\\\"></div></div>\"",
+                    "});",
+                    "",
+                    "dataView.removeAll();",
+                    "dataView.add([myPanel]);",
+                    "",
                     "this.getSearchView().hide();",
                     "this.getFahrplanerView().show();"
                 ],
@@ -153,6 +166,20 @@
             },
             "name": "launch",
             "designerId": "23c2d8b7-9113-4187-810d-c5f213c305a7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "lineTwo",
+                "selector": "dataview#lineTwo"
+            },
+            "name": "lineTwo",
+            "designerId": "405e2e82-cec4-40df-9726-9a59c9c2e8d2"
         }
     ]
 }
