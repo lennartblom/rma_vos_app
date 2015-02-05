@@ -103,9 +103,9 @@ Ext.define('VosNavigator.controller.Wecker', {
         var pace = this.getApplication().getController('Settings').getSliderPace();
 
         if(isTracking){
-            this.taskEngine = new Ext.util.DelayedTask(this.activateTracker(),this,);
+            this.taskEngine = new Ext.util.DelayedTask(this.activateTracker(),this);
+            this.taskEngine.setInterval(pace*1000);
             console.log("device is tracking");
-            this.activateTracker(pace*1000);
             //this.setupBackgroundPace();
             //this.checkDistance();
         }else{
@@ -118,7 +118,7 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     resetGeoTimer: function(interval) {
         if(this.getWeckerIsOn()){
-            this.getTrackingId().setTimeout(interval);
+            this.getTaskEngine().setInterval(interval);
             console.log("resetGeoTimer wurde aufgerufen");
         }
     },
@@ -153,21 +153,21 @@ Ext.define('VosNavigator.controller.Wecker', {
     activateTracker: function(pace) {
 
         console.log("activateTracker wurde aufgerufen");
-             this.trackingId = new Ext.device.Geolocation.watchPosition({
+             this.trackingId = new Ext.device.Geolocation.getCurrentPosition({
                  allowHighAccuracy:true,
-                 callback: Ext.bind(this.saveGeoLocation,this),
+                 success: Ext.bind(this.saveGeoLocation,this),
                  failure: function(){
                      console.log("Fehler beim Tracken");
                  }
              });
-        this.getTrackingId().setTimeout(pace);
         console.log("Tracker sollte gestartet sein");
     },
 
     saveGeoLocation: function(position) {
         this.getAktuellePosition().lat=position.coords.latitude;
         this.getAktuellePosition().lng=position.coords.longitude;
-        console.log("Aktuelle Position: "+this.getAktuellePosition().lat);
+        console.log("Aktuelle Position: "+this.getAktuellePosition().lat+
+                    " "+this.getAktuellePosition().lng);
     }
 
 });
