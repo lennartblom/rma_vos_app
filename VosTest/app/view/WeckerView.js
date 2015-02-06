@@ -105,9 +105,9 @@ Ext.define('VosNavigator.view.weckerView', {
                         items: [
                             {
                                 xtype: 'sliderfield',
+                                baseCls: 'divCenter',
                                 id: 'weckRadius',
                                 itemId: 'mysliderfield',
-                                style: 'background: none;\nmargin-left: auto;\nmargin-right: auto;',
                                 styleHtmlContent: true,
                                 width: '90%',
                                 label: '',
@@ -116,9 +116,9 @@ Ext.define('VosNavigator.view.weckerView', {
                             },
                             {
                                 xtype: 'label',
+                                baseCls: 'textCenter',
                                 html: '200 m vor dem Zielpunkt',
                                 id: 'sliderValueLabel',
-                                style: 'text-align: center;',
                                 styleHtmlContent: true
                             }
                         ]

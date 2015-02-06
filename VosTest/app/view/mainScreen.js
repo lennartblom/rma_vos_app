@@ -39,18 +39,18 @@ Ext.define('VosNavigator.view.mainScreen', {
             },
             {
                 xtype: 'container',
+                baseCls: 'transparentWhite',
                 height: '60px',
                 id: 'logo',
-                style: 'display:block;\nbackground-color: rgba(255,255,255, 0.7);\npadding:0px;\nmargin:0px;',
                 styleHtmlContent: true,
                 width: '320px',
                 items: [
                     {
                         xtype: 'image',
+                        baseCls: 'marginZeroPaddingZero',
                         docked: 'top',
                         height: '50px',
                         id: 'vosLogo',
-                        style: 'margin:0px;\npadding:0px;',
                         styleHtmlContent: true,
                         top: '5px',
                         width: '320px',
@@ -72,11 +72,11 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
+                                baseCls: 'roundTransparentBg',
                                 height: 75,
                                 hidden: false,
                                 id: 'weckerButton',
                                 left: 10,
-                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.3;',
                                 styleHtmlContent: true,
                                 top: -5,
                                 width: 75,
@@ -94,10 +94,10 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
+                                baseCls: 'roundTransparentBg',
                                 height: 75,
                                 id: 'settingsButton',
                                 left: 15,
-                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.3;',
                                 styleHtmlContent: true,
                                 top: -7,
                                 width: 75,
@@ -116,13 +116,14 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
+                                baseCls: 'roundTransparentBg',
                                 height: 75,
                                 id: 'achieveButton',
                                 left: 113,
-                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.3;',
                                 styleHtmlContent: true,
                                 top: 18,
                                 width: 75,
+                                labelCls: '',
                                 text: ''
                             }
                         ]
@@ -138,10 +139,10 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
+                                baseCls: 'roundTransparentBg',
                                 height: 75,
                                 id: 'game',
                                 left: 10,
-                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.3;',
                                 styleHtmlContent: true,
                                 top: 4,
                                 width: 75,
@@ -160,11 +161,11 @@ Ext.define('VosNavigator.view.mainScreen', {
                             {
                                 xtype: 'button',
                                 action: 'start',
+                                baseCls: 'roundTransparentBg',
                                 centered: true,
                                 height: 120,
                                 id: 'StartButton',
                                 left: 1,
-                                style: '-webkit-border-radius: 100%;\nborder-radius: 100%; /* border radius */\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: fff;\ndisplay:block;\nfont-size:11px;\nopacity:0.3;',
                                 styleHtmlContent: true,
                                 top: -2,
                                 width: 120,

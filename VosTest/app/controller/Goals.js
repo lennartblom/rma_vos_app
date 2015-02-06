@@ -17,7 +17,19 @@ Ext.define('VosNavigator.controller.Goals', {
     extend: 'Ext.app.Controller',
 
     config: {
-        date: null,
+        date: {
+            tag: null,
+            stunde: null,
+            minute: null,
+            sekunde: null
+        },
+        taskClock: null,
+        timeRemaining: {
+            tag: null,
+            stunde: null,
+            minute: null,
+            sekunde: null
+        },
 
         refs: {
             goalsBackButton: 'button#goalsBackButton',
@@ -48,9 +60,46 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     launch: function() {
-        this.date = new Date();
+        this.setupClock();
+        Ext.getStore('sights').load();
+        console.log("Goals Launcher wurde aufgerufen");
+    },
+
+    initiateDate: function() {
+
+        var datum = new Date();
+        var date = this.getDate();
+
+        date.tag=datum.getDay();
+        date.stunde = datum.getHours();
+        date.minute = datum.getMinutes();
+        date.sekunde = datum.getSeconds();
+    },
+
+    setupClock: function() {
+        this.initiateDate();
+        this.taskClock.setInterval(clock,1000);
+    },
+
+    clock: function() {
+        var datum = this.getDate();
+        var remaining =this.getTimeRemaining();
+        date.tag=datum.getDay();
+        date.stunde = datum.getHours();
+        date.minute = datum.getMinutes();
+        date.sekunde = datum.getSeconds();
+        remaining.tag = 7-date.tag;
+        remaining.stunde = 24-date.stunde;
+        remaining.minute=60-date.minute;
+        remaining.sekunde=60-date.sekunde;
+
         var daily = this.getDailyGoalsCounter();
-        daily.setHTML(date.now());
+        daily.setHTML(remaining.stunde+" Stunden"+remaining.minute+
+                      " Minuten"+remaining.sekunde+" Sekunde");
+
+
+
+
     }
 
 });

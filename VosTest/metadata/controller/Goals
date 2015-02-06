@@ -7,19 +7,37 @@
     "codeClass": null,
     "userConfig": {
         "date": [
-            "null"
+            "{tag: null, stunde:null, minute:null, sekunde:null}"
         ],
-        "designer|userClassName": "Goals"
+        "designer|userClassName": "Goals",
+        "taskClock": [
+            "`null`"
+        ],
+        "timeRemaining": [
+            "{tag:null,stunde:null,minute:null,sekunde:null}"
+        ]
     },
     "name": "MyController",
     "configAlternates": {
-        "date": "object"
+        "date": "object",
+        "taskClock": "object",
+        "timeRemaining": "object"
     },
     "designerId": "077834b7-114b-4f4d-887e-e802f056a810",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
             "name": "date",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "taskClock",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "timeRemaining",
             "type": "string"
         }
     ],
@@ -116,9 +134,9 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.date = new Date();",
-                    "var daily = this.getDailyGoalsCounter();",
-                    "daily.setHTML(date.now());"
+                    "this.setupClock();",
+                    "Ext.getStore('sights').load();",
+                    "console.log(\"Goals Launcher wurde aufgerufen\");"
                 ]
             },
             "name": "launch",
@@ -151,6 +169,79 @@
             },
             "name": "weeklyGoalsCounter",
             "designerId": "bee79f8a-bb6b-4d6a-b0e2-e24b92d67459"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initiateDate",
+                "implHandler": [
+                    "",
+                    "var datum = new Date();",
+                    "var date = this.getDate();",
+                    "",
+                    "date.tag=datum.getDay();",
+                    "date.stunde = datum.getHours();",
+                    "date.minute = datum.getMinutes();",
+                    "date.sekunde = datum.getSeconds();"
+                ]
+            },
+            "name": "initiateDate",
+            "designerId": "fc076cba-c936-4c4b-8cc2-386af545b196"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setupClock",
+                "implHandler": [
+                    "this.initiateDate();",
+                    "this.taskClock.setInterval(clock,1000);"
+                ]
+            },
+            "name": "setupClock",
+            "designerId": "c48a3a10-16b4-4154-a058-d1e33817b8f1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "clock",
+                "implHandler": [
+                    "var datum = this.getDate();",
+                    "var remaining =this.getTimeRemaining();",
+                    "date.tag=datum.getDay();",
+                    "date.stunde = datum.getHours();",
+                    "date.minute = datum.getMinutes();",
+                    "date.sekunde = datum.getSeconds();",
+                    "remaining.tag = 7-date.tag;",
+                    "remaining.stunde = 24-date.stunde;",
+                    "remaining.minute=60-date.minute;",
+                    "remaining.sekunde=60-date.sekunde;",
+                    "",
+                    "var daily = this.getDailyGoalsCounter();",
+                    "daily.setHTML(remaining.stunde+\" Stunden\"+remaining.minute+",
+                    "              \" Minuten\"+remaining.sekunde+\" Sekunde\");",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "name": "clock",
+            "designerId": "ad1e1949-eedf-496a-a653-8c45c2932c40"
         }
     ]
 }

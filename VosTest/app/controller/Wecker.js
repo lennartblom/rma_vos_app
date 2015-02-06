@@ -33,7 +33,6 @@ Ext.define('VosNavigator.controller.Wecker', {
             taskCheckDistance: null,
             taskBackgroundGeo: null
         },
-        task: null,
 
         refs: {
             weckerBackButton: 'button#weckerBackButton',

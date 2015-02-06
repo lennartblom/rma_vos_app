@@ -49,14 +49,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "baseCls": "orangeBorder",
                         "bottom": "30px",
                         "id": "details_border_bottom",
-                        "style": [
-                            "background-color:rgba(211, 83, 0, 0.9);",
-                            "display:block;",
-                            "height:5px;",
-                            "overflow:hidden;"
-                        ],
+                        "style": null,
                         "width": "255px"
                     },
                     "name": "MyContainer7",

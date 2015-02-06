@@ -6,35 +6,26 @@
     },
     "codeClass": null,
     "userConfig": {
-        "controllers": [
-            "Main",
-            "Goals",
-            "Settings",
-            "Wecker",
-            "Achievements",
-            "searchViewController",
-            "Fahrplaner"
-        ],
         "models": [
-            "stop",
-            "sight"
+            "sight",
+            "stop"
         ],
         "name": "VosNavigator",
         "stores": [
-            "stops",
-            "sights"
+            "sights",
+            "stops"
         ],
         "views": [
-            "settingsView",
-            "InitialView",
-            "fahrplanerView",
-            "weckerView",
+            "goalsDetails",
             "mainScreen",
             "MySearchField",
-            "searchView",
+            "fahrplanerView",
+            "goalsView",
+            "settingsView",
+            "weckerView",
             "achView",
-            "goalsDetails",
-            "goalsView"
+            "searchView",
+            "InitialView"
         ]
     },
     "name": "Application",
@@ -50,13 +41,29 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "Ext.getStore('stops').load();",
-                    "Ext.getStore('sights').load();",
-                    "console.log(\"Stores wurde geladen Launcher app.js.\");"
+                    "this.callLauncher();"
                 ]
             },
             "name": "launch",
-            "designerId": "def34fa4-6561-4d26-823c-4d959de9bdb6"
+            "designerId": "db6240d0-2ef6-46b1-b9a7-b91a7ffbf73c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "callLauncher",
+                "implHandler": [
+                    "    this.getApplication().getController('Goals').launch();",
+                    "    this.getApplication().getController('Fahrplaner').launch();",
+                    ""
+                ]
+            },
+            "name": "callLauncher",
+            "designerId": "8d020cdd-f033-4509-9b5a-c5da3c9bb4cc"
         }
     ]
 }

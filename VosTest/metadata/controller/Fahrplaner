@@ -303,6 +303,23 @@
             },
             "name": "SearchTitle",
             "designerId": "bb7243c6-8851-410d-ad3d-63eb1cad31c0"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.getStore('stops').load();",
+                    ""
+                ]
+            },
+            "name": "launch",
+            "designerId": "c2fdac09-3266-40bc-973d-176d1be4d954"
         }
     ]
 }
