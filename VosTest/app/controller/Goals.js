@@ -61,7 +61,6 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     initiateDate: function() {
-
         var datum = new Date();
         var date = this.getDate();
 
@@ -69,6 +68,8 @@ Ext.define('VosNavigator.controller.Goals', {
         date.stunde = datum.getHours();
         date.minute = datum.getMinutes();
         date.sekunde = datum.getSeconds();
+        console.log("initiate Date wurde aufgerufen");
+
     },
 
     setupClock: function() {
@@ -87,7 +88,8 @@ Ext.define('VosNavigator.controller.Goals', {
         remaining.stunde = 24-date.stunde;
         remaining.minute=60-date.minute;
         remaining.sekunde=60-date.sekunde;
-
+        console.log("<p>"+remaining.stunde+" Stunden"+remaining.minute+
+                      " Minuten"+remaining.sekunde+" Sekunde"+"</p>");
         var daily = this.getDailyGoalsCounter();
         daily.setHTML("<p>"+remaining.stunde+" Stunden"+remaining.minute+
                       " Minuten"+remaining.sekunde+" Sekunde"+"</p>");
@@ -98,9 +100,7 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     launch: function() {
-        this.setupClock();
-        Ext.getStore('sights').load();
-
+        console.log("ich bin ein kack launcher und werde nicht aufgerufen.")
     }
 
 });
