@@ -214,7 +214,8 @@
                 "implHandler": [
                     " this.getMainView().hide();",
                     " this.getGoalsView().show({type:\"slide\",direction:\"left\"});",
-                    " //this.getApplication().getController('Goals').setupClock();"
+                    "this.getApplication().getController('Goals').setupClock();",
+                    ""
                 ],
                 "name": "tap"
             },
@@ -422,13 +423,18 @@
             "designerId": "cc7c7109-a320-4bee-8699-2888289e4057"
         },
         {
-            "type": "fixedfunction",
+            "type": "controllerref",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "ref": "weckerButton",
+                "selector": "button#weckerButton"
+            },
+            "name": "weckerButton",
+            "designerId": "d24ee869-416d-4685-91cf-63b1adde2b8c"
                 "fn": "launch",
                 "implHandler": [
                     "console.log(\"Main Controller wird aufgerufen.lol\");"

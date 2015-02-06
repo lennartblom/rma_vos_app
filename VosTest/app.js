@@ -42,13 +42,13 @@ Ext.application({
         'mapView'
     ],
     controllers: [
-        'Settings',
+        'Main',
         'searchViewController',
-        'Wecker',
         'Fahrplaner',
         'Achievements',
         'Goals',
-        'Main'
+        'Settings',
+        'Wecker'
     ],
     name: 'VosNavigator',
 

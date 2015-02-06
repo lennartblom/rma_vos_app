@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
-            "Settings",
+            "Main",
             "searchViewController",
-            "Wecker",
             "Fahrplaner",
             "Achievements",
             "Goals",
-            "Main"
+            "Settings",
+            "Wecker"
         ],
         "models": [
             "sight",

@@ -165,14 +165,15 @@
             "userConfig": {
                 "fn": "initiateDate",
                 "implHandler": [
-                    "",
                     "var datum = new Date();",
                     "var date = this.getDate();",
                     "",
                     "date.tag=datum.getDay();",
                     "date.stunde = datum.getHours();",
                     "date.minute = datum.getMinutes();",
-                    "date.sekunde = datum.getSeconds();"
+                    "date.sekunde = datum.getSeconds();",
+                    "console.log(\"initiate Date wurde aufgerufen\");",
+                    ""
                 ]
             },
             "name": "initiateDate",
@@ -215,7 +216,8 @@
                     "remaining.stunde = 24-date.stunde;",
                     "remaining.minute=60-date.minute;",
                     "remaining.sekunde=60-date.sekunde;",
-                    "",
+                    "console.log(\"<p>\"+remaining.stunde+\" Stunden\"+remaining.minute+",
+                    "              \" Minuten\"+remaining.sekunde+\" Sekunde\"+\"</p>\");",
                     "var daily = this.getDailyGoalsCounter();",
                     "daily.setHTML(\"<p>\"+remaining.stunde+\" Stunden\"+remaining.minute+",
                     "              \" Minuten\"+remaining.sekunde+\" Sekunde\"+\"</p>\");",
@@ -238,7 +240,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.setupClock();"
+                    "console.log(\"ich bin ein kack launcher und werde nicht aufgerufen.\")"
                 ]
             },
             "name": "launch",
