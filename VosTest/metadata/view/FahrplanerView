@@ -35,6 +35,23 @@
             "designerId": "c1358de9-be9c-4ae1-8367-7f8468502c3b"
         },
         {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "400px",
+                "id": "map",
+                "layout": "fit",
+                "top": "50px",
+                "width": "320px"
+            },
+            "name": "MyContainer10",
+            "designerId": "582cf4a5-6c4c-43b1-a337-22fdc10d03a3"
+        },
+        {
             "type": "Ext.Button",
             "reference": {
                 "name": "items",
@@ -63,154 +80,6 @@
                 "style": "object"
             },
             "designerId": "97790e7f-aac1-43c9-9eb5-4c1aa818f9e2"
-        },
-        {
-            "type": "Ext.form.FieldSet",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "height": "140px",
-                "id": "search_field_set",
-                "title": "Haltestellen"
-            },
-            "name": "MyFieldSet",
-            "designerId": "1f724a52-39ce-4f1c-b40b-99ae29b9ad4b",
-            "cn": [
-                {
-                    "type": "Ext.field.Search",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "searchfieldStart",
-                        "label": "Von"
-                    },
-                    "name": "MySearchField1",
-                    "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7"
-                },
-                {
-                    "type": "Ext.field.Search",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "searchfieldDestination",
-                        "label": "Nach"
-                    },
-                    "name": "MySearchField2",
-                    "designerId": "d4120d0d-0fe8-4729-adc0-700a02aa624a"
-                }
-            ]
-        },
-        {
-            "type": "Ext.Container",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "docked": "top",
-                "height": 348,
-                "id": "linienInformationen",
-                "scrollable": "horizontal",
-                "top": "150px",
-                "width": "100%"
-            },
-            "name": "MyContainer10",
-            "designerId": "40a965cf-13c0-4d29-8b88-15889d11e859",
-            "cn": [
-                {
-                    "type": "Ext.dataview.DataView",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "baseCls": "transparentWhite",
-                        "docked": "top",
-                        "height": 100,
-                        "id": "lineTwo",
-                        "margin": "10 0 0 0 ",
-                        "scrollable": "vertical",
-                        "top": null,
-                        "width": "100%"
-                    },
-                    "name": "MyDataView3",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "d65fd6d6-938e-47b9-a965-082f1ff6e529",
-                    "cn": [
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "itemTpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "itemTpl",
-                                "implHandler": [
-                                    "<div>Data View Item {string}</div>"
-                                ]
-                            },
-                            "name": "itemTpl",
-                            "designerId": "351b26d4-723f-4223-9345-87f1047b5ec6"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.dataview.DataView",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "baseCls": "transparentWhite",
-                        "docked": "top",
-                        "height": 100,
-                        "id": "lineThree",
-                        "margin": "10 0 0 0",
-                        "scrollable": false,
-                        "style": null,
-                        "top": null,
-                        "width": "100%"
-                    },
-                    "name": "MyDataView4",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "dfea536c-e4a1-4ced-957b-580eda22c2e6",
-                    "cn": [
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "itemTpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "itemTpl",
-                                "implHandler": [
-                                    "<div>Data View Item {string}</div>"
-                                ]
-                            },
-                            "name": "itemTpl",
-                            "designerId": "ddba0dc0-ce54-4362-ba95-ffd9288da4fa"
-                        }
-                    ]
-                }
-            ]
         },
         {
             "type": "Ext.Container",

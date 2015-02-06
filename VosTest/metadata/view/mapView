@@ -7,12 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "baseCls": null,
-        "designer|userAlias": "achView",
-        "designer|userClassName": "achView",
+        "designer|userClassName": "mapView",
         "height": "100%"
     },
-    "name": "MyContainer1",
-    "designerId": "05c90d69-4bbe-4647-aa46-50af4f5a763f",
+    "name": "achView1",
+    "designerId": "973a711a-0c76-4151-a727-295dbbac5b41",
     "cn": [
         {
             "type": "Ext.Button",
@@ -28,7 +27,7 @@
                 "docked": "bottom",
                 "height": "65px",
                 "html": "zurück",
-                "id": "achBackButton",
+                "id": "achBackButton1",
                 "itemId": null,
                 "style": null,
                 "styleHtmlContent": true,
@@ -39,7 +38,7 @@
             "configAlternates": {
                 "style": "object"
             },
-            "designerId": "87c0e8c3-488d-4eba-a57d-8422de0b7cc7"
+            "designerId": "a14a1dc9-3df3-4fab-89a0-9e326374efad"
         },
         {
             "type": "Ext.Button",
@@ -58,7 +57,7 @@
                 "height": "65px",
                 "hidden": false,
                 "html": "Karte",
-                "id": "scoreButton",
+                "id": "scoreButton1",
                 "right": "0px",
                 "style": null,
                 "styleHtmlContent": true,
@@ -69,7 +68,7 @@
             "configAlternates": {
                 "style": "object"
             },
-            "designerId": "ebc074d3-b002-41ee-a576-e1d688d471c5"
+            "designerId": "eae36244-b80c-40eb-a0b5-ab62a6008abf"
         },
         {
             "type": "Ext.Container",
@@ -80,13 +79,13 @@
             "codeClass": null,
             "userConfig": {
                 "height": "80%",
-                "id": "wrapper_achievments_forms",
+                "id": "wrapper_achievments_forms1",
                 "margin": null,
                 "top": "50px",
                 "width": "100%"
             },
             "name": "MyContainer2",
-            "designerId": "a1987c36-40db-40b8-b9d0-93294b690ace",
+            "designerId": "30742e8b-1802-466a-b4a3-a24b0fe0e878",
             "cn": [
                 {
                     "type": "Ext.Container",
@@ -98,10 +97,10 @@
                     "userConfig": {
                         "docked": "top",
                         "height": "60px",
-                        "id": "netzerkundung_container"
+                        "id": "netzerkundung_container1"
                     },
                     "name": "MyContainer4",
-                    "designerId": "ccb3c93a-7f36-42b2-9e43-0f7e326bc353",
+                    "designerId": "d9e8d0b7-c921-45a9-bc77-e53936329878",
                     "cn": [
                         {
                             "type": "Ext.Label",
@@ -113,12 +112,12 @@
                             "userConfig": {
                                 "height": "25px",
                                 "html": "<p>Netzerkundung:</p>",
-                                "id": "netzerkundung",
+                                "id": "netzerkundung1",
                                 "margin": "5px",
                                 "top": null
                             },
                             "name": "MyLabel",
-                            "designerId": "82bf535e-d663-4c9e-9465-9ed9010a81af"
+                            "designerId": "2c8b2c2b-14d0-49f1-9283-6dc7d383eec1"
                         },
                         {
                             "type": "Ext.field.Checkbox",
@@ -131,7 +130,7 @@
                                 "label": "Field"
                             },
                             "name": "MyCheckbox",
-                            "designerId": "0adda1c8-0396-4882-bf68-94b01f8d8feb"
+                            "designerId": "21a4e133-6759-4142-82d6-1a10d2674d8a"
                         }
                     ]
                 },
@@ -144,12 +143,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": "80px",
-                        "id": "locations_visited_container",
+                        "id": "locations_visited_container1",
                         "top": "25px",
                         "width": "100%"
                     },
                     "name": "MyContainer5",
-                    "designerId": "e708768b-1ebb-4639-8866-0d031df33c47",
+                    "designerId": "70efc10f-e168-490e-a444-cb81f95d6ea1",
                     "cn": [
                         {
                             "type": "Ext.Label",
@@ -161,12 +160,12 @@
                             "userConfig": {
                                 "height": "25px",
                                 "html": "<p>Orte besucht:</p>",
-                                "id": "locations_visited",
+                                "id": "locations_visited1",
                                 "margin": "5px",
                                 "top": null
                             },
                             "name": "MyLabel",
-                            "designerId": "05d2f007-dc45-41f3-ab49-f3cd1556f82c"
+                            "designerId": "4a9af290-729d-4763-bbcc-7c072726e6a2"
                         },
                         {
                             "type": "Ext.field.Checkbox",
@@ -179,7 +178,7 @@
                                 "label": "Field"
                             },
                             "name": "MyCheckbox",
-                            "designerId": "94d77c5a-7442-4b7c-a6a8-f4eaf0a4ff7e"
+                            "designerId": "21d6a6db-b33b-49f4-9fb1-f82ee1ec0039"
                         },
                         {
                             "type": "Ext.field.Checkbox",
@@ -192,7 +191,7 @@
                                 "label": "Field"
                             },
                             "name": "MyCheckbox1",
-                            "designerId": "7a668241-6b0a-4bd0-8399-736a19e9695d"
+                            "designerId": "e6330caa-4942-4a6a-8a21-bc1c460a0466"
                         },
                         {
                             "type": "Ext.field.Checkbox",
@@ -205,7 +204,7 @@
                                 "label": "Field"
                             },
                             "name": "MyCheckbox2",
-                            "designerId": "dad9e45c-839a-4204-9d2e-da208ea31727"
+                            "designerId": "f55907d9-fd64-4150-853c-854fdcc2f7f7"
                         },
                         {
                             "type": "Ext.Label",
@@ -218,7 +217,7 @@
                                 "baseCls": "achievementsTextSmall",
                                 "height": "25px",
                                 "html": "Bisher erreichte Erfolge und erledigte Aufgaben",
-                                "id": "achievments_description",
+                                "id": "achievments_description1",
                                 "margin": "5px",
                                 "style": null,
                                 "top": "150px"
@@ -227,7 +226,7 @@
                             "configAlternates": {
                                 "style": "object"
                             },
-                            "designerId": "014f640d-aa13-4a6a-b42a-46749ae001ef"
+                            "designerId": "b8c0175c-ac5f-4f64-a5aa-603c36983da3"
                         }
                     ]
                 }
@@ -244,7 +243,7 @@
                 "baseCls": "orangeBorder",
                 "bottom": "30px",
                 "docked": "bottom",
-                "id": "border_bottom",
+                "id": "border_bottom1",
                 "layout": null,
                 "left": "65px",
                 "margin": null,
@@ -256,7 +255,7 @@
             "configAlternates": {
                 "style": "object"
             },
-            "designerId": "0fe6556b-d15b-490a-aa95-a6301163dd29"
+            "designerId": "eb9d3d45-33dd-49d7-a6f9-f9ce52f8f2fc"
         },
         {
             "type": "Ext.Img",
@@ -267,11 +266,11 @@
             "codeClass": null,
             "userConfig": {
                 "height": "100%",
-                "id": "achievment_bg",
+                "id": "achievment_bg1",
                 "src": "resources/images/background/achievements.png"
             },
             "name": "MyImg4",
-            "designerId": "108e67b1-9a5a-455d-8f7e-c748c825ddd5"
+            "designerId": "ef4e13a7-ac50-4096-9c5a-c39b2778802d"
         }
     ]
 }

@@ -19,11 +19,8 @@ Ext.define('VosNavigator.view.fahrplanerView', {
 
     requires: [
         'Ext.Img',
-        'Ext.Button',
-        'Ext.form.FieldSet',
-        'Ext.field.Search',
-        'Ext.dataview.DataView',
-        'Ext.XTemplate'
+        'Ext.Container',
+        'Ext.Button'
     ],
 
     config: {
@@ -38,6 +35,14 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 id: 'netzBackground',
                 width: '100%',
                 src: 'resources/images/background/verbindungen.png'
+            },
+            {
+                xtype: 'container',
+                height: '400px',
+                id: 'map',
+                top: '50px',
+                width: '320px',
+                layout: 'fit'
             },
             {
                 xtype: 'button',
@@ -55,61 +60,6 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                 styleHtmlContent: true,
                 width: 65,
                 text: 'back'
-            },
-            {
-                xtype: 'fieldset',
-                height: '140px',
-                id: 'search_field_set',
-                title: 'Haltestellen',
-                items: [
-                    {
-                        xtype: 'searchfield',
-                        itemId: 'searchfieldStart',
-                        label: 'Von'
-                    },
-                    {
-                        xtype: 'searchfield',
-                        itemId: 'searchfieldDestination',
-                        label: 'Nach'
-                    }
-                ]
-            },
-            {
-                xtype: 'container',
-                docked: 'top',
-                height: 348,
-                id: 'linienInformationen',
-                top: '150px',
-                width: '100%',
-                scrollable: 'horizontal',
-                items: [
-                    {
-                        xtype: 'dataview',
-                        baseCls: 'transparentWhite',
-                        docked: 'top',
-                        height: 100,
-                        id: 'lineTwo',
-                        margin: '10 0 0 0 ',
-                        width: '100%',
-                        scrollable: 'vertical',
-                        itemTpl: [
-                            '<div>Data View Item {string}</div>'
-                        ]
-                    },
-                    {
-                        xtype: 'dataview',
-                        baseCls: 'transparentWhite',
-                        docked: 'top',
-                        height: 100,
-                        id: 'lineThree',
-                        margin: '10 0 0 0',
-                        width: '100%',
-                        scrollable: false,
-                        itemTpl: [
-                            '<div>Data View Item {string}</div>'
-                        ]
-                    }
-                ]
             },
             {
                 xtype: 'container',

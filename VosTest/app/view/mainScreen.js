@@ -24,6 +24,7 @@ Ext.define('VosNavigator.view.mainScreen', {
     ],
 
     config: {
+        baseCls: '',
         height: '100%',
         id: 'mainWrapper',
         width: '100%',

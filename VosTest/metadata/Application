@@ -25,7 +25,8 @@
             "weckerView",
             "achView",
             "searchView",
-            "InitialView"
+            "InitialView",
+            "mapView"
         ]
     },
     "name": "Application",

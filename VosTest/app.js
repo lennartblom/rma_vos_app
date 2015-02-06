@@ -38,7 +38,8 @@ Ext.application({
         'weckerView',
         'achView',
         'searchView',
-        'InitialView'
+        'InitialView',
+        'mapView'
     ],
     name: 'VosNavigator',
 
