@@ -211,11 +211,7 @@
                                         "height": "25px",
                                         "html": "<p>6 Stunden 23 Minuten</p>",
                                         "id": "dailyGoalsCounter",
-                                        "style": [
-                                            "font-size:11px;",
-                                            "text-align:center;"
-                                        ],
-                                        "top": "270px"
+                                        "top": "150px"
                                     },
                                     "name": "MyLabel4",
                                     "configAlternates": {
@@ -254,14 +250,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "uppercaseHeadline",
                                         "height": "25px",
                                         "html": "<p>Wochenziele:</p>",
                                         "id": "label_weekly_goals",
-                                        "style": [
-                                            "font-family:Helvetica;",
-                                            "text-transform:uppercase;",
-                                            "font-size:13px;"
-                                        ],
+                                        "style": null,
                                         "top": null
                                     },
                                     "name": "MyLabel",
@@ -331,13 +324,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "textCenterSmall",
                                         "height": "25px",
                                         "html": "<p>3 Tage 6 Stunden 23 Minuten</p>",
                                         "id": "weeklyGoalsCounter",
-                                        "style": [
-                                            "font-size:11px;",
-                                            "text-algin:center;"
-                                        ],
+                                        "style": null,
                                         "top": "225px"
                                     },
                                     "name": "MyLabel3",
