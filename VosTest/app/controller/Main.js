@@ -71,7 +71,7 @@ Ext.define('VosNavigator.controller.Main', {
     gameButton: function(button, e, eOpts) {
          this.getMainView().hide();
          this.getGoalsView().show({type:"slide",direction:"left"});
-        this.getApplication().getController('Goals').setupClock();
+         //this.getApplication().getController('Goals').setupClock();
     },
 
     weckerButton: function(button, e, eOpts) {
@@ -87,6 +87,10 @@ Ext.define('VosNavigator.controller.Main', {
     achButton: function(button, e, eOpts) {
           this.getMainView().hide();
           this.getAchView().show({type:"slide",direction:"left"});
+    },
+
+    launch: function() {
+        console.log("Main Controller wird aufgerufen.");
     }
 
 });
