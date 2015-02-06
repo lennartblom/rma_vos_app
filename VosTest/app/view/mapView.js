@@ -19,8 +19,6 @@ Ext.define('VosNavigator.view.mapView', {
     requires: [
         'Ext.Button',
         'Ext.Container',
-        'Ext.Label',
-        'Ext.field.Checkbox',
         'Ext.Img'
     ],
 
@@ -32,94 +30,16 @@ Ext.define('VosNavigator.view.mapView', {
                 baseCls: 'backButton',
                 border: '',
                 bottom: '0px',
-                docked: 'bottom',
-                height: '65px',
-                html: 'zurück',
-                id: 'achBackButton1',
-                styleHtmlContent: true,
-                width: 65,
-                text: 'zurück'
-            },
-            {
-                xtype: 'button',
-                baseCls: 'backButton',
-                border: '',
-                bottom: '0px',
                 centered: false,
                 disabled: false,
                 height: '65px',
                 hidden: false,
-                html: 'Karte',
+                html: 'zurück',
                 id: 'scoreButton1',
                 right: '0px',
                 styleHtmlContent: true,
                 width: 65,
                 text: 'score'
-            },
-            {
-                xtype: 'container',
-                height: '80%',
-                id: 'wrapper_achievments_forms1',
-                top: '50px',
-                width: '100%',
-                items: [
-                    {
-                        xtype: 'container',
-                        docked: 'top',
-                        height: '60px',
-                        id: 'netzerkundung_container1',
-                        items: [
-                            {
-                                xtype: 'label',
-                                height: '25px',
-                                html: '<p>Netzerkundung:</p>',
-                                id: 'netzerkundung1',
-                                margin: '5px'
-                            },
-                            {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
-                            }
-                        ]
-                    },
-                    {
-                        xtype: 'container',
-                        height: '80px',
-                        id: 'locations_visited_container1',
-                        top: '25px',
-                        width: '100%',
-                        items: [
-                            {
-                                xtype: 'label',
-                                height: '25px',
-                                html: '<p>Orte besucht:</p>',
-                                id: 'locations_visited1',
-                                margin: '5px'
-                            },
-                            {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
-                            },
-                            {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
-                            },
-                            {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
-                            },
-                            {
-                                xtype: 'label',
-                                baseCls: 'achievementsTextSmall',
-                                height: '25px',
-                                html: 'Bisher erreichte Erfolge und erledigte Aufgaben',
-                                id: 'achievments_description1',
-                                margin: '5px',
-                                top: '150px'
-                            }
-                        ]
-                    }
-                ]
             },
             {
                 xtype: 'container',
