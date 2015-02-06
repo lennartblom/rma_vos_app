@@ -116,6 +116,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         content += '</div>';
 
         return content;
+    },
+
+    launch: function() {
+        Ext.getStore('stops').load();
+
     }
 
 });

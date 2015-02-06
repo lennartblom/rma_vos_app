@@ -61,6 +61,7 @@ Ext.define('VosNavigator.controller.Goals', {
 
     launch: function() {
         this.setupClock();
+        Ext.getStore('sights').load();
         console.log("Goals Launcher wurde aufgerufen");
     },
 

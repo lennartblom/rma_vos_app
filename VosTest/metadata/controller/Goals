@@ -135,6 +135,7 @@
                 "fn": "launch",
                 "implHandler": [
                     "this.setupClock();",
+                    "Ext.getStore('sights').load();",
                     "console.log(\"Goals Launcher wurde aufgerufen\");"
                 ]
             },

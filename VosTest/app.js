@@ -21,41 +21,36 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'stop',
-        'sight'
+        'sight',
+        'stop'
     ],
     stores: [
-        'stops',
-        'sights'
+        'sights',
+        'stops'
     ],
     views: [
-        'settingsView',
-        'InitialView',
-        'fahrplanerView',
-        'weckerView',
+        'goalsDetails',
         'mainScreen',
         'MySearchField',
-        'searchView',
+        'fahrplanerView',
+        'goalsView',
+        'settingsView',
+        'weckerView',
         'achView',
-        'goalsDetails',
-        'goalsView'
-    ],
-    controllers: [
-        'Main',
-        'Goals',
-        'Settings',
-        'Wecker',
-        'Achievements',
-        'searchViewController',
-        'Fahrplaner'
+        'searchView',
+        'InitialView'
     ],
     name: 'VosNavigator',
 
     launch: function() {
-        Ext.getStore('stops').load();
-        Ext.getStore('sights').load();
-        console.log("Stores wurde geladen Launcher app.js.");
+        this.callLauncher();
         Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
+    },
+
+    callLauncher: function() {
+            this.getApplication().getController('Goals').launch();
+            this.getApplication().getController('Fahrplaner').launch();
+
     }
 
 });
