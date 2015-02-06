@@ -1,0 +1,46 @@
+{
+   "sights":[
+      {
+         "name":"Rathaus",
+         "longitude":"8,0411810",
+         "latitude":"52,2774310",
+         "beschreibung":"Das historische Rathaus der Stadt Osnabrück wurde zwischen 1487 und 1512 im spätgotischen Stil erbaut.\nSeine geschichtsträchtigsten Momente erlebte das Osnabrücker Rathaus in den letzten Jahren des Dreißigjährigen Krieges. Zwischen 1643 und 1648 tagte im Osnabrücker Rathaus ein Teil der Delegationen der Kriegsparteien des Dreißigjährigen Krieges zu Verhandlungen über einen Friedensschluss, die schließlich im Jahre 1648 mit dem „Westfälischen Frieden von Osnabrück und Münster“ endeten. Im Osnabrücker Rathaus tagten dabei die Gesandten des Königreiches Schweden sowie diejenigen des Kaisers und der Reichsstände; demgegenüber verhandelten zu gleicher Zeit im Rathaus von Münster die kaiserlichen Gesandten und diejenigen Frankreichs. ",
+         "link":"http://de.wikipedia.org/wiki/Rathaus_Osnabr%C3%BCck"
+      },
+      {
+         "name":"Löwenpudel",
+         "longitude":"8,0435760",
+         "latitude":"52,2776660",
+         "beschreibung":"Der Löwenpudel ist ein Standbild vor dem Dom St. Peter.\nNach der volkstümlichen Sage war Karl der Große erzürnt über die Osnabrücker, als er erfuhr, dass die Bürger während seiner Abwesenheit wieder Kontakte zu Wittekind und den heidnischen Sachsen geknüpft hatten. Karl tat den Schwur, die Stadt züchtigen zu wollen, indem er dem ersten Lebewesen, das ihm bei seinem Einzug in Osnabrück entgegenkäme, den Kopf abschlagen würde.\nAls Karl in die Stadt einzog, getraute sich nur seine Schwester, die mit einem christlichen Sachsen verheiratet war, ihm mit der Absicht entgegenzutreten, um Gnade für die Bürger zu bitten. Karl sah sie kommen und flehte zum Himmel, er möge ihn aus dieser schrecklichen Lage befreien. Tatsächlich sprang plötzlich der Lieblingshund seiner Schwester, ein Pudel, heran und leckte dem König die Hand. Karl tötete ihn und erfüllte somit seinen Schwur, ohne einem Menschen das Leben zu nehmen. Die dankbaren Bürger ließen das Bild des Hundes in Stein hauen und auf dem Domhof aufstellen. Sie nannten ihn den Löwenpudel.",
+         "link":"http://de.wikipedia.org/wiki/L%C3%B6wenpudel"
+      },
+      {
+         "name":"Dom",
+         "longitude":"8,0447220",
+         "latitude":"52,2775690",
+         "beschreibung":"Der römisch-katholische Dom St. Peter (auch Dom St. Petrus) in Osnabrück ist die Kathedrale des Bistums Osnabrück. \nDer Dom ist ein spätromanisches Bauwerk und prägt seit seiner Entstehung die Silhouette der Stadt.",
+         "link":"http://de.wikipedia.org/wiki/Dom_St._Peter_%28Osnabr%C3%BCck%29"
+      },
+      {
+         "name":"Johanneskirche",
+         "longitude":"8,0516890",
+         "latitude":"52,2705630",
+         "beschreibung":"St. Johann (auch: Johanniskirche) ist eine ehemalige Stiftskirche in Osnabrück. \nSie gilt als eine der frühesten großen gotischen Hallenkirchen Deutschlands. Johannes der Täufer ist der Schutzpatron der Kirche. Sie umfasst ein dreischiffiges Langhaus, einen gerade geschlossenen Chor, ein Ostquerschiff und einen zweitürmigen Westriegelbau. Dieser ist Merkmal für die ursprüngliche Funktion als Stiftskirche.",
+         "link":"http://de.wikipedia.org/wiki/St._Johann_%28Osnabr%C3%BCck%29"
+      },
+      {
+         "name":"Bucksturm",
+         "longitude":"8,0385512",
+         "latitude":"52,2775378",
+         "beschreibung":"Der Bucksturm (früher auch Bocksturm) ist ein unter Denkmalschutz stehendes Bauwerk in Osnabrück.\nDer Turm mit halbrundem Grundriss wurde Anfang des 13. Jahrhunderts als Wachturm zwischen dem Heger Tor und dem Natruper Tor an der Osnabrücker Stadtmauer errichtet, die in diesem Abschnitt Bocksmauer hieß. Seinen Namen hat der Turm mit einem Durchmesser von 10,7 Meter angeblich nach einem Stein mit Bockskopf, der im nicht mehr bestehenden obersten Geschoss eingemauert gewesen sein soll.\nAnhand seiner relativ kleinen Schießscharten kann man erkennen, dass der Turm nie für Kanonen, sondern lediglich für kleinere Handfeuerwaffen vorgesehen war. Im Mittelalter war im Turm das städtische Gefängnis untergebracht.",
+         "link":"http://de.wikipedia.org/wiki/Bucksturm"
+      },
+      {
+         "name":"Heger Tor",
+         "longitude":"8,0387520",
+         "latitude":"52,2763310",
+         "beschreibung":"Das Waterloo-Tor mit seinem umgebenden Bereich ist in Osnabrück als das Heger Tor bekannt\nAm 18. Juni 1815 nahmen viele Osnabrücker Soldaten als Angehörige des Landwehr-Bataillons Osnabrück, des Leichten Feldbataillons Osnabrück und der King’s German Legion unter britischem Oberkommando an der Schlacht bei Waterloo teil. Zu Ehren dieser kämpfenden Mitbürger stiftete im Jahr 1816 der Osnabrücker Bürger Gerhard Friedrich von Gülich 1.000 Taler für eine Gedenkstätte.",
+         "link":"http://de.wikipedia.org/wiki/Waterloo-Tor"
+      }
+   ]
+}

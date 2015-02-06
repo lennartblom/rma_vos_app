@@ -16,11 +16,13 @@
             "searchViewController"
         ],
         "models": [
-            "stop"
+            "stop",
+            "sight"
         ],
         "name": "VosNavigator",
         "stores": [
-            "stops"
+            "stops",
+            "sights"
         ],
         "views": [
             "fahrplanerView",
@@ -31,7 +33,8 @@
             "weckerView",
             "mainScreen",
             "MySearchField",
-            "searchView"
+            "searchView",
+            "goalsDetails"
         ]
     },
     "name": "Application",

@@ -1,0 +1,46 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "sights",
+        "model": "sight",
+        "storeId": "sights"
+    },
+    "name": "stops1",
+    "designerId": "6c40c918-c18f-44d3-8177-a148ae52c2ec",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "resources/json/sights.json"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "e3bdb363-9192-47a8-8502-f99fb8ce958a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "sights"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "a2b1b2d6-3193-4bcd-a6ce-1aa00066c26f"
+                }
+            ]
+        }
+    ]
+}

@@ -137,7 +137,7 @@
                                     "userConfig": {
                                         "baseCls": "uppercaseHeadline",
                                         "height": "25px",
-                                        "html": "<p>Tagesziel:</p>",
+                                        "html": "<p>Besuche folgende Sehnswürdigkeiten:</p>",
                                         "id": "label_daily_goals",
                                         "top": null
                                     },
@@ -148,23 +148,22 @@
                                     "designerId": "f323cebc-43fd-4740-ba1c-939c327b623b"
                                 },
                                 {
-                                    "type": "Ext.dataview.DataView",
+                                    "type": "Ext.dataview.List",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "emptyText": "Besuche den Löwenpudel",
-                                        "height": "100px",
-                                        "html": "<p>Besuche den Löwenpudel</p>",
-                                        "id": "dataview_daily_goals",
-                                        "maxItemCache": 3,
+                                        "height": "200px",
+                                        "id": "sights_daily",
+                                        "itemCls": "sights_list",
+                                        "store": "sights",
                                         "top": "25px",
                                         "width": "100%"
                                     },
-                                    "name": "MyDataView1",
-                                    "designerId": "bb690014-0047-4a98-81b2-8e877c931d25",
+                                    "name": "MyList",
+                                    "designerId": "95870b49-1362-4064-8fe1-88d058163044",
                                     "cn": [
                                         {
                                             "type": "Ext.XTemplate",
@@ -176,11 +175,11 @@
                                             "userConfig": {
                                                 "designer|displayName": "itemTpl",
                                                 "implHandler": [
-                                                    "<div>Listeneintrag Nummer {string}</div>"
+                                                    "<div>{name}</div>"
                                                 ]
                                             },
                                             "name": "itemTpl",
-                                            "designerId": "398ffe1d-ef1c-4087-82f3-013c16d1aacb"
+                                            "designerId": "fc2b9159-d025-4ba6-b737-4d10c3e5b2a5"
                                         }
                                     ]
                                 },
@@ -195,7 +194,7 @@
                                         "height": "25px",
                                         "html": "<p>Verbleibende Zeit:</p>",
                                         "id": "dailyGoalsLabel",
-                                        "top": "125px"
+                                        "top": "250px"
                                     },
                                     "name": "MyLabel1",
                                     "designerId": "2295bb90-106e-4e07-9823-ef9db3f7e1a3"
@@ -237,7 +236,7 @@
                                 "left": null,
                                 "margin": "5px",
                                 "right": null,
-                                "top": "190px",
+                                "top": 300,
                                 "width": "100%"
                             },
                             "name": "MyContainer13",

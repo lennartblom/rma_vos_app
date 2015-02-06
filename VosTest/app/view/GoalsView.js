@@ -23,7 +23,7 @@ Ext.define('VosNavigator.view.goalsView', {
     requires: [
         'Ext.Button',
         'Ext.Label',
-        'Ext.dataview.DataView',
+        'Ext.dataview.List',
         'Ext.XTemplate',
         'Ext.Img'
     ],
@@ -87,28 +87,27 @@ Ext.define('VosNavigator.view.goalsView', {
                                         xtype: 'label',
                                         baseCls: 'uppercaseHeadline',
                                         height: '25px',
-                                        html: '<p>Tagesziel:</p>',
-                                        id: 'label_daily_goals'
+                                        html: '<p>Besuche folgende Sehnswürdigkeiten:</p>',
+                                        id: 'label_daily_goals',
                                     },
                                     {
-                                        xtype: 'dataview',
-                                        height: '100px',
-                                        html: '<p>Besuche den Löwenpudel</p>',
-                                        id: 'dataview_daily_goals',
+                                        xtype: 'list',
+                                        height: '200px',
+                                        id: 'sights_daily',
                                         top: '25px',
                                         width: '100%',
-                                        emptyText: 'Besuche den Löwenpudel',
+                                        itemCls: 'sights_list',
                                         itemTpl: [
-                                            '<div>Listeneintrag Nummer {string}</div>'
+                                            '<div>{name}</div>'
                                         ],
-                                        maxItemCache: 3
+                                        store: 'sights'
                                     },
                                     {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
                                         id: 'dailyGoalsLabel',
-                                        top: '125px'
+                                        top: '250px'
                                     },
                                     {
                                         xtype: 'label',
@@ -126,7 +125,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                 height: '100px',
                                 id: 'weekly_goals',
                                 margin: '5px',
-                                top: '190px',
+                                top: 300,
                                 width: '100%',
                                 items: [
                                     {
