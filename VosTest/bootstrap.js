@@ -32,7 +32,11 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
-  "MyApp": "app"
+  "VosNavigator": "app",
+  "VosNavigator.view.fahrplanerView": "app/view/FahrplanerView.js",
+  "VosNavigator.view.goalsView": "app/view/GoalsView.js",
+  "VosNavigator.view.settingsView": "app/view/SettingsView.js",
+  "VosNavigator.view.weckerView": "app/view/WeckerView.js"
 });
 
 Ext.ClassManager.addNameAlternateMappings({
@@ -667,10 +671,32 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "MyApp.controller.Main": [],
-  "MyApp.view.achievments_frontpage": [],
-  "MyApp.view.mainView": [],
-  "MyApp.view.wecker": []
+  "VosNavigator.controller.Achievements": [],
+  "VosNavigator.controller.Fahrplaner": [],
+  "VosNavigator.controller.Goals": [],
+  "VosNavigator.controller.Main": [],
+  "VosNavigator.controller.Settings": [],
+  "VosNavigator.controller.Wecker": [],
+  "VosNavigator.controller.searchViewController": [],
+  "VosNavigator.model.sight": [],
+  "VosNavigator.model.stop": [],
+  "VosNavigator.store.sights": [],
+  "VosNavigator.store.stops": [],
+  "VosNavigator.view.InitialView": [],
+  "VosNavigator.view.MySearchField": [],
+  "VosNavigator.view.achView": [],
+  "VosNavigator.view.fahrplanerView": [],
+  "VosNavigator.view.goalsDetails": [
+    "backButton"
+  ],
+  "VosNavigator.view.goalsView": [
+    "backButton"
+  ],
+  "VosNavigator.view.mainScreen": [],
+  "VosNavigator.view.mapView": [],
+  "VosNavigator.view.searchView": [],
+  "VosNavigator.view.settingsView": [],
+  "VosNavigator.view.weckerView": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1402,10 +1428,46 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "MyApp.controller.Main": [],
-  "MyApp.view.achievments_frontpage": [],
-  "MyApp.view.mainView": [],
-  "MyApp.view.wecker": []
+  "VosNavigator.controller.Achievements": [],
+  "VosNavigator.controller.Fahrplaner": [],
+  "VosNavigator.controller.Goals": [],
+  "VosNavigator.controller.Main": [],
+  "VosNavigator.controller.Settings": [],
+  "VosNavigator.controller.Wecker": [],
+  "VosNavigator.controller.searchViewController": [],
+  "VosNavigator.model.sight": [],
+  "VosNavigator.model.stop": [],
+  "VosNavigator.store.sights": [],
+  "VosNavigator.store.stops": [],
+  "VosNavigator.view.InitialView": [],
+  "VosNavigator.view.MySearchField": [],
+  "VosNavigator.view.achView": [
+    "widget.achView"
+  ],
+  "VosNavigator.view.fahrplanerView": [
+    "widget.fahrplanerview"
+  ],
+  "VosNavigator.view.goalsDetails": [
+    "widget.goalsdetails"
+  ],
+  "VosNavigator.view.goalsView": [
+    "widget.goalsview"
+  ],
+  "VosNavigator.view.mainScreen": [
+    "widget.mainScreen"
+  ],
+  "VosNavigator.view.mapView": [
+    "widget.mapview"
+  ],
+  "VosNavigator.view.searchView": [
+    "widget.searchview"
+  ],
+  "VosNavigator.view.settingsView": [
+    "widget.settingsview"
+  ],
+  "VosNavigator.view.weckerView": [
+    "widget.weckerview"
+  ]
 });
 
 
