@@ -6,10 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "searchViewController"
+        "designer|userClassName": "searchViewController",
+        "searchType": "",
+        "searchTypeTwo": null
     },
     "name": "MyController",
     "designerId": "5c080c39-9eb0-4ca3-80d0-df77e879fed0",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "searchTypeTwo",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "searchType",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "controllerref",
@@ -84,10 +98,10 @@
                 "fn": "onListItemTap",
                 "implHandler": [
                     "var dataView;",
-                    "console.log(\"Seachtype: \" + this.getSearchType());",
-                    "if(this.getSearchType() === 'start'){",
+                    "console.log(\"Seachtype: \" + this.searchType);",
+                    "if(this.searchType === 'start'){",
                     "    dataView = this.getLineTwo();",
-                    "}else if(this.getSearchType() === 'destination'){",
+                    "}else if(this.searchType === 'destination'){",
                     "    dataView = this.getLineThree();",
                     "}else{",
                     "    console.log(\"Search Type?!?!?\");",
@@ -212,42 +226,6 @@
             },
             "name": "init",
             "designerId": "5dd25ab0-f22d-430c-9538-62af1b736a7f"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "name"
-                ],
-                "fn": "setSearchType",
-                "implHandler": [
-                    "this.searchType = name;",
-                    "console.log(\"SearchType wurde neu gesetzt\");"
-                ]
-            },
-            "name": "setSearchType",
-            "designerId": "a35c0795-55c3-41dd-8612-2e2e4f5c7ce7"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "getSearchType",
-                "implHandler": [
-                    "return this.searchType;"
-                ]
-            },
-            "name": "getSearchType",
-            "designerId": "62f159b6-c3e4-40fd-b1e6-3dddc6536b06"
         }
     ]
 }
