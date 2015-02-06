@@ -69,7 +69,8 @@
                 "fn": "goalsBackButton",
                 "implHandler": [
                     "this.getGoalsView().hide();",
-                    "this.getMainView().show();"
+                    "this.getMainView().show();",
+                    "clearInterval(this.getTaskClock());"
                 ],
                 "name": "tap"
             },
@@ -123,24 +124,6 @@
             },
             "name": "goalsView",
             "designerId": "a410344b-c258-405a-9c84-2ae89477ac1e"
-        },
-        {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "launch",
-                "implHandler": [
-                    "this.setupClock();",
-                    "Ext.getStore('sights').load();",
-                    "console.log(\"Goals Launcher wurde aufgerufen\");"
-                ]
-            },
-            "name": "launch",
-            "designerId": "e7bdbdf0-77a3-43ef-b721-a3c41de59cdb"
         },
         {
             "type": "controllerref",

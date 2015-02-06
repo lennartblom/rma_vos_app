@@ -52,17 +52,12 @@ Ext.define('VosNavigator.controller.Goals', {
     goalsBackButton: function(button, e, eOpts) {
         this.getGoalsView().hide();
         this.getMainView().show();
+        clearInterval(this.getTaskClock());
     },
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
         var goalsDetails = Ext.create('VosTest.view.goalsDetails');
         this.getGoalsView().push(detailsView);
-    },
-
-    launch: function() {
-        this.setupClock();
-        Ext.getStore('sights').load();
-        console.log("Goals Launcher wurde aufgerufen");
     },
 
     initiateDate: function() {
