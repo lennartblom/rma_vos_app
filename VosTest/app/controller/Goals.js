@@ -89,8 +89,8 @@ Ext.define('VosNavigator.controller.Goals', {
         remaining.sekunde=60-date.sekunde;
 
         var daily = this.getDailyGoalsCounter();
-        daily.setHTML(remaining.stunde+" Stunden"+remaining.minute+
-                      " Minuten"+remaining.sekunde+" Sekunde");
+        daily.setHTML("<p>"+remaining.stunde+" Stunden"+remaining.minute+
+                      " Minuten"+remaining.sekunde+" Sekunde"+"</p>");
 
 
 
