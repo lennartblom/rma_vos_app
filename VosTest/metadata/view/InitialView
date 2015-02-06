@@ -119,6 +119,34 @@
             "name": "searchview",
             "designerId": "63d203c6-5c41-408e-b353-09d328a6880b",
             "masterInstanceId": "ca4ff710-0750-4c3d-b612-b2d0d625222d"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true
+            },
+            "name": "goalsdetails1",
+            "designerId": "cf4914c7-e891-421d-8ec1-8530a7db69be",
+            "masterInstanceId": "d256d4e6-5de7-42ed-a6d5-04b84333c9d0"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true
+            },
+            "name": "mapview1",
+            "designerId": "6936fcfc-85d2-49b5-9727-568f8335ec94",
+            "masterInstanceId": "973a711a-0c76-4151-a727-295dbbac5b41"
         }
     ]
 }

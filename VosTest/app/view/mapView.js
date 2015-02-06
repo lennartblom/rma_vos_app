@@ -15,6 +15,7 @@
 
 Ext.define('VosNavigator.view.mapView', {
     extend: 'Ext.Container',
+    alias: 'widget.mapview',
 
     requires: [
         'Ext.Button',

@@ -121,7 +121,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "baseCls": null,
+                                "baseCls": "roundTransparentBg",
                                 "height": 75,
                                 "hidden": null,
                                 "id": "weckerButton",
@@ -166,12 +166,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "baseCls": null,
+                                "baseCls": "roundTransparentBg",
                                 "height": 75,
                                 "id": "settingsButton",
                                 "left": 15,
                                 "style": null,
-                                "styleHtmlCls": "roundTransparentBg",
+                                "styleHtmlCls": null,
                                 "styleHtmlContent": true,
                                 "text": "",
                                 "top": -7,
