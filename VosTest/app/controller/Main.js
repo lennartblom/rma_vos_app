@@ -87,6 +87,10 @@ Ext.define('VosNavigator.controller.Main', {
     achButton: function(button, e, eOpts) {
           this.getMainView().hide();
           this.getAchView().show({type:"slide",direction:"left"});
+    },
+
+    launch: function() {
+        console.log("Main Controller wird aufgerufen.lol");
     }
 
 });

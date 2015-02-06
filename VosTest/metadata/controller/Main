@@ -437,7 +437,7 @@
             "designerId": "d24ee869-416d-4685-91cf-63b1adde2b8c"
                 "fn": "launch",
                 "implHandler": [
-                    "console.log(\"Main Controller wird aufgerufen.\");"
+                    "console.log(\"Main Controller wird aufgerufen.lol\");"
                 ]
             },
             "name": "launch",
