@@ -1,0 +1,156 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "alternateClassName": [
+            "backButton"
+        ],
+        "designer|userClassName": "goalsDetails",
+        "height": "100%",
+        "id": "goals1",
+        "width": "100%"
+    },
+    "name": "goalsView1",
+    "designerId": "d256d4e6-5de7-42ed-a6d5-04b84333c9d0",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": true,
+                "docked": "top",
+                "height": "100%",
+                "id": "container_details_view",
+                "layout": "fit",
+                "style": [
+                    "padding-top:60px;"
+                ],
+                "width": "320px"
+            },
+            "name": "MyContainer11",
+            "configAlternates": {
+                "style": "object"
+            },
+            "designerId": "8e3e3ccc-2b55-4144-8347-a1d11e6919eb",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bottom": "30px",
+                        "id": "details_border_bottom",
+                        "style": [
+                            "background-color:rgba(211, 83, 0, 0.9);",
+                            "display:block;",
+                            "height:5px;",
+                            "overflow:hidden;"
+                        ],
+                        "width": "255px"
+                    },
+                    "name": "MyContainer7",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "afdc1577-d9a5-4547-81ee-2442fc881cfa"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "backButton",
+                        "border": "",
+                        "bottom": "0px",
+                        "centered": false,
+                        "disabled": false,
+                        "docked": "bottom",
+                        "height": "65px",
+                        "hidden": false,
+                        "html": "<span>zurück</span>",
+                        "id": "detailsBackButton",
+                        "right": "0px",
+                        "styleHtmlContent": true,
+                        "text": "back",
+                        "width": 65
+                    },
+                    "name": "MyButton2",
+                    "configAlternates": {
+                        "style": "object"
+                    },
+                    "designerId": "a0a1b33a-c90b-4024-a4f9-42d9fc7c79e7"
+                },
+                {
+                    "type": "Ext.dataview.DataView",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "emptyText": "Besuche den Löwenpudel",
+                        "height": "100px",
+                        "html": null,
+                        "id": "dataview_details",
+                        "maxItemCache": 3,
+                        "store": "sights",
+                        "top": "25px",
+                        "width": "100%"
+                    },
+                    "name": "MyDataView",
+                    "designerId": "4df27326-76e7-4bcf-aea9-34313cd409a0",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div><h1>{name}</h1><p>{description}</p></div>"
+                                ]
+                            },
+                            "name": "itemTpl",
+                            "designerId": "6446108d-92b1-4e77-977f-155251aa21e6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "docked": "top",
+                "height": "100%",
+                "id": "details_background",
+                "src": "resources/images/background/game.png",
+                "width": "320px"
+            },
+            "name": "MyImg13",
+            "designerId": "08fbe5a6-947b-4fb3-8b40-8a2e2e5e8d56"
+        }
+    ]
+}

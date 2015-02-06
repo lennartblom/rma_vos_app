@@ -42,6 +42,9 @@ Ext.define('VosNavigator.controller.Goals', {
         control: {
             "button#goalsBackButton": {
                 tap: 'goalsBackButton'
+            },
+            "list#sights_daily": {
+                itemtap: 'onListItemTap'
             }
         }
     },
@@ -49,6 +52,11 @@ Ext.define('VosNavigator.controller.Goals', {
     goalsBackButton: function(button, e, eOpts) {
         this.getGoalsView().hide();
         this.getMainView().show();
+    },
+
+    onListItemTap: function(dataview, index, target, record, e, eOpts) {
+        var goalsDetails = Ext.create('VosTest.view.goalsDetails');
+        this.getGoalsView().push(detailsView);
     },
 
     launch: function() {

@@ -23,7 +23,7 @@ Ext.define('VosNavigator.view.goalsView', {
     requires: [
         'Ext.Button',
         'Ext.Label',
-        'Ext.dataview.DataView',
+        'Ext.dataview.List',
         'Ext.XTemplate',
         'Ext.Img'
     ],
@@ -45,9 +45,9 @@ Ext.define('VosNavigator.view.goalsView', {
                 items: [
                     {
                         xtype: 'container',
+                        baseCls: 'orangeBorder',
                         bottom: '30px',
                         id: 'goals_border_bottom',
-                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
                         width: '255px'
                     },
                     {
@@ -85,37 +85,36 @@ Ext.define('VosNavigator.view.goalsView', {
                                 items: [
                                     {
                                         xtype: 'label',
+                                        baseCls: 'uppercaseHeadline',
                                         height: '25px',
-                                        html: '<p>Tagesziel:</p>',
-                                        id: 'label_daily_goals',
-                                        style: 'font-family:Helvetica;\ntext-transform:uppercase;\nfont-size:13px;'
+                                        html: '<p>Besuche folgende Sehnswürdigkeiten:</p>',
+                                        id: 'label_daily_goals'
                                     },
                                     {
-                                        xtype: 'dataview',
-                                        height: '100px',
-                                        html: '<p>Besuche den Löwenpudel</p>',
-                                        id: 'dataview_daily_goals',
+                                        xtype: 'list',
+                                        height: '200px',
+                                        id: 'sights_daily',
                                         top: '25px',
                                         width: '100%',
-                                        emptyText: 'Besuche den Löwenpudel',
+                                        itemCls: 'sights_list',
                                         itemTpl: [
-                                            '<div>Listeneintrag Nummer {string}</div>'
+                                            '<div>{name}</div>'
                                         ],
-                                        maxItemCache: 3
+                                        store: 'sights'
                                     },
                                     {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
                                         id: 'dailyGoalsLabel',
-                                        top: '125px'
+                                        top: '250px'
                                     },
                                     {
                                         xtype: 'label',
+                                        baseCls: 'textCenterSmall',
                                         height: '25px',
                                         html: '<p>6 Stunden 23 Minuten</p>',
                                         id: 'dailyGoalsCounter',
-                                        style: 'font-size:11px;\ntext-align:center;',
                                         top: '150px'
                                     }
                                 ]
@@ -126,15 +125,15 @@ Ext.define('VosNavigator.view.goalsView', {
                                 height: '100px',
                                 id: 'weekly_goals',
                                 margin: '5px',
-                                top: '190px',
+                                top: 300,
                                 width: '100%',
                                 items: [
                                     {
                                         xtype: 'label',
+                                        baseCls: 'uppercaseHeadline',
                                         height: '25px',
                                         html: '<p>Wochenziele:</p>',
-                                        id: 'label_weekly_goals',
-                                        style: 'font-family:Helvetica;\ntext-transform:uppercase;\nfont-size:13px;'
+                                        id: 'label_weekly_goals'
                                     },
                                     {
                                         xtype: 'dataview',
@@ -151,6 +150,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'label',
+                                        baseCls: 'uppercaseHeadline',
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
                                         id: 'weeklyGoalsLabel',
@@ -158,10 +158,10 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'label',
+                                        baseCls: 'textCenterSmall',
                                         height: '25px',
                                         html: '<p>3 Tage 6 Stunden 23 Minuten</p>',
                                         id: 'weeklyGoalsCounter',
-                                        style: 'font-size:11px;\ntext-algin:center;',
                                         top: '225px'
                                     }
                                 ]
