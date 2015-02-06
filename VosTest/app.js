@@ -45,10 +45,12 @@ Ext.application({
         'Main',
         'Settings',
         'searchViewController',
-        'Wecker',
         'Fahrplaner',
         'Achievements',
         'Goals'
+        'Goals',
+        'Settings',
+        'Wecker'
     ],
     name: 'VosNavigator',
 
