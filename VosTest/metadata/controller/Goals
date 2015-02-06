@@ -236,9 +236,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.setupClock();",
-                    "Ext.getStore('sights').load();",
-                    ""
+                    "this.setupClock();"
                 ]
             },
             "name": "launch",

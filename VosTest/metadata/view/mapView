@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "baseCls": null,
+        "designer|userAlias": "mapview",
         "designer|userClassName": "mapView",
         "height": "100%"
     },

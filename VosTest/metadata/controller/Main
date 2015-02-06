@@ -23,7 +23,6 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "startButtonAction",
                 "implHandler": [
-                    "alert(\"Lol\");",
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
                     "//this.getApplication().getController('Wecker').wecken();"
@@ -158,6 +157,20 @@
             },
             "name": "gameButton",
             "designerId": "2bf3a1ba-771b-4f2c-98a7-672133e43b5a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerButton",
+                "selector": "button#weckerButton"
+            },
+            "name": "weckerButton",
+            "designerId": "bf9ac320-f7a5-4b87-af97-fe86f8182ccf"
         },
         {
             "type": "controllerref",
@@ -423,11 +436,6 @@
             },
             "name": "launch",
             "designerId": "25fa71a0-7b2d-4989-ba9e-097ffcdd7087"
-                "ref": "weckerButton",
-                "selector": "button#weckerButton"
-            },
-            "name": "weckerButton",
-            "designerId": "d24ee869-416d-4685-91cf-63b1adde2b8c"
         }
     ]
 }

@@ -52,7 +52,9 @@
                 "fn": "launch",
                 "implHandler": [
                     "",
-                    ""
+                    "",
+                    "Ext.getStore('sights').load();",
+                    "console.log('Logo hinter Sights');"
                 ]
             },
             "name": "launch",
