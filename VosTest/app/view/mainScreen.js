@@ -95,10 +95,10 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
-                                baseCls: 'roundTransparentBg',
                                 height: 75,
                                 id: 'settingsButton',
                                 left: 15,
+                                styleHtmlCls: 'roundTransparentBg',
                                 styleHtmlContent: true,
                                 top: -7,
                                 width: 75,
@@ -166,6 +166,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                                 centered: true,
                                 height: 120,
                                 id: 'StartButton',
+                                itemId: 'StartButton',
                                 left: 1,
                                 styleHtmlContent: true,
                                 top: -2,
