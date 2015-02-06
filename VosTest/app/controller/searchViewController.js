@@ -17,8 +17,6 @@ Ext.define('VosNavigator.controller.searchViewController', {
     extend: 'Ext.app.Controller',
 
     config: {
-        searchType: '',
-
         refs: {
             searchResultList: 'list#searchResultList',
             searchField: 'searchfield#searchField',
@@ -58,10 +56,10 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
         var dataView;
-        console.log("Seachtype: " + this.searchType);
-        if(this.searchType === 'start'){
+        console.log("Seachtype: " + this.getSearchType());
+        if(this.getSearchType() === 'start'){
             dataView = this.getLineTwo();
-        }else if(this.searchType === 'destination'){
+        }else if(this.getSearchType() === 'destination'){
             dataView = this.getLineThree();
         }else{
             console.log("Search Type?!?!?");
@@ -95,6 +93,15 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     init: function(application) {
         this.searchType = "";
+    },
+
+    setSearchType: function(name) {
+        this.searchType = name;
+        console.log("SearchType wurde neu gesetzt");
+    },
+
+    getSearchType: function() {
+        return this.searchType;
     }
 
 });

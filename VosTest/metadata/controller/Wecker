@@ -13,9 +13,7 @@
         "mixins": null,
         "shortestPath": true,
         "sliderValue": 200,
-        "task": [
-            "null"
-        ],
+        "task": null,
         "taskEngine": [
             "{taskGetPos:null,",
             "taskCheckDistance:null,",
