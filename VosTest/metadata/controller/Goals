@@ -225,6 +225,24 @@
             },
             "name": "clock",
             "designerId": "ad1e1949-eedf-496a-a653-8c45c2932c40"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "this.setupClock();",
+                    "Ext.getStore('sights').load();",
+                    ""
+                ]
+            },
+            "name": "launch",
+            "designerId": "4a481c48-b6bb-4618-a506-349cc7a19d26"
         }
     ]
 }

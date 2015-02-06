@@ -6,6 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "controllers": [
+            "Settings",
+            "searchViewController",
+            "Wecker",
+            "Fahrplaner",
+            "Achievements",
+            "Goals",
+            "Main"
+        ],
         "models": [
             "sight",
             "stop"
@@ -42,8 +51,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "Ext.getStore('sights').load();",
-                    "Ext.getStore('stops').load();",
+                    "",
                     ""
                 ]
             },

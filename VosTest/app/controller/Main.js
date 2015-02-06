@@ -27,7 +27,6 @@ Ext.define('VosNavigator.controller.Main', {
             AchView: '#AchView',
             StartButton: '#StartButton',
             gameButton: 'button#game',
-            weckerButton: 'button#weckerButton',
             settingsButton: 'button#settingsButton',
             achieveButton: 'button#achieveButton',
             startImageInv: 'image#StartImageInv',
@@ -39,7 +38,8 @@ Ext.define('VosNavigator.controller.Main', {
             settingsImageInv: 'image#SettingsImageInv',
             settingsImage: 'image#SettingsImage',
             weckerImageInv: 'image#WeckerImageInv',
-            weckerImage: 'image#WeckerImage'
+            weckerImage: 'image#WeckerImage',
+            weckerButton: 'button#weckerButton'
         },
 
         control: {

@@ -167,20 +167,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "weckerButton",
-                "selector": "button#weckerButton"
-            },
-            "name": "weckerButton",
-            "designerId": "bf9ac320-f7a5-4b87-af97-fe86f8182ccf"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "ref": "settingsButton",
                 "selector": "button#settingsButton"
             },
@@ -437,6 +423,11 @@
             },
             "name": "launch",
             "designerId": "25fa71a0-7b2d-4989-ba9e-097ffcdd7087"
+                "ref": "weckerButton",
+                "selector": "button#weckerButton"
+            },
+            "name": "weckerButton",
+            "designerId": "d24ee869-416d-4685-91cf-63b1adde2b8c"
         }
     ]
 }
