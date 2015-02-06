@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
+            "Main",
             "Settings",
             "searchViewController",
             "Wecker",
             "Fahrplaner",
             "Achievements",
-            "Goals",
-            "Main"
+            "Goals"
         ],
         "models": [
             "sight",
@@ -25,17 +25,17 @@
             "stops"
         ],
         "views": [
-            "goalsDetails",
             "mainScreen",
+            "goalsDetails",
             "MySearchField",
             "fahrplanerView",
             "goalsView",
             "settingsView",
-            "weckerView",
             "achView",
             "searchView",
             "InitialView",
-            "mapView"
+            "mapView",
+            "weckerView"
         ]
     },
     "name": "Application",

@@ -29,26 +29,26 @@ Ext.application({
         'stops'
     ],
     views: [
-        'goalsDetails',
         'mainScreen',
+        'goalsDetails',
         'MySearchField',
         'fahrplanerView',
         'goalsView',
         'settingsView',
-        'weckerView',
         'achView',
         'searchView',
         'InitialView',
-        'mapView'
+        'mapView',
+        'weckerView'
     ],
     controllers: [
+        'Main',
         'Settings',
         'searchViewController',
         'Wecker',
         'Fahrplaner',
         'Achievements',
-        'Goals',
-        'Main'
+        'Goals'
     ],
     name: 'VosNavigator',
 
