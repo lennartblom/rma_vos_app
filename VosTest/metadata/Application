@@ -41,29 +41,13 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.callLauncher();"
+                    "Ext.getStore('sights').load();",
+                    "Ext.getStore('stops').load();",
+                    ""
                 ]
             },
             "name": "launch",
             "designerId": "db6240d0-2ef6-46b1-b9a7-b91a7ffbf73c"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "callLauncher",
-                "implHandler": [
-                    "    this.getApplication().getController('Goals').launch();",
-                    "    this.getApplication().getController('Fahrplaner').launch();",
-                    ""
-                ]
-            },
-            "name": "callLauncher",
-            "designerId": "8d020cdd-f033-4509-9b5a-c5da3c9bb4cc"
         }
     ]
 }

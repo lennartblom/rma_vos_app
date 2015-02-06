@@ -213,7 +213,8 @@
                 "fn": "gameButton",
                 "implHandler": [
                     " this.getMainView().hide();",
-                    " this.getGoalsView().show({type:\"slide\",direction:\"left\"});"
+                    " this.getGoalsView().show({type:\"slide\",direction:\"left\"});",
+                    "this.getApplication().getController('Goals').setupClock();"
                 ],
                 "name": "tap"
             },

@@ -43,14 +43,10 @@ Ext.application({
     name: 'VosNavigator',
 
     launch: function() {
-        this.callLauncher();
+        Ext.getStore('sights').load();
+        Ext.getStore('stops').load();
+
         Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
-    },
-
-    callLauncher: function() {
-            this.getApplication().getController('Goals').launch();
-            this.getApplication().getController('Fahrplaner').launch();
-
     }
 
 });
