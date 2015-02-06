@@ -62,6 +62,7 @@ Ext.define('VosNavigator.controller.Main', {
     },
 
     startButtonAction: function(button, e, eOpts) {
+        alert("Lol");
         this.getMainView().hide();
         this.getFahrplanerView().show({type:"slide",direction:"left"});
         //this.getApplication().getController('Wecker').wecken();

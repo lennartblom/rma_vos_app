@@ -23,6 +23,7 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "startButtonAction",
                 "implHandler": [
+                    "alert(\"Lol\");",
                     "this.getMainView().hide();",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
                     "//this.getApplication().getController('Wecker').wecken();"

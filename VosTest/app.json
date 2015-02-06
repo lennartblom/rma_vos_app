@@ -90,6 +90,7 @@
     "css": [
         {
             "path": "resources/css/app.css",
+            "path": "resources/css/style.css",
             "update": "delta"
         }
     ],
