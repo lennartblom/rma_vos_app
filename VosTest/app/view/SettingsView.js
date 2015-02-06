@@ -43,17 +43,17 @@ Ext.define('VosNavigator.view.settingsView', {
                 items: [
                     {
                         xtype: 'label',
+                        baseCls: 'uppercaseHeadline',
                         height: '25px',
                         html: '<p>Einstellungen:</p>',
                         id: 'headline_settings',
-                        margin: '5px',
-                        style: 'font-family:Helvetica;\ntext-transform:uppercase;\nfont-size:13px;'
+                        margin: '5px'
                     },
                     {
                         xtype: 'container',
+                        baseCls: 'orangeBorder',
                         bottom: '30px',
                         id: 'settings_border_bottom',
-                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
                         width: '255px'
                     },
                     {
@@ -69,7 +69,6 @@ Ext.define('VosNavigator.view.settingsView', {
                         html: '<span>zurück</span>',
                         id: 'settingsBackButton',
                         right: '0px',
-                        style: '-moz-border-radius: 46px;\n-webkit-border-radius: 46px;\nborder-radius: 46px; /* border radius */\n-moz-background-clip: padding;\n-webkit-background-clip: padding-box;\nbackground-clip: padding-box; /* prevents bg color from leaking outside the border */\nbackground-color: #3d4f5e;\nopacity: 0.9;\ncolor:#fff;\nline-height:65px;\nfloat:right;\ndisplay:block;\nfont-size:11px;',
                         styleHtmlContent: true,
                         width: 65,
                         text: 'back'
@@ -113,10 +112,10 @@ Ext.define('VosNavigator.view.settingsView', {
                             },
                             {
                                 xtype: 'label',
+                                baseCls: 'textCenterSmall',
                                 html: '<p>Je häufiger die Position überprüft wird, desto mehr Strom wird verbraucht.</p>',
                                 id: 'info',
-                                margin: '5px',
-                                style: 'opacity:0.7;'
+                                margin: '5px'
                             }
                         ]
                     }

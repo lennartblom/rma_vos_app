@@ -43,9 +43,9 @@ Ext.define('VosNavigator.view.goalsDetails', {
                 items: [
                     {
                         xtype: 'container',
+                        baseCls: 'orangeBorder',
                         bottom: '30px',
                         id: 'details_border_bottom',
-                        style: 'background-color:rgba(211, 83, 0, 0.9);\ndisplay:block;\nheight:5px;\noverflow:hidden;',
                         width: '255px'
                     },
                     {

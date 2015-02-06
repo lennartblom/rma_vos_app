@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "baseCls": "",
         "designer|userAlias": "mainScreen",
         "designer|userClassName": "mainScreen",
         "height": "100%",
@@ -41,14 +42,10 @@
             },
             "codeClass": null,
             "userConfig": {
+                "baseCls": "transparentWhite",
                 "height": "60px",
                 "id": "logo",
-                "style": [
-                    "display:block;",
-                    "background-color: rgba(255,255,255, 0.7);",
-                    "padding:0px;",
-                    "margin:0px;"
-                ],
+                "style": null,
                 "styleHtmlContent": true,
                 "width": "320px"
             },
@@ -66,6 +63,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "baseCls": "marginZeroPaddingZero",
                         "centered": null,
                         "docked": "top",
                         "height": "50px",
@@ -73,10 +71,6 @@
                         "minHeight": null,
                         "minWidth": null,
                         "src": "resources/images/logo/vos_navigator.png",
-                        "style": [
-                            "margin:0px;",
-                            "padding:0px;"
-                        ],
                         "styleHtmlContent": true,
                         "top": "5px",
                         "width": "320px"
@@ -127,21 +121,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "roundTransparentBg",
                                 "height": 75,
                                 "hidden": false,
                                 "id": "weckerButton",
                                 "left": 10,
-                                "style": [
-                                    "",
-                                    "-webkit-border-radius: 100%;",
-                                    "border-radius: 100%; /* border radius */",
-                                    "-webkit-background-clip: padding-box;",
-                                    "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: fff;",
-                                    "display:block;",
-                                    "font-size:11px;",
-                                    "opacity:0.3;"
-                                ],
                                 "styleHtmlContent": true,
                                 "text": "",
                                 "top": -5,
@@ -182,20 +166,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "roundTransparentBg",
                                 "height": 75,
                                 "id": "settingsButton",
                                 "left": 15,
-                                "style": [
-                                    "",
-                                    "-webkit-border-radius: 100%;",
-                                    "border-radius: 100%; /* border radius */",
-                                    "-webkit-background-clip: padding-box;",
-                                    "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: fff;",
-                                    "display:block;",
-                                    "font-size:11px;",
-                                    "opacity:0.3;"
-                                ],
+                                "style": null,
                                 "styleHtmlContent": true,
                                 "text": "",
                                 "top": -7,
@@ -236,20 +211,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "roundTransparentBg",
                                 "height": 75,
                                 "id": "achieveButton",
+                                "labelCls": "",
                                 "left": 113,
-                                "style": [
-                                    "",
-                                    "-webkit-border-radius: 100%;",
-                                    "border-radius: 100%; /* border radius */",
-                                    "-webkit-background-clip: padding-box;",
-                                    "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: fff;",
-                                    "display:block;",
-                                    "font-size:11px;",
-                                    "opacity:0.3;"
-                                ],
+                                "style": null,
                                 "styleHtmlContent": true,
                                 "text": "",
                                 "top": 18,
@@ -289,20 +256,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "roundTransparentBg",
                                 "height": 75,
                                 "id": "game",
                                 "left": 10,
-                                "style": [
-                                    "",
-                                    "-webkit-border-radius: 100%;",
-                                    "border-radius: 100%; /* border radius */",
-                                    "-webkit-background-clip: padding-box;",
-                                    "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: fff;",
-                                    "display:block;",
-                                    "font-size:11px;",
-                                    "opacity:0.3;"
-                                ],
+                                "style": null,
                                 "styleHtmlContent": true,
                                 "text": "",
                                 "top": 4,
@@ -343,22 +301,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "action": "start",
+                                "baseCls": "roundTransparentBg",
                                 "centered": true,
                                 "height": 120,
                                 "id": "StartButton",
                                 "left": 1,
                                 "scope": null,
-                                "style": [
-                                    "",
-                                    "-webkit-border-radius: 100%;",
-                                    "border-radius: 100%; /* border radius */",
-                                    "-webkit-background-clip: padding-box;",
-                                    "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                                    "background-color: fff;",
-                                    "display:block;",
-                                    "font-size:11px;",
-                                    "opacity:0.3;"
-                                ],
+                                "style": null,
                                 "styleHtmlContent": true,
                                 "text": "",
                                 "top": -2,

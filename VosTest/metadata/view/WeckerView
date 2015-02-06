@@ -175,16 +175,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "divCenter",
                                 "id": "weckRadius",
                                 "itemId": "mysliderfield",
                                 "label": "",
                                 "maxValue": 2000,
                                 "minValue": 200,
-                                "style": [
-                                    "background: none;",
-                                    "margin-left: auto;",
-                                    "margin-right: auto;"
-                                ],
                                 "styleHtmlContent": true,
                                 "width": "90%"
                             },
@@ -202,12 +198,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "textCenter",
                                 "html": "200 m vor dem Zielpunkt",
                                 "id": "sliderValueLabel",
-                                "style": [
-                                    "text-align: center;",
-                                    ""
-                                ],
+                                "style": null,
                                 "styleHtmlContent": true
                             },
                             "name": "MyLabel1",

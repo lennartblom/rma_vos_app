@@ -114,6 +114,7 @@
   line-height:30px;
   font-size:9px;
   color:#fff;
+  text-overflow: inherit;
 }
 
 .transparentWhite{
@@ -127,7 +128,40 @@
 }
 
 .textCenterSmall{
-  font-size:11px;
+  font-size:12px;
+  opacity: 0.7;
   text-align:center; 
 }
 
+.mainViewStartBtn{
+
+}
+
+.marginZeroPaddingZero{
+  margin:0px;
+  padding:0px;
+  background-size:185px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.roundTransparentBg{
+  -webkit-border-radius: 100%;
+  border-radius: 100%; /* border radius */
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box; /* prevents bg color from leaking outside the border */
+  background-color: fff;
+  display:block;
+  font-size:11px;
+  opacity:0.3;
+}
+
+.textCenter{
+  text-align: center;
+}
+
+.divCenter{
+  background: none;
+  margin-left: auto;
+  margin-right: auto;
+}

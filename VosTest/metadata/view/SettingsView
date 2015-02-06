@@ -48,15 +48,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "baseCls": "uppercaseHeadline",
                         "height": "25px",
                         "html": "<p>Einstellungen:</p>",
                         "id": "headline_settings",
                         "margin": "5px",
-                        "style": [
-                            "font-family:Helvetica;",
-                            "text-transform:uppercase;",
-                            "font-size:13px;"
-                        ],
+                        "style": null,
                         "top": null
                     },
                     "name": "MyLabel6",
@@ -73,14 +70,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "baseCls": "orangeBorder",
                         "bottom": "30px",
                         "id": "settings_border_bottom",
-                        "style": [
-                            "background-color:rgba(211, 83, 0, 0.9);",
-                            "display:block;",
-                            "height:5px;",
-                            "overflow:hidden;"
-                        ],
+                        "style": null,
                         "width": "255px"
                     },
                     "name": "MyContainer7",
@@ -108,21 +101,7 @@
                         "html": "<span>zurück</span>",
                         "id": "settingsBackButton",
                         "right": "0px",
-                        "style": [
-                            "-moz-border-radius: 46px;",
-                            "-webkit-border-radius: 46px;",
-                            "border-radius: 46px; /* border radius */",
-                            "-moz-background-clip: padding;",
-                            "-webkit-background-clip: padding-box;",
-                            "background-clip: padding-box; /* prevents bg color from leaking outside the border */",
-                            "background-color: #3d4f5e;",
-                            "opacity: 0.9;",
-                            "color:#fff;",
-                            "line-height:65px;",
-                            "float:right;",
-                            "display:block;",
-                            "font-size:11px;"
-                        ],
+                        "style": null,
                         "styleHtmlContent": true,
                         "text": "back",
                         "width": 65
@@ -235,14 +214,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "textCenterSmall",
                                 "designer|displayName": "",
                                 "html": "<p>Je häufiger die Position überprüft wird, desto mehr Strom wird verbraucht.</p>",
                                 "id": "info",
                                 "margin": "5px",
-                                "style": [
-                                    "opacity:0.7;",
-                                    ""
-                                ]
+                                "style": null
                             },
                             "name": "MyLabel3",
                             "configAlternates": {
