@@ -23,7 +23,6 @@ Ext.define('VosNavigator.store.sights', {
     ],
 
     config: {
-        autoLoad: true,
         model: 'VosNavigator.model.sight',
         storeId: 'sights',
         proxy: {

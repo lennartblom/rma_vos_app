@@ -308,6 +308,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "uppercaseHeadline",
                                         "height": "25px",
                                         "html": "<p>Verbleibende Zeit:</p>",
                                         "id": "weeklyGoalsLabel",

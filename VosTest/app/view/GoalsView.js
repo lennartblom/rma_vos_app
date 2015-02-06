@@ -88,7 +88,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         baseCls: 'uppercaseHeadline',
                                         height: '25px',
                                         html: '<p>Besuche folgende Sehnswürdigkeiten:</p>',
-                                        id: 'label_daily_goals',
+                                        id: 'label_daily_goals'
                                     },
                                     {
                                         xtype: 'list',
@@ -150,6 +150,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'label',
+                                        baseCls: 'uppercaseHeadline',
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
                                         id: 'weeklyGoalsLabel',
