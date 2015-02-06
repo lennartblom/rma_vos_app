@@ -89,8 +89,10 @@
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListItemTap",
                 "implHandler": [
-                    "var goalsDetails = Ext.create('VosTest.view.goalsDetails');",
-                    "this.getGoalsView().push(detailsView);"
+                    "alert('Selected!{name}'+{name});",
+                    "",
+                    "/*var goalsDetails = Ext.create('VosTest.view.goalsDetails');",
+                    "this.getGoalsView().push(detailsView);*/"
                 ],
                 "name": "itemtap"
             },

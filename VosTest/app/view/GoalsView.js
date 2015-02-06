@@ -115,7 +115,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         height: '25px',
                                         html: '<p>6 Stunden 23 Minuten</p>',
                                         id: 'dailyGoalsCounter',
-                                        top: '150px'
+                                        top: '350px'
                                     }
                                 ]
                             },

@@ -89,7 +89,7 @@ Ext.define('VosNavigator.controller.Main', {
     },
 
     launch: function() {
-        console.log("Main Controller wird aufgerufen.");
+        console.log("Main Controller wird aufgerufen.lol");
     }
 
 });

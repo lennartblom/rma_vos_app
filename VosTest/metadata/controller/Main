@@ -431,7 +431,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "console.log(\"Main Controller wird aufgerufen.\");"
+                    "console.log(\"Main Controller wird aufgerufen.lol\");"
                 ]
             },
             "name": "launch",
