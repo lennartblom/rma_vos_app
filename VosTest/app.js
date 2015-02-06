@@ -55,6 +55,8 @@ Ext.application({
     launch: function() {
 
 
+        Ext.getStore('sights').load();
+        console.log('Logo hinter Sights');
         Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
     }
 

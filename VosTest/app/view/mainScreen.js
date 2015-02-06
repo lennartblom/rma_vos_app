@@ -73,6 +73,7 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
+                                baseCls: 'roundTransparentBg',
                                 height: 75,
                                 id: 'weckerButton',
                                 left: 10,
@@ -93,10 +94,10 @@ Ext.define('VosNavigator.view.mainScreen', {
                         items: [
                             {
                                 xtype: 'button',
+                                baseCls: 'roundTransparentBg',
                                 height: 75,
                                 id: 'settingsButton',
                                 left: 15,
-                                styleHtmlCls: 'roundTransparentBg',
                                 styleHtmlContent: true,
                                 top: -7,
                                 width: 75,

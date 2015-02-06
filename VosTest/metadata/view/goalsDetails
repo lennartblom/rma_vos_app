@@ -9,6 +9,7 @@
         "alternateClassName": [
             "backButton"
         ],
+        "designer|userAlias": "goalsdetails",
         "designer|userClassName": "goalsDetails",
         "height": "100%",
         "id": "goals1",

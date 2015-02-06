@@ -24,6 +24,8 @@ Ext.define('VosNavigator.view.InitialView', {
         'VosNavigator.view.weckerView',
         'VosNavigator.view.achView',
         'VosNavigator.view.searchView',
+        'VosNavigator.view.goalsDetails',
+        'VosNavigator.view.mapView',
         'Ext.Container'
     ],
 
@@ -63,6 +65,14 @@ Ext.define('VosNavigator.view.InitialView', {
             },
             {
                 xtype: 'searchview',
+                hidden: true
+            },
+            {
+                xtype: 'goalsdetails',
+                hidden: true
+            },
+            {
+                xtype: 'mapview',
                 hidden: true
             }
         ]
