@@ -167,20 +167,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "weckerButton",
-                "selector": "button#weckerButton"
-            },
-            "name": "weckerButton",
-            "designerId": "bf9ac320-f7a5-4b87-af97-fe86f8182ccf"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "ref": "settingsButton",
                 "selector": "button#settingsButton"
             },
@@ -215,7 +201,7 @@
                 "implHandler": [
                     " this.getMainView().hide();",
                     " this.getGoalsView().show({type:\"slide\",direction:\"left\"});",
-                    "this.getApplication().getController('Goals').setupClock();"
+                    ""
                 ],
                 "name": "tap"
             },
@@ -421,6 +407,20 @@
             },
             "name": "weckerImage",
             "designerId": "cc7c7109-a320-4bee-8699-2888289e4057"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weckerButton",
+                "selector": "button#weckerButton"
+            },
+            "name": "weckerButton",
+            "designerId": "d24ee869-416d-4685-91cf-63b1adde2b8c"
         }
     ]
 }

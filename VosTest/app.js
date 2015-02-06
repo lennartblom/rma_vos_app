@@ -41,11 +41,19 @@ Ext.application({
         'InitialView',
         'mapView'
     ],
+    controllers: [
+        'Settings',
+        'searchViewController',
+        'Wecker',
+        'Fahrplaner',
+        'Achievements',
+        'Goals',
+        'Main'
+    ],
     name: 'VosNavigator',
 
     launch: function() {
-        Ext.getStore('sights').load();
-        Ext.getStore('stops').load();
+
 
         Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
     }
