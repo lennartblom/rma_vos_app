@@ -116,7 +116,6 @@ Ext.define('VosNavigator.view.goalsView', {
                                         height: '25px',
                                         html: '<p>6 Stunden 23 Minuten</p>',
                                         id: 'dailyGoalsCounter',
-                                        style: 'font-size:11px;\ntext-align:center;',
                                         top: '150px'
                                     }
                                 ]
@@ -132,10 +131,10 @@ Ext.define('VosNavigator.view.goalsView', {
                                 items: [
                                     {
                                         xtype: 'label',
+                                        baseCls: 'uppercaseHeadline',
                                         height: '25px',
                                         html: '<p>Wochenziele:</p>',
-                                        id: 'label_weekly_goals',
-                                        style: 'font-family:Helvetica;\ntext-transform:uppercase;\nfont-size:13px;'
+                                        id: 'label_weekly_goals'
                                     },
                                     {
                                         xtype: 'dataview',
@@ -159,10 +158,10 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'label',
+                                        baseCls: 'textCenterSmall',
                                         height: '25px',
                                         html: '<p>3 Tage 6 Stunden 23 Minuten</p>',
                                         id: 'weeklyGoalsCounter',
-                                        style: 'font-size:11px;\ntext-algin:center;',
                                         top: '225px'
                                     }
                                 ]
