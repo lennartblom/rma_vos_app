@@ -1,0 +1,85 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "sight"
+    },
+    "name": "stop1",
+    "designerId": "a200c96a-734f-4654-8cba-145779508296",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "type": "string"
+            },
+            "name": "field1",
+            "designerId": "e2ce8dff-2641-4c54-8534-d9e0c82140ff"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "longitude",
+                "type": "float"
+            },
+            "name": "field4",
+            "designerId": "c385c8ba-0ef7-4ebf-91db-ccd06d32e8f2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "latitude",
+                "type": "float"
+            },
+            "name": "field5",
+            "designerId": "71ffa00a-454d-495d-90ae-386b2cf6cec0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "description",
+                "type": "string"
+            },
+            "name": "field6",
+            "designerId": "9e685f58-d6dd-4870-baa6-ea015b36686b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "link",
+                "type": "string"
+            },
+            "name": "field7",
+            "designerId": "31ee4466-9a75-4795-a3ba-df0c618587dc"
+        }
+    ]
+}

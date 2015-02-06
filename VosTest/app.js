@@ -21,10 +21,12 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'stop'
+        'stop',
+        'sight'
     ],
     stores: [
-        'stops'
+        'stops',
+        'sights'
     ],
     views: [
         'fahrplanerView',
@@ -35,7 +37,8 @@ Ext.application({
         'weckerView',
         'mainScreen',
         'MySearchField',
-        'searchView'
+        'searchView',
+        'goalsDetails'
     ],
     controllers: [
         'Main',
