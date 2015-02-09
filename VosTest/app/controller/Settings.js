@@ -25,7 +25,8 @@ Ext.define('VosNavigator.controller.Settings', {
             settingsView: 'container#goals1',
             mybutton: 'button#mybutton',
             labelsettings: 'label#label_settings',
-            gpsPace: 'sliderfield#gpsPace'
+            gpsPace: 'sliderfield#gpsPace',
+            goalsTimerOnOffSwitch: 'togglefield#goalsTimerOnOffSwitch'
         },
 
         control: {
@@ -35,6 +36,9 @@ Ext.define('VosNavigator.controller.Settings', {
             "sliderfield#gpsPace": {
                 change: 'onGpsPaceChange',
                 drag: 'onGpsPaceDrag'
+            },
+            "togglefield#goalsTimerOnOffSwitch": {
+                change: 'goalsTimerOnOff'
             }
         }
     },
@@ -59,6 +63,15 @@ Ext.define('VosNavigator.controller.Settings', {
         this.sliderPace = slider.getValue();
         this.getApplication().getController('Wecker').resetGeoTimer(slider.getValue());
 
+    },
+
+    goalsTimerOnOff: function(togglefield, newValue, oldValue, eOpts) {
+        var goalsController = this.getApplication().getController('Goals');
+        if(newValue){
+            goalsController.setupClock();
+        }else{
+            goalsController.stopClock();
+        }
     }
 
 });

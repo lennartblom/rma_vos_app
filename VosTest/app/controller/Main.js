@@ -27,7 +27,6 @@ Ext.define('VosNavigator.controller.Main', {
             AchView: '#AchView',
             StartButton: '#StartButton',
             gameButton: 'button#game',
-            weckerButton: 'button#weckerButton',
             settingsButton: 'button#settingsButton',
             achieveButton: 'button#achieveButton',
             startImageInv: 'image#StartImageInv',
@@ -39,7 +38,8 @@ Ext.define('VosNavigator.controller.Main', {
             settingsImageInv: 'image#SettingsImageInv',
             settingsImage: 'image#SettingsImage',
             weckerImageInv: 'image#WeckerImageInv',
-            weckerImage: 'image#WeckerImage'
+            weckerImage: 'image#WeckerImage',
+            weckerButton: 'button#weckerButton'
         },
 
         control: {
@@ -70,7 +70,6 @@ Ext.define('VosNavigator.controller.Main', {
     gameButton: function(button, e, eOpts) {
          this.getMainView().hide();
          this.getGoalsView().show({type:"slide",direction:"left"});
-        this.getApplication().getController('Goals').setupClock();
 
     },
 
@@ -87,10 +86,6 @@ Ext.define('VosNavigator.controller.Main', {
     achButton: function(button, e, eOpts) {
           this.getMainView().hide();
           this.getAchView().show({type:"slide",direction:"left"});
-    },
-
-    launch: function() {
-        console.log("Main Controller wird aufgerufen.lol");
     }
 
 });
