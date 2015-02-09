@@ -70,6 +70,7 @@
                 "implHandler": [
                     "this.getGoalsView().hide();",
                     "this.getMainView().show();",
+                    "this.stopClock();",
                     ""
                 ],
                 "name": "tap"
@@ -142,20 +143,6 @@
             "designerId": "b40342b7-07c1-4535-9c66-7b350d0bf7b3"
         },
         {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "weeklyGoalsCounter",
-                "selector": "label#weeklyGoalsCounter"
-            },
-            "name": "weeklyGoalsCounter",
-            "designerId": "bee79f8a-bb6b-4d6a-b0e2-e24b92d67459"
-        },
-        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -208,10 +195,10 @@
             "userConfig": {
                 "fn": "clock",
                 "implHandler": [
-                    "console.log(\"ticktack\");",
+                    "//console.log(\"ticktack\");",
                     "var date = this.getDate();",
                     "var remaining =this.getTimeRemaining();",
-                    "console.log(\"var geladen\");",
+                    "//console.log(\"var geladen\");",
                     "if(++date.sekunde>59){",
                     "    date.sekunde =0;",
                     "    if(++date.minute>59){",
@@ -228,13 +215,16 @@
                     "remaining.stunde = 24 - date.stunde;",
                     "remaining.minute = 60 - date.minute;",
                     "remaining.sekunde = 60 - date.sekunde;",
-                    "/*console.log(\"Aktuelle Zeit: \"+date.tag+\" \"+date.stunde+",
-                    "            \" \"+date.minute+\" \"+date.sekunde);",
-                    "console.log(\"Verbleibende Zeit: \"+remaining.tag+\" \"+remaining.stunde+",
-                    "            \" \"+remaining.minute+\" \"+remaining.sekunde);*/",
                     "",
-                    "",
-                    "",
+                    "/*console.log(\"Verbleibende Zeit bis: \"+",
+                    "                                    remaining.tag+\" \"+remaining.stunde+",
+                    "                                    \" \"+remaining.minute+\" \"+remaining.sekunde);*/",
+                    "var label = this.getDailyGoalsCounter();",
+                    "label.setHtml(remaining.stunde+\" Stunden \"+remaining.minute+",
+                    "              \" Minuten \"+remaining.sekunde+\" Sekunden\");",
+                    "label = this.getWeeklyGoalsCounter();",
+                    "label.setHtml(remaining.tag+\" Tage \"+remaining.stunde+",
+                    "                                    \" Stunden \"+remaining.minute+\" Minuten\");",
                     ""
                 ]
             },
@@ -251,8 +241,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.setupClock();",
-                    "console.log(\"Launcher Aufgerufen\");"
+                    ""
                 ]
             },
             "name": "launch",
@@ -273,6 +262,20 @@
             },
             "name": "stopClock",
             "designerId": "b04b0a19-62e8-42d2-9fd0-5db4e36b6d7b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "weeklyGoalsCounter",
+                "selector": "label#weeklyGoalsCounter"
+            },
+            "name": "weeklyGoalsCounter",
+            "designerId": "4e8c9042-5b65-4e86-bd8a-7a504cc80fca"
         }
     ]
 }
