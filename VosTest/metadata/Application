@@ -8,11 +8,9 @@
     "userConfig": {
         "controllers": [
             "Main",
-            "Settings",
             "searchViewController",
             "Fahrplaner",
             "Achievements",
-            "Goals"
             "Goals",
             "Settings",
             "Wecker"
@@ -27,17 +25,17 @@
             "stops"
         ],
         "views": [
-            "mainScreen",
             "goalsDetails",
+            "mainScreen",
             "MySearchField",
             "fahrplanerView",
             "goalsView",
             "settingsView",
+            "weckerView",
             "achView",
             "searchView",
             "InitialView",
-            "mapView",
-            "weckerView"
+            "mapView"
         ]
     },
     "name": "Application",

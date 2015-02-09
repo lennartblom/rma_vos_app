@@ -29,25 +29,23 @@ Ext.application({
         'stops'
     ],
     views: [
-        'mainScreen',
         'goalsDetails',
+        'mainScreen',
         'MySearchField',
         'fahrplanerView',
         'goalsView',
         'settingsView',
+        'weckerView',
         'achView',
         'searchView',
         'InitialView',
-        'mapView',
-        'weckerView'
+        'mapView'
     ],
     controllers: [
         'Main',
-        'Settings',
         'searchViewController',
         'Fahrplaner',
         'Achievements',
-        'Goals'
         'Goals',
         'Settings',
         'Wecker'
