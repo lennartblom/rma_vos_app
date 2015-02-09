@@ -82,10 +82,8 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     clock: function() {
-        console.log("ticktack");
         var date = this.getDate();
         var remaining =this.getTimeRemaining();
-        console.log("var geladen");
         if(++date.sekunde>59){
             date.sekunde =0;
             if(++date.minute>59){

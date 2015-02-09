@@ -48,7 +48,8 @@ Ext.application({
         'Achievements',
         'Goals',
         'Settings',
-        'Wecker'
+        'Wecker',
+        'mapViewController'
     ],
     name: 'VosNavigator',
 

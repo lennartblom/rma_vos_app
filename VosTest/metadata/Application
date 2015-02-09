@@ -13,7 +13,8 @@
             "Achievements",
             "Goals",
             "Settings",
-            "Wecker"
+            "Wecker",
+            "mapViewController"
         ],
         "models": [
             "sight",

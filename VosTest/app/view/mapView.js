@@ -15,11 +15,12 @@
 
 Ext.define('VosNavigator.view.mapView', {
     extend: 'Ext.Container',
-    alias: 'widget.mapview',
+    alias: 'widget.mapView',
 
     requires: [
         'Ext.Button',
-        'Ext.Container',
+        'Ext.Label',
+        'Ext.Map',
         'Ext.Img'
     ],
 
@@ -44,12 +45,49 @@ Ext.define('VosNavigator.view.mapView', {
             },
             {
                 xtype: 'container',
+                height: '80%',
+                id: 'contentMapWrapper',
+                top: '50px',
+                width: '100%',
+                items: [
+                    {
+                        xtype: 'label',
+                        baseCls: 'uppercaseHeadline',
+                        docked: 'top',
+                        html: 'Kartenübersicht',
+                        id: 'mapHeadline',
+                        margin: '5px'
+                    },
+                    {
+                        xtype: 'container',
+                        height: '400px',
+                        id: 'mapContainer',
+                        style: '',
+                        items: [
+                            {
+                                xtype: 'map',
+                                height: '90%',
+                                itemId: 'mymap'
+                            }
+                        ]
+                    },
+                    {
+                        xtype: 'label',
+                        baseCls: 'textCenterSmall',
+                        docked: 'top',
+                        html: 'Bereits besuchte Haltestellen sind in <span class="green bold">Grün</span> und noch nicht besuchte in <span class="red bold">Rot</span> gekennzeichnet.',
+                        id: 'infoText',
+                        top: '370px'
+                    }
+                ]
+            },
+            {
+                xtype: 'container',
                 baseCls: 'orangeBorder',
                 bottom: '30px',
                 docked: 'bottom',
-                id: 'border_bottom1',
-                left: '65px',
-                width: '190px'
+                id: 'borderBottom',
+                width: '255px'
             },
             {
                 xtype: 'image',

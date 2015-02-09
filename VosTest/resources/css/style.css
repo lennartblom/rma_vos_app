@@ -137,6 +137,18 @@
 
 }
 
+.green{
+  color:#26A65B;
+}
+
+.red{
+  color:#D91E18;
+}
+
+.bold{
+  font-weight: bold;
+}
+
 .marginZeroPaddingZero{
   margin:0px;
   padding:0px;

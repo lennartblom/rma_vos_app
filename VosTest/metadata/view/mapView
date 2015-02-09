@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "baseCls": null,
-        "designer|userAlias": "mapview",
+        "designer|userAlias": "mapView",
         "designer|userClassName": "mapView",
         "height": "100%"
     },
@@ -52,16 +52,100 @@
             },
             "codeClass": null,
             "userConfig": {
+                "docked": null,
+                "height": "80%",
+                "id": "contentMapWrapper",
+                "top": "50px",
+                "width": "100%"
+            },
+            "name": "MyContainer16",
+            "designerId": "87974034-53a2-42f7-9949-d1829328a1c7",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "uppercaseHeadline",
+                        "docked": "top",
+                        "html": "Kartenübersicht",
+                        "id": "mapHeadline",
+                        "margin": "5px"
+                    },
+                    "name": "MyLabel8",
+                    "designerId": "c0352aeb-6f61-4a87-a8d8-9265ab73a626"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "400px",
+                        "id": "mapContainer",
+                        "style": ""
+                    },
+                    "name": "MyContainer17",
+                    "designerId": "99a6d82c-77d6-4dad-ac85-487145d13f86",
+                    "cn": [
+                        {
+                            "type": "Ext.Map",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "90%",
+                                "itemId": "mymap"
+                            },
+                            "name": "MyMap",
+                            "designerId": "a7764e3b-3894-49d7-b7db-bef7e69c7168"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "textCenterSmall",
+                        "docked": "top",
+                        "html": "Bereits besuchte Haltestellen sind in <span class=\"green bold\">Grün</span> und noch nicht besuchte in <span class=\"red bold\">Rot</span> gekennzeichnet.",
+                        "id": "infoText",
+                        "top": "370px"
+                    },
+                    "name": "MyLabel9",
+                    "designerId": "8dcf5bee-f7c3-458d-8645-c10a1e0419a7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "baseCls": "orangeBorder",
                 "bottom": "30px",
                 "docked": "bottom",
-                "id": "border_bottom1",
+                "id": "borderBottom",
                 "layout": null,
-                "left": "65px",
+                "left": null,
                 "margin": null,
                 "padding": null,
                 "style": null,
-                "width": "190px"
+                "width": "255px"
             },
             "name": "MyContainer3",
             "configAlternates": {
@@ -77,6 +161,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "docked": null,
                 "height": "100%",
                 "id": "achievment_bg1",
                 "src": "resources/images/background/achievements.png"

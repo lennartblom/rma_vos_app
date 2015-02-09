@@ -72,8 +72,9 @@ Ext.define('VosNavigator.view.InitialView', {
                 hidden: true
             },
             {
-                xtype: 'mapview',
-                hidden: true
+                xtype: 'mapView',
+                hidden: true,
+                id: 'MapView'
             }
         ]
     }

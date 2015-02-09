@@ -1,0 +1,116 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mapViewController"
+    },
+    "name": "MyController",
+    "designerId": "740bac9a-5737-4f50-9cde-6f7badcaa37d",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#scoreButton1",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "console.log(\"Zurück\");",
+                    "this.getMapView().hide();",
+                    "this.getAchView().show();"
+                ],
+                "name": "tap"
+            },
+            "name": "onButtonTap",
+            "designerId": "dd567715-6384-4ce0-98c7-31e11c061083"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "achView",
+                "selector": "#AchView"
+            },
+            "name": "achView",
+            "designerId": "54317ad6-8b63-4cf5-9778-b56372620a0b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mapView",
+                "selector": "#MapView"
+            },
+            "name": "mapView",
+            "designerId": "20c7f713-3bd5-40c5-96fb-cdd5ff14681b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "map#mymap",
+                "designer|targetType": "Ext.Map",
+                "fn": "onMapMaprender",
+                "implHandler": [
+                    "var osnabrueck = new google.maps.LatLng(52.273238, 8.051014);",
+                    "",
+                    "var stopsLong = new Array();",
+                    "var stopsLat = new Array();",
+                    "var stopsTitle = new Array();",
+                    "",
+                    "stopsLong.push(8.0450892122);",
+                    "stopsLat.push(52.2674516543);",
+                    "stopsTitle.push(\"Agentur für Arbeit\");",
+                    "",
+                    "stopsLong.push(8.120717544);",
+                    "stopsLat.push(52.27325343);",
+                    "stopsTitle.push(\"Albert-Schweitzer-Straße\");",
+                    "",
+                    "stopsLong.push(8.016346902);",
+                    "stopsLat.push(52.26566678);",
+                    "stopsTitle.push(\"Alfred-Delp-Straße\");",
+                    "",
+                    "var image = 'resources/images/icons/red_station.png';",
+                    "",
+                    "",
+                    "gmap.panTo(osnabrueck);",
+                    "",
+                    "for(i = 0; i<3; i++){",
+                    "    var marker = new google.maps.Marker({",
+                    "        position: new google.maps.LatLng(stopsLat[i], stopsLong[i]),",
+                    "        map: gmap,",
+                    "        title: stopsTitle[i],",
+                    "        icon: image",
+                    "    });",
+                    "}",
+                    "",
+                    "",
+                    "console.log(\"Marker gesetzt.\");"
+                ],
+                "name": "maprender"
+            },
+            "name": "onMapMaprender",
+            "designerId": "dcacbdb5-41e3-47cf-8758-37dc1015e819"
+        }
+    ]
+}

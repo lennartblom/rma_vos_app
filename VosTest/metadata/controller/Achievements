@@ -72,6 +72,41 @@
             },
             "name": "mainView",
             "designerId": "74128081-ec57-4eed-87f4-9ebab5b03028"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#scoreButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "console.log(\"Map Button.\");",
+                    "this.getAchView().hide();",
+                    "this.getMapView().show();"
+                ],
+                "name": "tap"
+            },
+            "name": "onButtonTap",
+            "designerId": "8d06a5aa-112a-48ec-b26f-cc8eeb3c4060"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mapView",
+                "selector": "#MapView"
+            },
+            "name": "mapView",
+            "designerId": "13ca58fc-3db3-4a07-b54a-f17ed2df0680"
         }
     ]
 }

@@ -20,12 +20,16 @@ Ext.define('VosNavigator.controller.Achievements', {
         refs: {
             achView: '#AchView',
             achBackButton: 'button#achBackButton',
-            mainView: 'container#MainView'
+            mainView: 'container#MainView',
+            mapView: '#MapView'
         },
 
         control: {
             "button#achBackButton": {
                 tap: 'achBackButton'
+            },
+            "button#scoreButton": {
+                tap: 'onButtonTap'
             }
         }
     },
@@ -33,6 +37,12 @@ Ext.define('VosNavigator.controller.Achievements', {
     achBackButton: function(button, e, eOpts) {
         this.getAchView().hide();
         this.getMainView().show();
+    },
+
+    onButtonTap: function(button, e, eOpts) {
+        console.log("Map Button.");
+        this.getAchView().hide();
+        this.getMapView().show();
     }
 
 });
