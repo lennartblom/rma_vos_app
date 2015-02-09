@@ -87,7 +87,8 @@ Ext.define('VosNavigator.view.settingsView', {
                         items: [
                             {
                                 xtype: 'togglefield',
-                                label: 'Field'
+                                id: 'goalsTimerOnOffSwitch',
+                                label: 'Goals Timer'
                             },
                             {
                                 xtype: 'radiofield',

@@ -52,11 +52,11 @@ Ext.define('VosNavigator.controller.Goals', {
     goalsBackButton: function(button, e, eOpts) {
         this.getGoalsView().hide();
         this.getMainView().show();
-        clearInterval(this.getTaskClock());
+
     },
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
-        alert('Selected!{name}'+{name});
+        //alert('Selected!{name}'+{name});
 
         /*var goalsDetails = Ext.create('VosTest.view.goalsDetails');
         this.getGoalsView().push(detailsView);*/
@@ -75,26 +75,37 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     setupClock: function() {
+        console.log("setup clock wurde aufgerufen");
         this.initiateDate();
-        this.taskClock.setInterval(clock,1000);
+        var task = this.getTaskClock();
+        task = setInterval(Ext.bind(this.clock,this),1000);
     },
 
     clock: function() {
-        var datum = this.getDate();
+        console.log("ticktack");
+        var date = this.getDate();
         var remaining =this.getTimeRemaining();
-        date.tag=datum.getDay();
-        date.stunde = datum.getHours();
-        date.minute = datum.getMinutes();
-        date.sekunde = datum.getSeconds();
-        remaining.tag = 7-date.tag;
-        remaining.stunde = 24-date.stunde;
-        remaining.minute=60-date.minute;
-        remaining.sekunde=60-date.sekunde;
-        console.log("<p>"+remaining.stunde+" Stunden"+remaining.minute+
-                      " Minuten"+remaining.sekunde+" Sekunde"+"</p>");
-        var daily = this.getDailyGoalsCounter();
-        daily.setHTML("<p>"+remaining.stunde+" Stunden"+remaining.minute+
-                      " Minuten"+remaining.sekunde+" Sekunde"+"</p>");
+        console.log("var geladen");
+        if(++date.sekunde>59){
+            date.sekunde =0;
+            if(++date.minute>59){
+                date.minute = 0;
+                if(++date.stunde>23){
+                    date.stunde=0;
+                    if(++date.tag>6){
+                        date.tag = 0;
+                    }
+                }
+            }
+        }
+        remaining.tag = 7 - date.tag;
+        remaining.stunde = 24 - date.stunde;
+        remaining.minute = 60 - date.minute;
+        remaining.sekunde = 60 - date.sekunde;
+        console.log("Aktuelle Zeit: "+date.tag+" "+date.stunde+
+                    " "+date.minute+" "+date.sekunde);
+        console.log("Verbleibende Zeit: "+remaining.tag+" "+remaining.stunde+
+                    " "+remaining.minute+" "+remaining.sekunde);
 
 
 
@@ -102,7 +113,12 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     launch: function() {
-        console.log("ich bin ein kack launcher und werde nicht aufgerufen.")
+        this.setupClock();
+        console.log("Launcher Aufgerufen");
+    },
+
+    stopClock: function() {
+        clearInterval(this.getTaskClock());
     }
 
 });

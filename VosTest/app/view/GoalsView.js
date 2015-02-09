@@ -93,6 +93,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                     {
                                         xtype: 'list',
                                         height: '200px',
+                                        hidden: false,
                                         id: 'sights_daily',
                                         top: '25px',
                                         width: '100%',

@@ -169,6 +169,44 @@
             },
             "name": "gpsPace",
             "designerId": "c422eab2-2cc6-4355-8e44-aaf0157f430f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "goalsTimerOnOffSwitch",
+                "selector": "togglefield#goalsTimerOnOffSwitch"
+            },
+            "name": "goalsTimerOnOffSwitch",
+            "designerId": "ef225942-2d92-480b-9a43-5fe80e796924"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "togglefield#goalsTimerOnOffSwitch",
+                "designer|targetType": "Ext.field.Toggle",
+                "fn": "goalsTimerOnOff",
+                "implHandler": [
+                    "var goalsController = this.getApplication().getController('Goals');",
+                    "if(newValue){",
+                    "    goalsController.setupClock();",
+                    "}else{",
+                    "    goalsController.stopClock();",
+                    "}"
+                ],
+                "name": "change"
+            },
+            "name": "goalsTimerOnOff",
+            "designerId": "5ee29a7e-1773-4849-bed4-7a5b7c983ef0"
         }
     ]
 }

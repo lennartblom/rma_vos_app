@@ -11,7 +11,7 @@
         ],
         "designer|userClassName": "Goals",
         "taskClock": [
-            "`null`"
+            "null"
         ],
         "timeRemaining": [
             "{tag:null,stunde:null,minute:null,sekunde:null}"
@@ -70,7 +70,7 @@
                 "implHandler": [
                     "this.getGoalsView().hide();",
                     "this.getMainView().show();",
-                    "clearInterval(this.getTaskClock());"
+                    ""
                 ],
                 "name": "tap"
             },
@@ -89,7 +89,7 @@
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListItemTap",
                 "implHandler": [
-                    "alert('Selected!{name}'+{name});",
+                    "//alert('Selected!{name}'+{name});",
                     "",
                     "/*var goalsDetails = Ext.create('VosTest.view.goalsDetails');",
                     "this.getGoalsView().push(detailsView);*/"
@@ -189,8 +189,10 @@
             "userConfig": {
                 "fn": "setupClock",
                 "implHandler": [
+                    "console.log(\"setup clock wurde aufgerufen\");",
                     "this.initiateDate();",
-                    "this.taskClock.setInterval(clock,1000);"
+                    "var task = this.getTaskClock();",
+                    "task = setInterval(Ext.bind(this.clock,this),1000);"
                 ]
             },
             "name": "setupClock",
@@ -206,21 +208,30 @@
             "userConfig": {
                 "fn": "clock",
                 "implHandler": [
-                    "var datum = this.getDate();",
+                    "console.log(\"ticktack\");",
+                    "var date = this.getDate();",
                     "var remaining =this.getTimeRemaining();",
-                    "date.tag=datum.getDay();",
-                    "date.stunde = datum.getHours();",
-                    "date.minute = datum.getMinutes();",
-                    "date.sekunde = datum.getSeconds();",
-                    "remaining.tag = 7-date.tag;",
-                    "remaining.stunde = 24-date.stunde;",
-                    "remaining.minute=60-date.minute;",
-                    "remaining.sekunde=60-date.sekunde;",
-                    "console.log(\"<p>\"+remaining.stunde+\" Stunden\"+remaining.minute+",
-                    "              \" Minuten\"+remaining.sekunde+\" Sekunde\"+\"</p>\");",
-                    "var daily = this.getDailyGoalsCounter();",
-                    "daily.setHTML(\"<p>\"+remaining.stunde+\" Stunden\"+remaining.minute+",
-                    "              \" Minuten\"+remaining.sekunde+\" Sekunde\"+\"</p>\");",
+                    "console.log(\"var geladen\");",
+                    "if(++date.sekunde>59){",
+                    "    date.sekunde =0;",
+                    "    if(++date.minute>59){",
+                    "        date.minute = 0;",
+                    "        if(++date.stunde>23){",
+                    "            date.stunde=0;",
+                    "            if(++date.tag>6){",
+                    "                date.tag = 0;",
+                    "            }",
+                    "        }",
+                    "    }",
+                    "}",
+                    "remaining.tag = 7 - date.tag;",
+                    "remaining.stunde = 24 - date.stunde;",
+                    "remaining.minute = 60 - date.minute;",
+                    "remaining.sekunde = 60 - date.sekunde;",
+                    "console.log(\"Aktuelle Zeit: \"+date.tag+\" \"+date.stunde+",
+                    "            \" \"+date.minute+\" \"+date.sekunde);",
+                    "console.log(\"Verbleibende Zeit: \"+remaining.tag+\" \"+remaining.stunde+",
+                    "            \" \"+remaining.minute+\" \"+remaining.sekunde);",
                     "",
                     "",
                     "",
@@ -240,11 +251,28 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "console.log(\"ich bin ein kack launcher und werde nicht aufgerufen.\")"
+                    "this.setupClock();",
+                    "console.log(\"Launcher Aufgerufen\");"
                 ]
             },
             "name": "launch",
             "designerId": "4a481c48-b6bb-4618-a506-349cc7a19d26"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "stopClock",
+                "implHandler": [
+                    "clearInterval(this.getTaskClock());"
+                ]
+            },
+            "name": "stopClock",
+            "designerId": "b04b0a19-62e8-42d2-9fd0-5db4e36b6d7b"
         }
     ]
 }
