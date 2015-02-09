@@ -102,10 +102,10 @@ Ext.define('VosNavigator.controller.Goals', {
         remaining.stunde = 24 - date.stunde;
         remaining.minute = 60 - date.minute;
         remaining.sekunde = 60 - date.sekunde;
-        console.log("Aktuelle Zeit: "+date.tag+" "+date.stunde+
+        /*console.log("Aktuelle Zeit: "+date.tag+" "+date.stunde+
                     " "+date.minute+" "+date.sekunde);
         console.log("Verbleibende Zeit: "+remaining.tag+" "+remaining.stunde+
-                    " "+remaining.minute+" "+remaining.sekunde);
+                    " "+remaining.minute+" "+remaining.sekunde);*/
 
 
 
