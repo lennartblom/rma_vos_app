@@ -6,9 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "bottom": null,
         "designer|userAlias": "searchview",
         "designer|userClassName": "searchView",
-        "id": "searchView"
+        "height": null,
+        "id": "searchView",
+        "width": null
     },
     "name": "MyContainer",
     "designerId": "ca4ff710-0750-4c3d-b612-b2d0d625222d",

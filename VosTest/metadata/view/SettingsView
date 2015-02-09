@@ -151,7 +151,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "label": "Field"
+                                "id": "goalsTimerOnOffSwitch",
+                                "label": "Goals Timer"
                             },
                             "name": "MyToggleField",
                             "designerId": "74d8ee33-6961-476e-a27d-cb0d3ac1ad4d"
