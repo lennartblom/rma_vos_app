@@ -207,25 +207,6 @@
             },
             "name": "lineThree",
             "designerId": "bbc54c7b-9948-4567-b201-252107e76c2d"
-        },
-        {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "application"
-                ],
-                "fn": "init",
-                "implHandler": [
-                    "this.searchType = \"\";"
-                ]
-            },
-            "name": "init",
-            "designerId": "5dd25ab0-f22d-430c-9538-62af1b736a7f"
         }
     ]
 }

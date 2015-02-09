@@ -30,34 +30,31 @@ Ext.application({
     ],
     views: [
         'goalsDetails',
+        'settingsView',
+        'goalsView',
+        'achView',
+        'InitialView',
+        'fahrplanerView',
+        'weckerView',
         'mainScreen',
         'MySearchField',
-        'fahrplanerView',
-        'goalsView',
-        'settingsView',
-        'weckerView',
-        'achView',
         'searchView',
-        'InitialView',
         'mapView'
     ],
     controllers: [
+        'Settings',
+        'Wecker',
+        'Achievements',
+        'Goals',
         'Main',
         'searchViewController',
         'Fahrplaner',
-        'Achievements',
-        'Goals',
-        'Settings',
-        'Wecker',
         'mapViewController'
     ],
     name: 'VosNavigator',
 
     launch: function() {
 
-
-        Ext.getStore('sights').load();
-        console.log('Logo hinter Sights');
         Ext.create('VosNavigator.view.InitialView', {fullscreen: true});
     }
 

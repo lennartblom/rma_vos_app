@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "db": [
+            "null"
+        ],
         "designer|userClassName": "Fahrplaner",
         "startOrt": [
             "{lat:0.0,lng:0.0}"
@@ -18,7 +21,8 @@
     "name": "MyController",
     "configAlternates": {
         "zielOrt": "object",
-        "startOrt": "object"
+        "startOrt": "object",
+        "db": "object"
     },
     "designerId": "58f13f6b-eafa-4b74-b9dc-6b1ad6681e46",
     "customConfigs": [
@@ -30,6 +34,11 @@
         {
             "group": "(Custom Properties)",
             "name": "zielOrt",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "db",
             "type": "string"
         }
     ],
@@ -314,12 +323,53 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "Ext.getStore('stops').load();",
+                    "//Ext.getStore('stops').load();",
+                    "var db = this.getDb();",
+                    "this.dbcopy();",
+                    "db = window.sqlitePlugin.openDatabase(\"vosnavigator.db\");",
+                    "",
+                    "db.transaction(function(tx) {",
+                    "   tx.executeSql(\"select * from stops;\", [], function(tx, res) {",
+                    "       var length = res.rows.length;",
+                    "       for(var i =0;i<length;i++){",
+                    "          console.log(res.rows.item(i).name);",
+                    "",
+                    "       }",
+                    "      });",
+                    "",
+                    "    }, function(e) {",
+                    "      console.log(\"ERROR: \" + e.message);",
+                    "    });",
+                    "",
                     ""
                 ]
             },
             "name": "launch",
             "designerId": "c2fdac09-3266-40bc-973d-176d1be4d954"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "dbcopy",
+                "implHandler": [
+                    "",
+                    "    window.plugins.sqlDB.copy(\"vosnavigator.db\",function(){",
+                    "        console.log(\"db wurde erfolgreich kopiert\");},",
+                    "        function(e){",
+                    "         //db already exists or problem in copying the db file. Check the Log.",
+                    "        console.log(\"Error Code = \"+JSON.stringify(e));",
+                    "        //e.code = 516 => if db exists",
+                    "        });",
+                    ""
+                ]
+            },
+            "name": "dbcopy",
+            "designerId": "15ed7b0f-9b2c-4d69-8728-6a7bed6b3997"
         }
     ]
 }

@@ -91,10 +91,6 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     onListPainted: function(element, eOpts) {
 
-    },
-
-    init: function(application) {
-        this.searchType = "";
     }
 
 });

@@ -7,13 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
+            "Settings",
+            "Wecker",
+            "Achievements",
+            "Goals",
             "Main",
             "searchViewController",
             "Fahrplaner",
-            "Achievements",
-            "Goals",
-            "Settings",
-            "Wecker",
             "mapViewController"
         ],
         "models": [
@@ -27,39 +27,18 @@
         ],
         "views": [
             "goalsDetails",
+            "settingsView",
+            "goalsView",
+            "achView",
+            "InitialView",
+            "fahrplanerView",
+            "weckerView",
             "mainScreen",
             "MySearchField",
-            "fahrplanerView",
-            "goalsView",
-            "settingsView",
-            "weckerView",
-            "achView",
             "searchView",
-            "InitialView",
             "mapView"
         ]
     },
     "name": "Application",
-    "designerId": "application",
-    "cn": [
-        {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "launch",
-                "implHandler": [
-                    "",
-                    "",
-                    "Ext.getStore('sights').load();",
-                    "console.log('Logo hinter Sights');"
-                ]
-            },
-            "name": "launch",
-            "designerId": "db6240d0-2ef6-46b1-b9a7-b91a7ffbf73c"
-        }
-    ]
+    "designerId": "application"
 }

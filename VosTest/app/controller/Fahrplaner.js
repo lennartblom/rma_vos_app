@@ -25,6 +25,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             lat: 0.0,
             lng: 0.0
         },
+        db: null,
 
         refs: {
             MainView: '#MainView',
@@ -119,7 +120,36 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     launch: function() {
-        Ext.getStore('stops').load();
+        //Ext.getStore('stops').load();
+        var db = this.getDb();
+        this.dbcopy();
+        db = window.sqlitePlugin.openDatabase("vosnavigator.db");
+
+        db.transaction(function(tx) {
+           tx.executeSql("select * from stops;", [], function(tx, res) {
+               var length = res.rows.length;
+               for(var i =0;i<length;i++){
+                  console.log(res.rows.item(i).name);
+
+               }
+              });
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+
+
+    },
+
+    dbcopy: function() {
+
+            window.plugins.sqlDB.copy("vosnavigator.db",function(){
+                console.log("db wurde erfolgreich kopiert");},
+                function(e){
+                 //db already exists or problem in copying the db file. Check the Log.
+                console.log("Error Code = "+JSON.stringify(e));
+                //e.code = 516 => if db exists
+                });
 
     }
 

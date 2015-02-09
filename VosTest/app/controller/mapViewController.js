@@ -41,10 +41,10 @@ Ext.define('VosNavigator.controller.mapViewController', {
     onMapMaprender: function(map, gmap, eOpts) {
         var osnabrueck = new google.maps.LatLng(52.273238, 8.051014);
 
-        var stopsLong = new Array();
-        var stopsLat = new Array();
-        var stopsTitle = new Array();
-
+        var stopsLong = [];
+        var stopsLat = [];
+        var stopsTitle = [];
+        console.log("vars geladen");
         stopsLong.push(8.0450892122);
         stopsLat.push(52.2674516543);
         stopsTitle.push("Agentur für Arbeit");
@@ -56,12 +56,12 @@ Ext.define('VosNavigator.controller.mapViewController', {
         stopsLong.push(8.016346902);
         stopsLat.push(52.26566678);
         stopsTitle.push("Alfred-Delp-Straße");
-
+        console.log("punkte defined");
         var image = 'resources/images/icons/red_station.png';
 
 
         gmap.panTo(osnabrueck);
-
+        console.log("osnabrück");
         for(i = 0; i<3; i++){
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(stopsLat[i], stopsLong[i]),
