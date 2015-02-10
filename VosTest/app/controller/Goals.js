@@ -123,7 +123,11 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     stopClock: function() {
-        clearInterval(this.getTaskClock());
+        var clock = this.getTaskClock();
+        clearInterval(clock);
+        clearInterval(this.taskClock);
+        this.taskClock = null;
+        console.log("timer wurde gestoppt");
     }
 
 });
