@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "buffered": true,
         "designer|userClassName": "sights",
         "model": "sight",
         "storeId": "sights"

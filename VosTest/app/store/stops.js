@@ -26,6 +26,7 @@ Ext.define('VosNavigator.store.stops', {
         buffered: true,
         model: 'VosNavigator.model.stop',
         storeId: 'stops',
+        syncRemovedRecords: false,
         proxy: {
             type: 'ajax',
             url: 'resources/json/stops.json',

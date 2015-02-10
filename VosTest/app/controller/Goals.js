@@ -101,10 +101,10 @@ Ext.define('VosNavigator.controller.Goals', {
                 }
             }
         }
-        remaining.tag = 7 - date.tag;
-        remaining.stunde = 24 - date.stunde;
-        remaining.minute = 60 - date.minute;
-        remaining.sekunde = 60 - date.sekunde;
+        remaining.tag = 6 - date.tag;
+        remaining.stunde = 23 - date.stunde;
+        remaining.minute = 59 - date.minute;
+        remaining.sekunde = 59 - date.sekunde;
 
         /*console.log("Verbleibende Zeit bis: "+
                                             remaining.tag+" "+remaining.stunde+
@@ -119,7 +119,8 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     launch: function() {
-        this.getStore('sights').load();
+        Ext.getStore('sights').load();
+        console.log("goals launcer");
     },
 
     stopClock: function() {

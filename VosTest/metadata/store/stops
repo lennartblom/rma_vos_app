@@ -9,7 +9,8 @@
         "buffered": true,
         "designer|userClassName": "stops",
         "model": "stop",
-        "storeId": "stops"
+        "storeId": "stops",
+        "syncRemovedRecords": false
     },
     "name": "MyStore",
     "designerId": "5f10bac9-71a8-42b8-a5b7-4047ad520981",

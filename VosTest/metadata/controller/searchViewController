@@ -8,9 +8,19 @@
     "userConfig": {
         "designer|userClassName": "searchViewController",
         "searchType": "",
-        "searchTypeTwo": null
+        "searchTypeTwo": null,
+        "startOrt": [
+            "{name:null,lat:0.0,lng:0.0}"
+        ],
+        "zielOrt": [
+            "{name:null,lat:0.0,lng:0.0}"
+        ]
     },
     "name": "MyController",
+    "configAlternates": {
+        "zielOrt": "object",
+        "startOrt": "object"
+    },
     "designerId": "5c080c39-9eb0-4ca3-80d0-df77e879fed0",
     "customConfigs": [
         {
@@ -21,6 +31,16 @@
         {
             "group": "(Custom Properties)",
             "name": "searchType",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "startOrt",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "zielOrt",
             "type": "string"
         }
     ],
@@ -96,42 +116,28 @@
             "userConfig": {
                 "designer|controlQuery": "list#searchResultList",
                 "designer|targetType": "Ext.dataview.List",
-                "fn": "onListItemTap",
+                "fn": "list",
                 "implHandler": [
-                    "var dataView;",
-                    "console.log(\"Seachtype: \" + this.searchType);",
+                    "",
+                    "/*var startOrt = this.getStarOrt();",
+                    "var zielOrt = this.getZielOrt();*/",
+                    "console.log(\"itemTap\");",
                     "if(this.searchType === 'start'){",
-                    "    dataView = this.getLineTwo();",
+                    "   /*startOrt.name=record.get('name');",
+                    "   startOrt.lat = record.get('lat');",
+                    "   startOrt.lng = record.get('long');*/",
                     "}else if(this.searchType === 'destination'){",
-                    "    dataView = this.getLineThree();",
-                    "}else{",
-                    "    console.log(\"Search Type?!?!?\");",
-                    "    return -1;",
+                    "  /* zielOrt.name=record.get('name');",
+                    "   zielOrt.lat = record.get('lat');",
+                    "   zielOrt.lng = record.get('long');*/",
                     "}",
-                    "",
-                    "var linesData = record.get('lines');",
-                    "//var quantity = linesArray.getCount();",
-                    "",
-                    "",
-                    "",
-                    "var myPanel = Ext.create('Ext.Panel', {",
-                    "    html: \"<div class=\\\"buslineWrapper\\\"><div class=\\\"buslinesBoxLeft\\\"><div class=\\\"busIcon\\\" stlye=\\\"background-image:url(resources/images/icons/bus-icon-150x150.png)\\\"></div> \" + this.getApplication().getController('Fahrplaner').getLines(linesData) + \"</div><div class=\\\"buslinesBoxRight\\\">\"+ record.get('name')+ \"</div><div class=\\\"clearing\\\"></div></div>\"",
-                    "});",
-                    "",
-                    "dataView.removeAll();",
-                    "dataView.add([myPanel]);",
-                    "",
-                    "var store = Ext.getStore('stops');",
-                    "store.clearFilter();",
-                    "",
-                    "this.getSearchResultList().refresh();",
+                    "console.log(\"ende von if\");",
                     "this.getSearchView().hide();",
-                    "this.getFahrplanerView().show();",
-                    ""
+                    "this.getFahrplanerView().show();"
                 ],
                 "name": "itemtap"
             },
-            "name": "onListItemTap",
+            "name": "list",
             "designerId": "05357f84-920d-43e7-a198-f96d0dfea636"
         },
         {
@@ -189,6 +195,97 @@
             },
             "name": "lineThree",
             "designerId": "bbc54c7b-9948-4567-b201-252107e76c2d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#searchResultList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "selectItem",
+                "implHandler": [
+                    "//console.log(\"selectItem\");",
+                    "/*this.getSearchView().hide();",
+                    "this.getFahrplanerView().show({type:\"slide\",direction:\"down\"});*/",
+                    "/*var dataView;",
+                    "console.log(\"Seachtype: \" + this.searchType);",
+                    "if(this.searchType === 'start'){",
+                    "    dataView = this.getLineTwo();",
+                    "}else if(this.searchType === 'destination'){",
+                    "    dataView = this.getLineThree();",
+                    "}else{",
+                    "    console.log(\"Search Type?!?!?\");",
+                    "    return -1;",
+                    "}",
+                    "",
+                    "var linesData = record.get('lines');",
+                    "//var quantity = linesArray.getCount();",
+                    "",
+                    "",
+                    "",
+                    "var myPanel = Ext.create('Ext.Panel', {",
+                    "    html: \"<div class=\\\"buslineWrapper\\\"><div class=\\\"buslinesBoxLeft\\\"><div class=\\\"busIcon\\\" stlye=\\\"background-image:url(resources/images/icons/bus-icon-150x150.png)\\\"></div> \" + this.getApplication().getController('Fahrplaner').getLines(linesData) + \"</div><div class=\\\"buslinesBoxRight\\\">\"+ record.get('name')+ \"</div><div class=\\\"clearing\\\"></div></div>\"",
+                    "});",
+                    "",
+                    "dataView.removeAll();",
+                    "dataView.add([myPanel]);",
+                    "",
+                    "var store = Ext.getStore('stops');",
+                    "store.clearFilter();",
+                    "",
+                    "this.getSearchResultList().refresh();*/",
+                    "/*this.getSearchView().hide();",
+                    "this.getFahrplanerView().show();*/",
+                    ""
+                ],
+                "name": "select"
+            },
+            "name": "selectItem",
+            "designerId": "144a81ea-89d2-4948-9d29-f73745368478"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value"
+                ],
+                "fn": "setStart",
+                "implHandler": [
+                    "var startValue = this.getLineTwo();",
+                    "startValue.setValue(value);"
+                ]
+            },
+            "name": "setStart",
+            "designerId": "6cfb12b9-d834-4be1-a64f-0da6cd28bbc8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value"
+                ],
+                "fn": "setDest",
+                "implHandler": [
+                    "var destValue = this.getLineThree();",
+                    "destValue.setValue(value);"
+                ]
+            },
+            "name": "setDest",
+            "designerId": "b214bb1f-b9d6-4538-9891-1b358a6ab92d"
         }
     ]
 }
