@@ -92,10 +92,10 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'list',
-                                        baseCls: 'transparent_List',
+                                        baseCls: 'transparentList',
                                         height: '100px',
                                         hidden: false,
-                                        id: 'sights_daily',
+                                        id: 'sightsDaily',
                                         top: '25px',
                                         width: '100%',
                                         itemCls: 'sights_list',

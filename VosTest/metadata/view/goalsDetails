@@ -12,7 +12,7 @@
         "designer|userAlias": "goalsdetails",
         "designer|userClassName": "goalsDetails",
         "height": "100%",
-        "id": "goals1",
+        "id": "goalsDetails",
         "width": "100%"
     },
     "name": "goalsView1",

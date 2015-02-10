@@ -86,11 +86,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "list#sights_daily",
+                "designer|controlQuery": "list#sightsDaily",
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListItemTap",
                 "implHandler": [
-                    "//alert('Selected!{name}'+{name});",
+                    "//alert('Selected!{name}');",
+                    "     this.getGoalsView().hide();",
+                    "     this.getGoalsDetails().show();",
                     "",
                     "/*var goalsDetails = Ext.create('VosTest.view.goalsDetails');",
                     "this.getGoalsView().push(detailsView);*/"
@@ -283,6 +285,34 @@
             },
             "name": "weeklyGoalsCounter",
             "designerId": "4e8c9042-5b65-4e86-bd8a-7a504cc80fca"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "sightsDaily",
+                "selector": "list#sightsDaily"
+            },
+            "name": "sightsDaily",
+            "designerId": "fe4591d7-2409-42cd-8d61-fd93490c1082"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "goalsDetails",
+                "selector": "container#goalsDetails"
+            },
+            "name": "goalsDetails",
+            "designerId": "3594efd5-884d-45f5-b170-cfa5e715ea47"
         }
     ]
 }

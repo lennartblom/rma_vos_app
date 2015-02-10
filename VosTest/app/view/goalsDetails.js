@@ -29,7 +29,7 @@ Ext.define('VosNavigator.view.goalsDetails', {
 
     config: {
         height: '100%',
-        id: 'goals1',
+        id: 'goalsDetails',
         width: '100%',
         items: [
             {

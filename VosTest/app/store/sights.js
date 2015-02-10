@@ -23,6 +23,7 @@ Ext.define('VosNavigator.store.sights', {
     ],
 
     config: {
+        autoLoad: true,
         buffered: true,
         model: 'VosNavigator.model.sight',
         storeId: 'sights',
