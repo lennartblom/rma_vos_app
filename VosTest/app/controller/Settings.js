@@ -66,12 +66,7 @@ Ext.define('VosNavigator.controller.Settings', {
     },
 
     goalsTimerOnOff: function(togglefield, newValue, oldValue, eOpts) {
-        var goalsController = this.getApplication().getController('Goals');
-        if(newValue){
-            goalsController.setupClock();
-        }else{
-            goalsController.stopClock();
-        }
+
     }
 
 });
