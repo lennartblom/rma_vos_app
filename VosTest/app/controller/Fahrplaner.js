@@ -120,14 +120,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     launch: function() {
-
-
-        Ext.getStore('stops').load();
-        console.log("Test nach getdb()");
-        var db = this.getDb();
-        //this.dbcopy();
-        db = window.openDatabase("vosnavigator.db");
-        console.log("Test nach getdb()");
         Ext.getStore('stops').load();
         /*
         var db = this.getDb();
