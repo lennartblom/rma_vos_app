@@ -35,7 +35,8 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             lineOne: 'dataview#lineOne',
             lineTwo: 'dataview#lineTwo',
             searchView: '#searchView',
-            SearchTitle: 'label#SearchTitle'
+            SearchTitle: 'label#SearchTitle',
+            mybutton4: 'button#mybutton4'
         },
 
         control: {
@@ -53,6 +54,9 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             },
             "searchfield#searchfieldDestination": {
                 focus: 'onFocusSearchfieldDestination'
+            },
+            "button#mybutton4": {
+                tap: 'sucheVerbindung'
             }
         }
     },
@@ -67,7 +71,9 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     onLineOneItemTap: function(list, index, item, record) {
-        var dataView = this.getLineTwo();
+
+
+        /*var dataView = this.getLineTwo();
         var linesData = record.get('lines');
         //var quantity = linesArray.getCount();
 
@@ -78,32 +84,88 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         });
 
         dataView.removeAll();
-        dataView.add([myPanel]);
+        dataView.add([myPanel]);*/
     },
 
     onFocusSearchfieldStart: function(textfield, e, eOpts) {
 
-        var searchTitle = Ext.getCmp('SearchTitle');
-        searchTitle.setData({title:"Start"}); // Übergabe an das Label searchTitle
-        console.log('Search Typ übergabe ::before');
+        //var searchTitle = Ext.getCmp('SearchTitle');
+        //searchTitle.setData({title:"Start"}); // Übergabe an das Label searchTitle
+        //console.log('Search Typ übergabe ::before');
         this.getApplication().getController('searchViewController').searchType = 'start';
-        console.log('Search Typ übergabe ::after');
+        //console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
         this.getFahrplanerView().hide();
     },
 
     onFocusSearchfieldDestination: function(textfield, e, eOpts) {
-        this.getFahrplanerView().hide();
-        var searchTitle = Ext.getCmp('SearchTitle');
-        searchTitle.setData({title:"Ziel"});  // Übergabe an das Label searchTitle
-        console.log('Search Typ übergabe ::before');
+        //var searchTitle = Ext.getCmp('SearchTitle');
+        //searchTitle.setData({title:"Ziel"});  // Übergabe an das Label searchTitle
+        //console.log('Search Typ übergabe ::before');
         this.getApplication().getController('searchViewController').searchType = 'destination';
-        console.log('Search Typ übergabe ::after');
+        //console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
+        this.getFahrplanerView().hide();
+
+    },
+
+    sucheVerbindung: function(button, e, eOpts) {
+        var searchView = this.getApplication().getController('searchViewController');
+        var sOrt = searchView.getStartOrt();
+        var zOrt = searchView.getZielOrt();
+        var db = this.getDb();
+        var start = this.getStartOrt();
+        var ziel = this.getZielOrt();
+
+        console.log(sOrt);
+        console.log(zOrt);
+
+
+        /*db.transaction(function(tx) {
+           tx.executeSql("select lat from stops where name = '"+sOrt+"';", [], function(tx, res) {
+
+                start.lat = res.rows.item(0).lat;
+                console.log(" s"+start.lat);
+           });
+           tx.executeSql("select lat,long as lng from stops where name = '"+zOrt+"';", [], function(tx, res) {
+                ziel.lat = res.rows.item(0).lat;
+                ziel.lng = res.rows.item(0).lng;
+                console.log(ziel.lat+" z"+ziel.lng);
+           });
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });*/
+        db.transaction(function(tx) {
+           tx.executeSql("Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+           {
+                var length = res.rows.length;
+                var lines = [];
+                var j=0;
+
+                if(length===0){
+                    console.log("verbindung über neumarkt");
+                }else{
+                    for(var i =0; i<length;i++){
+                        console.log(res.rows.item(i).lineId);
+
+                    }
+
+                }
+           });
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+
+
+
+
+
     },
 
     getLines: function(data) {
-        var len = data.length;
+        /*var len = data.length;
         var content = '';
         content += '<div class="busline">';
 
@@ -116,7 +178,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
         content += '</div>';
 
-        return content;
+        return content;*/
     },
 
     launch: function() {
@@ -125,23 +187,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         Ext.getStore('stops').load();
 
 
-        /*
-        var db = this.getDb();
-        db = window.sqlitePlugin.openDatabase("vosnavigator.db");
-        db.transaction(function(tx) {
-           tx.executeSql("select * from stops;", [], function(tx, res) {
-               var length = res.rows.length;
-               for(var i =0;i<length;i++){
-                  console.log(res.rows.item(i).name);
 
-               }
-              });
+        var db = window.sqlitePlugin.openDatabase("vosnavigator.db");
+        this.setDb(db);
 
-            }, function(e) {
-              console.log("ERROR: " + e.message);
-            });
 
-        */
         console.log("launcher Fahrplaner");
     },
 

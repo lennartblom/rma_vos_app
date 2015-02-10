@@ -88,7 +88,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "searchfieldStart",
-                        "label": "Von"
+                        "label": "Von",
+                        "value": [
+                            "\"Aktueller Ort\""
+                        ]
                     },
                     "name": "MySearchField1",
                     "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7"
@@ -102,7 +105,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "searchfieldDestination",
-                        "label": "Nach"
+                        "label": "Nach",
+                        "placeHolder": "Ziel Ort"
                     },
                     "name": "MySearchField2",
                     "designerId": "d4120d0d-0fe8-4729-adc0-700a02aa624a"
@@ -209,6 +213,20 @@
                             "designerId": "ddba0dc0-ce54-4362-ba95-ffd9288da4fa"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mybutton4",
+                        "text": "MyButton4"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "30f38143-e6e5-45a9-a4c2-be08de423fae"
                 }
             ]
         },

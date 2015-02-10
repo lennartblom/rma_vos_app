@@ -165,7 +165,7 @@
                 ],
                 "fn": "getLines",
                 "implHandler": [
-                    "var len = data.length;",
+                    "/*var len = data.length;",
                     "var content = '';",
                     "content += '<div class=\"busline\">';",
                     "",
@@ -178,7 +178,7 @@
                     "",
                     "content += '</div>';",
                     "",
-                    "return content;"
+                    "return content;*/"
                 ]
             },
             "name": "getLines",
@@ -216,7 +216,9 @@
                 "designer|targetType": "MyList",
                 "fn": "onLineOneItemTap",
                 "implHandler": [
-                    "var dataView = this.getLineTwo();",
+                    "",
+                    "",
+                    "/*var dataView = this.getLineTwo();",
                     "var linesData = record.get('lines');",
                     "//var quantity = linesArray.getCount();",
                     "",
@@ -227,7 +229,7 @@
                     "});",
                     "",
                     "dataView.removeAll();",
-                    "dataView.add([myPanel]);"
+                    "dataView.add([myPanel]);*/"
                 ],
                 "name": "itemtap"
             },
@@ -247,11 +249,11 @@
                 "fn": "onFocusSearchfieldStart",
                 "implHandler": [
                     "",
-                    "var searchTitle = Ext.getCmp('SearchTitle');",
-                    "searchTitle.setData({title:\"Start\"}); // Übergabe an das Label searchTitle",
-                    "console.log('Search Typ übergabe ::before');",
+                    "//var searchTitle = Ext.getCmp('SearchTitle');",
+                    "//searchTitle.setData({title:\"Start\"}); // Übergabe an das Label searchTitle",
+                    "//console.log('Search Typ übergabe ::before');",
                     "this.getApplication().getController('searchViewController').searchType = 'start';",
-                    "console.log('Search Typ übergabe ::after');",
+                    "//console.log('Search Typ übergabe ::after');",
                     "this.getSearchView().show({type:\"slide\",direction:\"up\"});",
                     "this.getFahrplanerView().hide();"
                 ],
@@ -272,13 +274,14 @@
                 "designer|targetType": "Ext.field.Search",
                 "fn": "onFocusSearchfieldDestination",
                 "implHandler": [
-                    "this.getFahrplanerView().hide();",
-                    "var searchTitle = Ext.getCmp('SearchTitle');",
-                    "searchTitle.setData({title:\"Ziel\"});  // Übergabe an das Label searchTitle",
-                    "console.log('Search Typ übergabe ::before');",
+                    "//var searchTitle = Ext.getCmp('SearchTitle');",
+                    "//searchTitle.setData({title:\"Ziel\"});  // Übergabe an das Label searchTitle",
+                    "//console.log('Search Typ übergabe ::before');",
                     "this.getApplication().getController('searchViewController').searchType = 'destination';",
-                    "console.log('Search Typ übergabe ::after');",
-                    "this.getSearchView().show({type:\"slide\",direction:\"up\"});"
+                    "//console.log('Search Typ übergabe ::after');",
+                    "this.getSearchView().show({type:\"slide\",direction:\"up\"});",
+                    "this.getFahrplanerView().hide();",
+                    ""
                 ],
                 "name": "focus"
             },
@@ -328,23 +331,11 @@
                     "Ext.getStore('stops').load();",
                     "",
                     "",
-                    "/*",
-                    "var db = this.getDb();",
-                    "db = window.sqlitePlugin.openDatabase(\"vosnavigator.db\");",
-                    "db.transaction(function(tx) {",
-                    "   tx.executeSql(\"select * from stops;\", [], function(tx, res) {",
-                    "       var length = res.rows.length;",
-                    "       for(var i =0;i<length;i++){",
-                    "          console.log(res.rows.item(i).name);",
                     "",
-                    "       }",
-                    "      });",
+                    "var db = window.sqlitePlugin.openDatabase(\"vosnavigator.db\");",
+                    "this.setDb(db);",
                     "",
-                    "    }, function(e) {",
-                    "      console.log(\"ERROR: \" + e.message);",
-                    "    });",
                     "",
-                    "*/",
                     "console.log(\"launcher Fahrplaner\");"
                 ]
             },
@@ -374,6 +365,90 @@
             },
             "name": "dbcopy",
             "designerId": "15ed7b0f-9b2c-4d69-8728-6a7bed6b3997"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mybutton4",
+                "selector": "button#mybutton4"
+            },
+            "name": "mybutton4",
+            "designerId": "15b0b405-71ab-4c65-b75d-cc145ac45007"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#mybutton4",
+                "designer|targetType": "Ext.Button",
+                "fn": "sucheVerbindung",
+                "implHandler": [
+                    "var searchView = this.getApplication().getController('searchViewController');",
+                    "var sOrt = searchView.getStartOrt();",
+                    "var zOrt = searchView.getZielOrt();",
+                    "var db = this.getDb();",
+                    "var start = this.getStartOrt();",
+                    "var ziel = this.getZielOrt();",
+                    "",
+                    "console.log(sOrt);",
+                    "console.log(zOrt);",
+                    "",
+                    "",
+                    "/*db.transaction(function(tx) {",
+                    "   tx.executeSql(\"select lat from stops where name = '\"+sOrt+\"';\", [], function(tx, res) {",
+                    "",
+                    "        start.lat = res.rows.item(0).lat;",
+                    "        console.log(\" s\"+start.lat);",
+                    "   });",
+                    "   tx.executeSql(\"select lat,long as lng from stops where name = '\"+zOrt+\"';\", [], function(tx, res) {",
+                    "        ziel.lat = res.rows.item(0).lat;",
+                    "        ziel.lng = res.rows.item(0).lng;",
+                    "        console.log(ziel.lat+\" z\"+ziel.lng);",
+                    "   });",
+                    "",
+                    "    }, function(e) {",
+                    "      console.log(\"ERROR: \" + e.message);",
+                    "    });*/",
+                    "db.transaction(function(tx) {",
+                    "   tx.executeSql(\"Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '\"+sOrt+\"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '\"+zOrt+\"';\", [], function(tx, res)",
+                    "   {",
+                    "        var length = res.rows.length;",
+                    "        var lines = [];",
+                    "        var j=0;",
+                    "",
+                    "        if(length===0){",
+                    "            console.log(\"verbindung über neumarkt\");",
+                    "        }else{",
+                    "            for(var i =0; i<length;i++){",
+                    "                console.log(res.rows.item(i).lineId);",
+                    "",
+                    "            }",
+                    "",
+                    "        }",
+                    "   });",
+                    "",
+                    "    }, function(e) {",
+                    "      console.log(\"ERROR: \" + e.message);",
+                    "    });",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "sucheVerbindung",
+            "designerId": "933cfe1b-931c-4b3a-9f58-fa805922697f"
         }
     ]
 }
