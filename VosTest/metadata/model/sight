@@ -75,6 +75,20 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "visited",
+                "type": "boolean"
+            },
+            "name": "field3",
+            "designerId": "07299b49-f532-4d68-8bdb-18b642b908c4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "link",
                 "type": "string"
             },
