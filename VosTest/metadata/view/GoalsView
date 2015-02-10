@@ -155,10 +155,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "transparent_List",
+                                        "baseCls": "transparentList",
                                         "height": "100px",
                                         "hidden": false,
-                                        "id": "sights_daily",
+                                        "id": "sightsDaily",
                                         "itemCls": "sights_list",
                                         "store": "sights",
                                         "top": "25px",

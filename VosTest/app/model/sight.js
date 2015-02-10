@@ -39,6 +39,10 @@ Ext.define('VosNavigator.model.sight', {
                 type: 'string'
             },
             {
+                name: 'visited',
+                type: 'boolean'
+            },
+            {
                 name: 'link',
                 type: 'string'
             }
