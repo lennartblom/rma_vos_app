@@ -61,7 +61,7 @@
                 "docked": "top",
                 "id": "searchField",
                 "itemId": "searchField",
-                "label": "Field"
+                "label": "Suche"
             },
             "name": "MySearchField3",
             "designerId": "023155e1-4b14-41ad-8936-9904bccaf597"
