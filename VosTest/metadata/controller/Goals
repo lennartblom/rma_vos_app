@@ -259,7 +259,11 @@
             "userConfig": {
                 "fn": "stopClock",
                 "implHandler": [
-                    "clearInterval(this.getTaskClock());"
+                    "var clock = this.getTaskClock();",
+                    "clearInterval(clock);",
+                    "clearInterval(this.taskClock);",
+                    "this.taskClock = null;",
+                    "console.log(\"timer wurde gestoppt\");"
                 ]
             },
             "name": "stopClock",

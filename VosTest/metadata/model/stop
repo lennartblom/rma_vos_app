@@ -22,8 +22,8 @@
                 "name": "id",
                 "type": "int"
             },
-            "name": "field",
-            "designerId": "6c640b96-5de5-4475-8ce5-a3df43b958e0"
+            "name": "field1",
+            "designerId": "56cfc155-3ce3-4721-88ab-26e58cba722d"
         },
         {
             "type": "Ext.data.Field",
@@ -36,8 +36,8 @@
                 "name": "name",
                 "type": "string"
             },
-            "name": "field1",
-            "designerId": "56cfc155-3ce3-4721-88ab-26e58cba722d"
+            "name": "field",
+            "designerId": "fa86d672-855a-47b7-995f-8e8bb1550909"
         },
         {
             "type": "Ext.data.Field",
@@ -47,7 +47,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "longitude",
+                "name": "long",
                 "type": "float"
             },
             "name": "field4",
@@ -61,7 +61,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "latitude",
+                "name": "lat",
                 "type": "float"
             },
             "name": "field5",
