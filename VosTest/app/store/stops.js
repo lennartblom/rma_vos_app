@@ -26,16 +26,25 @@ Ext.define('VosNavigator.store.stops', {
         buffered: true,
         model: 'VosNavigator.model.stop',
         storeId: 'stops',
+        syncRemovedRecords: false,
         proxy: {
-            type: 'sql',
-            database: 'vosnavigator',
-            table: 'stops'
             type: 'ajax',
             url: 'resources/json/stops.json',
             reader: {
                 type: 'json',
                 rootProperty: 'stops'
             }
-        }
+        },
+        listeners: [
+            {
+                fn: 'onStoreLoad',
+                event: 'load'
+            }
+        ]
+    },
+
+    onStoreLoad: function(store, records, successful, operation, eOpts) {
+        console.log("Haltestellen " + store.getCount());
     }
+
 });

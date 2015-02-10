@@ -63,6 +63,8 @@ Ext.define('VosNavigator.controller.Main', {
 
     startButtonAction: function(button, e, eOpts) {
         this.getMainView().hide();
+        Ext.getStore('stops').load();
+        console.log("Stops geladen");
         this.getFahrplanerView().show({type:"slide",direction:"left"});
         //this.getApplication().getController('Wecker').wecken();
     },

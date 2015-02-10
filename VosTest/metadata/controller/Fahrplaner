@@ -323,9 +323,11 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "this.dbcopy();",
                     "",
                     "Ext.getStore('stops').load();",
+                    "console.log(\"Store Stops wurde geladen.\");",
+                    "this.dbcopy();",
+                    "",
                     "",
                     "",
                     "/*",

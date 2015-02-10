@@ -120,9 +120,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     launch: function() {
-        this.dbcopy();
 
         Ext.getStore('stops').load();
+        console.log("Store Stops wurde geladen.");
+        this.dbcopy();
+
 
 
         /*

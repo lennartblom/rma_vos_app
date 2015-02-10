@@ -119,7 +119,7 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     launch: function() {
-        this.getStore('sights').load();
+        Ext.getStore('sights').load();
     },
 
     stopClock: function() {

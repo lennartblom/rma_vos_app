@@ -24,6 +24,8 @@
                 "fn": "startButtonAction",
                 "implHandler": [
                     "this.getMainView().hide();",
+                    "Ext.getStore('stops').load();",
+                    "console.log(\"Stops geladen\");",
                     "this.getFahrplanerView().show({type:\"slide\",direction:\"left\"});",
                     "//this.getApplication().getController('Wecker').wecken();"
                 ],

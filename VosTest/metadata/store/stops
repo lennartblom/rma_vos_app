@@ -9,7 +9,8 @@
         "buffered": true,
         "designer|userClassName": "stops",
         "model": "stop",
-        "storeId": "stops"
+        "storeId": "stops",
+        "syncRemovedRecords": false
     },
     "name": "MyStore",
     "designerId": "5f10bac9-71a8-42b8-a5b7-4047ad520981",
@@ -22,8 +23,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "database": "vosnavigator",
-                "table": "stops"
                 "url": "resources/json/stops.json"
             },
             "name": "MyAjaxProxy1",
@@ -43,6 +42,23 @@
                     "designerId": "f6d792e4-a590-4740-be19-76eac94e40ed"
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreLoad",
+                "implHandler": [
+                    "console.log(\"Haltestellen \" + store.getCount());"
+                ],
+                "name": "load"
+            },
+            "name": "onStoreLoad",
+            "designerId": "d566596a-0fa9-497f-a234-0b99f73eda4c"
         }
     ]
 }

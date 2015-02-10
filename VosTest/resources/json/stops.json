@@ -1,4 +1,5 @@
-[
+{
+  "stops":[
   {
     "id":1,
     "name":"Am Heidekotten",
@@ -25,7 +26,7 @@
     "name":"Bergerskamp",
     "long":8.0481592035,
     "lat":52.2526789233,
-    "visited":false
+    "visited":true
   },
   {
     "id":6,
@@ -200,7 +201,7 @@
     "name":"Neumarkt",
     "long":8.0486774787,
     "lat":52.2725392927,
-    "visited":false
+    "visited":true
   },
   {
     "id":40,
@@ -1124,14 +1125,14 @@
     "name":"Kamp-Promenade",
     "long":8.0448516945,
     "lat":52.2742752713,
-    "visited":false
+    "visited":true
   },
   {
     "id":176,
     "name":"Karl-Adams-Weg",
     "long":8.1358942579,
     "lat":52.3045987931,
-    "visited":false
+    "visited":true
   },
   {
     "id":177,
@@ -1880,7 +1881,7 @@
     "name":"Walkmühlenweg",
     "long":8.0169329385,
     "lat":52.2923679635,
-    "visited":false
+    "visited":true
   },
   {
     "id":286,
@@ -2072,3 +2073,5 @@
     "visited":false
   }
 ]
+
+}
