@@ -18,6 +18,16 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     config: {
         searchType: '',
+        startOrt: {
+            name: null,
+            lat: 0.0,
+            lng: 0.0
+        },
+        zielOrt: {
+            name: null,
+            lat: 0.0,
+            lng: 0.0
+        },
 
         refs: {
             searchResultList: 'list#searchResultList',
@@ -33,7 +43,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
                 keyup: 'onSearchfieldKeyup'
             },
             "list#searchResultList": {
-                itemtap: 'onListItemTap'
+                itemtap: 'list',
+                select: 'selectItem'
             }
         }
     },
@@ -56,8 +67,30 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     },
 
-    onListItemTap: function(dataview, index, target, record, e, eOpts) {
-        var dataView;
+    list: function(dataview, index, target, record, e, eOpts) {
+
+        /*var startOrt = this.getStarOrt();
+        var zielOrt = this.getZielOrt();*/
+        console.log("itemTap");
+        if(this.searchType === 'start'){
+           /*startOrt.name=record.get('name');
+           startOrt.lat = record.get('lat');
+           startOrt.lng = record.get('long');*/
+        }else if(this.searchType === 'destination'){
+          /* zielOrt.name=record.get('name');
+           zielOrt.lat = record.get('lat');
+           zielOrt.lng = record.get('long');*/
+        }
+        console.log("ende von if");
+        this.getSearchView().hide();
+        this.getFahrplanerView().show();
+    },
+
+    selectItem: function(dataview, record, eOpts) {
+        //console.log("selectItem");
+        /*this.getSearchView().hide();
+        this.getFahrplanerView().show({type:"slide",direction:"down"});*/
+        /*var dataView;
         console.log("Seachtype: " + this.searchType);
         if(this.searchType === 'start'){
             dataView = this.getLineTwo();
@@ -83,10 +116,20 @@ Ext.define('VosNavigator.controller.searchViewController', {
         var store = Ext.getStore('stops');
         store.clearFilter();
 
-        this.getSearchResultList().refresh();
-        this.getSearchView().hide();
-        this.getFahrplanerView().show();
+        this.getSearchResultList().refresh();*/
+        /*this.getSearchView().hide();
+        this.getFahrplanerView().show();*/
 
+    },
+
+    setStart: function(value) {
+        var startValue = this.getLineTwo();
+        startValue.setValue(value);
+    },
+
+    setDest: function(value) {
+        var destValue = this.getLineThree();
+        destValue.setValue(value);
     }
 
 });
