@@ -19,10 +19,9 @@ Ext.define('VosNavigator.view.settingsView', {
 
     requires: [
         'Ext.Container',
-        'Ext.Label',
         'Ext.Button',
-        'Ext.field.Toggle',
-        'Ext.field.Radio',
+        'Ext.Label',
+        'Ext.field.Slider',
         'Ext.Img'
     ],
 
@@ -41,14 +40,6 @@ Ext.define('VosNavigator.view.settingsView', {
                 width: '320px',
                 layout: 'fit',
                 items: [
-                    {
-                        xtype: 'label',
-                        baseCls: 'uppercaseHeadline',
-                        height: '25px',
-                        html: '<p>Einstellungen:</p>',
-                        id: 'headline_settings',
-                        margin: '5px'
-                    },
                     {
                         xtype: 'container',
                         baseCls: 'orangeBorder',
@@ -77,27 +68,52 @@ Ext.define('VosNavigator.view.settingsView', {
                         xtype: 'container',
                         centered: false,
                         id: 'settings_wrapper_container',
-                        layout: 'fit'
+                        layout: 'fit',
+                        items: [
+                            {
+                                xtype: 'label',
+                                baseCls: 'uppercaseHeadline',
+                                docked: 'top',
+                                height: '25px',
+                                html: '<p>Mitwirkende:</p>',
+                                id: 'credits',
+                                margin: '5px'
+                            },
+                            {
+                                xtype: 'container',
+                                baseCls: 'creditsTable',
+                                height: '240px',
+                                html: '<table id="creditsTable"> 	<tr> 		<td class="tableHeadline" colspan="3">Entwickler</td> 	</tr> 	<tr> 		<td>Thomas Schalldach</td> 		<td colspan="2">Fabian Brammer</td> 	</tr> 	<tr> 	</tr> 	<tr> 		<td colspan="3">Lennart Blom</td> 	</tr> 	<tr> 		<td class="tableHeadline" colspan="3">Besonderen Dank an Entwickler externer Plugins</td> 	</tr> 	<tr> 		<td class="tableHeadline">Entwickler</td> 		<td colsan="2" class="tableHeadline">Plugin</td> 	</tr> 	<tr> 		<td>brodybits - Chris Brody</td> 		<td>Brodysoft SQLitePlugin</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> 	<tr> 		<td>Sebastián Katzer</td> 		<td>BackgroundMode</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> 	<tr> 		<td>Rahul Pandey</td> 		<td>sqlDB</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> 	<tr> 		<td>Chris Scott</td> 		<td>CDV Background Geo Location</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> </table>',
+                                id: 'creditsTable'
+                            }
+                        ]
                     },
                     {
                         xtype: 'container',
                         id: 'settings_form_wrapper',
-                        top: '30px',
+                        top: '280px',
                         width: '100%',
                         items: [
                             {
-                                xtype: 'togglefield',
-                                id: 'goalsTimerOnOffSwitch',
-                                label: 'Goals Timer'
+                                xtype: 'label',
+                                baseCls: 'uppercaseHeadline',
+                                height: '25px',
+                                html: '<p>Einstellungen:</p>',
+                                id: 'headline_settings',
+                                margin: '5px'
                             },
                             {
-                                xtype: 'radiofield',
-                                label: 'Field',
-                                name: 'field'
+                                xtype: 'label',
+                                baseCls: 'textCenterSmall',
+                                html: '<p>GPS Positionierungs Intervall</p>',
+                                id: 'info1',
+                                margin: '5px'
                             },
                             {
                                 xtype: 'sliderfield',
+                                baseCls: 'divCenter',
                                 id: 'gpsPace',
+                                style: 'background-color:none;',
                                 label: 'GPS Pace',
                                 value: [
                                     30
