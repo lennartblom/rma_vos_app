@@ -57,8 +57,7 @@ Ext.define('VosNavigator.controller.mapViewController', {
         stopsLat.push(52.26566678);
         stopsTitle.push("Alfred-Delp-Straße");
         console.log("punkte defined");
-        var image = 'resources/images/icons/red_station.png';
-
+        var image = new google.maps.MarkerImage("resources/images/icons/red_station.png", null, null, null, new google.maps.Size(35,35));
 
         gmap.panTo(osnabrueck);
         console.log("osnabrück");
