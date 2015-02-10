@@ -196,12 +196,7 @@
                 "designer|targetType": "Ext.field.Toggle",
                 "fn": "goalsTimerOnOff",
                 "implHandler": [
-                    "var goalsController = this.getApplication().getController('Goals');",
-                    "if(newValue){",
-                    "    goalsController.setupClock();",
-                    "}else{",
-                    "    goalsController.stopClock();",
-                    "}"
+                    ""
                 ],
                 "name": "change"
             },

@@ -128,6 +128,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         //this.dbcopy();
         db = window.openDatabase("vosnavigator.db");
         console.log("Test nach getdb()");
+        Ext.getStore('stops').load();
+        /*
+        var db = this.getDb();
+        this.dbcopy();
+        db = window.sqlitePlugin.openDatabase("vosnavigator.db");
         db.transaction(function(tx) {
            tx.executeSql("select * from stops;", [], function(tx, res) {
                var length = res.rows.length;
@@ -141,6 +146,8 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
               console.log("ERROR: " + e.message);
             });
 
+        */
+        console.log("launcher Fahrplaner");
     },
 
     dbcopy: function() {
