@@ -155,7 +155,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "height": "200px",
+                                        "baseCls": "transparent_List",
+                                        "height": "100px",
                                         "hidden": false,
                                         "id": "sights_daily",
                                         "itemCls": "sights_list",
@@ -195,7 +196,7 @@
                                         "height": "25px",
                                         "html": "<p>Verbleibende Zeit:</p>",
                                         "id": "dailyGoalsLabel",
-                                        "top": "250px"
+                                        "top": "145px"
                                     },
                                     "name": "MyLabel1",
                                     "designerId": "2295bb90-106e-4e07-9823-ef9db3f7e1a3"
@@ -212,7 +213,7 @@
                                         "height": "25px",
                                         "html": "<p>6 Stunden 23 Minuten</p>",
                                         "id": "dailyGoalsCounter",
-                                        "top": "350px"
+                                        "top": "170px"
                                     },
                                     "name": "MyLabel4",
                                     "configAlternates": {
@@ -237,7 +238,7 @@
                                 "left": null,
                                 "margin": "5px",
                                 "right": null,
-                                "top": 300,
+                                "top": 200,
                                 "width": "100%"
                             },
                             "name": "MyContainer13",
@@ -313,7 +314,7 @@
                                         "height": "25px",
                                         "html": "<p>Verbleibende Zeit:</p>",
                                         "id": "weeklyGoalsLabel",
-                                        "top": "200px"
+                                        "top": "120px"
                                     },
                                     "name": "MyLabel2",
                                     "designerId": "7cde9b28-1b02-4aa9-b88c-cda203ac3ef6"
@@ -331,7 +332,7 @@
                                         "html": "<p>3 Tage 6 Stunden 23 Minuten</p>",
                                         "id": "weeklyGoalsCounter",
                                         "style": null,
-                                        "top": "225px"
+                                        "top": "140px"
                                     },
                                     "name": "MyLabel3",
                                     "configAlternates": {
