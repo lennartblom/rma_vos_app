@@ -26,7 +26,7 @@ Ext.define('VosNavigator.store.stops', {
         storeId: 'stops',
         proxy: {
             type: 'sql',
-            database: 'vosnavigator.db',
+            database: 'vosnavigator',
             table: 'stops'
         }
     }

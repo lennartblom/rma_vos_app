@@ -21,7 +21,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "database": "vosnavigator.db",
+                "database": "vosnavigator",
                 "table": "stops"
             },
             "name": "MySqlProxy",
