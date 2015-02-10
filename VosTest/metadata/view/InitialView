@@ -39,10 +39,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "hidden": true
+            },
+            "name": "searchview",
+            "designerId": "63d203c6-5c41-408e-b353-09d328a6880b",
+            "masterInstanceId": "ca4ff710-0750-4c3d-b612-b2d0d625222d"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "hidden": true,
                 "id": "FahrplanerView"
             },
-            "name": "fahrplanerview",
+            "name": "fahrplanerview2",
             "designerId": "a306303a-2d35-421b-98e2-72fe821223d7",
             "masterInstanceId": "b60cccb9-321a-45c4-ad9c-93f071883a5f"
         },
@@ -116,20 +130,6 @@
             "userConfig": {
                 "hidden": true
             },
-            "name": "searchview",
-            "designerId": "63d203c6-5c41-408e-b353-09d328a6880b",
-            "masterInstanceId": "ca4ff710-0750-4c3d-b612-b2d0d625222d"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "hidden": true
-            },
             "name": "goalsdetails",
             "designerId": "cf4914c7-e891-421d-8ec1-8530a7db69be",
             "masterInstanceId": "d256d4e6-5de7-42ed-a6d5-04b84333c9d0"
@@ -145,7 +145,7 @@
                 "hidden": true,
                 "id": "MapView"
             },
-            "name": "mapview1",
+            "name": "mapview",
             "designerId": "4aa1e561-0d3e-44e7-a8fe-1bf628202dce",
             "masterInstanceId": "973a711a-0c76-4151-a727-295dbbac5b41"
         }

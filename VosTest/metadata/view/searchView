@@ -10,6 +10,7 @@
         "designer|userAlias": "searchview",
         "designer|userClassName": "searchView",
         "height": null,
+        "hidden": true,
         "id": "searchView",
         "width": null
     },
@@ -58,7 +59,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "docked": "top",
+                "docked": null,
                 "id": "searchField",
                 "itemId": "searchField",
                 "label": "Suche"
