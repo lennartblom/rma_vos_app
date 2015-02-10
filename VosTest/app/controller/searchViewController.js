@@ -33,8 +33,7 @@ Ext.define('VosNavigator.controller.searchViewController', {
                 keyup: 'onSearchfieldKeyup'
             },
             "list#searchResultList": {
-                itemtap: 'onListItemTap',
-                painted: 'onListPainted'
+                itemtap: 'onListItemTap'
             }
         }
     },
@@ -47,6 +46,7 @@ Ext.define('VosNavigator.controller.searchViewController', {
         if(value === ''){
             console.log('String ist leer. Filter wird geleert.');
             store.clearFilter();
+
         } else {
             console.log("Search refresh with: "+value);
             store.filter('name', value);
@@ -84,12 +84,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
         store.clearFilter();
 
         this.getSearchResultList().refresh();
-
         this.getSearchView().hide();
-        this.getFahrplanerView().show({type:"slide",direction:"down"});
-    },
-
-    onListPainted: function(element, eOpts) {
+        this.getFahrplanerView().show();
 
     }
 

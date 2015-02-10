@@ -31,11 +31,11 @@ Ext.define('VosNavigator.model.stop', {
                 type: 'string'
             },
             {
-                name: 'longitude',
+                name: 'long',
                 type: 'float'
             },
             {
-                name: 'latitude',
+                name: 'lat',
                 type: 'float'
             },
             {

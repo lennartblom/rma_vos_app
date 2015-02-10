@@ -42,7 +42,7 @@ Ext.define('VosNavigator.view.searchView', {
                 docked: 'top',
                 id: 'searchField',
                 itemId: 'searchField',
-                label: 'Field'
+                label: 'Suche'
             },
             {
                 xtype: 'list',

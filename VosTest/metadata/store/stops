@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "buffered": true,
         "designer|userClassName": "stops",
         "model": "stop",
         "storeId": "stops"
@@ -14,7 +15,7 @@
     "designerId": "5f10bac9-71a8-42b8-a5b7-4047ad520981",
     "cn": [
         {
-            "type": "Ext.data.proxy.Sql",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -23,9 +24,25 @@
             "userConfig": {
                 "database": "vosnavigator",
                 "table": "stops"
+                "url": "resources/json/stops.json"
             },
-            "name": "MySqlProxy",
-            "designerId": "72e1f2f9-7477-4881-9a86-621ef3329719"
+            "name": "MyAjaxProxy1",
+            "designerId": "53cae6ca-ede7-49e3-85f7-eb71d3aba240",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "stops"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "f6d792e4-a590-4740-be19-76eac94e40ed"
+                }
+            ]
         }
     ]
 }

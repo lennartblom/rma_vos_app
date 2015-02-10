@@ -72,6 +72,7 @@
                     "if(value === ''){",
                     "    console.log('String ist leer. Filter wird geleert.');",
                     "    store.clearFilter();",
+                    "    ",
                     "} else {",
                     "    console.log(\"Search refresh with: \"+value);",
                     "    store.filter('name', value);",
@@ -124,9 +125,9 @@
                     "store.clearFilter();",
                     "",
                     "this.getSearchResultList().refresh();",
-                    "",
                     "this.getSearchView().hide();",
-                    "this.getFahrplanerView().show({type:\"slide\",direction:\"down\"});"
+                    "this.getFahrplanerView().show();",
+                    ""
                 ],
                 "name": "itemtap"
             },
@@ -160,25 +161,6 @@
             },
             "name": "FahrplanerView",
             "designerId": "d0a0e593-759c-4914-a6d2-95ce707ab8d5"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "list#searchResultList",
-                "designer|targetType": "Ext.dataview.List",
-                "fn": "onListPainted",
-                "implHandler": [
-                    ""
-                ],
-                "name": "painted"
-            },
-            "name": "onListPainted",
-            "designerId": "251e230f-1dbe-40ec-bbe8-4de64c242437"
         },
         {
             "type": "controllerref",
