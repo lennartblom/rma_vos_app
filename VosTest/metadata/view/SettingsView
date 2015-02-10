@@ -41,28 +41,6 @@
             "designerId": "3c6b4f2f-9277-4000-99a5-1091c310e05c",
             "cn": [
                 {
-                    "type": "Ext.Label",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "baseCls": "uppercaseHeadline",
-                        "height": "25px",
-                        "html": "<p>Einstellungen:</p>",
-                        "id": "headline_settings",
-                        "margin": "5px",
-                        "style": null,
-                        "top": null
-                    },
-                    "name": "MyLabel6",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "c684fd07-2c87-407f-83da-7ab1e04bb10e"
-                },
-                {
                     "type": "Ext.Container",
                     "reference": {
                         "name": "items",
@@ -125,7 +103,48 @@
                         "layout": "fit"
                     },
                     "name": "MyContainer14",
-                    "designerId": "b32c0717-36f1-4f7f-adb6-eaa3b7c60d68"
+                    "designerId": "b32c0717-36f1-4f7f-adb6-eaa3b7c60d68",
+                    "cn": [
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "uppercaseHeadline",
+                                "docked": "top",
+                                "height": "25px",
+                                "html": "<p>Mitwirkende:</p>",
+                                "id": "credits",
+                                "margin": "5px",
+                                "style": null,
+                                "top": null
+                            },
+                            "name": "MyLabel6",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "c684fd07-2c87-407f-83da-7ab1e04bb10e"
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "creditsTable",
+                                "height": "240px",
+                                "html": "<table id=\"creditsTable\"> \t<tr> \t\t<td class=\"tableHeadline\" colspan=\"3\">Entwickler</td> \t</tr> \t<tr> \t\t<td>Thomas Schalldach</td> \t\t<td colspan=\"2\">Fabian Brammer</td> \t</tr> \t<tr> \t</tr> \t<tr> \t\t<td colspan=\"3\">Lennart Blom</td> \t</tr> \t<tr> \t\t<td class=\"tableHeadline\" colspan=\"3\">Besonderen Dank an Entwickler externer Plugins</td> \t</tr> \t<tr> \t\t<td class=\"tableHeadline\">Entwickler</td> \t\t<td colsan=\"2\" class=\"tableHeadline\">Plugin</td> \t</tr> \t<tr> \t\t<td>brodybits - Chris Brody</td> \t\t<td>Brodysoft SQLitePlugin</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> \t<tr> \t\t<td>Sebastián Katzer</td> \t\t<td>BackgroundMode</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> \t<tr> \t\t<td>Rahul Pandey</td> \t\t<td>sqlDB</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> \t<tr> \t\t<td>Chris Scott</td> \t\t<td>CDV Background Geo Location</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> </table>",
+                                "id": "creditsTable"
+                            },
+                            "name": "MyContainer",
+                            "designerId": "642b2216-881b-47c7-b8d5-ccadb3577466"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.Container",
@@ -137,39 +156,54 @@
                     "userConfig": {
                         "id": "settings_form_wrapper",
                         "layout": null,
-                        "top": "30px",
+                        "top": "280px",
                         "width": "100%"
                     },
                     "name": "MyContainer15",
                     "designerId": "1c2791e0-788d-4978-aaec-8e1f91da65c3",
                     "cn": [
                         {
-                            "type": "Ext.field.Toggle",
+                            "type": "Ext.Label",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "id": "goalsTimerOnOffSwitch",
-                                "label": "Goals Timer"
+                                "baseCls": "uppercaseHeadline",
+                                "height": "25px",
+                                "html": "<p>Einstellungen:</p>",
+                                "id": "headline_settings",
+                                "margin": "5px",
+                                "style": null,
+                                "top": null
                             },
-                            "name": "MyToggleField",
-                            "designerId": "74d8ee33-6961-476e-a27d-cb0d3ac1ad4d"
+                            "name": "MyLabel1",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "e2e23bb7-8bff-4427-b211-11e2e99b4b25"
                         },
                         {
-                            "type": "Ext.field.Radio",
+                            "type": "Ext.Label",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "label": "Field",
-                                "name": "field"
+                                "baseCls": "textCenterSmall",
+                                "designer|displayName": "",
+                                "html": "<p>GPS Positionierungs Intervall</p>",
+                                "id": "info1",
+                                "margin": "5px",
+                                "style": null
                             },
-                            "name": "MyRadioButton",
-                            "designerId": "89bd824a-04f6-446b-b324-948c97427a97"
+                            "name": "MyLabel2",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "ca9395f1-cb8a-4154-b976-0d3f65320428"
                         },
                         {
                             "type": "Ext.field.Slider",
@@ -179,11 +213,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "divCenter",
                                 "id": "gpsPace",
                                 "itemId": null,
                                 "label": "GPS Pace",
                                 "maxValue": 120,
                                 "minValue": 5,
+                                "style": "background-color:none;",
                                 "value": [
                                     30
                                 ]
