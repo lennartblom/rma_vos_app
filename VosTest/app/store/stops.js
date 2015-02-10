@@ -18,20 +18,16 @@ Ext.define('VosNavigator.store.stops', {
 
     requires: [
         'VosNavigator.model.stop',
-        'Ext.data.proxy.Ajax',
-        'Ext.data.reader.Json'
+        'Ext.data.proxy.Sql'
     ],
 
     config: {
         model: 'VosNavigator.model.stop',
         storeId: 'stops',
         proxy: {
-            type: 'ajax',
-            url: 'resources/json/stops.json',
-            reader: {
-                type: 'json',
-                rootProperty: 'stops'
-            }
+            type: 'sql',
+            database: 'vosnavigator.db',
+            table: 'stops'
         }
     }
 });

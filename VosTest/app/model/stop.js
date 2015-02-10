@@ -31,14 +31,6 @@ Ext.define('VosNavigator.model.stop', {
                 type: 'string'
             },
             {
-                name: 'longitudeOSM',
-                type: 'float'
-            },
-            {
-                name: 'latitudeOSM',
-                type: 'float'
-            },
-            {
                 name: 'longitude',
                 type: 'float'
             },
@@ -47,19 +39,8 @@ Ext.define('VosNavigator.model.stop', {
                 type: 'float'
             },
             {
-                convert: function(v, rec) {
-                    if(v.line){
-                        if(v.line instanceof Array){
-                            return v.line;
-                        } else{
-                            return [v.line]; // Conversion to an Array
-                        }
-
-                        return v.line;
-                    }
-                },
-                name: 'lines',
-                type: 'auto'
+                name: 'visited',
+                type: 'boolean'
             }
         ]
     }

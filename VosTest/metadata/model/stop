@@ -47,34 +47,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "longitudeOSM",
-                "type": "float"
-            },
-            "name": "field2",
-            "designerId": "347e47db-c3a7-465c-bf41-7715ee95fda3"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "latitudeOSM",
-                "type": "float"
-            },
-            "name": "field3",
-            "designerId": "6ec92b43-5ebc-4f87-a240-00dc97510a35"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "name": "longitude",
                 "type": "float"
             },
@@ -103,41 +75,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "lines",
-                "type": "auto"
+                "name": "visited",
+                "type": "boolean"
             },
-            "name": "field6",
-            "designerId": "8cf71fd4-e2ff-4c38-a3c2-a55d7690e85f",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "v",
-                            "rec"
-                        ],
-                        "fn": "convert",
-                        "implHandler": [
-                            "if(v.line){",
-                            "    if(v.line instanceof Array){",
-                            "        return v.line;",
-                            "    } else{",
-                            "        return [v.line]; // Conversion to an Array",
-                            "    }",
-                            "    ",
-                            "    return v.line;",
-                            "}"
-                        ]
-                    },
-                    "name": "convert",
-                    "designerId": "dec87656-cc5e-41a9-8809-e9d314e147d5"
-                }
-            ]
+            "name": "field2",
+            "designerId": "86a129f2-8bc4-49ff-9fb3-aa6665ee8db7"
         }
     ]
 }

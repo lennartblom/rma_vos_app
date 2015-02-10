@@ -14,32 +14,18 @@
     "designerId": "5f10bac9-71a8-42b8-a5b7-4047ad520981",
     "cn": [
         {
-            "type": "Ext.data.proxy.Ajax",
+            "type": "Ext.data.proxy.Sql",
             "reference": {
                 "name": "proxy",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "url": "resources/json/stops.json"
+                "database": "vosnavigator.db",
+                "table": "stops"
             },
-            "name": "MyAjaxProxy",
-            "designerId": "ec362767-1c67-4237-8c3a-17eb96174dce",
-            "cn": [
-                {
-                    "type": "Ext.data.reader.Json",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "rootProperty": "stops"
-                    },
-                    "name": "MyJsonReader",
-                    "designerId": "1eb7d6fa-7bdb-49a8-ac37-2a89006161c6"
-                }
-            ]
+            "name": "MySqlProxy",
+            "designerId": "72e1f2f9-7477-4881-9a86-621ef3329719"
         }
     ]
 }
