@@ -27,6 +27,7 @@ Ext.application({
     stores: [
         'stops',
         'sights'
+        'leer'
     ],
     views: [
         'goalsDetails',
@@ -50,6 +51,7 @@ Ext.application({
         'searchViewController',
         'mapViewController',
         'Fahrplaner'
+        'goalsDetailsController'
     ],
     name: 'VosNavigator',
 

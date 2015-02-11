@@ -25,6 +25,7 @@ Ext.define('VosNavigator.view.searchView', {
     ],
 
     config: {
+        hidden: true,
         id: 'searchView',
         items: [
             {
@@ -39,7 +40,6 @@ Ext.define('VosNavigator.view.searchView', {
             },
             {
                 xtype: 'searchfield',
-                docked: 'top',
                 id: 'searchField',
                 itemId: 'searchField',
                 label: 'Suche'

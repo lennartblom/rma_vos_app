@@ -6,10 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "alternateClassName": [
-            "backButton"
-        ],
-        "designer|userAlias": "goalsview",
+        "designer|userAlias": "goalsView",
         "designer|userClassName": "goalsView",
         "height": "100%",
         "id": "goals",
@@ -155,10 +152,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "transparent_List",
+                                        "baseCls": "transparentList",
                                         "height": "100px",
                                         "hidden": false,
-                                        "id": "sights_daily",
+                                        "id": "sightsDaily",
                                         "itemCls": "sights_list",
                                         "store": "sights",
                                         "top": "25px",

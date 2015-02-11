@@ -36,14 +36,16 @@ Ext.define('VosNavigator.controller.Goals', {
             MainView: 'container#MainView',
             goalsView: 'container#GoalsView',
             dailyGoalsCounter: 'label#dailyGoalsCounter',
-            weeklyGoalsCounter: 'label#weeklyGoalsCounter'
+            weeklyGoalsCounter: 'label#weeklyGoalsCounter',
+            sightsDaily: 'list#sightsDaily',
+            goalsDetails: 'container#goalsDetails'
         },
 
         control: {
             "button#goalsBackButton": {
                 tap: 'goalsBackButton'
             },
-            "list#sights_daily": {
+            "list#sightsDaily": {
                 itemtap: 'onListItemTap'
             }
         }
@@ -57,10 +59,12 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
-        //alert('Selected!{name}'+{name});
+        var details = this.getApplication().getController('goalsDetailsController');
+        details.setData(record.data.name,record.data.description);
+             this.getGoalsView().hide();
+             this.getGoalsDetails().show();
 
-        /*var goalsDetails = Ext.create('VosTest.view.goalsDetails');
-        this.getGoalsView().push(detailsView);*/
+
     },
 
     initiateDate: function() {

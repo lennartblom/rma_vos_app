@@ -15,6 +15,7 @@
             "searchViewController",
             "mapViewController",
             "Fahrplaner"
+            "goalsDetailsController"
         ],
         "models": [
             "sight",
@@ -24,6 +25,7 @@
         "stores": [
             "stops",
             "sights"
+            "leer"
         ],
         "views": [
             "goalsDetails",
@@ -40,5 +42,23 @@
         ]
     },
     "name": "Application",
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "name": "launch",
+            "designerId": "cea13aa9-fb00-482e-badc-9b0181e69360"
+        }
+    ]
 }

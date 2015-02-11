@@ -18,6 +18,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     config: {
         searchType: '',
+        startOrt: 'start',
+        zielOrt: 'ziel',
 
         refs: {
             searchResultList: 'list#searchResultList',
@@ -30,7 +32,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
         control: {
             "searchfield#searchField": {
-                keyup: 'onSearchfieldKeyup'
+                keyup: 'onSearchfieldKeyup',
+                clearicontap: 'onSearchfieldClearicontap'
             },
             "list#searchResultList": {
                 itemtap: 'onListItemTap'
@@ -86,6 +89,22 @@ Ext.define('VosNavigator.controller.searchViewController', {
         this.getSearchResultList().refresh();
         this.getSearchView().hide();
         this.getFahrplanerView().show();
+    listTap: function(dataview, index, target, record, e, eOpts) {
+
+
+        console.log("itemTap");
+        if(this.searchType==='start'){
+            this.setStartOrt(record.get('name'));
+        }else{
+            this.setZielOrt(record.get('name'));
+        }
+        console.log("ende von if");
+        this.getSearchView().hide();
+        this.getFahrplanerView().show();
+    },
+
+    onSearchfieldClearicontap: function(textfield, e, eOpts) {
+        Ext.getStore('stops').clearFilter();
 
     }
 

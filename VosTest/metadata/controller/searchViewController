@@ -9,17 +9,13 @@
         "designer|userClassName": "searchViewController",
         "searchType": "",
         "searchTypeTwo": null,
-        "startOrt": [
-            "{name:null,lat:0.0,lng:0.0}"
-        ],
-        "zielOrt": [
-            "{name:null,lat:0.0,lng:0.0}"
-        ]
+        "startOrt": "start",
+        "zielOrt": "ziel"
     },
     "name": "MyController",
     "configAlternates": {
-        "zielOrt": "object",
-        "startOrt": "object"
+        "record1": "object",
+        "record2": "object"
     },
     "designerId": "5c080c39-9eb0-4ca3-80d0-df77e879fed0",
     "customConfigs": [
@@ -41,6 +37,11 @@
         {
             "group": "(Custom Properties)",
             "name": "zielOrt",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "record2",
             "type": "string"
         }
     ],
@@ -116,20 +117,15 @@
             "userConfig": {
                 "designer|controlQuery": "list#searchResultList",
                 "designer|targetType": "Ext.dataview.List",
-                "fn": "list",
+                "fn": "listTap",
                 "implHandler": [
                     "",
-                    "/*var startOrt = this.getStarOrt();",
-                    "var zielOrt = this.getZielOrt();*/",
+                    "",
                     "console.log(\"itemTap\");",
-                    "if(this.searchType === 'start'){",
-                    "   /*startOrt.name=record.get('name');",
-                    "   startOrt.lat = record.get('lat');",
-                    "   startOrt.lng = record.get('long');*/",
-                    "}else if(this.searchType === 'destination'){",
-                    "  /* zielOrt.name=record.get('name');",
-                    "   zielOrt.lat = record.get('lat');",
-                    "   zielOrt.lng = record.get('long');*/",
+                    "if(this.searchType==='start'){",
+                    "    this.setStartOrt(record.get('name'));",
+                    "}else{",
+                    "    this.setZielOrt(record.get('name'));",
                     "}",
                     "",
                     "var linesData = record.get('lines');",
@@ -154,7 +150,7 @@
                 ],
                 "name": "itemtap"
             },
-            "name": "list",
+            "name": "listTap",
             "designerId": "05357f84-920d-43e7-a198-f96d0dfea636"
         },
         {
@@ -221,88 +217,17 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "list#searchResultList",
-                "designer|targetType": "Ext.dataview.List",
-                "fn": "selectItem",
+                "designer|controlQuery": "searchfield#searchField",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldClearicontap",
                 "implHandler": [
-                    "//console.log(\"selectItem\");",
-                    "/*this.getSearchView().hide();",
-                    "this.getFahrplanerView().show({type:\"slide\",direction:\"down\"});*/",
-                    "/*var dataView;",
-                    "console.log(\"Seachtype: \" + this.searchType);",
-                    "if(this.searchType === 'start'){",
-                    "    dataView = this.getLineTwo();",
-                    "}else if(this.searchType === 'destination'){",
-                    "    dataView = this.getLineThree();",
-                    "}else{",
-                    "    console.log(\"Search Type?!?!?\");",
-                    "    return -1;",
-                    "}",
-                    "",
-                    "var linesData = record.get('lines');",
-                    "//var quantity = linesArray.getCount();",
-                    "",
-                    "",
-                    "",
-                    "var myPanel = Ext.create('Ext.Panel', {",
-                    "    html: \"<div class=\\\"buslineWrapper\\\"><div class=\\\"buslinesBoxLeft\\\"><div class=\\\"busIcon\\\" stlye=\\\"background-image:url(resources/images/icons/bus-icon-150x150.png)\\\"></div> \" + this.getApplication().getController('Fahrplaner').getLines(linesData) + \"</div><div class=\\\"buslinesBoxRight\\\">\"+ record.get('name')+ \"</div><div class=\\\"clearing\\\"></div></div>\"",
-                    "});",
-                    "",
-                    "dataView.removeAll();",
-                    "dataView.add([myPanel]);",
-                    "",
-                    "var store = Ext.getStore('stops');",
-                    "store.clearFilter();",
-                    "",
-                    "this.getSearchResultList().refresh();*/",
-                    "/*this.getSearchView().hide();",
-                    "this.getFahrplanerView().show();*/",
+                    "Ext.getStore('stops').clearFilter();",
                     ""
                 ],
-                "name": "select"
+                "name": "clearicontap"
             },
-            "name": "selectItem",
-            "designerId": "144a81ea-89d2-4948-9d29-f73745368478"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "value"
-                ],
-                "fn": "setStart",
-                "implHandler": [
-                    "var startValue = this.getLineTwo();",
-                    "startValue.setValue(value);"
-                ]
-            },
-            "name": "setStart",
-            "designerId": "6cfb12b9-d834-4be1-a64f-0da6cd28bbc8"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "value"
-                ],
-                "fn": "setDest",
-                "implHandler": [
-                    "var destValue = this.getLineThree();",
-                    "destValue.setValue(value);"
-                ]
-            },
-            "name": "setDest",
-            "designerId": "b214bb1f-b9d6-4538-9891-1b358a6ab92d"
+            "name": "onSearchfieldClearicontap",
+            "designerId": "3169ecb9-c3c9-4a3b-be22-53b0ff4f6efa"
         }
     ]
 }

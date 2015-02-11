@@ -17,13 +17,13 @@ Ext.define('VosNavigator.view.InitialView', {
     extend: 'Ext.Container',
 
     requires: [
+        'VosNavigator.view.searchView',
         'VosNavigator.view.mainScreen',
         'VosNavigator.view.fahrplanerView',
         'VosNavigator.view.goalsView',
         'VosNavigator.view.settingsView',
         'VosNavigator.view.weckerView',
         'VosNavigator.view.achView',
-        'VosNavigator.view.searchView',
         'VosNavigator.view.goalsDetails',
         'VosNavigator.view.mapView',
         'Ext.Container'
@@ -35,16 +35,19 @@ Ext.define('VosNavigator.view.InitialView', {
         scrollable: false,
         items: [
             {
+                xtype: 'searchview'
+            },
+            {
                 xtype: 'mainScreen',
                 id: 'MainView'
             },
             {
-                xtype: 'fahrplanerview',
+                xtype: 'fahrplanerView',
                 hidden: true,
                 id: 'FahrplanerView'
             },
             {
-                xtype: 'goalsview',
+                xtype: 'goalsView',
                 hidden: true,
                 id: 'GoalsView'
             },
@@ -64,12 +67,7 @@ Ext.define('VosNavigator.view.InitialView', {
                 id: 'AchView'
             },
             {
-                xtype: 'searchview',
-                hidden: true
-            },
-            {
-                xtype: 'goalsdetails',
-                hidden: true
+                xtype: 'goalsDetails'
             },
             {
                 xtype: 'mapView',

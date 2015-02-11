@@ -15,11 +15,8 @@
 
 Ext.define('VosNavigator.view.goalsView', {
     extend: 'Ext.Container',
-    alias: 'widget.goalsview',
+    alias: 'widget.goalsView',
 
-    alternateClassName: [
-        'backButton'
-    ],
     requires: [
         'Ext.Button',
         'Ext.Label',
@@ -92,10 +89,10 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'list',
-                                        baseCls: 'transparent_List',
+                                        baseCls: 'transparentList',
                                         height: '100px',
                                         hidden: false,
-                                        id: 'sights_daily',
+                                        id: 'sightsDaily',
                                         top: '25px',
                                         width: '100%',
                                         itemCls: 'sights_list',

@@ -15,30 +15,36 @@
 
 Ext.define('VosNavigator.view.goalsDetails', {
     extend: 'Ext.Container',
-    alias: 'widget.goalsdetails',
+    alias: 'widget.goalsDetails',
 
-    alternateClassName: [
-        'backButton'
-    ],
     requires: [
+        'Ext.Img',
         'Ext.Button',
         'Ext.dataview.DataView',
-        'Ext.XTemplate',
-        'Ext.Img'
+        'Ext.XTemplate'
     ],
 
     config: {
         height: '100%',
-        id: 'goals1',
+        hidden: true,
+        id: 'goalsDetails',
         width: '100%',
         items: [
+            {
+                xtype: 'image',
+                centered: false,
+                docked: 'top',
+                height: '100%',
+                id: 'details_background',
+                width: '320px',
+                src: 'resources/images/background/game.png'
+            },
             {
                 xtype: 'container',
                 centered: true,
                 docked: 'top',
                 height: '100%',
                 id: 'container_details_view',
-                style: 'padding-top:60px;',
                 width: '320px',
                 layout: 'fit',
                 items: [
@@ -63,32 +69,22 @@ Ext.define('VosNavigator.view.goalsDetails', {
                         id: 'detailsBackButton',
                         right: '0px',
                         styleHtmlContent: true,
-                        width: 65,
-                        text: 'back'
+                        width: 65
                     },
                     {
                         xtype: 'dataview',
-                        height: '100px',
-                        id: 'dataview_details',
+                        height: '400px',
+                        id: 'dataviewDetails',
                         top: '25px',
                         width: '100%',
                         emptyText: 'Besuche den Löwenpudel',
                         itemTpl: [
                             '<div><h1>{name}</h1><p>{description}</p></div>'
                         ],
-                        maxItemCache: 3,
-                        store: 'sights'
+                        maxItemCache: 15,
+                        store: 'leer'
                     }
                 ]
-            },
-            {
-                xtype: 'image',
-                centered: false,
-                docked: 'top',
-                height: '100%',
-                id: 'details_background',
-                width: '320px',
-                src: 'resources/images/background/game.png'
             }
         ]
     }

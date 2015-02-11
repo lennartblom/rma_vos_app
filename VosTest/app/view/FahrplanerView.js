@@ -15,7 +15,7 @@
 
 Ext.define('VosNavigator.view.fahrplanerView', {
     extend: 'Ext.Container',
-    alias: 'widget.fahrplanerview',
+    alias: 'widget.fahrplanerView',
 
     requires: [
         'Ext.Img',
@@ -65,12 +65,14 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                     {
                         xtype: 'searchfield',
                         itemId: 'searchfieldStart',
-                        label: 'Von'
+                        label: 'Von',
+                        value: 'Aktueller Ort'
                     },
                     {
                         xtype: 'searchfield',
                         itemId: 'searchfieldDestination',
-                        label: 'Nach'
+                        label: 'Nach',
+                        placeHolder: 'Ziel Ort'
                     }
                 ]
             },
@@ -108,6 +110,11 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         itemTpl: [
                             '<div>Data View Item {string}</div>'
                         ]
+                    },
+                    {
+                        xtype: 'button',
+                        itemId: 'mybutton4',
+                        text: 'MyButton4'
                     }
                 ]
             },

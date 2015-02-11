@@ -1,0 +1,119 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "goalsDetailsController"
+    },
+    "name": "MyController",
+    "designerId": "4d589091-0807-4916-a94b-6fcdf0996355",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "GoalsDetails",
+                "selector": "#goalsDetails"
+            },
+            "name": "GoalsDetails",
+            "designerId": "82074aa0-f15b-476a-9acb-9e85a1ed7926"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "detailsBackButton",
+                "selector": "button#detailsBackButton"
+            },
+            "name": "detailsBackButton",
+            "designerId": "6fcce44c-6adb-430e-83ba-5bc0f4d280aa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#detailsBackButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "goalsDetailsBackButton",
+                "implHandler": [
+                    "this.getGoalsDetails().hide();",
+                    "this.getGoalsView().show();"
+                ],
+                "name": "tap"
+            },
+            "name": "goalsDetailsBackButton",
+            "designerId": "cfd85527-8e8a-4b5a-9374-6eb600040bd9"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "GoalsView",
+                "selector": "#GoalsView"
+            },
+            "name": "GoalsView",
+            "designerId": "9237635b-f0e5-4b54-b0a9-184b07851f73"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "name",
+                    "description"
+                ],
+                "fn": "setData",
+                "implHandler": [
+                    "console.log(name);",
+                    "console.log(description);",
+                    "Ext.getStore('leer').removeAll();",
+                    "var details = this.getDataviewDetails();",
+                    "details.refresh();",
+                    "",
+                    "",
+                    "details.setData({\"name\":name});",
+                    "details.setData({\"description\":description});"
+                ]
+            },
+            "name": "setData",
+            "designerId": "6ff14537-113c-4ef2-98fd-b91f21128ba2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "dataviewDetails",
+                "selector": "dataview#dataviewDetails"
+            },
+            "name": "dataviewDetails",
+            "designerId": "d840795f-8a47-45f2-8e7b-84d1e4c08eef"
+        }
+    ]
+}
