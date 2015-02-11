@@ -245,12 +245,8 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-<<<<<<< HEAD
-                    "Ext.getStore('sights').load();"
-=======
                     "Ext.getStore('sights').load();",
                     "console.log(\"goals launcer\");"
->>>>>>> 150e83eae5676cd67f87739aefafc13c67a36ab2
                 ]
             },
             "name": "launch",
