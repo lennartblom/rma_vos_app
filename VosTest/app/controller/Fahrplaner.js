@@ -219,7 +219,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                 }else{
                     for(var i =0; i<length;i++){
                         lines[j++] = res.rows.item(i).lineId;
-                        console.log(lines[j-1]);
+                        console.log("linie "+lines[j-1]);
 
                     }
                     return lines;
@@ -243,7 +243,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
                for(var i =0; i<length;i++){
                    direction[j++] = res.rows.item(i).direction;
-                   console.log(direction[j-1]);
+                   console.log("direction "+direction[j-1]);
                }
                return direction;
 
@@ -258,6 +258,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         var db = this.getDb();
 
         db.transaction(function(tx) {
+           var me = this;
            tx.executeSql("Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
            {
                 var length = res.rows.length;
@@ -265,8 +266,8 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                 var j=0;
 
                 for(var i =0; i<length;i++){
-                    stationen[j++] = res.rows.item(i).endstation;
-                    console.log(stationen[j-1]);
+                    stationen[j++] = Ext.bind(me.stopIdToName(res.rows.item(i).endstation),me);
+                    console.log("Endstation "+stationen[j-1]);
                 }
                 return stationen;
 
@@ -284,13 +285,27 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         db.transaction(function(tx) {
            tx.executeSql("select lat from stops where name = '"+ort+"';", [], function(tx, res) {
                 coords.lat = res.rows.item(0).lat;
-                console.log(coords.lat);
+                console.log(ort+" "+coords.lat);
            });
            tx.executeSql("select long as lng from stops where name = '"+ort+"';", [], function(tx, res) {
                 coords.lng = res.rows.item(0).lng;
-                console.log(+coords.lng);
+                console.log(ort+" "+coords.lng);
            });
            return coords;
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+    },
+
+    stopIdToName: function(id) {
+        var db = this.getDb();
+
+        db.transaction(function(tx) {
+           tx.executeSql("Select name from stops where id="+id+";", [], function(tx, res)
+           {
+                return res.rows.item(0).name;
+           });
 
             }, function(e) {
               console.log("ERROR: " + e.message);
