@@ -19,7 +19,8 @@ Ext.define('VosNavigator.controller.mapViewController', {
     config: {
         refs: {
             achView: '#AchView',
-            mapView: '#MapView'
+            mapView: '#MapView',
+            Percent: 'label#Percent'
         },
 
         control: {
@@ -49,14 +50,19 @@ Ext.define('VosNavigator.controller.mapViewController', {
                 callback : function(){
                     var redstation = new google.maps.MarkerImage("resources/images/icons/red_station.png", null, null, null, new google.maps.Size(25,25));
                     var greenstation = new google.maps.MarkerImage("resources/images/icons/green_station.png", null, null, null, new google.maps.Size(25,25));
+                    var total = this.getCount();
+                    var visited = 0;
+                    var notVisited = 0;
 
-                    for(i = 0; i< this.getCount(); i++){
+                    for(i = 0; i< total; i++){
                         var stopPosition =  new google.maps.LatLng(this.getData().getAt(i).get('lat'), this.getData().getAt(i).get('long'));
 
                         if(this.getData().getAt(i).get('visited')){
                             icon = greenstation;
+                            visited++;
                         } else {
                             icon = redstation;
+                            notVisited++;
                         }
 
                         var marker = new google.maps.Marker({
@@ -66,6 +72,7 @@ Ext.define('VosNavigator.controller.mapViewController', {
                             icon: icon
                         });
                     }
+                    alert("Du hast bereits "+ Math.round(visited/(total/100)) + "% des Busnetztes besucht...");
                 }
             }
         );

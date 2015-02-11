@@ -23,6 +23,7 @@ Ext.define('VosNavigator.store.sights', {
     ],
 
     config: {
+        buffered: true,
         model: 'VosNavigator.model.sight',
         storeId: 'sights',
         proxy: {

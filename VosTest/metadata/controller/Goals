@@ -213,10 +213,10 @@
                     "        }",
                     "    }",
                     "}",
-                    "remaining.tag = 7 - date.tag;",
-                    "remaining.stunde = 24 - date.stunde;",
-                    "remaining.minute = 60 - date.minute;",
-                    "remaining.sekunde = 60 - date.sekunde;",
+                    "remaining.tag = 6 - date.tag;",
+                    "remaining.stunde = 23 - date.stunde;",
+                    "remaining.minute = 59 - date.minute;",
+                    "remaining.sekunde = 59 - date.sekunde;",
                     "",
                     "/*console.log(\"Verbleibende Zeit bis: \"+",
                     "                                    remaining.tag+\" \"+remaining.stunde+",
@@ -243,7 +243,12 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
+<<<<<<< HEAD
                     "Ext.getStore('sights').load();"
+=======
+                    "Ext.getStore('sights').load();",
+                    "console.log(\"goals launcer\");"
+>>>>>>> 150e83eae5676cd67f87739aefafc13c67a36ab2
                 ]
             },
             "name": "launch",

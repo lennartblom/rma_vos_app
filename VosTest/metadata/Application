@@ -7,14 +7,14 @@
     "codeClass": null,
     "userConfig": {
         "controllers": [
-            "Settings",
-            "Wecker",
-            "Achievements",
-            "Goals",
             "Main",
+            "Goals",
+            "Settings",
+            "Achievements",
+            "Wecker",
             "searchViewController",
-            "Fahrplaner",
-            "mapViewController"
+            "mapViewController",
+            "Fahrplaner"
         ],
         "models": [
             "sight",
@@ -22,12 +22,11 @@
         ],
         "name": "VosNavigator",
         "stores": [
-            "sights",
-            "stops"
+            "stops",
+            "sights"
         ],
         "views": [
             "goalsDetails",
-            "settingsView",
             "goalsView",
             "achView",
             "InitialView",
@@ -36,7 +35,8 @@
             "mainScreen",
             "MySearchField",
             "searchView",
-            "mapView"
+            "mapView",
+            "settingsView"
         ]
     },
     "name": "Application",

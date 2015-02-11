@@ -60,13 +60,13 @@ Ext.define('VosNavigator.view.mapView', {
                     },
                     {
                         xtype: 'container',
-                        height: '400px',
+                        height: '430px',
                         id: 'mapContainer',
                         style: '',
                         items: [
                             {
                                 xtype: 'map',
-                                height: '90%',
+                                height: '360px',
                                 itemId: 'mymap'
                             }
                         ]
@@ -78,6 +78,16 @@ Ext.define('VosNavigator.view.mapView', {
                         html: 'Bereits besuchte Haltestellen sind in <span class="green bold">Grün</span> und noch nicht besuchte in <span class="red bold">Rot</span> gekennzeichnet.',
                         id: 'infoText',
                         top: '370px'
+                    },
+                    {
+                        xtype: 'label',
+                        baseCls: 'textCenterSmall',
+                        docked: 'top',
+                        height: '25px',
+                        html: 'Du hast bereits <span class="bold">25%</span> des Busnetztes besucht...',
+                        id: 'percent',
+                        top: '410px',
+                        width: '100%'
                     }
                 ]
             },

@@ -82,14 +82,19 @@
                     "        callback : function(){",
                     "            var redstation = new google.maps.MarkerImage(\"resources/images/icons/red_station.png\", null, null, null, new google.maps.Size(25,25));",
                     "            var greenstation = new google.maps.MarkerImage(\"resources/images/icons/green_station.png\", null, null, null, new google.maps.Size(25,25));",
+                    "            var total = this.getCount();",
+                    "            var visited = 0;",
+                    "            var notVisited = 0;",
                     "",
-                    "            for(i = 0; i< this.getCount(); i++){",
+                    "            for(i = 0; i< total; i++){",
                     "                var stopPosition =  new google.maps.LatLng(this.getData().getAt(i).get('lat'), this.getData().getAt(i).get('long'));",
                     "",
                     "                if(this.getData().getAt(i).get('visited')){",
                     "                    icon = greenstation;",
+                    "                    visited++;",
                     "                } else {",
                     "                    icon = redstation;",
+                    "                    notVisited++;",
                     "                }",
                     "",
                     "                var marker = new google.maps.Marker({",
@@ -99,6 +104,7 @@
                     "                    icon: icon",
                     "                });",
                     "            }",
+                    "            alert(\"Du hast bereits \"+ Math.round(visited/(total/100)) + \"% des Busnetztes besucht...\");",
                     "        }",
                     "    }",
                     ");",
@@ -113,6 +119,20 @@
             },
             "name": "onMapMaprender",
             "designerId": "dcacbdb5-41e3-47cf-8758-37dc1015e819"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "Percent",
+                "selector": "label#Percent"
+            },
+            "name": "Percent",
+            "designerId": "538acf34-f29d-4854-b292-ce1e042ef93f"
         }
     ]
 }
