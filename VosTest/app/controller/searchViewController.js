@@ -36,7 +36,7 @@ Ext.define('VosNavigator.controller.searchViewController', {
                 clearicontap: 'onSearchfieldClearicontap'
             },
             "list#searchResultList": {
-                itemtap: 'onListItemTap'
+                itemtap: 'listTap'
             }
         }
     },
@@ -59,16 +59,14 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     },
 
-    onListItemTap: function(dataview, index, target, record, e, eOpts) {
-        var dataView;
-        console.log("Seachtype: " + this.searchType);
-        if(this.searchType === 'start'){
-            dataView = this.getLineTwo();
-        }else if(this.searchType === 'destination'){
-            dataView = this.getLineThree();
+    listTap: function(dataview, index, target, record, e, eOpts) {
+
+
+        console.log("itemTap");
+        if(this.searchType==='start'){
+            this.setStartOrt(record.get('name'));
         }else{
-            console.log("Search Type?!?!?");
-            return -1;
+            this.setZielOrt(record.get('name'));
         }
 
         var linesData = record.get('lines');
@@ -87,17 +85,6 @@ Ext.define('VosNavigator.controller.searchViewController', {
         store.clearFilter();
 
         this.getSearchResultList().refresh();
-        this.getSearchView().hide();
-        this.getFahrplanerView().show();
-    listTap: function(dataview, index, target, record, e, eOpts) {
-
-
-        console.log("itemTap");
-        if(this.searchType==='start'){
-            this.setStartOrt(record.get('name'));
-        }else{
-            this.setZielOrt(record.get('name'));
-        }
         console.log("ende von if");
         this.getSearchView().hide();
         this.getFahrplanerView().show();
