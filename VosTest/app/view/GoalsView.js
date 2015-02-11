@@ -15,11 +15,8 @@
 
 Ext.define('VosNavigator.view.goalsView', {
     extend: 'Ext.Container',
-    alias: 'widget.goalsview',
+    alias: 'widget.goalsView',
 
-    alternateClassName: [
-        'backButton'
-    ],
     requires: [
         'Ext.Button',
         'Ext.Label',

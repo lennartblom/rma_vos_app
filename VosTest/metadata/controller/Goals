@@ -90,12 +90,12 @@
                 "designer|targetType": "Ext.dataview.List",
                 "fn": "onListItemTap",
                 "implHandler": [
-                    "//alert('Selected!{name}');",
+                    "var details = this.getApplication().getController('goalsDetailsController');",
+                    "details.setData(record.data.name,record.data.description);",
                     "     this.getGoalsView().hide();",
                     "     this.getGoalsDetails().show();",
                     "",
-                    "/*var goalsDetails = Ext.create('VosTest.view.goalsDetails');",
-                    "this.getGoalsView().push(detailsView);*/"
+                    ""
                 ],
                 "name": "itemtap"
             },

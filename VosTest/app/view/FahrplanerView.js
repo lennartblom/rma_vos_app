@@ -15,7 +15,7 @@
 
 Ext.define('VosNavigator.view.fahrplanerView', {
     extend: 'Ext.Container',
-    alias: 'widget.fahrplanerview',
+    alias: 'widget.fahrplanerView',
 
     requires: [
         'Ext.Img',

@@ -59,12 +59,12 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
-        //alert('Selected!{name}');
+        var details = this.getApplication().getController('goalsDetailsController');
+        details.setData(record.data.name,record.data.description);
              this.getGoalsView().hide();
              this.getGoalsDetails().show();
 
-        /*var goalsDetails = Ext.create('VosTest.view.goalsDetails');
-        this.getGoalsView().push(detailsView);*/
+
     },
 
     initiateDate: function() {
