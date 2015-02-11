@@ -117,12 +117,21 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         this.getCoordsStartZiel(sOrt,zOrt);
         var startCoords = this.getStartOrt();
         var zielCoord = this.getZielOrt();
-        var stationen = this.getEndstationen(1,sOrt,zOrt);
+        var stationen = [];
+        var direction = [];
+        var lines = [];
+
+        this.getEndstationen(1,sOrt,zOrt,stationen);
+        this.showDirection(1,sOrt,zOrt,direction);
+        this.showLines(sOrt, zOrt,lines);
+
+
         console.log("vars initialisiert");
-        for(var i =0;i<stationen.length;i++){
+        console.log("LALALLALAA"+stationen.length);
+        /*for(var i =0;i<stationen.length;i++){
             //stationen[i]=this.stopIdToName(stationen[i]);
             console.log("log");
-        }
+        }*/
 
         /*
         *
@@ -136,8 +145,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
 
 
-        var direction = this.showDirection(1,sOrt,zOrt);
-        var lines = this.showLines(sOrt, zOrt);
+
 
         console.log(sOrt);
         console.log(zOrt);
@@ -209,16 +217,14 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     },
 
-    showLines: function(sOrt, zOrt) {
+    showLines: function(sOrt, zOrt, lines) {
         var db = this.getDb();
-        var lines;
 
         db.transaction(function(tx) {
            tx.executeSql("Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
            {
                 var length = res.rows.length;
                 var j=0;
-                lines = new Array(length);
 
                 if(length===0){
                     console.log("verbindung über neumarkt");
@@ -234,19 +240,18 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             }, function(e) {
               console.log("ERROR: " + e.message);
             });
-        return lines;
+
 
     },
 
-    showDirection: function(nummer, sOrt, zOrt) {
+    showDirection: function(nummer, sOrt, zOrt, direction) {
         var db = this.getDb();
-        var direction;
+
         db.transaction(function(tx) {
            tx.executeSql("Select direction"+nummer+" as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select direction"+nummer+" as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
            {
                 var length = res.rows.length;
                 var j=0;
-                direction = new Array(length);
 
                for(var i =0; i<length;i++){
                    direction[j++] = res.rows.item(i).direction;
@@ -259,17 +264,16 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             }, function(e) {
               console.log("ERROR: " + e.message);
             });
-        return direction;
+
     },
 
-    getEndstationen: function(nummer, sOrt, zOrt) {
+    getEndstationen: function(nummer, sOrt, zOrt, stationen) {
         var db = this.getDb();
-        var stationen;
-        db.transaction(function(tx) {
-           tx.executeSql("Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+
+        db.transaction(function(tx, stationen) {
+           tx.executeSql("Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res, stationen)
            {
                 var length = res.rows.length;
-                stationen = new Array(length);
                 var j=0;
 
                 for(var i =0; i<length;i++){
@@ -282,7 +286,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             }, function(e) {
               console.log("ERROR: " + e.message);
             });
-        return stationen;
+
     },
 
     getCoords: function(ort) {
