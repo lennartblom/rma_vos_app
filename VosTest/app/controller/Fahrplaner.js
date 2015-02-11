@@ -114,50 +114,33 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         var sOrt = searchView.getStartOrt();
         var zOrt = searchView.getZielOrt();
         var db = this.getDb();
-        var start = this.getStartOrt();
-        var ziel = this.getZielOrt();
+        this.getCoordsStartZiel(sOrt,zOrt);
+        var startCoords = this.getStartOrt();
+        var zielCoord = this.getZielOrt();
+        var stationen = this.getEndstationen(1,sOrt,zOrt);
+        console.log("vars initialisiert");
+        for(var i =0;i<stationen.length;i++){
+            //stationen[i]=this.stopIdToName(stationen[i]);
+            console.log("log");
+        }
+
+        /*
+        *
+        *
+        for(var i =0;i<stationen.length;i++){
+            if(this.entfernung(startCoords,))
+        }
+        ***/
+
+
+
+
+
+        var direction = this.showDirection(1,sOrt,zOrt);
+        var lines = this.showLines(sOrt, zOrt);
 
         console.log(sOrt);
         console.log(zOrt);
-
-
-        db.transaction(function(tx) {
-           tx.executeSql("select lat,long as lng from stops where name = '"+sOrt+"';", [], function(tx, res) {
-                start.lng = res.rows.item(0).lng;
-                start.lat = res.rows.item(0).lat;
-                console.log(" s"+start.lng);
-           });
-           tx.executeSql("select lat,long as lng from stops where name = '"+zOrt+"';", [], function(tx, res) {
-                ziel.lat = res.rows.item(0).lat;
-                ziel.lng = res.rows.item(0).lng;
-                console.log(ziel.lat+" z"+ziel.lng);
-           });
-
-            }, function(e) {
-              console.log("ERROR: " + e.message);
-            });
-        db.transaction(function(tx) {
-           tx.executeSql("Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
-           {
-                var length = res.rows.length;
-                var lines = [];
-                var j=0;
-
-                if(length===0){
-                    console.log("verbindung über neumarkt");
-                }else{
-                    for(var i =0; i<length;i++){
-                        console.log(res.rows.item(i).lineId);
-
-                    }
-
-                }
-           });
-
-            }, function(e) {
-              console.log("ERROR: " + e.message);
-            });
-
 
 
 
@@ -207,6 +190,134 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                 //e.code = 516 => if db exists
                 });
 
+    },
+
+    entfernung: function(startOrt, zielOrt) {
+        var distance = 0.0;
+        var deltaX = 71.5 * (startOrt.lng-zielOrt.lng);
+        var deltaY = 111.3 * (startOrt.lat-zielOrt.lat);
+        var radius = this.getSliderValue();
+        if(deltaX!==0||deltaY!==0){
+        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
+        }
+        return distance;
+    },
+
+    getCoordsStartZiel: function(sOrt, zOrt) {
+        this.setStartOrt(this.getCoords(sOrt));
+        this.setZielOrt(this.getCoords(zOrt));
+
+    },
+
+    showLines: function(sOrt, zOrt) {
+        var db = this.getDb();
+        var lines;
+
+        db.transaction(function(tx) {
+           tx.executeSql("Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+           {
+                var length = res.rows.length;
+                var j=0;
+                lines = new Array(length);
+
+                if(length===0){
+                    console.log("verbindung über neumarkt");
+                }else{
+                    for(var i =0; i<length;i++){
+                        lines[j++] = res.rows.item(i).lineId;
+                        console.log("linie "+lines[j-1]);
+
+                    }
+                }
+           });
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+        return lines;
+
+    },
+
+    showDirection: function(nummer, sOrt, zOrt) {
+        var db = this.getDb();
+        var direction;
+        db.transaction(function(tx) {
+           tx.executeSql("Select direction"+nummer+" as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select direction"+nummer+" as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+           {
+                var length = res.rows.length;
+                var j=0;
+                direction = new Array(length);
+
+               for(var i =0; i<length;i++){
+                   direction[j++] = res.rows.item(i).direction;
+                   console.log("direction "+direction[j-1]);
+               }
+
+
+           });
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+        return direction;
+    },
+
+    getEndstationen: function(nummer, sOrt, zOrt) {
+        var db = this.getDb();
+        var stationen;
+        db.transaction(function(tx) {
+           tx.executeSql("Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation"+nummer+" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+           {
+                var length = res.rows.length;
+                stationen = new Array(length);
+                var j=0;
+
+                for(var i =0; i<length;i++){
+                    stationen[j++] = res.rows.item(i).endstation;
+                    console.log("Endstation "+stationen[j-1]);
+                }
+
+           });
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+        return stationen;
+    },
+
+    getCoords: function(ort) {
+        var db = this.getDb();
+        var coords = {lat:0.0,
+                      lng:0.0};
+        db.transaction(function(tx) {
+           tx.executeSql("select lat from stops where name = '"+ort+"';", [], function(tx, res) {
+                coords.lat = res.rows.item(0).lat;
+                console.log(ort+" "+coords.lat);
+           });
+           tx.executeSql("select long as lng from stops where name = '"+ort+"';", [], function(tx, res) {
+                coords.lng = res.rows.item(0).lng;
+                console.log(ort+" "+coords.lng);
+           });
+           return coords;
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+    },
+
+    stopIdToName: function(id) {
+        var db = this.getDb();
+        var name;
+        db.transaction(function(tx) {
+           tx.executeSql("Select name from stops where id="+id+";", [], function(tx, res)
+           {
+                name = res.rows.item(0).name;
+           });
+
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+            });
+        return name;
     }
 
 });

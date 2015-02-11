@@ -69,22 +69,10 @@ Ext.define('VosNavigator.controller.searchViewController', {
             this.setZielOrt(record.get('name'));
         }
 
-        var linesData = record.get('lines');
-        //var quantity = linesArray.getCount();
-
-
-
-        var myPanel = Ext.create('Ext.Panel', {
-            html: "<div class=\"buslineWrapper\"><div class=\"buslinesBoxLeft\"><div class=\"busIcon\" stlye=\"background-image:url(resources/images/icons/bus-icon-150x150.png)\"></div></div><div class=\"buslinesBoxRight\">"+ record.get('name')+ "</div><div class=\"clearing\"></div></div>"
-        });
-
-        dataView.removeAll();
-        dataView.add([myPanel]);
-
         var store = Ext.getStore('stops');
         store.clearFilter();
 
-        this.getSearchResultList().refresh();
+
         console.log("ende von if");
         this.getSearchView().hide();
         this.getFahrplanerView().show();
