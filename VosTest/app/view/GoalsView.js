@@ -76,7 +76,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                 height: '100px',
                                 id: 'daily_goals',
                                 margin: '5px',
-                                top: '0px',
+                                top: '10px',
                                 width: '100%',
                                 layout: 'fit',
                                 items: [
@@ -89,12 +89,12 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'list',
-                                        baseCls: 'transparentList',
-                                        height: '100px',
+                                        baseCls: 'dailyGoalsDataView',
+                                        height: '40px',
                                         hidden: false,
                                         id: 'sightsDaily',
                                         top: '25px',
-                                        width: '100%',
+                                        width: '90%',
                                         itemCls: 'sights_list',
                                         itemTpl: [
                                             '<div>{name}</div>'
@@ -106,7 +106,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
                                         id: 'dailyGoalsLabel',
-                                        top: '145px'
+                                        top: '85px'
                                     },
                                     {
                                         xtype: 'label',
@@ -114,7 +114,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         height: '25px',
                                         html: '<p>6 Stunden 23 Minuten</p>',
                                         id: 'dailyGoalsCounter',
-                                        top: '170px'
+                                        top: '110px'
                                     }
                                 ]
                             },
@@ -124,7 +124,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                 height: '100px',
                                 id: 'weekly_goals',
                                 margin: '5px',
-                                top: 200,
+                                top: '175px',
                                 width: '100%',
                                 items: [
                                     {
@@ -135,17 +135,17 @@ Ext.define('VosNavigator.view.goalsView', {
                                         id: 'label_weekly_goals'
                                     },
                                     {
-                                        xtype: 'dataview',
+                                        xtype: 'list',
+                                        baseCls: 'dailyGoalsDataView',
                                         height: '175px',
-                                        html: '<p>Besuche den Löwenpudel</p>',
                                         id: 'dataview_weekly_goals',
                                         top: '25px',
-                                        width: '100%',
-                                        emptyText: 'Paintball spielen in Belm',
+                                        width: '90%',
+                                        itemCls: 'sights_list',
                                         itemTpl: [
-                                            '<div>Data View Item {string}</div>'
+                                            '<div>{name}</div>'
                                         ],
-                                        maxItemCache: 5
+                                        store: 'sights'
                                     },
                                     {
                                         xtype: 'label',
@@ -153,7 +153,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
                                         id: 'weeklyGoalsLabel',
-                                        top: '120px'
+                                        top: '210px'
                                     },
                                     {
                                         xtype: 'label',
@@ -161,7 +161,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         height: '25px',
                                         html: '<p>3 Tage 6 Stunden 23 Minuten</p>',
                                         id: 'weeklyGoalsCounter',
-                                        top: '140px'
+                                        top: '230px'
                                     }
                                 ]
                             }

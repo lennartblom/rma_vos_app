@@ -91,7 +91,7 @@
                 "fn": "onListItemTap",
                 "implHandler": [
                     "var details = this.getApplication().getController('goalsDetailsController');",
-                    "details.setData(record.data.name,record.data.description);",
+                    "details.setData(record.data.name, record.data.description, record.data.link);",
                     "     this.getGoalsView().hide();",
                     "     this.getGoalsDetails().show();",
                     "",
@@ -181,7 +181,10 @@
                     "console.log(\"setup clock wurde aufgerufen\");",
                     "this.initiateDate();",
                     "var task = this.getTaskClock();",
-                    "task = setInterval(Ext.bind(this.clock,this),1000);"
+                    "task = setInterval(Ext.bind(this.clock,this),1000);",
+                    "",
+                    "Ext.getStore('sights').load();",
+                    "console.log(\"goals launcer\");"
                 ]
             },
             "name": "setupClock",
@@ -245,8 +248,7 @@
             "userConfig": {
                 "fn": "launch",
                 "implHandler": [
-                    "Ext.getStore('sights').load();",
-                    "console.log(\"goals launcer\");"
+                    ""
                 ]
             },
             "name": "launch",
@@ -313,6 +315,29 @@
             },
             "name": "goalsDetails",
             "designerId": "3594efd5-884d-45f5-b170-cfa5e715ea47"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#dataview_weekly_goals",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListItemSingletap",
+                "implHandler": [
+                    "var details = this.getApplication().getController('goalsDetailsController');",
+                    "details.setData(record.data.name, record.data.description, record.data.link);",
+                    "this.getGoalsView().hide();",
+                    "this.getGoalsDetails().show();",
+                    ""
+                ],
+                "name": "itemsingletap"
+            },
+            "name": "onListItemSingletap",
+            "designerId": "c66123ef-11b9-4ee4-8181-01a2bffea81f"
         }
     ]
 }

@@ -83,19 +83,19 @@
             "userConfig": {
                 "designer|params": [
                     "name",
-                    "description"
+                    "description",
+                    "link"
                 ],
                 "fn": "setData",
                 "implHandler": [
-                    "console.log(name);",
-                    "console.log(description);",
                     "Ext.getStore('leer').removeAll();",
                     "var details = this.getDataviewDetails();",
                     "details.refresh();",
                     "",
                     "",
                     "details.setData({\"name\":name});",
-                    "details.setData({\"description\":description});"
+                    "details.setData({\"description\":description});",
+                    "details.setData({\"link\":link});"
                 ]
             },
             "name": "setData",
