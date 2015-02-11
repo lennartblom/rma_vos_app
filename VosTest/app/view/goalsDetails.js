@@ -73,15 +73,14 @@ Ext.define('VosNavigator.view.goalsDetails', {
                     },
                     {
                         xtype: 'dataview',
-                        height: '400px',
+                        height: '500px',
                         id: 'dataviewDetails',
                         top: '25px',
                         width: '100%',
                         emptyText: 'Besuche den Löwenpudel',
                         itemTpl: [
-                            '<div><h1>{name}</h1><p>{description}</p></div>'
+                            '<div class="goalsDetails"><h1>{name}</h1><p>{description}</p><p class="moreInformation">Mehr Informationen gibt es hier...</p><a class="linkGoalsDetails" target="_new" href="{link}"><img height="31px" width="35px" src="resources/images/icons/www_icon.png" title="www" /></a></div>'
                         ],
-                        maxItemCache: 15,
                         store: 'leer'
                     }
                 ]

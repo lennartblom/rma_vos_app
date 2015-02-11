@@ -36,9 +36,7 @@ Ext.define('VosNavigator.controller.goalsDetailsController', {
         this.getGoalsView().show();
     },
 
-    setData: function(name, description) {
-        console.log(name);
-        console.log(description);
+    setData: function(name, description, link) {
         Ext.getStore('leer').removeAll();
         var details = this.getDataviewDetails();
         details.refresh();
@@ -46,6 +44,7 @@ Ext.define('VosNavigator.controller.goalsDetailsController', {
 
         details.setData({"name":name});
         details.setData({"description":description});
+        details.setData({"link":link});
     }
 
 });

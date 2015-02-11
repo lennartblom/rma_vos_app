@@ -47,6 +47,9 @@ Ext.define('VosNavigator.controller.Goals', {
             },
             "list#sightsDaily": {
                 itemtap: 'onListItemTap'
+            },
+            "list#dataview_weekly_goals": {
+                itemsingletap: 'onListItemSingletap'
             }
         }
     },
@@ -60,10 +63,18 @@ Ext.define('VosNavigator.controller.Goals', {
 
     onListItemTap: function(dataview, index, target, record, e, eOpts) {
         var details = this.getApplication().getController('goalsDetailsController');
-        details.setData(record.data.name,record.data.description);
+        details.setData(record.data.name, record.data.description, record.data.link);
              this.getGoalsView().hide();
              this.getGoalsDetails().show();
 
+
+    },
+
+    onListItemSingletap: function(dataview, index, target, record, e, eOpts) {
+        var details = this.getApplication().getController('goalsDetailsController');
+        details.setData(record.data.name, record.data.description, record.data.link);
+        this.getGoalsView().hide();
+        this.getGoalsDetails().show();
 
     },
 
@@ -84,6 +95,9 @@ Ext.define('VosNavigator.controller.Goals', {
         this.initiateDate();
         var task = this.getTaskClock();
         task = setInterval(Ext.bind(this.clock,this),1000);
+
+        Ext.getStore('sights').load();
+        console.log("goals launcer");
     },
 
     clock: function() {
@@ -123,8 +137,7 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     launch: function() {
-        Ext.getStore('sights').load();
-        console.log("goals launcer");
+
     },
 
     stopClock: function() {

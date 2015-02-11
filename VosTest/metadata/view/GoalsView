@@ -118,7 +118,7 @@
                                 "left": null,
                                 "margin": "5px",
                                 "right": null,
-                                "top": "0px",
+                                "top": "10px",
                                 "width": "100%"
                             },
                             "name": "MyContainer8",
@@ -152,14 +152,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "transparentList",
-                                        "height": "100px",
+                                        "baseCls": "dailyGoalsDataView",
+                                        "height": "40px",
                                         "hidden": false,
                                         "id": "sightsDaily",
                                         "itemCls": "sights_list",
                                         "store": "sights",
                                         "top": "25px",
-                                        "width": "100%"
+                                        "width": "90%"
                                     },
                                     "name": "MyList",
                                     "designerId": "95870b49-1362-4064-8fe1-88d058163044",
@@ -193,7 +193,7 @@
                                         "height": "25px",
                                         "html": "<p>Verbleibende Zeit:</p>",
                                         "id": "dailyGoalsLabel",
-                                        "top": "145px"
+                                        "top": "85px"
                                     },
                                     "name": "MyLabel1",
                                     "designerId": "2295bb90-106e-4e07-9823-ef9db3f7e1a3"
@@ -210,7 +210,7 @@
                                         "height": "25px",
                                         "html": "<p>6 Stunden 23 Minuten</p>",
                                         "id": "dailyGoalsCounter",
-                                        "top": "170px"
+                                        "top": "110px"
                                     },
                                     "name": "MyLabel4",
                                     "configAlternates": {
@@ -235,7 +235,7 @@
                                 "left": null,
                                 "margin": "5px",
                                 "right": null,
-                                "top": 200,
+                                "top": "175px",
                                 "width": "100%"
                             },
                             "name": "MyContainer13",
@@ -263,23 +263,23 @@
                                     "designerId": "a9d8f61c-9fac-427e-812b-9569783da118"
                                 },
                                 {
-                                    "type": "Ext.dataview.DataView",
+                                    "type": "Ext.dataview.List",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "emptyText": "Paintball spielen in Belm",
+                                        "baseCls": "dailyGoalsDataView",
                                         "height": "175px",
-                                        "html": "<p>Besuche den Löwenpudel</p>",
                                         "id": "dataview_weekly_goals",
-                                        "maxItemCache": 5,
+                                        "itemCls": "sights_list",
+                                        "store": "sights",
                                         "top": "25px",
-                                        "width": "100%"
+                                        "width": "90%"
                                     },
-                                    "name": "MyDataView1",
-                                    "designerId": "288a74aa-7f46-44fe-8833-871ef0b2e2a2",
+                                    "name": "MyList2",
+                                    "designerId": "d335c7b5-1354-4439-be67-7743b62a1052",
                                     "cn": [
                                         {
                                             "type": "Ext.XTemplate",
@@ -291,11 +291,11 @@
                                             "userConfig": {
                                                 "designer|displayName": "itemTpl",
                                                 "implHandler": [
-                                                    "<div>Data View Item {string}</div>"
+                                                    "<div>{name}</div>"
                                                 ]
                                             },
                                             "name": "itemTpl",
-                                            "designerId": "78ca7a4c-daef-43e7-a0a8-a7b6fdd830fc"
+                                            "designerId": "7babd864-af39-464a-96f3-4b593fe3dd89"
                                         }
                                     ]
                                 },
@@ -311,7 +311,7 @@
                                         "height": "25px",
                                         "html": "<p>Verbleibende Zeit:</p>",
                                         "id": "weeklyGoalsLabel",
-                                        "top": "120px"
+                                        "top": "210px"
                                     },
                                     "name": "MyLabel2",
                                     "designerId": "7cde9b28-1b02-4aa9-b88c-cda203ac3ef6"
@@ -329,7 +329,7 @@
                                         "html": "<p>3 Tage 6 Stunden 23 Minuten</p>",
                                         "id": "weeklyGoalsCounter",
                                         "style": null,
-                                        "top": "140px"
+                                        "top": "230px"
                                     },
                                     "name": "MyLabel3",
                                     "configAlternates": {

@@ -72,7 +72,7 @@ Ext.define('VosNavigator.controller.mapViewController', {
                             icon: icon
                         });
                     }
-                    alert("Du hast bereits "+ Math.round(visited/(total/100)) + "% des Busnetztes besucht...");
+                    console.log("Du hast bereits "+ Math.round(visited/(total/100)) + "% des Busnetztes besucht...");
                 }
             }
         );
