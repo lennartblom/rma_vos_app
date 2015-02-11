@@ -14,7 +14,7 @@
             "Wecker",
             "searchViewController",
             "mapViewController",
-            "Fahrplaner"
+            "Fahrplaner",
             "goalsDetailsController"
         ],
         "models": [
@@ -24,7 +24,7 @@
         "name": "VosNavigator",
         "stores": [
             "stops",
-            "sights"
+            "sights",
             "leer"
         ],
         "views": [
