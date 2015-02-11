@@ -398,28 +398,103 @@
                     "var sOrt = searchView.getStartOrt();",
                     "var zOrt = searchView.getZielOrt();",
                     "var db = this.getDb();",
-                    "var start = this.getStartOrt();",
-                    "var ziel = this.getZielOrt();",
+                    "this.getCoordsStartZiel(sOrt,zOrt);",
+                    "var startCoords = this.getStartOrt();",
+                    "var zielCoord = this.getZielOrt();",
+                    "var stationen = this.getEndstationen(1,sOrt,zOrt);",
+                    "console.log(\"vars initialisiert\");",
+                    "",
+                    "/*",
+                    "*",
+                    "*",
+                    "for(var i =0;i<stationen.length;i++){",
+                    "    if(this.entfernung(startCoords,))",
+                    "}",
+                    "***/",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "var direction = this.showDirection(1,sOrt,zOrt);",
+                    "var lines = this.showLines(sOrt, zOrt);",
                     "",
                     "console.log(sOrt);",
                     "console.log(zOrt);",
                     "",
                     "",
-                    "db.transaction(function(tx) {",
-                    "   tx.executeSql(\"select lat,long as lng from stops where name = '\"+sOrt+\"';\", [], function(tx, res) {",
-                    "        start.lng = res.rows.item(0).lng;",
-                    "        start.lat = res.rows.item(0).lat;",
-                    "        console.log(\" s\"+start.lng);",
-                    "   });",
-                    "   tx.executeSql(\"select lat,long as lng from stops where name = '\"+zOrt+\"';\", [], function(tx, res) {",
-                    "        ziel.lat = res.rows.item(0).lat;",
-                    "        ziel.lng = res.rows.item(0).lng;",
-                    "        console.log(ziel.lat+\" z\"+ziel.lng);",
-                    "   });",
                     "",
-                    "    }, function(e) {",
-                    "      console.log(\"ERROR: \" + e.message);",
-                    "    });",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "sucheVerbindung",
+            "designerId": "933cfe1b-931c-4b3a-9f58-fa805922697f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "startOrt",
+                    "zielOrt"
+                ],
+                "fn": "entfernung",
+                "implHandler": [
+                    "var distance = 0.0;",
+                    "var deltaX = 71.5 * (startOrt.lng-zielOrt.lng);",
+                    "var deltaY = 111.3 * (startOrt.lat-zielOrt.lat);",
+                    "var radius = this.getSliderValue();",
+                    "if(deltaX!==0||deltaY!==0){",
+                    "distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;",
+                    "}",
+                    "return distance;"
+                ]
+            },
+            "name": "entfernung",
+            "designerId": "ae924ec0-ca37-4468-a984-4a9b40db882e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "sOrt",
+                    "zOrt"
+                ],
+                "fn": "getCoordsStartZiel",
+                "implHandler": [
+                    "this.setStartOrt(this.getCoords(sOrt));",
+                    "this.setZielOrt(this.getCoords(zOrt));",
+                    ""
+                ]
+            },
+            "name": "getCoordsStartZiel",
+            "designerId": "895babe2-043c-4f0e-8f71-77b60eb912cf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "sOrt",
+                    "zOrt"
+                ],
+                "fn": "showLines",
+                "implHandler": [
+                    "var db = this.getDb();",
                     "db.transaction(function(tx) {",
                     "   tx.executeSql(\"Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '\"+sOrt+\"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '\"+zOrt+\"';\", [], function(tx, res)",
                     "   {",
@@ -431,26 +506,136 @@
                     "            console.log(\"verbindung über neumarkt\");",
                     "        }else{",
                     "            for(var i =0; i<length;i++){",
-                    "                console.log(res.rows.item(i).lineId);",
+                    "                lines[j++] = res.rows.item(i).lineId;",
+                    "                console.log(lines[j-1]);",
                     "",
                     "            }",
-                    "",
+                    "            return lines;",
                     "        }",
                     "   });",
                     "",
                     "    }, function(e) {",
                     "      console.log(\"ERROR: \" + e.message);",
-                    "    });",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "name": "tap"
+                    "    });"
+                ]
             },
-            "name": "sucheVerbindung",
-            "designerId": "933cfe1b-931c-4b3a-9f58-fa805922697f"
+            "name": "showLines",
+            "designerId": "35166c26-58f3-443c-be20-2356e804ee65"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "nummer",
+                    "sOrt",
+                    "zOrt"
+                ],
+                "fn": "showDirection",
+                "implHandler": [
+                    "var db = this.getDb();",
+                    "db.transaction(function(tx) {",
+                    "   tx.executeSql(\"Select direction\"+nummer+\" as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '\"+sOrt+\"' intersect Select direction\"+nummer+\" as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '\"+zOrt+\"';\", [], function(tx, res)",
+                    "   {",
+                    "        var length = res.rows.length;",
+                    "        var direction = [];",
+                    "        var j=0;",
+                    "",
+                    "     ",
+                    "       for(var i =0; i<length;i++){",
+                    "           direction[j++] = res.rows.item(i).direction;",
+                    "           console.log(direction[j-1]);",
+                    "       }",
+                    "       return direction;",
+                    "        ",
+                    "   });",
+                    "",
+                    "    }, function(e) {",
+                    "      console.log(\"ERROR: \" + e.message);",
+                    "    });"
+                ]
+            },
+            "name": "showDirection",
+            "designerId": "d3155402-cf02-4349-b759-b7094c34e932"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "nummer",
+                    "sOrt",
+                    "zOrt"
+                ],
+                "fn": "getEndstationen",
+                "implHandler": [
+                    "var db = this.getDb();",
+                    "",
+                    "db.transaction(function(tx) {",
+                    "   tx.executeSql(\"Select endstation\"+nummer+\" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '\"+sOrt+\"' intersect Select endstation\"+nummer+\" as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '\"+zOrt+\"';\", [], function(tx, res)",
+                    "   {",
+                    "        var length = res.rows.length;",
+                    "        var stationen = [];",
+                    "        var j=0;",
+                    "       ",
+                    "        for(var i =0; i<length;i++){",
+                    "            stationen[j++] = res.rows.item(i).endstation;",
+                    "            console.log(stationen[j-1]);",
+                    "        }",
+                    "        return stationen;",
+                    "        ",
+                    "   });",
+                    "",
+                    "    }, function(e) {",
+                    "      console.log(\"ERROR: \" + e.message);",
+                    "    });"
+                ]
+            },
+            "name": "getEndstationen",
+            "designerId": "ed11436e-1f5d-4666-a873-bafa10eb9e5d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "ort"
+                ],
+                "fn": "getCoords",
+                "implHandler": [
+                    "var db = this.getDb();",
+                    "var coords = {lat:0.0,",
+                    "              lng:0.0};",
+                    "db.transaction(function(tx) {",
+                    "   tx.executeSql(\"select lat from stops where name = '\"+ort+\"';\", [], function(tx, res) {",
+                    "        coords.lat = res.rows.item(0).lat;",
+                    "        console.log(coords.lat);",
+                    "   });",
+                    "   tx.executeSql(\"select long as lng from stops where name = '\"+ort+\"';\", [], function(tx, res) {",
+                    "        coords.lng = res.rows.item(0).lng;",
+                    "        console.log(+coords.lng);",
+                    "   });",
+                    "   return coords;",
+                    "",
+                    "    }, function(e) {",
+                    "      console.log(\"ERROR: \" + e.message);",
+                    "    });"
+                ]
+            },
+            "name": "getCoords",
+            "designerId": "506a1d8d-20ae-4579-9dd3-bb2545393968"
         }
     ]
 }
