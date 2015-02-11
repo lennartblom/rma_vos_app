@@ -1,4 +1,12 @@
 
+@font-face{
+  font-family: 'ArchitectsDaughter';
+  src: url('ArchitectsDaughter.eot?#iefix') format('embedded-opentype'),  url('ArchitectsDaughter.woff') format('woff'), url('ArchitectsDaughter.ttf')  format('truetype'), url('ArchitectsDaughter.svg#ArchitectsDaughter') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .clearing{
 	clear:both;
 	height:0;
@@ -201,6 +209,66 @@
 
 .gitURL{
   padding-right:15px;
+}
+
+div.goalsDetails h1{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+div.goalsDetails p{
+  font-size: 13px;
+  line-height: 19px;
+  text-align: justify;
+}
+
+div.goalsDetails{
+  padding:10px;
+}
+
+.linkGoalsDetails{
+  display: block;
+  height: 35px;
+  width: 35px;
+}
+
+.moreInformation{
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.dailyGoalsDataView{
+  background-image:url("../images/background/todoBackground.png");
+  background-color: #fff; /* layer fill content */
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 0 1px rgba(0,0,0,.13), inset 0 0 0 rgba(0,0,0,.02); /* drop shadow, outer glow and inner glow */
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 0 1px rgba(0,0,0,.13), inset 0 0 0 rgba(0,0,0,.02); /* drop shadow, outer glow and inner glow */
+  box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 0 1px rgba(0,0,0,.13), inset 0 0 0 rgba(0,0,0,.02); /* drop shadow, outer glow and inner glow */
+  background-position: -20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.dailyGoalsDataView-item-relative{
+  margin-bottom:2px;
+  border-bottom: thin #bfc7d1 solid;
+  height: 30px;
+  font-weight: 200;
+  padding-top:10px;
+  color:#2f2f2f;
+  padding-left:30px;
+}
+
+.dailyGoalsDataView-item div{
+  margin-bottom:2px;
+  border-bottom: thin #bfc7d1 solid;
+  height: 40px;
+  font-weight: 200;
+  padding-top:10px;
+  color:#2f2f2f;
+  padding-left:30px;
 }
 
 
