@@ -84,13 +84,13 @@ Ext.define('VosNavigator.view.goalsView', {
                                         xtype: 'label',
                                         baseCls: 'uppercaseHeadline',
                                         height: '25px',
-                                        html: '<p>Besuche folgende Sehnswürdigkeiten:</p>',
+                                        html: '<p>Besuche folgende Haltestelle:</p>',
                                         id: 'label_daily_goals'
                                     },
                                     {
                                         xtype: 'list',
                                         baseCls: 'dailyGoalsDataView',
-                                        height: '40px',
+                                        height: '42px',
                                         hidden: false,
                                         id: 'sightsDaily',
                                         top: '25px',
@@ -99,14 +99,23 @@ Ext.define('VosNavigator.view.goalsView', {
                                         itemTpl: [
                                             '<div>{name}</div>'
                                         ],
-                                        store: 'sights'
+                                        store: 'stops'
+                                    },
+                                    {
+                                        xtype: 'label',
+                                        baseCls: 'textCenterSmall',
+                                        height: '25px',
+                                        html: '<p>Besuche folgende Haltestelle in der angegebenen Zeit und verdiene dir dadurch eine <span class="bold">Medallie</span>!</p>',
+                                        id: 'dailyGoalsDescribtion',
+                                        style: 'text-align:left;',
+                                        top: '78px'
                                     },
                                     {
                                         xtype: 'label',
                                         height: '25px',
                                         html: '<p>Verbleibende Zeit:</p>',
                                         id: 'dailyGoalsLabel',
-                                        top: '85px'
+                                        top: '115px'
                                     },
                                     {
                                         xtype: 'label',
@@ -114,7 +123,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         height: '25px',
                                         html: '<p>6 Stunden 23 Minuten</p>',
                                         id: 'dailyGoalsCounter',
-                                        top: '110px'
+                                        top: '140px'
                                     }
                                 ]
                             },
@@ -124,14 +133,14 @@ Ext.define('VosNavigator.view.goalsView', {
                                 height: '100px',
                                 id: 'weekly_goals',
                                 margin: '5px',
-                                top: '175px',
+                                top: '185px',
                                 width: '100%',
                                 items: [
                                     {
                                         xtype: 'label',
                                         baseCls: 'uppercaseHeadline',
                                         height: '25px',
-                                        html: '<p>Wochenziele:</p>',
+                                        html: '<p>Sehenswürdigkeiten:</p>',
                                         id: 'label_weekly_goals'
                                     },
                                     {
@@ -149,19 +158,12 @@ Ext.define('VosNavigator.view.goalsView', {
                                     },
                                     {
                                         xtype: 'label',
-                                        baseCls: 'uppercaseHeadline',
-                                        height: '25px',
-                                        html: '<p>Verbleibende Zeit:</p>',
-                                        id: 'weeklyGoalsLabel',
-                                        top: '210px'
-                                    },
-                                    {
-                                        xtype: 'label',
                                         baseCls: 'textCenterSmall',
                                         height: '25px',
-                                        html: '<p>3 Tage 6 Stunden 23 Minuten</p>',
-                                        id: 'weeklyGoalsCounter',
-                                        top: '230px'
+                                        html: '<p>Suche dir von den aufgelisteten Sehenswürdigkeiten eine aus und verdiene dir durch den Besuch einen <span class="bold">Pokal</span></p>',
+                                        id: 'weeklyGoalsDescribtion',
+                                        style: 'text-align:left;',
+                                        top: '215px'
                                     }
                                 ]
                             }
