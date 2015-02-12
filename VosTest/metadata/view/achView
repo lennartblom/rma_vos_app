@@ -98,7 +98,9 @@
                     "userConfig": {
                         "docked": "top",
                         "height": "60px",
-                        "id": "netzerkundung_container"
+                        "id": "dailygoals_container",
+                        "margin": "5px",
+                        "width": "100%"
                     },
                     "name": "MyContainer4",
                     "designerId": "ccb3c93a-7f36-42b2-9e43-0f7e326bc353",
@@ -111,27 +113,51 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "uppercaseHeadline",
                                 "height": "25px",
-                                "html": "<p>Netzerkundung:</p>",
-                                "id": "netzerkundung",
+                                "html": "Tagesziele",
+                                "id": "locations_visited1",
                                 "margin": "5px",
                                 "top": null
                             },
-                            "name": "MyLabel",
-                            "designerId": "82bf535e-d663-4c9e-9465-9ed9010a81af"
+                            "name": "MyLabel6",
+                            "designerId": "34e51ae5-185d-4cbd-98d5-ff9fd7dd2783"
                         },
                         {
-                            "type": "Ext.field.Checkbox",
+                            "type": "Ext.dataview.DataView",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "label": "Field"
+                                "baseCls": "dailyGoalsCounterDataView",
+                                "height": "41px",
+                                "id": "dailyGoalsAchCouter",
+                                "maxItemCache": 1,
+                                "store": "stops",
+                                "width": "90%"
                             },
-                            "name": "MyCheckbox",
-                            "designerId": "0adda1c8-0396-4882-bf68-94b01f8d8feb"
+                            "name": "MyDataView",
+                            "designerId": "251e0b24-3c87-4f9b-b3c3-b0a8dbf073f2",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div class=\"itemWrapper\"><div class=\"content\">Erreichte Tagesziele</div><div class=\"dailyGoalsCounterIcon\">{id}</div></div>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "0d32be0b-703b-4076-95bd-be405c100f96"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -145,6 +171,7 @@
                     "userConfig": {
                         "height": "80px",
                         "id": "locations_visited_container",
+                        "margin": "5px",
                         "top": "25px",
                         "width": "100%"
                     },
@@ -159,8 +186,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "baseCls": "uppercaseHeadline",
                                 "height": "25px",
-                                "html": "<p>Orte besucht:</p>",
+                                "html": "Sehenswürdigkeiten:",
                                 "id": "locations_visited",
                                 "margin": "5px",
                                 "top": null
@@ -169,43 +197,39 @@
                             "designerId": "05d2f007-dc45-41f3-ab49-f3cd1556f82c"
                         },
                         {
-                            "type": "Ext.field.Checkbox",
+                            "type": "Ext.dataview.DataView",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "label": "Field"
+                                "baseCls": "weekendTasksDoneDataview",
+                                "height": "167px",
+                                "id": "weekendTasksDone",
+                                "store": "sights",
+                                "width": "90%"
                             },
-                            "name": "MyCheckbox",
-                            "designerId": "94d77c5a-7442-4b7c-a6a8-f4eaf0a4ff7e"
-                        },
-                        {
-                            "type": "Ext.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "label": "Field"
-                            },
-                            "name": "MyCheckbox1",
-                            "designerId": "7a668241-6b0a-4bd0-8399-736a19e9695d"
-                        },
-                        {
-                            "type": "Ext.field.Checkbox",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "label": "Field"
-                            },
-                            "name": "MyCheckbox2",
-                            "designerId": "dad9e45c-839a-4204-9d2e-da208ea31727"
+                            "name": "MyDataView1",
+                            "designerId": "a92451fb-6f15-48dd-a114-1e7fe5c41649",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<div class=\"itemWrapper\"><div class=\"content\">{name}</div><div class=\"weekendGoalsCup\"></div></div>"
+                                        ]
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "ba93ceb3-b2da-4d50-8dce-70ae0b2c0ad1"
+                                }
+                            ]
                         },
                         {
                             "type": "Ext.Label",
@@ -215,19 +239,73 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "baseCls": "achievementsTextSmall",
+                                "baseCls": "textCenterSmall",
                                 "height": "25px",
                                 "html": "Bisher erreichte Erfolge und erledigte Aufgaben",
                                 "id": "achievments_description",
                                 "margin": "5px",
                                 "style": null,
-                                "top": "150px"
+                                "top": "210px"
                             },
                             "name": "MyLabel5",
                             "configAlternates": {
                                 "style": "object"
                             },
                             "designerId": "014f640d-aa13-4a6a-b42a-46749ae001ef"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "uppercaseHeadline",
+                                "height": "25px",
+                                "html": "Abgefahrenes Busnetz:",
+                                "id": "locations_visited2",
+                                "margin": "5px",
+                                "top": "250px"
+                            },
+                            "name": "MyLabel8",
+                            "designerId": "a32bab45-d916-4ac5-9246-e6931f4c21a0"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "netzanteilProgress",
+                                "docked": "top",
+                                "height": "35px",
+                                "id": "netzanteil",
+                                "top": "280px",
+                                "width": "100%"
+                            },
+                            "name": "MyLabel7",
+                            "designerId": "aeee8feb-8c97-443a-87fc-efe858c55755",
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "tpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "tpl",
+                                        "implHandler": [
+                                            "<div class=\"itemWrapper\"><div class=\"percentIcon\"><span id=\"int\">{percent}</span><span id=\"typo\">%</span></div><div class=\"content\">des Busnetzes wurden bisher besucht.</div></div>"
+                                        ]
+                                    },
+                                    "name": "tpl",
+                                    "designerId": "2c105698-557d-4326-a1ef-335f7e614516"
+                                }
+                            ]
                         }
                     ]
                 }

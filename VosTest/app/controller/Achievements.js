@@ -21,7 +21,8 @@ Ext.define('VosNavigator.controller.Achievements', {
             achView: '#AchView',
             achBackButton: 'button#achBackButton',
             mainView: 'container#MainView',
-            mapView: '#MapView'
+            mapView: '#MapView',
+            netzanteil: 'label#netzanteil'
         },
 
         control: {
@@ -43,6 +44,11 @@ Ext.define('VosNavigator.controller.Achievements', {
         console.log("Map Button.");
         this.getAchView().hide();
         this.getMapView().show();
+    },
+
+    launch: function() {
+        Ext.getStore('sights').load();
+        this.getNetzanteil().setData({"percent":25});
     }
 
 });

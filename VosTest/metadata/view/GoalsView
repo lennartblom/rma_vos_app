@@ -134,7 +134,7 @@
                                     "userConfig": {
                                         "baseCls": "uppercaseHeadline",
                                         "height": "25px",
-                                        "html": "<p>Besuche folgende Sehnswürdigkeiten:</p>",
+                                        "html": "<p>Besuche folgende Haltestelle:</p>",
                                         "id": "label_daily_goals",
                                         "top": null
                                     },
@@ -153,11 +153,11 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "baseCls": "dailyGoalsDataView",
-                                        "height": "40px",
+                                        "height": "42px",
                                         "hidden": false,
                                         "id": "sightsDaily",
                                         "itemCls": "sights_list",
-                                        "store": "sights",
+                                        "store": "stops",
                                         "top": "25px",
                                         "width": "90%"
                                     },
@@ -190,10 +190,33 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "textCenterSmall",
+                                        "height": "25px",
+                                        "html": "<p>Besuche folgende Haltestelle in der angegebenen Zeit und verdiene dir dadurch eine <span class=\"bold\">Medallie</span>!</p>",
+                                        "id": "dailyGoalsDescribtion",
+                                        "style": [
+                                            "text-align:left;"
+                                        ],
+                                        "top": "78px"
+                                    },
+                                    "name": "MyLabel9",
+                                    "configAlternates": {
+                                        "style": "object"
+                                    },
+                                    "designerId": "210eef1c-764c-4d5e-a049-62e124b27338"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
                                         "height": "25px",
                                         "html": "<p>Verbleibende Zeit:</p>",
                                         "id": "dailyGoalsLabel",
-                                        "top": "85px"
+                                        "top": "115px"
                                     },
                                     "name": "MyLabel1",
                                     "designerId": "2295bb90-106e-4e07-9823-ef9db3f7e1a3"
@@ -210,7 +233,7 @@
                                         "height": "25px",
                                         "html": "<p>6 Stunden 23 Minuten</p>",
                                         "id": "dailyGoalsCounter",
-                                        "top": "110px"
+                                        "top": "140px"
                                     },
                                     "name": "MyLabel4",
                                     "configAlternates": {
@@ -235,7 +258,7 @@
                                 "left": null,
                                 "margin": "5px",
                                 "right": null,
-                                "top": "175px",
+                                "top": "185px",
                                 "width": "100%"
                             },
                             "name": "MyContainer13",
@@ -251,7 +274,7 @@
                                     "userConfig": {
                                         "baseCls": "uppercaseHeadline",
                                         "height": "25px",
-                                        "html": "<p>Wochenziele:</p>",
+                                        "html": "<p>Sehenswürdigkeiten:</p>",
                                         "id": "label_weekly_goals",
                                         "style": null,
                                         "top": null
@@ -307,29 +330,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "uppercaseHeadline",
-                                        "height": "25px",
-                                        "html": "<p>Verbleibende Zeit:</p>",
-                                        "id": "weeklyGoalsLabel",
-                                        "top": "210px"
-                                    },
-                                    "name": "MyLabel2",
-                                    "designerId": "7cde9b28-1b02-4aa9-b88c-cda203ac3ef6"
-                                },
-                                {
-                                    "type": "Ext.Label",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
                                         "baseCls": "textCenterSmall",
                                         "height": "25px",
-                                        "html": "<p>3 Tage 6 Stunden 23 Minuten</p>",
-                                        "id": "weeklyGoalsCounter",
-                                        "style": null,
-                                        "top": "230px"
+                                        "html": "<p>Suche dir von den aufgelisteten Sehenswürdigkeiten eine aus und verdiene dir durch den Besuch einen <span class=\"bold\">Pokal</span></p>",
+                                        "id": "weeklyGoalsDescribtion",
+                                        "style": [
+                                            "text-align:left;"
+                                        ],
+                                        "top": "215px"
                                     },
                                     "name": "MyLabel3",
                                     "configAlternates": {
