@@ -150,7 +150,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             var i=0;
             var j=0;
             var length=0;
-
+            var verbindungUberNeumarkt = false;
             db.transaction(function(tx) {
                 //get coords from Startort Name
                 tx.executeSql("select lat, long as lng from stops where name = '"+sOrt+"';", [],
@@ -174,20 +174,23 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
                               });
                 //get Lines from Start to Destiantion
-                tx.executeSql("Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+                tx.executeSql("Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"' order by lineId;", [], function(tx, res)
                               {
                                   length = res.rows.length;
                                   j=0;
 
                                   if(length===0){
                                       console.log("verbindung über neumarkt");
+                                      verbindungUberNeumarkt =true;
+
                                   }else{
                                       for(i =0; i<length;i++){
                                           lines[j++] = res.rows.item(i).lineId;
                                       }
+                                      verbindungUberNeumarkt = false;
                                   }
-                              });
-                tx.executeSql("Select direction1 as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select direction1 as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+                              },function(){console.log("errror mit Lines");});
+                tx.executeSql("Select direction1 as direction, lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select direction1 as direction, lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"' order by lineId;", [], function(tx, res)
                               {
                                   length = res.rows.length;
                                   j=0;
@@ -197,8 +200,8 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                   }
 
 
-                              });
-                tx.executeSql("Select direction2 as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select direction2 as direction From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"';", [], function(tx, res)
+                              },function(){console.log("errror mit dir1");});
+                tx.executeSql("Select direction2 as direction, lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select direction2 as direction, lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"' order by lineId;", [], function(tx, res)
                               {
                                   length = res.rows.length;
                                   j=0;
@@ -208,36 +211,62 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                   }
 
 
-                              });
-                tx.executeSql("select lat, long as lng from stops where id in (Select endstation1 as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation1 as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"');", [], function(tx, res)
+                              },function(){console.log("errror mit dir2");});
+                tx.executeSql("select name, lat, long as lng, lineId, endstation1 From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.id in (Select endstation1 From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation1 From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+zOrt+"') and lineId in (Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select lineId From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+zOrt+"' order by lineId) order by lineId;", [], function(tx, res)
+                              {
+                                  length = res.rows.length;
+                                  j=0;
+                                  for( i =0; i<length;i++){
+                                      var innerArray =[];
+
+                                      innerArray[0] = res.rows.item(i).name;
+                                      innerArray[1] = res.rows.item(i).lat;
+                                      innerArray[2] = res.rows.item(i).lng;
+                                      innerArray[3] = res.rows.item(i).lineId;
+                                      endstation1[j++] = innerArray;
+
+                                      console.log("Monsterabfrage: "+endstation1[j-1][0]+" "+endstation1[j-1][1]+" "+endstation1[j-1][2]+" "+endstation1[j-1][3]);
+                                  }
+
+                              },function(){console.log("errror mit monsterabfraage");});
+                /*tx.executeSql("select lat, long as lng from stops where id in(Select endstation2 as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation2 as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"');", [], function(tx, res)
                               {
                                   length = res.rows.length;
                                   j=0;
 
                                   for( i =0; i<length;i++){
-                                      endstation1[j++] = res.rows.item(i).name;
-
+                                      endstation2[j][0] = res.rows.item(i).lat;
+                                      endstation2[j][1] = res.rows.item(i).lng;
+                                      j++;
                                   }
 
-                              });
-                tx.executeSql("select lat, long as lng from stops where id in(Select endstation2 as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId=lines.id and stops.name = '"+sOrt+"' intersect Select endstation2 as endstation From stops, connections, lines Where stops.id = connections.stopId and connections.lineId = lines.id and stops.name = '"+zOrt+"');", [], function(tx, res)
-                              {
-                                  length = res.rows.length;
-                                  j=0;
-
-                                  for( i =0; i<length;i++){
-                                      endstation2[j++] = res.rows.item(i).name;
-
-                                  }
-
-                              });
+                              });*/
 
 
             }, function(e) {
                 console.log("ERROR: " + e.message);
             },function(){
+                var entfernung1;
+                var entfernung2;
+                var tmpDirection= [];
                 console.log("transaction Succesfull"+" start.lat "+start.lat+" ziel.lat "+ziel.lat+" Lines [0] "+lines[0]+" direction1[0] "+
-                            direction1[0]+" direction2[0] "+direction2[0]+" Endstation1[0] "+endstation1[0]+" enstation2[0] "+endstation2[0]);
+                            direction1[0]+" direction2[0] "+direction2[0]+" Endstation1[0] "+endstation1[0][0]);
+                for(var i =0;i<lines.length;i++){
+                    entfernung1 = self.entfernung(start,{lat:endstation1[i][1],lng:endstation1[i][2]});
+                    console.log("Entfernung von Startort: "+sOrt+" nach "+endstation1[i][0]+"="+entfernung1);
+                    entfernung2 = self.entfernung(ziel,{lat:endstation1[i][1],lng:endstation1[i][2]});
+                    console.log("Entfernung von Zielort: "+zOrt+" nach "+endstation1[i][0]+"="+entfernung2);
+
+                    if(entfernung1>entfernung2){
+                        tmpDirection[i]=direction1[i];
+                        console.log("e>e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
+
+                    }else{
+                        tmpDirection[i]=direction2[i];
+                        console.log("e<e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
+
+                    }
+                }
             }
                           );
         }
@@ -283,11 +312,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     dbcopy: function() {
-           /*window.plugins.sqlDB.remove("vosnavigator.db",function(){
+           window.plugins.sqlDB.remove("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich entfernt");},
                 function(e){
                     console.log("Error Code = "+JSON.stringify(e));
-                });*/
+                });
 
             window.plugins.sqlDB.copy("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich kopiert");},
@@ -300,13 +329,14 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     entfernung: function(startOrt, zielOrt) {
+
         var distance = 0.0;
         var deltaX = 71.5 * (startOrt.lng-zielOrt.lng);
         var deltaY = 111.3 * (startOrt.lat-zielOrt.lat);
-        var radius = this.getSliderValue();
         if(deltaX!==0||deltaY!==0){
         distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
         }
+
         return distance;
     },
 
