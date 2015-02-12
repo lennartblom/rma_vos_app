@@ -62,14 +62,16 @@ Ext.define('VosNavigator.controller.searchViewController', {
     listTap: function(dataview, index, target, record, e, eOpts) {
 
 
+
+
         console.log("itemTap");
         if(this.searchType==='start'){
             this.setStartOrt(record.get('name'));
         }else{
-            this.setZielOrt(record.get('name'));
+           this.setZielOrt(record.get('name'));
         }
-
         var store = Ext.getStore('stops');
+
         store.clearFilter();
 
 
