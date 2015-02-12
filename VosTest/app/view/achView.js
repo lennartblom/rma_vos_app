@@ -19,9 +19,9 @@ Ext.define('VosNavigator.view.achView', {
 
     requires: [
         'Ext.Button',
-        'Ext.Container',
         'Ext.Label',
-        'Ext.field.Checkbox',
+        'Ext.dataview.DataView',
+        'Ext.XTemplate',
         'Ext.Img'
     ],
 
@@ -68,18 +68,29 @@ Ext.define('VosNavigator.view.achView', {
                         xtype: 'container',
                         docked: 'top',
                         height: '60px',
-                        id: 'netzerkundung_container',
+                        id: 'dailygoals_container',
+                        margin: '5px',
+                        width: '100%',
                         items: [
                             {
                                 xtype: 'label',
+                                baseCls: 'uppercaseHeadline',
                                 height: '25px',
-                                html: '<p>Netzerkundung:</p>',
-                                id: 'netzerkundung',
+                                html: 'Tagesziele',
+                                id: 'locations_visited1',
                                 margin: '5px'
                             },
                             {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
+                                xtype: 'dataview',
+                                baseCls: 'dailyGoalsCounterDataView',
+                                height: '41px',
+                                id: 'dailyGoalsAchCouter',
+                                width: '90%',
+                                itemTpl: [
+                                    '<div class="itemWrapper"><div class="content">Erreichte Tagesziele</div><div class="dailyGoalsCounterIcon">{id}</div></div>'
+                                ],
+                                maxItemCache: 1,
+                                store: 'stops'
                             }
                         ]
                     },
@@ -87,36 +98,58 @@ Ext.define('VosNavigator.view.achView', {
                         xtype: 'container',
                         height: '80px',
                         id: 'locations_visited_container',
+                        margin: '5px',
                         top: '25px',
                         width: '100%',
                         items: [
                             {
                                 xtype: 'label',
+                                baseCls: 'uppercaseHeadline',
                                 height: '25px',
-                                html: '<p>Orte besucht:</p>',
+                                html: 'Sehenswürdigkeiten:',
                                 id: 'locations_visited',
                                 margin: '5px'
                             },
                             {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
-                            },
-                            {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
-                            },
-                            {
-                                xtype: 'checkboxfield',
-                                label: 'Field'
+                                xtype: 'dataview',
+                                baseCls: 'weekendTasksDoneDataview',
+                                height: '167px',
+                                id: 'weekendTasksDone',
+                                width: '90%',
+                                itemTpl: [
+                                    '<div class="itemWrapper"><div class="content">{name}</div><div class="weekendGoalsCup"></div></div>'
+                                ],
+                                store: 'sights'
                             },
                             {
                                 xtype: 'label',
-                                baseCls: 'achievementsTextSmall',
+                                baseCls: 'textCenterSmall',
                                 height: '25px',
                                 html: 'Bisher erreichte Erfolge und erledigte Aufgaben',
                                 id: 'achievments_description',
                                 margin: '5px',
-                                top: '150px'
+                                top: '210px'
+                            },
+                            {
+                                xtype: 'label',
+                                baseCls: 'uppercaseHeadline',
+                                height: '25px',
+                                html: 'Abgefahrenes Busnetz:',
+                                id: 'locations_visited2',
+                                margin: '5px',
+                                top: '250px'
+                            },
+                            {
+                                xtype: 'label',
+                                baseCls: 'netzanteilProgress',
+                                docked: 'top',
+                                height: '35px',
+                                id: 'netzanteil',
+                                top: '280px',
+                                tpl: [
+                                    '<div class="itemWrapper"><div class="percentIcon"><span id="int">{percent}</span><span id="typo">%</span></div><div class="content">des Busnetzes wurden bisher besucht.</div></div>'
+                                ],
+                                width: '100%'
                             }
                         ]
                     }

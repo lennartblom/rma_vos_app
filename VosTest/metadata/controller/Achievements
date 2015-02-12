@@ -107,6 +107,37 @@
             },
             "name": "mapView",
             "designerId": "13ca58fc-3db3-4a07-b54a-f17ed2df0680"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.getStore('sights').load();",
+                    "this.getNetzanteil().setData({\"percent\":25});"
+                ]
+            },
+            "name": "launch",
+            "designerId": "a7c499f9-a056-4409-9f45-9407b51af57a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "netzanteil",
+                "selector": "label#netzanteil"
+            },
+            "name": "netzanteil",
+            "designerId": "ee824542-b4ad-4157-a138-3b5051e4636d"
         }
     ]
 }
