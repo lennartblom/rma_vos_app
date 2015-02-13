@@ -42,12 +42,12 @@ Ext.define('VosNavigator.controller.Achievements', {
     },
 
     achBackButton: function(button, e, eOpts) {
+        this.resetPercentage();
         this.getAchView().hide();
         this.getMainView().show();
     },
 
     onButtonTap: function(button, e, eOpts) {
-        console.log("Map Button.");
         this.getAchView().hide();
         this.getMapView().show();
     },
@@ -126,6 +126,17 @@ Ext.define('VosNavigator.controller.Achievements', {
 
         },1250);
 
+    },
+
+    resetPercentage: function() {
+        var element = document.getElementById("percentage");
+        var i = 1;
+
+        for(i;i<=10;i++){
+            element.classList.remove("p"+(i-1)+"0");
+        }
+
+        document.getElementById("int").innerHTML = 0;
     }
 
 });

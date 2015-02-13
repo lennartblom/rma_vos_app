@@ -62,6 +62,7 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "achBackButton",
                 "implHandler": [
+                    "this.resetPercentage();",
                     "this.getAchView().hide();",
                     "this.getMainView().show();"
                 ],
@@ -96,7 +97,6 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "onButtonTap",
                 "implHandler": [
-                    "console.log(\"Map Button.\");",
                     "this.getAchView().hide();",
                     "this.getMapView().show();"
                 ],
@@ -264,6 +264,29 @@
             },
             "name": "onDataviewInitialize",
             "designerId": "8654bde9-33ab-4659-8b55-7c6d72085219"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetPercentage",
+                "implHandler": [
+                    "var element = document.getElementById(\"percentage\");",
+                    "var i = 1;",
+                    "",
+                    "for(i;i<=10;i++){",
+                    "    element.classList.remove(\"p\"+(i-1)+\"0\");",
+                    "}",
+                    "",
+                    "document.getElementById(\"int\").innerHTML = 0;"
+                ]
+            },
+            "name": "resetPercentage",
+            "designerId": "029ded30-3a6b-49ef-a14e-6399dc332741"
         }
     ]
 }
