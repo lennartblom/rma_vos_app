@@ -13,11 +13,11 @@
         "mixins": null,
         "shortestPath": true,
         "sliderValue": 200,
-        "task": null,
         "taskEngine": [
             "{taskGetPos:null,",
             "taskCheckDistance:null,",
-            "taskBackgroundGeo:null}"
+            "taskBackgroundGeo:null,",
+            "taskCheckVisited:null}"
         ],
         "trackingId": [
             "null"
@@ -81,11 +81,6 @@
         {
             "group": "(Custom Properties)",
             "name": "taskEngine",
-            "type": "string"
-        },
-        {
-            "group": "(Custom Properties)",
-            "name": "task",
             "type": "string"
         }
     ],
@@ -411,9 +406,11 @@
                 "fn": "entfernung",
                 "implHandler": [
                     "console.log(\"distance Berechnung\");",
-                    "var pos = this.getAktuellePosition();",
-                    "var destPos = this.getApplication().getController('Fahrplaner').getZielOrt();",
-                    "var latCurrent =pos.lat;",
+                    "var fahrplaner =this.getApplication().getController('Fahrplaner');",
+                    "var aktPos = this.getAktuellePosition();",
+                    "var destPos = fahrplaner.getZielOrt();",
+                    "var distance = fahrplaner.entfernung(aktPos,destPos);",
+                    "/*var latCurrent =pos.lat;",
                     "var lngCurrent =pos.lng;",
                     "var latDestination =destPos.lat;",
                     "var lngDestination =destPos.lng;",
@@ -423,7 +420,7 @@
                     "var radius = this.getSliderValue();",
                     "if(deltaX!==0||deltaY!==0){",
                     "distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;",
-                    "}",
+                    "}*/",
                     "console.log(distance);",
                     "console.log(radius);",
                     "if(distance<=radius){",
@@ -446,8 +443,29 @@
             "userConfig": {
                 "fn": "checkDistance",
                 "implHandler": [
-                    "this.entfernung();",
-                    ""
+                    "console.log(\"distance Berechnung\");",
+                    "var fahrplaner =this.getApplication().getController('Fahrplaner');",
+                    "var aktPos = this.getAktuellePosition();",
+                    "var destPos = fahrplaner.getZielOrt();",
+                    "var distance = fahrplaner.entfernung(aktPos,destPos);",
+                    "var radius = this.getSliderValue();",
+                    "/*var latCurrent =pos.lat;",
+                    "var lngCurrent =pos.lng;",
+                    "var latDestination =destPos.lat;",
+                    "var lngDestination =destPos.lng;",
+                    "var distance = 0.0;",
+                    "var deltaX = 71.5 * (lngCurrent-lngDestination);",
+                    "var deltaY = 111.3 * (latCurrent-latDestination);",
+                    "",
+                    "if(deltaX!==0||deltaY!==0){",
+                    "distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;",
+                    "}*/",
+                    "console.log(distance);",
+                    "console.log(radius);",
+                    "if(distance<=radius){",
+                    "    console.log(\"distance<radius\");",
+                    "    this.wecken();",
+                    "}"
                 ]
             },
             "name": "checkDistance",

@@ -31,7 +31,8 @@ Ext.define('VosNavigator.controller.Wecker', {
         taskEngine: {
             taskGetPos: null,
             taskCheckDistance: null,
-            taskBackgroundGeo: null
+            taskBackgroundGeo: null,
+            taskCheckVisited: null
         },
 
         refs: {
@@ -132,9 +133,11 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     entfernung: function() {
         console.log("distance Berechnung");
-        var pos = this.getAktuellePosition();
-        var destPos = this.getApplication().getController('Fahrplaner').getZielOrt();
-        var latCurrent =pos.lat;
+        var fahrplaner =this.getApplication().getController('Fahrplaner');
+        var aktPos = this.getAktuellePosition();
+        var destPos = fahrplaner.getZielOrt();
+        var distance = fahrplaner.entfernung(aktPos,destPos);
+        /*var latCurrent =pos.lat;
         var lngCurrent =pos.lng;
         var latDestination =destPos.lat;
         var lngDestination =destPos.lng;
@@ -144,7 +147,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         var radius = this.getSliderValue();
         if(deltaX!==0||deltaY!==0){
         distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
-        }
+        }*/
         console.log(distance);
         console.log(radius);
         if(distance<=radius){
@@ -155,8 +158,29 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     checkDistance: function() {
-        this.entfernung();
+        console.log("distance Berechnung");
+        var fahrplaner =this.getApplication().getController('Fahrplaner');
+        var aktPos = this.getAktuellePosition();
+        var destPos = fahrplaner.getZielOrt();
+        var distance = fahrplaner.entfernung(aktPos,destPos);
+        var radius = this.getSliderValue();
+        /*var latCurrent =pos.lat;
+        var lngCurrent =pos.lng;
+        var latDestination =destPos.lat;
+        var lngDestination =destPos.lng;
+        var distance = 0.0;
+        var deltaX = 71.5 * (lngCurrent-lngDestination);
+        var deltaY = 111.3 * (latCurrent-latDestination);
 
+        if(deltaX!==0||deltaY!==0){
+        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
+        }*/
+        console.log(distance);
+        console.log(radius);
+        if(distance<=radius){
+            console.log("distance<radius");
+            this.wecken();
+        }
     },
 
     activateTracker: function() {

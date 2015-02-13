@@ -483,12 +483,12 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     dbcopy: function() {
-           /*window.plugins.sqlDB.remove("vosnavigator.db",function(){
+           window.plugins.sqlDB.remove("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich entfernt");},
                 function(e){
                     console.log("Error Code = "+JSON.stringify(e));
                 });
-        */
+
             window.plugins.sqlDB.copy("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich kopiert");},
                 function(e){

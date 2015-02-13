@@ -53,7 +53,7 @@
                 "hidden": true,
                 "id": "FahrplanerView"
             },
-            "name": "fahrplanerview2",
+            "name": "fahrplanerview",
             "designerId": "a306303a-2d35-421b-98e2-72fe821223d7",
             "masterInstanceId": "b60cccb9-321a-45c4-ad9c-93f071883a5f"
         },
@@ -68,7 +68,7 @@
                 "hidden": true,
                 "id": "GoalsView"
             },
-            "name": "goalsview2",
+            "name": "goalsview",
             "designerId": "3cce19c2-3477-469a-9b7b-b00f2fd0d0c9",
             "masterInstanceId": "bdc6e475-08cf-4183-aff2-884bf524a593"
         },
