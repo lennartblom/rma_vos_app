@@ -125,25 +125,6 @@
                     },
                     "name": "MyLabel9",
                     "designerId": "8dcf5bee-f7c3-458d-8645-c10a1e0419a7"
-                },
-                {
-                    "type": "Ext.Label",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "baseCls": "textCenterSmall",
-                        "docked": "top",
-                        "height": "25px",
-                        "html": "Du hast bereits <span class=\"bold\">25%</span> des Busnetztes besucht...",
-                        "id": "percent",
-                        "top": "410px",
-                        "width": "100%"
-                    },
-                    "name": "MyLabel4",
-                    "designerId": "e640f025-f857-4c66-b3df-13be0fd8c46b"
                 }
             ]
         },
