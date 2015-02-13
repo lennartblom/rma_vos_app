@@ -71,18 +71,14 @@ Ext.define('VosNavigator.controller.Achievements', {
         setTimeout(function() {
             var element = document.getElementById("percentage");
             var counter = 0;
-            var delay = 500;
+            var delay = 250;
             var counterOnes = 0;
-
-
             var i = 0;
 
             countUp();
 
             function countUp () {
                 setTimeout(function () {
-
-
 
                     displayOnes();
 
@@ -100,12 +96,8 @@ Ext.define('VosNavigator.controller.Achievements', {
                             }else{
                                 document.getElementById("int").innerHTML = i*10;
                             }
-                        },25);
+                        },delay/10);
                     }
-                    console.log("var i = " +i +" var counterOnes = " + counterOnes);
-
-
-
 
                     if (i < 10) {
                         counterOnes = 0;
@@ -121,7 +113,7 @@ Ext.define('VosNavigator.controller.Achievements', {
                         return 0;
                     }
 
-                }, 250);
+                }, delay);
             }
 
         },1250);
