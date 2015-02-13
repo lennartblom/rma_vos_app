@@ -9,6 +9,7 @@
         "buffered": true,
         "designer|userClassName": "stops",
         "model": "stop",
+        "pageSize": 10,
         "storeId": "stops",
         "syncRemovedRecords": false
     },
@@ -23,6 +24,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "noCache": false,
                 "url": "resources/json/stops.json"
             },
             "name": "MyAjaxProxy1",

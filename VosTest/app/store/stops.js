@@ -25,10 +25,12 @@ Ext.define('VosNavigator.store.stops', {
     config: {
         buffered: true,
         model: 'VosNavigator.model.stop',
+        pageSize: 10,
         storeId: 'stops',
         syncRemovedRecords: false,
         proxy: {
             type: 'ajax',
+            noCache: false,
             url: 'resources/json/stops.json',
             reader: {
                 type: 'json',

@@ -221,7 +221,7 @@ Ext.define('VosNavigator.controller.Wecker', {
                             stationaryRadius: 10,
                             distanceFilter: 10,
                             activityType: "Fitness",
-                            stopOnTerminate: false,// <-- iOS-only
+                            stopOnTerminate: true,// <-- iOS-only
                             debug: false     // <-- enable this hear sounds for background-geolocation life-cycle.
                         });
 
