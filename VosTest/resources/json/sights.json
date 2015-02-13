@@ -21,7 +21,7 @@
             "longitude": "8,0447220",
             "latitude": "52,2775690",
             "description": "Der römisch-katholische Dom St. Peter (auch Dom St. Petrus) in Osnabrück ist die Kathedrale des Bistums Osnabrück. \nDer Dom ist ein spätromanisches Bauwerk und prägt seit seiner Entstehung die Silhouette der Stadt.",
-            "visited": false,
+            "visited": true,
             "link": "http://de.wikipedia.org/wiki/Dom_St._Peter_%28Osnabr%C3%BCck%29"
   },
         {
@@ -93,7 +93,7 @@
             "longitude": "8,0493319",
             "latitude": "52,3025882",
             "description": "Nettebad: Viel Spaß bei Sport, Spiel und Wellness\nIm Nettebad, dem Familienbad in Osnabrück, sind Spaß und gute Laune garantiert. Auch Fitness und Entspannung kommen nicht zu kurz. Wer einen Tag Urlaub vor der Haustür erleben möchten: Hier findet jeder ein reichhaltiges Angebot, das zu ihm passt.",
-            "visited": false,
+            "visited": true,
             "link": "https://www.nettebad.de/startseite.html"
   },
         {

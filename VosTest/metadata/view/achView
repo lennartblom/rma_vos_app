@@ -133,9 +133,11 @@
                             "userConfig": {
                                 "baseCls": "dailyGoalsCounterDataView",
                                 "height": "41px",
-                                "id": "dailyGoalsAchCouter",
+                                "id": "abc",
+                                "itemId": null,
                                 "maxItemCache": 1,
-                                "store": "stops",
+                                "scrollable": false,
+                                "store": null,
                                 "width": "90%"
                             },
                             "name": "MyDataView",
@@ -299,7 +301,7 @@
                                     "userConfig": {
                                         "designer|displayName": "tpl",
                                         "implHandler": [
-                                            "<div class=\"itemWrapper\"><div class=\"percentIcon\"><span id=\"int\">{percent}</span><span id=\"typo\">%</span></div><div class=\"content\">des Busnetzes wurden bisher besucht.</div></div>"
+                                            "<div class=\"itemWrapper\"><div id=\"percentage\" class=\"percentIcon\"><span id=\"int\">{percent}</span><span id=\"typo\">%</span></div><div class=\"content\">des Busnetzes wurden bisher besucht.</div></div>"
                                         ]
                                     },
                                     "name": "tpl",

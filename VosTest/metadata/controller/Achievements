@@ -6,10 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
+        "dailyGoalsCounter": 0,
         "designer|userClassName": "Achievements"
     },
     "name": "MyController",
+    "configAlternates": {
+        "dailyGoalsCounter": "number"
+    },
     "designerId": "09d61032-2b70-40d9-88d3-bc520197186c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "dailyGoalsCounter",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "controllerref",
@@ -119,7 +130,9 @@
                 "fn": "launch",
                 "implHandler": [
                     "Ext.getStore('sights').load();",
-                    "this.getNetzanteil().setData({\"percent\":25});"
+                    "Ext.getStore('sights').filter(\"visited\", true);",
+                    "this.getNetzanteil().setData({\"percent\":0});",
+                    "//this.setDailyGoalsCounter(this.dailyGoalsCounter);"
                 ]
             },
             "name": "launch",
@@ -138,6 +151,119 @@
             },
             "name": "netzanteil",
             "designerId": "ee824542-b4ad-4157-a138-3b5051e4636d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "stop"
+                ],
+                "fn": "percentageAnimation",
+                "implHandler": [
+                    "setTimeout(function() {",
+                    "    var element = document.getElementById(\"percentage\");",
+                    "    var counter = 0;",
+                    "    var delay = 500;",
+                    "    var counterOnes = 0;",
+                    "",
+                    "",
+                    "    var i = 0;",
+                    "",
+                    "    countUp();",
+                    "",
+                    "    function countUp () {",
+                    "        setTimeout(function () {",
+                    "",
+                    "",
+                    "",
+                    "            displayOnes();",
+                    "",
+                    "            function displayOnes(){",
+                    "                setTimeout(function(){",
+                    "                    if((i*10+counterOnes < stop)){",
+                    "                        document.getElementById(\"int\").innerHTML = i*10+counterOnes+1;",
+                    "                    }else{",
+                    "                        return 0;",
+                    "                    }",
+                    "",
+                    "                    if(counterOnes < 9){",
+                    "                        counterOnes++;",
+                    "                        displayOnes();",
+                    "                    }else{",
+                    "                        document.getElementById(\"int\").innerHTML = i*10;",
+                    "                    }",
+                    "                },25);",
+                    "            }",
+                    "            console.log(\"var i = \" +i +\" var counterOnes = \" + counterOnes);",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "            if (i < 10) {",
+                    "                counterOnes = 0;",
+                    "                i++;",
+                    "                countUp();",
+                    "            }",
+                    "",
+                    "            if(i*10 < stop){",
+                    "                element.classList.remove(\"p\"+(i-1)+\"0\");",
+                    "                element.classList.add(\"p\"+i+\"0\");",
+                    "                document.getElementById(\"int\").innerHTML = i*10;",
+                    "            }else{",
+                    "                return 0;",
+                    "            }",
+                    "",
+                    "        }, 250);",
+                    "    }",
+                    "",
+                    "},1250);",
+                    ""
+                ]
+            },
+            "name": "percentageAnimation",
+            "designerId": "38175a4e-51aa-4bcb-a4e5-9bfd1a1e9da7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "dailyGoalsAchCounter",
+                "selector": "#dailyGoalsAchCounter"
+            },
+            "name": "dailyGoalsAchCounter",
+            "designerId": "f62ea942-d8b3-438b-963e-cb1ab26e7d77"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#abc",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewInitialize",
+                "implHandler": [
+                    "var myPanel = Ext.create('Ext.Panel', {",
+                    "    html: \"<div class=\\\"itemWrapper\\\"><div class=\\\"content\\\">Erreichte Tagesziele</div><div class=\\\"dailyGoalsCounterIcon\\\">\" + this.getDailyGoalsCounter() + \"</div></div>\"",
+                    "});",
+                    "",
+                    "component.add([myPanel]);"
+                ],
+                "name": "initialize"
+            },
+            "name": "onDataviewInitialize",
+            "designerId": "8654bde9-33ab-4659-8b55-7c6d72085219"
         }
     ]
 }

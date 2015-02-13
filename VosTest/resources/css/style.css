@@ -286,7 +286,7 @@ div.goalsDetails{
 .dailyGoalsCounterDataView .content,
 .weekendTasksDoneDataview .content{
   float: left;
-  width: 60%;
+  width: 80%;
   padding-left:25px;
 }
 
@@ -338,13 +338,53 @@ div.goalsDetails{
   width: 30px;
   height: 30px;
   margin-left:5px;
-  background-image: url("../images/icons/percent_bg.png");
+  background-image: url("../images/icons/percentage_bar/percent_0.png");
   background-repeat: no-repeat;
   background-size: 30px 30px;
   color:#fff;
   font-weight: bold;
   padding-top: 7px;
   padding-left: 5px;
+}
+
+.netzanteilProgress .p10{
+  background-image: url("../images/icons/percentage_bar/percent_10.png");
+}
+
+.netzanteilProgress .p20{
+  background-image: url("../images/icons/percentage_bar/percent_20.png");
+}
+
+.netzanteilProgress .p30{
+  background-image: url("../images/icons/percentage_bar/percent_30.png");
+}
+
+.netzanteilProgress .p40{
+  background-image: url("../images/icons/percentage_bar/percent_40.png");
+}
+
+.netzanteilProgress .p50{
+  background-image: url("../images/icons/percentage_bar/percent_50.png");
+}
+
+.netzanteilProgress .p60{
+  background-image: url("../images/icons/percentage_bar/percent_60.png");
+}
+
+.netzanteilProgress .p70{
+  background-image: url("../images/icons/percentage_bar/percent_70.png");
+}
+
+.netzanteilProgress .p80{
+  background-image: url("../images/icons/percentage_bar/percent_80.png");
+}
+
+.netzanteilProgress .p90{
+  background-image: url("../images/icons/percentage_bar/percent_90.png");
+}
+
+.netzanteilProgress .p100{
+  background-image: url("../images/icons/percentage_bar/percent_100.png");
 }
 
 .percentIcon #int{

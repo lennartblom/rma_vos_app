@@ -17,12 +17,15 @@ Ext.define('VosNavigator.controller.Achievements', {
     extend: 'Ext.app.Controller',
 
     config: {
+        dailyGoalsCounter: 0,
+
         refs: {
             achView: '#AchView',
             achBackButton: 'button#achBackButton',
             mainView: 'container#MainView',
             mapView: '#MapView',
-            netzanteil: 'label#netzanteil'
+            netzanteil: 'label#netzanteil',
+            dailyGoalsAchCounter: '#dailyGoalsAchCounter'
         },
 
         control: {
@@ -31,6 +34,9 @@ Ext.define('VosNavigator.controller.Achievements', {
             },
             "button#scoreButton": {
                 tap: 'onButtonTap'
+            },
+            "dataview#abc": {
+                initialize: 'onDataviewInitialize'
             }
         }
     },
@@ -46,9 +52,80 @@ Ext.define('VosNavigator.controller.Achievements', {
         this.getMapView().show();
     },
 
+    onDataviewInitialize: function(component, eOpts) {
+        var myPanel = Ext.create('Ext.Panel', {
+            html: "<div class=\"itemWrapper\"><div class=\"content\">Erreichte Tagesziele</div><div class=\"dailyGoalsCounterIcon\">" + this.getDailyGoalsCounter() + "</div></div>"
+        });
+
+        component.add([myPanel]);
+    },
+
     launch: function() {
         Ext.getStore('sights').load();
-        this.getNetzanteil().setData({"percent":25});
+        Ext.getStore('sights').filter("visited", true);
+        this.getNetzanteil().setData({"percent":0});
+        //this.setDailyGoalsCounter(this.dailyGoalsCounter);
+    },
+
+    percentageAnimation: function(stop) {
+        setTimeout(function() {
+            var element = document.getElementById("percentage");
+            var counter = 0;
+            var delay = 500;
+            var counterOnes = 0;
+
+
+            var i = 0;
+
+            countUp();
+
+            function countUp () {
+                setTimeout(function () {
+
+
+
+                    displayOnes();
+
+                    function displayOnes(){
+                        setTimeout(function(){
+                            if((i*10+counterOnes < stop)){
+                                document.getElementById("int").innerHTML = i*10+counterOnes+1;
+                            }else{
+                                return 0;
+                            }
+
+                            if(counterOnes < 9){
+                                counterOnes++;
+                                displayOnes();
+                            }else{
+                                document.getElementById("int").innerHTML = i*10;
+                            }
+                        },25);
+                    }
+                    console.log("var i = " +i +" var counterOnes = " + counterOnes);
+
+
+
+
+                    if (i < 10) {
+                        counterOnes = 0;
+                        i++;
+                        countUp();
+                    }
+
+                    if(i*10 < stop){
+                        element.classList.remove("p"+(i-1)+"0");
+                        element.classList.add("p"+i+"0");
+                        document.getElementById("int").innerHTML = i*10;
+                    }else{
+                        return 0;
+                    }
+
+                }, 250);
+            }
+
+        },1250);
+
     }
 
 });

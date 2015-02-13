@@ -84,13 +84,13 @@ Ext.define('VosNavigator.view.achView', {
                                 xtype: 'dataview',
                                 baseCls: 'dailyGoalsCounterDataView',
                                 height: '41px',
-                                id: 'dailyGoalsAchCouter',
+                                id: 'abc',
                                 width: '90%',
+                                scrollable: false,
                                 itemTpl: [
                                     '<div class="itemWrapper"><div class="content">Erreichte Tagesziele</div><div class="dailyGoalsCounterIcon">{id}</div></div>'
                                 ],
-                                maxItemCache: 1,
-                                store: 'stops'
+                                maxItemCache: 1
                             }
                         ]
                     },
@@ -147,7 +147,7 @@ Ext.define('VosNavigator.view.achView', {
                                 id: 'netzanteil',
                                 top: '280px',
                                 tpl: [
-                                    '<div class="itemWrapper"><div class="percentIcon"><span id="int">{percent}</span><span id="typo">%</span></div><div class="content">des Busnetzes wurden bisher besucht.</div></div>'
+                                    '<div class="itemWrapper"><div id="percentage" class="percentIcon"><span id="int">{percent}</span><span id="typo">%</span></div><div class="content">des Busnetzes wurden bisher besucht.</div></div>'
                                 ],
                                 width: '100%'
                             }
