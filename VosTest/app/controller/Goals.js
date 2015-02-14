@@ -45,9 +45,6 @@ Ext.define('VosNavigator.controller.Goals', {
             "button#goalsBackButton": {
                 tap: 'goalsBackButton'
             },
-            "list#sightsDaily": {
-                itemtap: 'onListItemTap'
-            },
             "list#dataview_weekly_goals": {
                 itemsingletap: 'onListItemSingletap'
             }
@@ -58,15 +55,6 @@ Ext.define('VosNavigator.controller.Goals', {
         this.getGoalsView().hide();
         this.getMainView().show();
         this.stopClock();
-
-    },
-
-    onListItemTap: function(dataview, index, target, record, e, eOpts) {
-        var details = this.getApplication().getController('goalsDetailsController');
-        details.setData(record.data.name, record.data.description, record.data.link);
-             this.getGoalsView().hide();
-             this.getGoalsDetails().show();
-
 
     },
 

@@ -6,6 +6,9 @@
   font-style: normal;
 }
 
+*{
+  font-family: "Helvetica Neue";
+}
 
 .clearing{
 	clear:both;
@@ -338,9 +341,10 @@ div.goalsDetails{
   width: 30px;
   height: 30px;
   margin-left:5px;
-  background-image: url("../images/icons/percentage_bar/percent_0.png");
+  background-image: url("../images/icons/percentage_bg.png");
   background-repeat: no-repeat;
-  background-size: 30px 30px;
+  background-size: 330px 30px;
+  background-position: 0px 0px;
   color:#fff;
   font-weight: bold;
   padding-top: 7px;
@@ -348,43 +352,53 @@ div.goalsDetails{
 }
 
 .netzanteilProgress .p10{
-  background-image: url("../images/icons/percentage_bar/percent_10.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -30px 0px;
 }
 
 .netzanteilProgress .p20{
-  background-image: url("../images/icons/percentage_bar/percent_20.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -60px 0px;
 }
 
 .netzanteilProgress .p30{
-  background-image: url("../images/icons/percentage_bar/percent_30.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -90px 0px;
 }
 
 .netzanteilProgress .p40{
-  background-image: url("../images/icons/percentage_bar/percent_40.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -120px 0px;
 }
 
 .netzanteilProgress .p50{
-  background-image: url("../images/icons/percentage_bar/percent_50.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -150px 0px;
 }
 
 .netzanteilProgress .p60{
-  background-image: url("../images/icons/percentage_bar/percent_60.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -180px 0px;
 }
 
 .netzanteilProgress .p70{
-  background-image: url("../images/icons/percentage_bar/percent_70.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -210px 0px;
 }
 
 .netzanteilProgress .p80{
-  background-image: url("../images/icons/percentage_bar/percent_80.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -240px 0px;
 }
 
 .netzanteilProgress .p90{
-  background-image: url("../images/icons/percentage_bar/percent_90.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -270px 0px;
 }
 
 .netzanteilProgress .p100{
-  background-image: url("../images/icons/percentage_bar/percent_100.png");
+  background-image: url("../images/icons/percentage_bg.png");
+  background-position: -300px 0px;
 }
 
 .percentIcon #int{
@@ -393,4 +407,61 @@ div.goalsDetails{
 
 .percentIcon #typo{
   font-size: 8px;
+}
+
+.busline{
+font-size: 11px;
+}
+
+.startBusstop{
+  display: block;
+  float:left;
+  width: 100%;
+}
+
+.startBusstop img{
+  margin-bottom:-5px;
+}
+
+.destinationBusstop img{
+  margin-bottom:-5px;
+}
+
+.destinationBusstop{
+  display: block;
+  float: left;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.vonnach{
+  display: inline-block;
+  height: 20px;
+  width: 30px;
+  padding-right: 8px;
+}
+
+
+.ovalBox{
+  display: inline-block;
+  height:20px;
+  width: auto;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  line-height: 20px;
+  padding-left:5px;
+  padding-right:5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.red{
+  color:#fff;
+  background-color:#D91E18;
+}
+
+.blue{
+  color:#fff;
+  background-color:#4183D7;
 }

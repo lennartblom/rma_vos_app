@@ -84,12 +84,13 @@ Ext.define('VosNavigator.view.achView', {
                                 xtype: 'dataview',
                                 baseCls: 'dailyGoalsCounterDataView',
                                 height: '41px',
-                                id: 'dailyGoalsAchCouter',
+                                id: 'abc',
                                 width: '90%',
+                                scrollable: false,
                                 itemTpl: [
                                     '<div class="itemWrapper"><div class="content">Erreichte Tagesziele</div><div class="dailyGoalsCounterIcon">{id}</div></div>'
                                 ],
-                                maxItemCache: 1,
+                                maxItemCache: 1
                             }
                         ]
                     },

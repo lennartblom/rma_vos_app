@@ -120,15 +120,49 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     sucheVerbindung: function(button, e, eOpts) {
+
+
+
         var searchView = this.getApplication().getController('searchViewController');
         var sOrt = searchView.getStartOrt();
         var zOrt = searchView.getZielOrt();
         var self = this;
         console.log("verbindung von "+sOrt+" nach "+zOrt);
 
+        var dataView = this.getLineTwo();
+        dataView.removeAll();
+        var htmlContent;
+
+        htmlContent += "<div class=\"connection\">\n";
+        htmlContent += "<div class=\"startBusstop\">\n";
+        htmlContent += "<span class=\"vonnach\">von</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\">\n";
+        htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span>\n";
+        htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> <span class=\"ovalBox red busline\">#LINIE#</span> #RICHTUNG# \n";
+        htmlContent += "</div>\n";
 
 
+        htmlContent += "<div class=\"destinationBusstop\">\n";
+        htmlContent += "<span class=\"vonnach\">nach</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"> \n";
+        htmlContent += "<span class=\"ovalBox blue busline\">" + zOrt + "</span></div>\n";
 
+        // IF ---- VERBINDUNG ÜBER NEUMARKT? DANN DAS HIER AUCH!
+
+        htmlContent += "<div class=\"viaBusstop\">via <span class=\"ovalBox blue busline\">Neumarkt</span> mit \n";
+        htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> \n";
+        htmlContent += "<span class=\"ovalBox red busline\">#LINIE#</span> #RICHTUNG# \n";
+        htmlContent += "</div>\n";
+
+
+        // ENDIF ----
+
+
+        htmlContent += "</div>\n";
+
+        var myPanel = Ext.create('Ext.Panel', {
+            html: htmlContent
+        });
+
+        dataView.add([myPanel]);
 
         dataBaseActionDirektVerbindung(sOrt,zOrt);
         if(self.getNeumarkt()){

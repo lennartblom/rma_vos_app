@@ -266,7 +266,7 @@
                     "this.getAchView().show({type:\"slide\",direction:\"left\"});",
                     "",
                     "",
-                    "this.getApplication().getController('Achievements').percentageAnimation(25);"
+                    "this.getApplication().getController('Achievements').percentageAnimation(82);"
                 ],
                 "name": "tap"
             },

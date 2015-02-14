@@ -79,30 +79,6 @@
             "designerId": "34f6099f-a68b-4b65-bc16-b6162a861f62"
         },
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "list#sightsDaily",
-                "designer|targetType": "Ext.dataview.List",
-                "fn": "onListItemTap",
-                "implHandler": [
-                    "var details = this.getApplication().getController('goalsDetailsController');",
-                    "details.setData(record.data.name, record.data.description, record.data.link);",
-                    "     this.getGoalsView().hide();",
-                    "     this.getGoalsDetails().show();",
-                    "",
-                    ""
-                ],
-                "name": "itemtap"
-            },
-            "name": "onListItemTap",
-            "designerId": "e9d03f0d-8e8d-4811-aabf-4673c8a5214e"
-        },
-        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
