@@ -151,10 +151,12 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> \n";
         htmlContent += "<span class=\"ovalBox red busline\">#LINIE#</span> #RICHTUNG# \n";
         htmlContent += "</div>\n";
-        htmlContent += "</div>\n";
 
 
         // ENDIF ----
+
+
+        htmlContent += "</div>\n";
 
         var myPanel = Ext.create('Ext.Panel', {
             html: htmlContent
