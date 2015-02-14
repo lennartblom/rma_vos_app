@@ -36,7 +36,7 @@ Ext.define('VosNavigator.view.settingsView', {
                 docked: 'top',
                 height: '100%',
                 id: 'container_settings_view',
-                style: 'padding-top:60px;',
+                style: 'padding-top:30px;',
                 width: '320px',
                 layout: 'fit',
                 items: [

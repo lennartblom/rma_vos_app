@@ -7,17 +7,24 @@
     "codeClass": null,
     "userConfig": {
         "dailyGoalsCounter": 0,
-        "designer|userClassName": "Achievements"
+        "designer|userClassName": "Achievements",
+        "reachedBusNetwork": 0
     },
     "name": "MyController",
     "configAlternates": {
-        "dailyGoalsCounter": "number"
+        "dailyGoalsCounter": "number",
+        "reachedBusNetwork": "number"
     },
     "designerId": "09d61032-2b70-40d9-88d3-bc520197186c",
     "customConfigs": [
         {
             "group": "(Custom Properties)",
             "name": "dailyGoalsCounter",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "reachedBusNetwork",
             "type": "string"
         }
     ],
@@ -176,7 +183,7 @@
                     "",
                     "    function countUp () {",
                     "        setTimeout(function () {",
-                    "            ",
+                    "",
                     "            displayOnes();",
                     "",
                     "            function displayOnes(){",
@@ -207,6 +214,7 @@
                     "                element.classList.add(\"p\"+i+\"0\");",
                     "                document.getElementById(\"int\").innerHTML = i*10;",
                     "            }else{",
+                    "                i = 10;",
                     "                return 0;",
                     "            }",
                     "",
@@ -252,10 +260,21 @@
                     "",
                     "component.add([myPanel]);"
                 ],
-                "name": "initialize"
+                "name": "initialize",
+                "reachedBusNetwork": 0
             },
             "name": "onDataviewInitialize",
-            "designerId": "8654bde9-33ab-4659-8b55-7c6d72085219"
+            "configAlternates": {
+                "reachedBusNetwork": "number"
+            },
+            "designerId": "8654bde9-33ab-4659-8b55-7c6d72085219",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "reachedBusNetwork",
+                    "type": "string"
+                }
+            ]
         },
         {
             "type": "basicfunction",

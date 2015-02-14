@@ -18,6 +18,7 @@ Ext.define('VosNavigator.controller.Achievements', {
 
     config: {
         dailyGoalsCounter: 0,
+        reachedBusNetwork: 0,
 
         refs: {
             achView: '#AchView',
@@ -110,6 +111,7 @@ Ext.define('VosNavigator.controller.Achievements', {
                         element.classList.add("p"+i+"0");
                         document.getElementById("int").innerHTML = i*10;
                     }else{
+                        i = 10;
                         return 0;
                     }
 

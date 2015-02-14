@@ -30,7 +30,7 @@
                 "id": "container_settings_view",
                 "layout": "fit",
                 "style": [
-                    "padding-top:60px;"
+                    "padding-top:30px;"
                 ],
                 "width": "320px"
             },
