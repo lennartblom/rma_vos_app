@@ -26,8 +26,8 @@ Ext.application({
     ],
     stores: [
         'sights',
-        'stops',
-        'leer'
+        'leer',
+        'stops'
     ],
     views: [
         'goalsDetails',
@@ -38,20 +38,19 @@ Ext.application({
         'fahrplanerView',
         'weckerView',
         'mainScreen',
-        'MySearchField',
         'searchView',
         'mapView'
     ],
     controllers: [
-        'Settings',
-        'Wecker',
-        'Achievements',
-        'Goals',
         'Main',
-        'searchViewController',
-        'Fahrplaner',
+        'Goals',
+        'Settings',
         'mapViewController',
-        'goalsDetailsController'
+        'Achievements',
+        'goalsDetailsController',
+        'Fahrplaner',
+        'searchViewController',
+        'Wecker'
     ],
     name: 'VosNavigator',
 

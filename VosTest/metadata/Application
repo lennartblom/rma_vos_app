@@ -10,12 +10,12 @@
             "Main",
             "Goals",
             "Settings",
-            "Achievements",
-            "Wecker",
-            "searchViewController",
             "mapViewController",
+            "Achievements",
+            "goalsDetailsController",
             "Fahrplaner",
-            "goalsDetailsController"
+            "searchViewController",
+            "Wecker"
         ],
         "models": [
             "sight",
@@ -23,42 +23,23 @@
         ],
         "name": "VosNavigator",
         "stores": [
-            "stops",
             "sights",
-            "leer"
+            "leer",
+            "stops"
         ],
         "views": [
             "goalsDetails",
+            "settingsView",
             "goalsView",
             "achView",
             "InitialView",
             "fahrplanerView",
             "weckerView",
             "mainScreen",
-            "MySearchField",
             "searchView",
-            "mapView",
-            "settingsView"
+            "mapView"
         ]
     },
     "name": "Application",
-    "designerId": "application",
-    "cn": [
-        {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "launch",
-                "implHandler": [
-                    ""
-                ]
-            },
-            "name": "launch",
-            "designerId": "cea13aa9-fb00-482e-badc-9b0181e69360"
-        }
-    ]
+    "designerId": "application"
 }
