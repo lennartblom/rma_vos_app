@@ -93,6 +93,7 @@ Ext.define('VosNavigator.controller.Wecker', {
     },
 
     wecken: function() {
+        var self = this;
         var taskCheckDistance = this.getTaskEngine().taskCheckDistance;
         navigator.vibrate(1);
         if(!this.getWeckerKlingelt()){
@@ -102,6 +103,8 @@ Ext.define('VosNavigator.controller.Wecker', {
                                          function(){
                                                     weckTune.stop();
                                                     clearInterval(taskCheckDistance);
+                                                    self.setWeckerKlingelt(false);
+
             },"Zielort Erreicht!");
             navigator.vibrate(1);
             this.setWeckerKlingelt(true);
@@ -131,52 +134,19 @@ Ext.define('VosNavigator.controller.Wecker', {
         }
     },
 
-    entfernung: function() {
-        console.log("distance Berechnung");
-        var fahrplaner =this.getApplication().getController('Fahrplaner');
-        var aktPos = this.getAktuellePosition();
-        var destPos = fahrplaner.getZielOrt();
-        var distance = fahrplaner.entfernung(aktPos,destPos);
-        /*var latCurrent =pos.lat;
-        var lngCurrent =pos.lng;
-        var latDestination =destPos.lat;
-        var lngDestination =destPos.lng;
-        var distance = 0.0;
-        var deltaX = 71.5 * (lngCurrent-lngDestination);
-        var deltaY = 111.3 * (latCurrent-latDestination);
-        var radius = this.getSliderValue();
-        if(deltaX!==0||deltaY!==0){
-        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
-        }*/
-        console.log(distance);
-        console.log(radius);
-        if(distance<=radius){
-            console.log("distance<radius");
-            this.wecken();
-        }
+    checkHaltestelle: function() {
+        var store = Ext.getStore('stops');
+        store.clearFilter();
+        store.filter(visited);
 
     },
 
     checkDistance: function() {
-        console.log("distance Berechnung");
         var fahrplaner =this.getApplication().getController('Fahrplaner');
         var aktPos = this.getAktuellePosition();
         var destPos = fahrplaner.getZielOrt();
         var distance = fahrplaner.entfernung(aktPos,destPos);
         var radius = this.getSliderValue();
-        /*var latCurrent =pos.lat;
-        var lngCurrent =pos.lng;
-        var latDestination =destPos.lat;
-        var lngDestination =destPos.lng;
-        var distance = 0.0;
-        var deltaX = 71.5 * (lngCurrent-lngDestination);
-        var deltaY = 111.3 * (latCurrent-latDestination);
-
-        if(deltaX!==0||deltaY!==0){
-        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
-        }*/
-        console.log(distance);
-        console.log(radius);
         if(distance<=radius){
             console.log("distance<radius");
             this.wecken();
@@ -204,7 +174,7 @@ Ext.define('VosNavigator.controller.Wecker', {
     initiateTaskManager: function(pace) {
         var taskEngine = this.getTaskEngine();
         taskEngine.taskGetPos = setInterval(Ext.bind(this.activateTracker,this),pace);
-        taskEngine.taskCheckDistance = setInterval(Ext.bind(this.checkDistance,this),5000);
+        taskEngine.taskCheckDistance = setInterval(Ext.bind(this.checkDistance,this),7000);
         taskEngine.taskBackgroundGeo.start();
         console.log("taskmanager wurde initialisiert");
     },
