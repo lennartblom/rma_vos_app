@@ -75,7 +75,7 @@ Ext.define('VosNavigator.view.mapView', {
                         xtype: 'label',
                         baseCls: 'textCenterSmall',
                         docked: 'top',
-                        html: 'Bereits besuchte Haltestellen sind in <span class="green bold">Grün</span> und noch nicht besuchte in <span class="red bold">Rot</span> gekennzeichnet.',
+                        html: 'Bereits besuchte Haltestellen sind in <span class="green bold">Grün</span> und noch nicht besuchte in <span class="redText bold">Rot</span> gekennzeichnet.',
                         id: 'infoText',
                         top: '370px'
                     }
