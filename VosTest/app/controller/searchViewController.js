@@ -61,27 +61,40 @@ Ext.define('VosNavigator.controller.searchViewController', {
 
     listTap: function(dataview, index, target, record, e, eOpts) {
 
-
-
-
-        console.log("itemTap");
-        if(this.searchType==='start'){
-            this.setStartOrt(record.get('name'));
-        }else{
-           this.setZielOrt(record.get('name'));
-        }
+        var self = this;
         var store = Ext.getStore('stops');
+        var list = self.getSearchResultList();
+        var fpController = self.getApplication().getController('Fahrplaner');
+        var startFeld = fpController.getSearchfieldStart();
+        var zielFeld = fpController.getSearchfieldDestination();
+        var ort = record.get('name');
+        //console.log("itemTap");
+        if(self.searchType==='start'){
+            self.setStartOrt(ort);
+            startFeld.setPlaceHolder(ort);
+            store.clearFilter();
+            dataview.refresh();
+        }else{
+            self.setZielOrt(ort);
+            zielFeld.setPlaceHolder(ort);
+            store.clearFilter();
+            dataview.refresh();
+            if(startFeld!==null||startFeld!==undefined){
+                fpController.sucheVerbindung();
+            }
+        }
 
         store.clearFilter();
+        dataview.refresh();
 
-
-        console.log("ende von if");
-        this.getSearchView().hide();
-        this.getFahrplanerView().show();
+        //console.log("ende von if");
+        self.getSearchView().hide();
+        self.getFahrplanerView().show();
     },
 
     onSearchfieldClearicontap: function(textfield, e, eOpts) {
         Ext.getStore('stops').clearFilter();
+        this.getSearchResultList().refresh();
 
     }
 

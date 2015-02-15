@@ -65,14 +65,12 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                     {
                         xtype: 'searchfield',
                         itemId: 'searchfieldStart',
-                        label: 'Von',
-                        value: 'Aktueller Ort'
+                        label: 'Von'
                     },
                     {
                         xtype: 'searchfield',
                         itemId: 'searchfieldDestination',
-                        label: 'Nach',
-                        placeHolder: 'Ziel Ort'
+                        label: 'Nach'
                     }
                 ]
             },
@@ -89,24 +87,11 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         xtype: 'dataview',
                         baseCls: 'transparentWhite',
                         docked: 'top',
-                        height: 100,
+                        height: 300,
                         id: 'lineTwo',
                         margin: '10 0 0 0 ',
                         width: '100%',
                         scrollable: 'vertical',
-                        itemTpl: [
-                            '<div>Data View Item {string}</div>'
-                        ]
-                    },
-                    {
-                        xtype: 'dataview',
-                        baseCls: 'transparentWhite',
-                        docked: 'top',
-                        height: 100,
-                        id: 'lineThree',
-                        margin: '10 0 0 0',
-                        width: '100%',
-                        scrollable: false,
                         itemTpl: [
                             '<div>Data View Item {string}</div>'
                         ]

@@ -26,14 +26,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             lng: 0.0
         },
         db: null,
-        directionList: 0,
-        linesList: 0,
         neumarkt: true,
         tempCoords: {
             lat: 0.0,
             lng: 0.0
         },
-        mutexLock: true,
 
         refs: {
             MainView: '#MainView',
@@ -126,48 +123,19 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         var searchView = this.getApplication().getController('searchViewController');
         var sOrt = searchView.getStartOrt();
         var zOrt = searchView.getZielOrt();
+        /*var searchfieldStart = this.getSearchfieldStart();
+        searchfieldStart.setPlaceHolder(sOrt);
+        var searchfieldZiel = this.getSearchfieldDestination();
+        searchfieldZiel.setPlaceHolder(zOrt);*/
         var self = this;
-        console.log("verbindung von "+sOrt+" nach "+zOrt);
+        //console.log("verbindung von "+sOrt+" nach "+zOrt);
 
-        var dataView = this.getLineTwo();
+        var dataView = self.getLineTwo();
         dataView.removeAll();
-        var htmlContent;
 
-        htmlContent += "<div class=\"connection\">\n";
-        htmlContent += "<div class=\"startBusstop\">\n";
-        htmlContent += "<span class=\"vonnach\">von</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\">\n";
-        htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span>\n";
-        htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> <span class=\"ovalBox red busline\">#LINIE#</span> #RICHTUNG# \n";
-        htmlContent += "</div>\n";
-
-
-        htmlContent += "<div class=\"destinationBusstop\">\n";
-        htmlContent += "<span class=\"vonnach\">nach</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"> \n";
-        htmlContent += "<span class=\"ovalBox blue busline\">" + zOrt + "</span></div>\n";
-
-        // IF ---- VERBINDUNG ÜBER NEUMARKT? DANN DAS HIER AUCH!
-
-        htmlContent += "<div class=\"viaBusstop\">via <span class=\"ovalBox blue busline\">Neumarkt</span> mit \n";
-        htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> \n";
-        htmlContent += "<span class=\"ovalBox red busline\">#LINIE#</span> #RICHTUNG# \n";
-        htmlContent += "</div>\n";
-
-
-        // ENDIF ----
-
-
-        htmlContent += "</div>\n";
-
-        var myPanel = Ext.create('Ext.Panel', {
-            html: htmlContent
-        });
-
-        dataView.add([myPanel]);
 
         dataBaseActionDirektVerbindung(sOrt,zOrt);
-        if(self.getNeumarkt()){
-            //dataBaseActionUmstiegAmNeumarkt(sOrt,zOrt);
-        }
+
         /**
         *
         *functions
@@ -192,7 +160,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             var j=0;
             var length=0;
             db.transaction(function(tx) {
-                console.log("aufruf databaseActionUmstiegAmNeumarkt");
+                //console.log("aufruf databaseActionUmstiegAmNeumarkt");
 
                 //get coords from Startort Name
                 tx.executeSql("select lineId from stops, connections where stops.id = connections.stopId and name = '"+sOrt+"' order by lineId;", [],
@@ -280,7 +248,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                       innerArray[3] = res.rows.item(i).lineId;
                                       endstation1[j++] = innerArray;
 
-                                      console.log("Monsterabfrage: "+endstation1[j-1][0]+" "+endstation1[j-1][1]+" "+endstation1[j-1][2]+" "+endstation1[j-1][3]);
+                                      //console.log("Monsterabfrage: "+endstation1[j-1][0]+" "+endstation1[j-1][1]+" "+endstation1[j-1][2]+" "+endstation1[j-1][3]);
                                   }
 
                               },function(){console.log("errror mit monsterabfraage");});
@@ -299,7 +267,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                       innerArray[3] = res.rows.item(i).lineId;
                                       endstation1a[j++] = innerArray;
 
-                                      console.log("Monsterabfrage2: "+endstation1a[j-1][0]+" "+endstation1a[j-1][1]+" "+endstation1a[j-1][2]+" "+endstation1a[j-1][3]);
+                                      //console.log("Monsterabfrage2: "+endstation1a[j-1][0]+" "+endstation1a[j-1][1]+" "+endstation1a[j-1][2]+" "+endstation1a[j-1][3]);
                                   }
 
                               },function(){console.log("errror mit monsterabfraage2");});
@@ -312,39 +280,74 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                var tmpDirection=[];
                                var tmpDirection2=[];
                                var neumarktCoords = {lng:8.0486774787,lat:52.2725392927};
-                               console.log("Läuft bis hier 1 !");
+                               //console.log("Läuft bis hier 1 !");
                                for(var i =0;i<startLines.length;i++){
                                    entfernung1 = self.entfernung(start,{lat:endstation1[i][1],lng:endstation1[i][2]});
-                                   console.log("Von: "+sOrt+" nach Neumarkt");
+                                   //console.log("Von: "+sOrt+" nach Neumarkt");
                                    entfernung2 = self.entfernung(neumarktCoords,{lat:endstation1[i][1],lng:endstation1[i][2]});
 
                                    if(entfernung1>entfernung2){
                                        tmpDirection[i]=direction1[i];
-                                       console.log("e>e2 lineId: "+startLines[i]+"nach"+tmpDirection[i]);
+                                       //console.log("e>e2 lineId: "+startLines[i]+"nach"+tmpDirection[i]);
 
                                    }else{
                                        tmpDirection[i]=direction2[i];
-                                       console.log("e<e2 lineId: "+startLines[i]+"nach"+tmpDirection[i]);
+                                       //console.log("e<e2 lineId: "+startLines[i]+"nach"+tmpDirection[i]);
 
                                    }
                                }
-                               console.log("Läuft bis hier 2 !");
+                               //console.log("Läuft bis hier 2 !");
 
                                for(i =0;i<zielLines.length;i++){
                                    entfernung1 = self.entfernung(neumarktCoords,{lat:endstation1a[i][1],lng:endstation1a[i][2]});
-                                   console.log("Von: Neumarkt nach "+zOrt);
+                                   //console.log("Von: Neumarkt nach "+zOrt);
                                    entfernung2 = self.entfernung(ziel,{lat:endstation1a[i][1],lng:endstation1a[i][2]});
 
                                    if(entfernung1>entfernung2){
                                        tmpDirection2[i]=direction1a[i];
-                                       console.log("e>e2 lineId: "+zielLines[i]+"nach"+tmpDirection2[i]);
+                                       //console.log("e>e2 lineId: "+zielLines[i]+"nach"+tmpDirection2[i]);
 
                                    }else{
                                        tmpDirection2[i]=direction2a[i];
-                                       console.log("e<e2 lineId: "+zielLines[i]+"nach"+tmpDirection2[i]);
+                                       //console.log("e<e2 lineId: "+zielLines[i]+"nach"+tmpDirection2[i]);
 
                                    }
                                }
+
+                               var dataView = self.getLineTwo();
+                               dataView.removeAll();
+                               var htmlContent;
+
+                               htmlContent += "<div class=\"connection\">\n";
+                               htmlContent += "<div class=\"startBusstop\">\n";
+                               htmlContent += "<span class=\"vonnach\">von</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\">\n";
+                               htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span>\n";
+                               htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> <span class=\"ovalBox red busline\">"+startLines[0]+"</span> "+tmpDirection[0]+" \n";
+                               htmlContent += "</div>\n";
+
+
+                               htmlContent += "<div class=\"destinationBusstop\">\n";
+                               htmlContent += "<span class=\"vonnach\">nach</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"> \n";
+                               htmlContent += "<span class=\"ovalBox blue busline\">" + zOrt + "</span></div>\n";
+
+                               // IF ---- VERBINDUNG ÜBER NEUMARKT? DANN DAS HIER AUCH!
+
+                               htmlContent += "<div class=\"viaBusstop\">via <span class=\"ovalBox blue busline\">Neumarkt</span> mit \n";
+                               htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> \n";
+                               htmlContent += "<span class=\"ovalBox red busline\">"+zielLines[0]+"</span> "+tmpDirection2[0]+" \n";
+                               htmlContent += "</div>\n";
+
+
+                               // ENDIF ----
+
+
+                               htmlContent += "</div>\n";
+
+                               var myPanel = Ext.create('Ext.Panel', {
+                                   html: htmlContent
+                               });
+
+                               dataView.add([myPanel]);
 
                            });
         }
@@ -397,7 +400,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
                                   if(length===0){
                                       self.setNeumarkt(true);
-                                      console.log("verbindung über neumarkt:"+self.getNeumarkt());
+                                      //console.log("verbindung über neumarkt:"+self.getNeumarkt());
                                       dataBaseActionUmstiegAmNeumarkt(sOrt,zOrt);
 
                                   }else{
@@ -443,7 +446,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                       innerArray[3] = res.rows.item(i).lineId;
                                       endstation1[j++] = innerArray;
 
-                                      console.log("Monsterabfrage: "+endstation1[j-1][0]+" "+endstation1[j-1][1]+" "+endstation1[j-1][2]+" "+endstation1[j-1][3]);
+                                      //console.log("Monsterabfrage: "+endstation1[j-1][0]+" "+endstation1[j-1][1]+" "+endstation1[j-1][2]+" "+endstation1[j-1][3]);
                                   }
 
                               },function(){console.log("errror mit monsterabfraage");});
@@ -455,26 +458,49 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                 var entfernung1;
                 var entfernung2;
                 var tmpDirection= [];
-                console.log("transaction Succesfull"+" start.lat "+start.lat+" ziel.lat "+ziel.lat+" Lines [0] "+lines[0]+" direction1[0] "+
-                            direction1[0]+" direction2[0] "+direction2[0]+" Endstation1[0] "+endstation1[0][0]);
+                /*console.log("transaction Succesfull"+" start.lat "+start.lat+" ziel.lat "+ziel.lat+" Lines [0] "+lines[0]+" direction1[0] "+
+                            direction1[0]+" direction2[0] "+direction2[0]+" Endstation1[0] "+endstation1[0][0]);*/
                 if(!self.getNeumarkt()){
                     var length=lines.length;
                     for(var i =0;i<length;i++){
                         entfernung1 = self.entfernung(start,{lat:endstation1[i][1],lng:endstation1[i][2]});
-                        console.log("Entfernung von Startort: "+sOrt+" nach "+endstation1[i][0]+"="+entfernung1);
+                        //console.log("Entfernung von Startort: "+sOrt+" nach "+endstation1[i][0]+"="+entfernung1);
                         entfernung2 = self.entfernung(ziel,{lat:endstation1[i][1],lng:endstation1[i][2]});
-                        console.log("Entfernung von Zielort: "+zOrt+" nach "+endstation1[i][0]+"="+entfernung2);
+                        //console.log("Entfernung von Zielort: "+zOrt+" nach "+endstation1[i][0]+"="+entfernung2);
 
                         if(entfernung1>entfernung2){
                             tmpDirection[i]=direction1[i];
-                            console.log("e>e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
+                            //console.log("e>e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
 
                         }else{
                             tmpDirection[i]=direction2[i];
-                            console.log("e<e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
+                            //console.log("e<e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
 
                         }
                     }
+
+                    var dataView = self.getLineTwo();
+                    dataView.removeAll();
+                    var htmlContent;
+
+                    htmlContent += "<div class=\"connection\">\n";
+                    htmlContent += "<div class=\"startBusstop\">\n";
+                    htmlContent += "<span class=\"vonnach\">von</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\">\n";
+                    htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span>\n";
+                    htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> <span class=\"ovalBox red busline\">"+lines[0]+"</span> "+tmpDirection[0]+" \n";
+                    htmlContent += "</div>\n";
+
+
+                    htmlContent += "<div class=\"destinationBusstop\">\n";
+                    htmlContent += "<span class=\"vonnach\">nach</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"> \n";
+                    htmlContent += "<span class=\"ovalBox blue busline\">" + zOrt + "</span></div>\n";
+                    htmlContent += "</div>\n";
+
+                    var myPanel = Ext.create('Ext.Panel', {
+                        html: htmlContent
+                    });
+
+                    dataView.add([myPanel]);
                 }
 
             });
