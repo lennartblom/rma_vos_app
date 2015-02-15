@@ -1,5 +1,4 @@
-{
-  "stops":[
+[
   {
     "id":1,
     "name":"Am Heidekotten",
@@ -26,34 +25,13 @@
     "name":"Bergerskamp",
     "long":8.0481592035,
     "lat":52.2526789233,
-    "visited":true
+    "visited":false
   },
   {
     "id":6,
     "name":"Berningshöhe",
     "long":8.0474919215,
     "lat":52.2502790348,
-    "visited":false
-  },
-  {
-    "id":7,
-    "name":"Brückenstraße",
-    "long":8.0121721615,
-    "lat":52.3005478094,
-    "visited":false
-  },
-  {
-    "id":8,
-    "name":"Carl-Stolcke-Straße",
-    "long":8.0090558301,
-    "lat":52.3030985355,
-    "visited":false
-  },
-  {
-    "id":9,
-    "name":"Dornierstraße",
-    "long":8.0111967675,
-    "lat":52.302473277,
     "visited":false
   },
   {
@@ -64,38 +42,10 @@
     "visited":false
   },
   {
-    "id":11,
-    "name":"Engernweg",
-    "long":8.0974922257,
-    "lat":52.2964765931,
-    "visited":false
-  },
-  {
-    "id":12,
-    "name":"Eversburger Straße",
-    "long":8.0075778103,
-    "lat":52.3010715417,
-    "visited":false
-  },
-  {
-    "id":13,
-    "name":"Friesenweg",
-    "long":8.089734756,
-    "lat":52.2942583056,
-    "visited":false
-  },
-  {
     "id":14,
     "name":"Gewerbegebiet Sutthausen",
     "long":8.0285573724,
     "lat":52.2316193354,
-    "visited":false
-  },
-  {
-    "id":15,
-    "name":"Hafenringstraße",
-    "long":8.0070577898,
-    "lat":52.3076435564,
     "visited":false
   },
   {
@@ -113,13 +63,6 @@
     "visited":false
   },
   {
-    "id":23,
-    "name":"Industriegebiet West",
-    "long":8.0047169858,
-    "lat":52.3045998109,
-    "visited":false
-  },
-  {
     "id":24,
     "name":"Jägerstraße",
     "long":8.1335913643,
@@ -131,20 +74,6 @@
     "name":"Johanniskirche",
     "long":8.0509033728,
     "lat":52.270934535,
-    "visited":false
-  },
-  {
-    "id":26,
-    "name":"Kameradschaftsweg",
-    "long":8.0880030839,
-    "lat":52.2957924442,
-    "visited":false
-  },
-  {
-    "id":27,
-    "name":"Kirche Widukindland",
-    "long":8.0969632169,
-    "lat":52.2946978376,
     "visited":false
   },
   {
@@ -201,20 +130,13 @@
     "name":"Neumarkt",
     "long":8.0486774787,
     "lat":52.2725392927,
-    "visited":true
+    "visited":false
   },
   {
     "id":40,
     "name":"Osnabrücker Werkstätten",
     "long":8.0327734144,
     "lat":52.2316873977,
-    "visited":false
-  },
-  {
-    "id":41,
-    "name":"Pagenstecherstraße",
-    "long":8.0169794397,
-    "lat":52.2945673447,
     "visited":false
   },
   {
@@ -232,24 +154,10 @@
     "visited":false
   },
   {
-    "id":44,
-    "name":"Sachsenweg",
-    "long":8.0924198922,
-    "lat":52.2915500806,
-    "visited":false
-  },
-  {
     "id":45,
     "name":"Schlossstraße",
     "long":8.1453843799,
     "lat":52.3154624354,
-    "visited":false
-  },
-  {
-    "id":46,
-    "name":"Spielplatz",
-    "long":8.0933251214,
-    "lat":52.2957687315,
     "visited":false
   },
   {
@@ -365,13 +273,6 @@
     "visited":false
   },
   {
-    "id":63,
-    "name":"Am Zuschlag",
-    "long":8.0859939662,
-    "lat":52.2992603239,
-    "visited":false
-  },
-  {
     "id":64,
     "name":"An der Landwehr",
     "long":7.9811158658,
@@ -446,13 +347,6 @@
     "name":"Bahnhof Eversburg",
     "long":8.0025663914,
     "lat":52.3008536101,
-    "visited":false
-  },
-  {
-    "id":75,
-    "name":"Bahnhof Lüstringen",
-    "long":8.1140656459,
-    "lat":52.2646342308,
     "visited":false
   },
   {
@@ -1125,14 +1019,14 @@
     "name":"Kamp-Promenade",
     "long":8.0448516945,
     "lat":52.2742752713,
-    "visited":true
+    "visited":false
   },
   {
     "id":176,
     "name":"Karl-Adams-Weg",
     "long":8.1358942579,
     "lat":52.3045987931,
-    "visited":true
+    "visited":false
   },
   {
     "id":177,
@@ -1576,13 +1470,6 @@
     "visited":false
   },
   {
-    "id":242,
-    "name":"Sandforter Straße",
-    "long":8.1158722059,
-    "lat":52.2681117893,
-    "visited":false
-  },
-  {
     "id":243,
     "name":"Sandgrube",
     "long":8.0114758395,
@@ -1881,7 +1768,7 @@
     "name":"Walkmühlenweg",
     "long":8.0169329385,
     "lat":52.2923679635,
-    "visited":true
+    "visited":false
   },
   {
     "id":286,
@@ -2073,5 +1960,3 @@
     "visited":false
   }
 ]
-
-}
