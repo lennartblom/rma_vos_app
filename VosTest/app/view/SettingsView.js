@@ -133,6 +133,14 @@ Ext.define('VosNavigator.view.settingsView', {
                                 html: '<p>Je häufiger die Position überprüft wird, desto mehr Strom wird verbraucht.</p>',
                                 id: 'info',
                                 margin: '5px'
+                            },
+                            {
+                                xtype: 'label',
+                                baseCls: 'textCenterSmall',
+                                html: '<p>Versionsnummer 0.9b</p>',
+                                id: 'info2',
+                                margin: '5px',
+                                style: 'text-align:left;\nfont-size:10px;\npadding-top:15px;'
                             }
                         ]
                     }

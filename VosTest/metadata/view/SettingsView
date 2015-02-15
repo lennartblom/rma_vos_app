@@ -263,6 +263,31 @@
                                 "style": "object"
                             },
                             "designerId": "ee4990f5-8f4b-445d-8196-943afdcd26a3"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "textCenterSmall",
+                                "designer|displayName": "",
+                                "html": "<p>Versionsnummer 0.9b</p>",
+                                "id": "info2",
+                                "margin": "5px",
+                                "style": [
+                                    "text-align:left;",
+                                    "font-size:10px;",
+                                    "padding-top:15px;"
+                                ]
+                            },
+                            "name": "MyLabel10",
+                            "configAlternates": {
+                                "style": "object"
+                            },
+                            "designerId": "41859755-3523-4b15-91de-0160a692a1c0"
                         }
                     ]
                 }
