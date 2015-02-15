@@ -52,9 +52,9 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     goalsBackButton: function(button, e, eOpts) {
+        this.stopClock();
         this.getGoalsView().hide();
         this.getMainView().show();
-        this.stopClock();
 
     },
 
@@ -83,17 +83,15 @@ Ext.define('VosNavigator.controller.Goals', {
         this.initiateDate();
         var task = this.getTaskClock();
         task = setInterval(Ext.bind(this.clock,this),1000);
-
         Ext.getStore('sights').load();
-        console.log("goals launcer");
+        Ext.getStore('sights').clearFilter();
+
     },
 
     clock: function() {
         var date = this.getDate();
         var remaining =this.getTimeRemaining();
-        //console.log("ticktack");
-        var date = this.getDate();
-        var remaining =this.getTimeRemaining();
+
         //console.log("var geladen");
         if(++date.sekunde>59){
             date.sekunde =0;
@@ -118,9 +116,7 @@ Ext.define('VosNavigator.controller.Goals', {
         var label = this.getDailyGoalsCounter();
         label.setHtml(remaining.stunde+" Stunden "+remaining.minute+
                       " Minuten "+remaining.sekunde+" Sekunden");
-        label = this.getWeeklyGoalsCounter();
-        label.setHtml(remaining.tag+" Tage "+remaining.stunde+
-                                            " Stunden "+remaining.minute+" Minuten");
+
 
     },
 
@@ -129,10 +125,8 @@ Ext.define('VosNavigator.controller.Goals', {
     },
 
     stopClock: function() {
-        var clock = this.getTaskClock();
-        clearInterval(clock);
-        clearInterval(this.taskClock);
-        this.taskClock = null;
+
+        clearInterval(this.getTaskClock());
         console.log("timer wurde gestoppt");
     }
 

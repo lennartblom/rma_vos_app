@@ -105,7 +105,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         xtype: 'label',
                                         baseCls: 'textCenterSmall',
                                         height: '25px',
-                                        html: '<p>Besuche folgende Haltestelle in der angegebenen Zeit und verdiene dir dadurch eine <span class="bold">Medallie</span>!</p>',
+                                        html: '<p>Besuche folgende Haltestelle in der angegebenen Zeit und verdiene dir eine <span class="bold">Medallie</span>!</p>',
                                         id: 'dailyGoalsDescribtion',
                                         style: 'text-align:left;',
                                         top: '78px'

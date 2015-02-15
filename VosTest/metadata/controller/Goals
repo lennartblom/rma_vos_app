@@ -68,9 +68,9 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "goalsBackButton",
                 "implHandler": [
+                    "this.stopClock();",
                     "this.getGoalsView().hide();",
                     "this.getMainView().show();",
-                    "this.stopClock();",
                     ""
                 ],
                 "name": "tap"
@@ -158,9 +158,9 @@
                     "this.initiateDate();",
                     "var task = this.getTaskClock();",
                     "task = setInterval(Ext.bind(this.clock,this),1000);",
-                    "",
                     "Ext.getStore('sights').load();",
-                    "console.log(\"goals launcer\");"
+                    "Ext.getStore('sights').clearFilter();",
+                    ""
                 ]
             },
             "name": "setupClock",
@@ -178,9 +178,7 @@
                 "implHandler": [
                     "var date = this.getDate();",
                     "var remaining =this.getTimeRemaining();",
-                    "//console.log(\"ticktack\");",
-                    "var date = this.getDate();",
-                    "var remaining =this.getTimeRemaining();",
+                    "",
                     "//console.log(\"var geladen\");",
                     "if(++date.sekunde>59){",
                     "    date.sekunde =0;",
@@ -205,9 +203,7 @@
                     "var label = this.getDailyGoalsCounter();",
                     "label.setHtml(remaining.stunde+\" Stunden \"+remaining.minute+",
                     "              \" Minuten \"+remaining.sekunde+\" Sekunden\");",
-                    "label = this.getWeeklyGoalsCounter();",
-                    "label.setHtml(remaining.tag+\" Tage \"+remaining.stunde+",
-                    "                                    \" Stunden \"+remaining.minute+\" Minuten\");",
+                    "",
                     ""
                 ]
             },
@@ -240,10 +236,8 @@
             "userConfig": {
                 "fn": "stopClock",
                 "implHandler": [
-                    "var clock = this.getTaskClock();",
-                    "clearInterval(clock);",
-                    "clearInterval(this.taskClock);",
-                    "this.taskClock = null;",
+                    "",
+                    "clearInterval(this.getTaskClock());",
                     "console.log(\"timer wurde gestoppt\");"
                 ]
             },
