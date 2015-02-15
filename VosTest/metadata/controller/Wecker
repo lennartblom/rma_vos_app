@@ -330,17 +330,19 @@
                     "if(!this.getWeckerKlingelt()){",
                     "    var weckTune = new Media(this.getTune());",
                     "    weckTune.play();",
+                    "    navigator.vibrate(1);",
                     "    navigator.notification.alert(\"Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe\",",
                     "                                 function(){",
                     "                                            weckTune.stop();",
                     "                                            clearInterval(taskCheckDistance);",
                     "                                            self.setWeckerKlingelt(false);",
-                    "                                            ",
+                    "",
                     "    },\"Zielort Erreicht!\");",
-                    "    navigator.vibrate(1);",
                     "    this.setWeckerKlingelt(true);",
+                    "}else{",
+                    "    navigator.vibrate(1);",
                     "}",
-                    "navigator.vibrate(1);"
+                    ""
                 ]
             },
             "name": "wecken",
@@ -410,7 +412,8 @@
                 "implHandler": [
                     "var store = Ext.getStore('stops');",
                     "store.clearFilter();",
-                    "store.filter(visited);",
+                    "store.filter('visited',true);",
+                    "",
                     ""
                 ]
             },

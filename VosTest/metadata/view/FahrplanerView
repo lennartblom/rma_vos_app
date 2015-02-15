@@ -89,9 +89,7 @@
                     "userConfig": {
                         "itemId": "searchfieldStart",
                         "label": "Von",
-                        "value": [
-                            "\"Aktueller Ort\""
-                        ]
+                        "value": null
                     },
                     "name": "MySearchField1",
                     "designerId": "f5a5577d-6f36-477c-8ae2-be9eb17e3fd7"
@@ -106,7 +104,7 @@
                     "userConfig": {
                         "itemId": "searchfieldDestination",
                         "label": "Nach",
-                        "placeHolder": "Ziel Ort"
+                        "placeHolder": null
                     },
                     "name": "MySearchField2",
                     "designerId": "d4120d0d-0fe8-4729-adc0-700a02aa624a"
@@ -141,7 +139,7 @@
                     "userConfig": {
                         "baseCls": "transparentWhite",
                         "docked": "top",
-                        "height": 100,
+                        "height": 300,
                         "id": "lineTwo",
                         "margin": "10 0 0 0 ",
                         "scrollable": "vertical",
@@ -169,48 +167,6 @@
                             },
                             "name": "itemTpl",
                             "designerId": "351b26d4-723f-4223-9345-87f1047b5ec6"
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.dataview.DataView",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "baseCls": "transparentWhite",
-                        "docked": "top",
-                        "height": 100,
-                        "id": "lineThree",
-                        "margin": "10 0 0 0",
-                        "scrollable": false,
-                        "style": null,
-                        "top": null,
-                        "width": "100%"
-                    },
-                    "name": "MyDataView4",
-                    "configAlternates": {
-                        "style": "object"
-                    },
-                    "designerId": "dfea536c-e4a1-4ced-957b-580eda22c2e6",
-                    "cn": [
-                        {
-                            "type": "Ext.XTemplate",
-                            "reference": {
-                                "name": "itemTpl",
-                                "type": "object"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|displayName": "itemTpl",
-                                "implHandler": [
-                                    "<div>Data View Item {string}</div>"
-                                ]
-                            },
-                            "name": "itemTpl",
-                            "designerId": "ddba0dc0-ce54-4362-ba95-ffd9288da4fa"
                         }
                     ]
                 },

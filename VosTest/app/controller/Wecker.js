@@ -99,6 +99,7 @@ Ext.define('VosNavigator.controller.Wecker', {
         if(!this.getWeckerKlingelt()){
             var weckTune = new Media(this.getTune());
             weckTune.play();
+            navigator.vibrate(1);
             navigator.notification.alert("Sie haben den Ziel Ort erreicht, oder befinden sich in unmitelbarer Nähe",
                                          function(){
                                                     weckTune.stop();
@@ -106,10 +107,11 @@ Ext.define('VosNavigator.controller.Wecker', {
                                                     self.setWeckerKlingelt(false);
 
             },"Zielort Erreicht!");
-            navigator.vibrate(1);
             this.setWeckerKlingelt(true);
+        }else{
+            navigator.vibrate(1);
         }
-        navigator.vibrate(1);
+
     },
 
     initiateTracking: function(isTracking) {
@@ -137,7 +139,8 @@ Ext.define('VosNavigator.controller.Wecker', {
     checkHaltestelle: function() {
         var store = Ext.getStore('stops');
         store.clearFilter();
-        store.filter(visited);
+        store.filter('visited',true);
+
 
     },
 
