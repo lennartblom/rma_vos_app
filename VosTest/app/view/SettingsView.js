@@ -123,7 +123,7 @@ Ext.define('VosNavigator.view.settingsView', {
                             },
                             {
                                 xtype: 'label',
-                                html: 'Aktuelle Position wird im 30 Sekunden Takt überprüft.',
+                                html: 'GPS-Positionierung alle 30 Sekunden.',
                                 id: 'label_settings',
                                 margin: '5px'
                             },
