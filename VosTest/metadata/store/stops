@@ -24,6 +24,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "api": null,
                 "noCache": false,
                 "url": "resources/json/stops.json"
             },

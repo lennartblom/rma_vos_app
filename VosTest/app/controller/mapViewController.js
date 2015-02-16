@@ -57,7 +57,7 @@ Ext.define('VosNavigator.controller.mapViewController', {
                     for(i = 0; i< total; i++){
                         var stopPosition =  new google.maps.LatLng(this.getData().getAt(i).get('lat'), this.getData().getAt(i).get('long'));
 
-                        if(this.getData().getAt(i).get('visited')){
+                        if(this.getData().getAt(i).get('visited')==='true'){
                             icon = greenstation;
                             visited++;
                         } else {
