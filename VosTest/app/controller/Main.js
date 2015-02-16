@@ -70,9 +70,10 @@ Ext.define('VosNavigator.controller.Main', {
     },
 
     gameButton: function(button, e, eOpts) {
-         this.getMainView().hide();
-         this.getGoalsView().show({type:"slide",direction:"left"});
-         this.getApplication().getController('Goals').setupClock();
+        this.getMainView().hide();
+        this.getGoalsView().show({type:"slide",direction:"left"});
+        this.getApplication().getController('Goals').setupClock();
+
 
     },
 
@@ -89,6 +90,7 @@ Ext.define('VosNavigator.controller.Main', {
     achButton: function(button, e, eOpts) {
         this.getMainView().hide();
         this.getAchView().show({type:"slide",direction:"left"});
+
         var percent = this.getApplication().getController('mapViewController').getPercentProp();
 
         this.getApplication().getController('Achievements').percentageAnimation(percent);

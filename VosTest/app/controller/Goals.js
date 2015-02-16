@@ -128,6 +128,75 @@ Ext.define('VosNavigator.controller.Goals', {
 
         clearInterval(this.getTaskClock());
         console.log("timer wurde gestoppt");
+    },
+
+    setupDaten: function() {
+        var fp = this.getApplication().getController('Fahrplaner');
+        var self = this;
+
+        dataBaseActionGetVisitedStops();
+
+
+        /**
+        *
+        *
+        *function
+        *
+        *
+        **/
+
+
+        function dataBaseActionGetVisitedStops(){
+            var db = fp.getDb();
+            var i=0;
+            var length=0;
+            var innerFeld;
+            var speicherFeld=[];
+            var store = Ext.getStore('stopsUnvisited');
+            store.load();
+            db.transaction(function(tx) {
+                //visited 0 == false :)
+                tx.executeSql("select id, name, lat, long as lng, visited from stops;", [],
+                              function(tx, res) {
+                                  length = res.rows.length;
+
+                                  for(i=0;i<length;i++){
+                                      innerFeld = [];
+                                      innerFeld[0]=res.rows.item(i).id;
+                                      innerFeld[1]=res.rows.item(i).name;
+                                      innerFeld[2]=res.rows.item(i).lat;
+                                      innerFeld[3]=res.rows.item(i).lng;
+                                      innerFeld[4]=res.rows.item(i).visited;
+                                      speicherFeld[i]=innerFeld;
+                                  }
+
+                              },function(e){console.log("errror bei set Visited "+e.message);});
+            },function(e){console.log(e.message+"getVisited successerror");},function(){
+                console.log("getVisitedForMaps transaction successfull");
+                length = speicherFeld.length;
+
+                for(i=0;i<length;i++){
+                    store.add({id:innerFeld[i][0],
+                                                 long:innerFeld[i][3],
+                                                 lat:innerFeld[i][2],
+                                                 name:innerFeld[i][1],
+                                                 visited:innerFeld[i][4]
+                              });
+                }
+
+
+            });
+        }
+
+
+
+
+
+
+
+
+
+
     }
 
 });
