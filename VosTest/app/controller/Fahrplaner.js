@@ -48,9 +48,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             "button#fahrplanerBackButton": {
                 tap: 'fahrplanerBackButton'
             },
-            "#lineOne": {
-                itemtap: 'onLineOneItemTap'
-            },
             "searchfield#searchfieldStart": {
                 focus: 'onFocusSearchfieldStart'
             },
@@ -62,43 +59,20 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     fahrplanerBackButton: function(button, e, eOpts) {
         this.getFahrplanerView().hide();
-        this.getMainView().show();
-    },
-
-    onLineOneItemTap: function(list, index, item, record) {
-
-
-        /*var dataView = this.getLineTwo();
-        var linesData = record.get('lines');
-        //var quantity = linesArray.getCount();
-
-
-
-        var myPanel = Ext.create('Ext.Panel', {
-            html: "<div class=\"buslineWrapper\"><div class=\"buslinesBoxLeft\"><div class=\"busIcon\" stlye=\"background-image:url(resources/images/icons/bus-icon-150x150.png)\"></div> " + this.getLines(linesData) + "</div><div class=\"buslinesBoxRight\">"+ record.get('name')+ "</div><div class=\"clearing\"></div></div>"
-        });
-
-        dataView.removeAll();
-        dataView.add([myPanel]);*/
+        this.getMainView().show({type:"slide",direction:"right"});
     },
 
     onFocusSearchfieldStart: function(textfield, e, eOpts) {
 
-        //var searchTitle = Ext.getCmp('SearchTitle');
-        //searchTitle.setData({title:"Start"}); // Übergabe an das Label searchTitle
-        //console.log('Search Typ übergabe ::before');
+
         this.getApplication().getController('searchViewController').searchType = 'start';
-        //console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
         this.getFahrplanerView().hide();
     },
 
     onFocusSearchfieldDestination: function(textfield, e, eOpts) {
-        //var searchTitle = Ext.getCmp('SearchTitle');
-        //searchTitle.setData({title:"Ziel"});  // Übergabe an das Label searchTitle
-        //console.log('Search Typ übergabe ::before');
+
         this.getApplication().getController('searchViewController').searchType = 'destination';
-        //console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
         this.getFahrplanerView().hide();
 
@@ -107,7 +81,9 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     launch: function() {
 
         Ext.getStore('stops').load();
+
         console.log("Store Stops wurde geladen.");
+
         this.dbcopy();
 
 
@@ -121,11 +97,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     dbcopy: function() {
-           window.plugins.sqlDB.remove("vosnavigator.db",function(){
+           /*window.plugins.sqlDB.remove("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich entfernt");},
                 function(e){
                     console.log("Error Code = "+JSON.stringify(e));
-                });
+                });*/
 
             window.plugins.sqlDB.copy("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich kopiert");},
@@ -352,8 +328,14 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                htmlContent += "<img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Von</span>\n";
                                htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span></br>\n";
                                for(i = 0;i<length;i++){
-                                   htmlContent += "<span class=\"ovalBox red busline\">"+startLines[i]+"</span> "+tmpDirection[i]+"</br> \n";
+
+                                   htmlContent += "<div class=\"lineListRow\">\n";
+                                   htmlContent += "<div class=\"wrapperLineListLeft\"><div class=\"tableCell\"><span class=\"ovalBox red busline\">"+startLines[i]+"</span></div></div><div class=\"wrapperLineListRight\">"+tmpDirection[i]+"</br> \n";
+                                   htmlContent += "</div>\n";
+                                   htmlContent += "</div>\n";
                                }
+
+
                                htmlContent += "</div>\n";
 
                                htmlContent += "<div class=\"destinationBusstop\">\n";
@@ -517,9 +499,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                     htmlContent += "<div class=\"startBusstop\">\n";
                     htmlContent += "<img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Von</span>\n";
                     htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span></br>\n";
+                    htmlContent += "<div class=\"paddingBoxBorder\">\n";
                     for(i = 0;i<length;i++){
                         htmlContent += "<span class=\"ovalBox red busline\">"+lines[i]+"</span> "+tmpDirection[i]+"</br> \n";
                     }
+                    htmlContent += "</div>\n";
                     htmlContent += "</div>\n";
 
 

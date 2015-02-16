@@ -79,7 +79,7 @@ Ext.define('VosNavigator.view.goalsDetails', {
                         width: '100%',
                         emptyText: 'Besuche den Löwenpudel',
                         itemTpl: [
-                            '<div class="goalsDetails"><h1>{name}</h1><p>{description}</p><p class="moreInformation">Mehr Informationen gibt es hier...</p><a class="linkGoalsDetails" target="_new" href="{link}"><img height="31px" width="35px" src="resources/images/icons/www_icon.png" title="www" /></a></div>'
+                            '<div class="goalsDetails"><h1>{name}</h1><p>{description}</p><p class="moreInformation">Mehr Informationen gibt es hier...</p><a class="linkGoalsDetails" onClick="javascript:window.open(\'{link}\', \'_system\');return false;" href="{link}"><img height="31px" width="35px" src="resources/images/icons/www_icon.png" title="www" /></a></div>'
                         ],
                         store: 'leer'
                     }

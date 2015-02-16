@@ -71,7 +71,7 @@
                 "implHandler": [
                     "this.resetPercentage();",
                     "this.getAchView().hide();",
-                    "this.getMainView().show();"
+                    "this.getMainView().show({type:\"slide\",direction:\"right\"});"
                 ],
                 "name": "tap"
             },
@@ -105,7 +105,7 @@
                 "fn": "onButtonTap",
                 "implHandler": [
                     "this.getAchView().hide();",
-                    "this.getMapView().show();"
+                    "this.getMapView().show({type:\"slide\",direction:\"left\"});"
                 ],
                 "name": "tap"
             },

@@ -76,7 +76,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "visited",
-                "type": "boolean"
+                "type": "string"
             },
             "name": "field2",
             "designerId": "86a129f2-8bc4-49ff-9fb3-aa6665ee8db7"

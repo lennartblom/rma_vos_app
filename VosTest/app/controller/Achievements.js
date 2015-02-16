@@ -45,12 +45,12 @@ Ext.define('VosNavigator.controller.Achievements', {
     achBackButton: function(button, e, eOpts) {
         this.resetPercentage();
         this.getAchView().hide();
-        this.getMainView().show();
+        this.getMainView().show({type:"slide",direction:"right"});
     },
 
     onButtonTap: function(button, e, eOpts) {
         this.getAchView().hide();
-        this.getMapView().show();
+        this.getMapView().show({type:"slide",direction:"left"});
     },
 
     onDataviewInitialize: function(component, eOpts) {

@@ -46,12 +46,12 @@ Ext.define('VosNavigator.controller.Settings', {
     settingsBackButton: function(button, e, eOpts) {
 
         this.getSettingsView().hide();
-        this.getMainView().show();
+        this.getMainView().show({type:"slide",direction:"right"});
 
     },
 
     onGpsPaceChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
-        Ext.getCmp('label_settings').setHtml("Aktuelle Position wird im "+newValue+" Sekunden Takt überprüft.");
+        Ext.getCmp('label_settings').setHtml("GPS-Positionierung alle "+newValue+" Sekunden.");
         this.setSliderPace(newValue);
         this.getApplication().getController('Wecker').resetGeoTimer(newValue*1000);
     },
@@ -59,7 +59,7 @@ Ext.define('VosNavigator.controller.Settings', {
     onGpsPaceDrag: function(sliderfield, sl, thumb, e, eOpts) {
         var slider = this.getGpsPace();
         var label = Ext.getCmp('label_settings');
-        label.setHtml("Aktuelle Position wird im "+slider.getValue()+" Sekunden Takt überprüft.");
+        label.setHtml("GPS-Positionierung alle "+slider.getValue()+" Sekunden.");
         this.sliderPace = slider.getValue();
         this.getApplication().getController('Wecker').resetGeoTimer(slider.getValue());
 

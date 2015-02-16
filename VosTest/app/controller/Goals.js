@@ -54,7 +54,7 @@ Ext.define('VosNavigator.controller.Goals', {
     goalsBackButton: function(button, e, eOpts) {
         this.stopClock();
         this.getGoalsView().hide();
-        this.getMainView().show();
+        this.getMainView().show({type:"slide",direction:"right"});
 
     },
 

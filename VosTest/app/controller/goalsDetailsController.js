@@ -33,7 +33,7 @@ Ext.define('VosNavigator.controller.goalsDetailsController', {
 
     goalsDetailsBackButton: function(button, e, eOpts) {
         this.getGoalsDetails().hide();
-        this.getGoalsView().show();
+        this.getGoalsView().show({type:"slide",direction:"right"});
     },
 
     setData: function(name, description, link) {

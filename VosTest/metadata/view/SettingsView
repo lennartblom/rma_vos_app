@@ -236,7 +236,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "designer|displayName": "",
-                                "html": "Aktuelle Position wird im 30 Sekunden Takt überprüft.",
+                                "html": "GPS-Positionierung alle 30 Sekunden.",
                                 "id": "label_settings",
                                 "margin": "5px"
                             },

@@ -465,3 +465,34 @@ font-size: 11px;
   color:#fff;
   background-color:#4183D7;
 }
+
+.paddingBoxBorder{
+  padding-left:10px;
+  margin-left:10px;
+  padding-top:5px;
+  padding-bottom: 5px;
+  border-left: 3px dashed #4183D7;
+}
+
+.lineListRow{
+  display: table;
+}
+
+.wrapperLineListLeft{
+  float: left;
+  width: 40px;
+  height: 100%;
+  display: table;
+}
+
+.tableCell{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.wrapperLineListRight{
+  float: right;
+  width: 260px;
+  display: table;
+}
