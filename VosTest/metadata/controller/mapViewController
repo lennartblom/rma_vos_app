@@ -6,10 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mapViewController"
+        "designer|userClassName": "mapViewController",
+        "percentProp": 0
     },
     "name": "MyController",
+    "configAlternates": {
+        "percentProp": "number"
+    },
     "designerId": "740bac9a-5737-4f50-9cde-6f7badcaa37d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "percentProp",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "controlleraction",
@@ -74,6 +85,7 @@
                 "implHandler": [
                     "var osnabrueck = new google.maps.LatLng(52.2725392927, 8.0486774787);",
                     "var fp = this.getApplication().getController('Fahrplaner');",
+                    "var self = this;",
                     "",
                     "gmap.panTo(osnabrueck);",
                     "",
@@ -143,7 +155,8 @@
                     "                icon: icon",
                     "            });",
                     "        }",
-                    "        console.log(\"Du hast bereits \"+ Math.round(visited/(total/100)) + \"% des Busnetztes besucht...\");",
+                    "        self.setPercentProp(Math.round(visited/(total/100)));",
+                    "        console.log(\"Du hast bereits \"+ self.getPercentProp() + \"% des Busnetztes besucht...\");",
                     "",
                     "",
                     "    });",

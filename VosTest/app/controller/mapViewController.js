@@ -17,6 +17,8 @@ Ext.define('VosNavigator.controller.mapViewController', {
     extend: 'Ext.app.Controller',
 
     config: {
+        percentProp: 0,
+
         refs: {
             achView: '#AchView',
             mapView: '#MapView',
@@ -42,6 +44,7 @@ Ext.define('VosNavigator.controller.mapViewController', {
     onMapMaprender: function(map, gmap, eOpts) {
         var osnabrueck = new google.maps.LatLng(52.2725392927, 8.0486774787);
         var fp = this.getApplication().getController('Fahrplaner');
+        var self = this;
 
         gmap.panTo(osnabrueck);
 
@@ -111,7 +114,8 @@ Ext.define('VosNavigator.controller.mapViewController', {
                         icon: icon
                     });
                 }
-                console.log("Du hast bereits "+ Math.round(visited/(total/100)) + "% des Busnetztes besucht...");
+                self.setPercentProp(Math.round(visited/(total/100)));
+                console.log("Du hast bereits "+ self.getPercentProp() + "% des Busnetztes besucht...");
 
 
             });
