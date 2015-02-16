@@ -157,7 +157,7 @@
                                         "hidden": false,
                                         "id": "sightsDaily",
                                         "itemCls": "sights_list",
-                                        "store": "stops",
+                                        "store": "stopsUnvisited",
                                         "top": "25px",
                                         "width": "90%"
                                     },

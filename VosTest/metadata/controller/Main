@@ -200,9 +200,10 @@
                 "designer|targetType": "Ext.Button",
                 "fn": "gameButton",
                 "implHandler": [
-                    " this.getMainView().hide();",
-                    " this.getGoalsView().show({type:\"slide\",direction:\"left\"});",
-                    " this.getApplication().getController('Goals').setupClock();",
+                    "this.getMainView().hide();",
+                    "this.getGoalsView().show({type:\"slide\",direction:\"left\"});",
+                    "this.getApplication().getController('Goals').setupClock();",
+                    "",
                     ""
                 ],
                 "name": "tap"
@@ -264,6 +265,7 @@
                 "implHandler": [
                     "this.getMainView().hide();",
                     "this.getAchView().show({type:\"slide\",direction:\"left\"});",
+                    "",
                     "var percent = this.getApplication().getController('mapViewController').getPercentProp();",
                     "",
                     "this.getApplication().getController('Achievements').percentageAnimation(percent);"
