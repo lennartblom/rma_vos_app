@@ -87,7 +87,7 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         xtype: 'dataview',
                         baseCls: 'transparentWhite',
                         docked: 'top',
-                        height: 300,
+                        height: 340,
                         id: 'lineTwo',
                         margin: '10 0 0 0 ',
                         width: '100%',
@@ -95,11 +95,6 @@ Ext.define('VosNavigator.view.fahrplanerView', {
                         itemTpl: [
                             '<div>Data View Item {string}</div>'
                         ]
-                    },
-                    {
-                        xtype: 'button',
-                        itemId: 'mybutton4',
-                        text: 'MyButton4'
                     }
                 ]
             },

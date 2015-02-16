@@ -134,76 +134,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "mybutton",
-                "selector": "button#mybutton"
-            },
-            "name": "mybutton",
-            "designerId": "45b698a7-2d84-461e-b11d-30dc02a52e28"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#mybutton",
-                "designer|targetType": "Ext.Button",
-                "fn": "storeTest",
-                "implHandler": [
-                    "this.stops.filter(\"id\", 250);"
-                ],
-                "name": "tap"
-            },
-            "name": "storeTest",
-            "designerId": "186e2bc3-1083-41d2-8557-e7676e21d121"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "ref": "lineOne",
                 "selector": "dataview#lineOne"
             },
             "name": "lineOne",
             "designerId": "d0bb6b69-cc7a-4985-986c-7029cf6058e9"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "data"
-                ],
-                "fn": "getLines",
-                "implHandler": [
-                    "/*var len = data.length;",
-                    "var content = '';",
-                    "content += '<div class=\"busline\">';",
-                    "",
-                    "for(var i=0;i<len;i++){",
-                    "    content += '<a href=\"#\">';",
-                    "    content += data[i]['LineId'];",
-                    "    content += '</a>';",
-                    "",
-                    "}",
-                    "",
-                    "content += '</div>';",
-                    "",
-                    "return content;*/"
-                ]
-            },
-            "name": "getLines",
-            "designerId": "1c7ac032-cde5-4bb5-8629-9ac71f1d2b8f"
         },
         {
             "type": "controllerref",
@@ -395,6 +330,34 @@
             "designerId": "15ed7b0f-9b2c-4d69-8728-6a7bed6b3997"
         },
         {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "startOrt",
+                    "zielOrt"
+                ],
+                "fn": "entfernung",
+                "implHandler": [
+                    "",
+                    "var distance = 0.0;",
+                    "var deltaX = 71.5 * (startOrt.lng-zielOrt.lng);",
+                    "var deltaY = 111.3 * (startOrt.lat-zielOrt.lat);",
+                    "if(deltaX!==0||deltaY!==0){",
+                    "distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;",
+                    "}",
+                    "",
+                    "return distance;"
+                ]
+            },
+            "name": "entfernung",
+            "designerId": "ae924ec0-ca37-4468-a984-4a9b40db882e"
+        },
+        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -402,22 +365,34 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "mybutton4",
-                "selector": "button#mybutton4"
+                "ref": "searchfieldStart",
+                "selector": "searchfield#searchfieldStart"
             },
-            "name": "mybutton4",
-            "designerId": "15b0b405-71ab-4c65-b75d-cc145ac45007"
+            "name": "searchfieldStart",
+            "designerId": "dcc43368-3385-41b2-b635-7fada374fba9"
         },
         {
-            "type": "controlleraction",
+            "type": "controllerref",
             "reference": {
-                "name": "listeners",
+                "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#mybutton4",
-                "designer|targetType": "Ext.Button",
+                "ref": "searchfieldDestination",
+                "selector": "searchfield#searchfieldDestination"
+            },
+            "name": "searchfieldDestination",
+            "designerId": "d7fd88ae-3a49-4d69-8f2e-c6ee9309ac15"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "sucheVerbindung",
                 "implHandler": [
                     "",
@@ -426,12 +401,7 @@
                     "var searchView = this.getApplication().getController('searchViewController');",
                     "var sOrt = searchView.getStartOrt();",
                     "var zOrt = searchView.getZielOrt();",
-                    "/*var searchfieldStart = this.getSearchfieldStart();",
-                    "searchfieldStart.setPlaceHolder(sOrt);",
-                    "var searchfieldZiel = this.getSearchfieldDestination();",
-                    "searchfieldZiel.setPlaceHolder(zOrt);*/",
                     "var self = this;",
-                    "//console.log(\"verbindung von \"+sOrt+\" nach \"+zOrt);",
                     "",
                     "var dataView = self.getLineTwo();",
                     "dataView.removeAll();",
@@ -619,32 +589,34 @@
                     "",
                     "                       var dataView = self.getLineTwo();",
                     "                       dataView.removeAll();",
-                    "                       var htmlContent;",
+                    "                       var htmlContent=\"\";",
                     "",
+                    "                       length = startLines.length;",
                     "                       htmlContent += \"<div class=\\\"connection\\\">\\n\";",
                     "                       htmlContent += \"<div class=\\\"startBusstop\\\">\\n\";",
-                    "                       htmlContent += \"<span class=\\\"vonnach\\\">von</span><img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\">\\n\";",
-                    "                       htmlContent += \"<span class=\\\"ovalBox blue busline\\\">\"+ sOrt +\"</span>\\n\";",
-                    "                       htmlContent += \"Linie <img src=\\\"resources/images/icons/busline_icon.png\\\" height=\\\"15px\\\" width=\\\"auto\\\"> <span class=\\\"ovalBox red busline\\\">\"+startLines[0]+\"</span> \"+tmpDirection[0]+\" \\n\";",
+                    "                       htmlContent += \"<img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\"><span class=\\\"vonnach\\\">Von</span>\\n\";",
+                    "                       htmlContent += \"<span class=\\\"ovalBox blue busline\\\">\"+ sOrt +\"</span></br>\\n\";",
+                    "                       for(i = 0;i<length;i++){",
+                    "                           htmlContent += \"<span class=\\\"ovalBox red busline\\\">\"+startLines[i]+\"</span> \"+tmpDirection[i]+\"</br> \\n\";",
+                    "                       }",
                     "                       htmlContent += \"</div>\\n\";",
-                    "",
                     "",
                     "                       htmlContent += \"<div class=\\\"destinationBusstop\\\">\\n\";",
-                    "                       htmlContent += \"<span class=\\\"vonnach\\\">nach</span><img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\"> \\n\";",
+                    "                       htmlContent += \"</br><img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\"><span class=\\\"vonnach\\\">Über</span> \\n\";",
+                    "                       htmlContent += \"<span class=\\\"ovalBox blue busline\\\">Neumarkt</span></div>\\n\";",
+                    "                       ",
+                    "",
+                    "                       length = zielLines.length;",
+                    "                       htmlContent += \"<div class=\\\"connection\\\">\\n\";",
+                    "                       for(i = 0;i<length;i++){",
+                    "                           htmlContent += \"<span class=\\\"ovalBox red busline\\\">\"+zielLines[i]+\"</span> \"+tmpDirection2[i]+\"</br> \\n\";",
+                    "                       }",
+                    "                       htmlContent += \"</div>\\n\";",
+                    "                       htmlContent += \"<div class=\\\"destinationBusstop\\\">\\n\";",
+                    "                       htmlContent += \"</br><img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\"><span class=\\\"vonnach\\\">Nach</span> \\n\";",
                     "                       htmlContent += \"<span class=\\\"ovalBox blue busline\\\">\" + zOrt + \"</span></div>\\n\";",
-                    "",
-                    "                       // IF ---- VERBINDUNG ÜBER NEUMARKT? DANN DAS HIER AUCH!",
-                    "",
-                    "                       htmlContent += \"<div class=\\\"viaBusstop\\\">via <span class=\\\"ovalBox blue busline\\\">Neumarkt</span> mit \\n\";",
-                    "                       htmlContent += \"Linie <img src=\\\"resources/images/icons/busline_icon.png\\\" height=\\\"15px\\\" width=\\\"auto\\\"> \\n\";",
-                    "                       htmlContent += \"<span class=\\\"ovalBox red busline\\\">\"+zielLines[0]+\"</span> \"+tmpDirection2[0]+\" \\n\";",
                     "                       htmlContent += \"</div>\\n\";",
                     "",
-                    "",
-                    "                       // ENDIF ----",
-                    "",
-                    "",
-                    "                       htmlContent += \"</div>\\n\";",
                     "",
                     "                       var myPanel = Ext.create('Ext.Panel', {",
                     "                           html: htmlContent",
@@ -773,29 +745,31 @@
                     "",
                     "                if(entfernung1>entfernung2){",
                     "                    tmpDirection[i]=direction1[i];",
-                    "                    //console.log(\"e>e2 lineId: \"+lines[i]+\"nach\"+tmpDirection[i]);",
+                    "                   // console.log(\"e>e2 lineId: \"+lines[i]+\"nach\"+tmpDirection[i]);",
                     "",
                     "                }else{",
                     "                    tmpDirection[i]=direction2[i];",
-                    "                    //console.log(\"e<e2 lineId: \"+lines[i]+\"nach\"+tmpDirection[i]);",
+                    "                   // console.log(\"e<e2 lineId: \"+lines[i]+\"nach\"+tmpDirection[i]);",
                     "",
                     "                }",
                     "            }",
                     "",
                     "            var dataView = self.getLineTwo();",
                     "            dataView.removeAll();",
-                    "            var htmlContent;",
-                    "",
+                    "            var htmlContent = \"\";",
+                    "            length = lines.length;",
                     "            htmlContent += \"<div class=\\\"connection\\\">\\n\";",
                     "            htmlContent += \"<div class=\\\"startBusstop\\\">\\n\";",
-                    "            htmlContent += \"<span class=\\\"vonnach\\\">von</span><img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\">\\n\";",
-                    "            htmlContent += \"<span class=\\\"ovalBox blue busline\\\">\"+ sOrt +\"</span>\\n\";",
-                    "            htmlContent += \"Linie <img src=\\\"resources/images/icons/busline_icon.png\\\" height=\\\"15px\\\" width=\\\"auto\\\"> <span class=\\\"ovalBox red busline\\\">\"+lines[0]+\"</span> \"+tmpDirection[0]+\" \\n\";",
+                    "            htmlContent += \"<img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\"><span class=\\\"vonnach\\\">Von</span>\\n\";",
+                    "            htmlContent += \"<span class=\\\"ovalBox blue busline\\\">\"+ sOrt +\"</span></br>\\n\";",
+                    "            for(i = 0;i<length;i++){",
+                    "                htmlContent += \"<span class=\\\"ovalBox red busline\\\">\"+lines[i]+\"</span> \"+tmpDirection[i]+\"</br> \\n\";",
+                    "            }",
                     "            htmlContent += \"</div>\\n\";",
                     "",
                     "",
                     "            htmlContent += \"<div class=\\\"destinationBusstop\\\">\\n\";",
-                    "            htmlContent += \"<span class=\\\"vonnach\\\">nach</span><img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\"> \\n\";",
+                    "            htmlContent += \"<img src=\\\"resources/images/icons/bus-icon-150x150.png\\\" height=\\\"20px\\\" width=\\\"auto\\\"><span class=\\\"vonnach\\\">Nach</span> \\n\";",
                     "            htmlContent += \"<span class=\\\"ovalBox blue busline\\\">\" + zOrt + \"</span></div>\\n\";",
                     "            htmlContent += \"</div>\\n\";",
                     "",
@@ -810,67 +784,10 @@
                     "",
                     "}",
                     ""
-                ],
-                "name": "tap"
-            },
-            "name": "sucheVerbindung",
-            "designerId": "933cfe1b-931c-4b3a-9f58-fa805922697f"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "startOrt",
-                    "zielOrt"
-                ],
-                "fn": "entfernung",
-                "implHandler": [
-                    "",
-                    "var distance = 0.0;",
-                    "var deltaX = 71.5 * (startOrt.lng-zielOrt.lng);",
-                    "var deltaY = 111.3 * (startOrt.lat-zielOrt.lat);",
-                    "if(deltaX!==0||deltaY!==0){",
-                    "distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;",
-                    "}",
-                    "",
-                    "return distance;"
                 ]
             },
-            "name": "entfernung",
-            "designerId": "ae924ec0-ca37-4468-a984-4a9b40db882e"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "searchfieldStart",
-                "selector": "searchfield#searchfieldStart"
-            },
-            "name": "searchfieldStart",
-            "designerId": "dcc43368-3385-41b2-b635-7fada374fba9"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "searchfieldDestination",
-                "selector": "searchfield#searchfieldDestination"
-            },
-            "name": "searchfieldDestination",
-            "designerId": "d7fd88ae-3a49-4d69-8f2e-c6ee9309ac15"
+            "name": "sucheVerbindung",
+            "designerId": "69570b69-c864-4fa1-8745-5271ec6f0272"
         }
     ]
 }

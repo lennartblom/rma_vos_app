@@ -47,11 +47,11 @@ Ext.define('VosNavigator.controller.searchViewController', {
         var dataView = this.getSearchResultList();
 
         if(value === ''){
-            console.log('String ist leer. Filter wird geleert.');
+            //console.log('String ist leer. Filter wird geleert.');
             store.clearFilter();
 
         } else {
-            console.log("Search refresh with: "+value);
+            //console.log("Search refresh with: "+value);
             store.filter('name', value);
         }
 

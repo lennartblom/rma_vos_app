@@ -36,12 +36,10 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             MainView: '#MainView',
             fahrplanerBackButton: '#fahrplanerBackButton',
             FahrplanerView: '#FahrplanerView',
-            mybutton: 'button#mybutton',
             lineOne: 'dataview#lineOne',
             lineTwo: 'dataview#lineTwo',
             searchView: '#searchView',
             SearchTitle: 'label#SearchTitle',
-            mybutton4: 'button#mybutton4',
             searchfieldStart: 'searchfield#searchfieldStart',
             searchfieldDestination: 'searchfield#searchfieldDestination'
         },
@@ -49,9 +47,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         control: {
             "button#fahrplanerBackButton": {
                 tap: 'fahrplanerBackButton'
-            },
-            "button#mybutton": {
-                tap: 'storeTest'
             },
             "#lineOne": {
                 itemtap: 'onLineOneItemTap'
@@ -61,9 +56,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             },
             "searchfield#searchfieldDestination": {
                 focus: 'onFocusSearchfieldDestination'
-            },
-            "button#mybutton4": {
-                tap: 'sucheVerbindung'
             }
         }
     },
@@ -71,10 +63,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     fahrplanerBackButton: function(button, e, eOpts) {
         this.getFahrplanerView().hide();
         this.getMainView().show();
-    },
-
-    storeTest: function(button, e, eOpts) {
-        this.stops.filter("id", 250);
     },
 
     onLineOneItemTap: function(list, index, item, record) {
@@ -116,19 +104,59 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     },
 
-    sucheVerbindung: function(button, e, eOpts) {
+    launch: function() {
+
+        Ext.getStore('stops').load();
+        console.log("Store Stops wurde geladen.");
+        this.dbcopy();
+
+
+
+
+        var db = window.sqlitePlugin.openDatabase("vosnavigator.db");
+        this.setDb(db);
+
+
+        console.log("launcher Fahrplaner");
+    },
+
+    dbcopy: function() {
+           window.plugins.sqlDB.remove("vosnavigator.db",function(){
+                console.log("db wurde erfolgreich entfernt");},
+                function(e){
+                    console.log("Error Code = "+JSON.stringify(e));
+                });
+
+            window.plugins.sqlDB.copy("vosnavigator.db",function(){
+                console.log("db wurde erfolgreich kopiert");},
+                function(e){
+                 //db already exists or problem in copying the db file. Check the Log.
+                console.log("Error Code = "+JSON.stringify(e));
+                //e.code = 516 => if db exists
+                });
+
+    },
+
+    entfernung: function(startOrt, zielOrt) {
+
+        var distance = 0.0;
+        var deltaX = 71.5 * (startOrt.lng-zielOrt.lng);
+        var deltaY = 111.3 * (startOrt.lat-zielOrt.lat);
+        if(deltaX!==0||deltaY!==0){
+        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
+        }
+
+        return distance;
+    },
+
+    sucheVerbindung: function() {
 
 
 
         var searchView = this.getApplication().getController('searchViewController');
         var sOrt = searchView.getStartOrt();
         var zOrt = searchView.getZielOrt();
-        /*var searchfieldStart = this.getSearchfieldStart();
-        searchfieldStart.setPlaceHolder(sOrt);
-        var searchfieldZiel = this.getSearchfieldDestination();
-        searchfieldZiel.setPlaceHolder(zOrt);*/
         var self = this;
-        //console.log("verbindung von "+sOrt+" nach "+zOrt);
 
         var dataView = self.getLineTwo();
         dataView.removeAll();
@@ -316,32 +344,34 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
                                var dataView = self.getLineTwo();
                                dataView.removeAll();
-                               var htmlContent;
+                               var htmlContent="";
 
+                               length = startLines.length;
                                htmlContent += "<div class=\"connection\">\n";
                                htmlContent += "<div class=\"startBusstop\">\n";
-                               htmlContent += "<span class=\"vonnach\">von</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\">\n";
-                               htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span>\n";
-                               htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> <span class=\"ovalBox red busline\">"+startLines[0]+"</span> "+tmpDirection[0]+" \n";
+                               htmlContent += "<img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Von</span>\n";
+                               htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span></br>\n";
+                               for(i = 0;i<length;i++){
+                                   htmlContent += "<span class=\"ovalBox red busline\">"+startLines[i]+"</span> "+tmpDirection[i]+"</br> \n";
+                               }
                                htmlContent += "</div>\n";
-
 
                                htmlContent += "<div class=\"destinationBusstop\">\n";
-                               htmlContent += "<span class=\"vonnach\">nach</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"> \n";
+                               htmlContent += "</br><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Über</span> \n";
+                               htmlContent += "<span class=\"ovalBox blue busline\">Neumarkt</span></div>\n";
+
+
+                               length = zielLines.length;
+                               htmlContent += "<div class=\"connection\">\n";
+                               for(i = 0;i<length;i++){
+                                   htmlContent += "<span class=\"ovalBox red busline\">"+zielLines[i]+"</span> "+tmpDirection2[i]+"</br> \n";
+                               }
+                               htmlContent += "</div>\n";
+                               htmlContent += "<div class=\"destinationBusstop\">\n";
+                               htmlContent += "</br><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Nach</span> \n";
                                htmlContent += "<span class=\"ovalBox blue busline\">" + zOrt + "</span></div>\n";
-
-                               // IF ---- VERBINDUNG ÜBER NEUMARKT? DANN DAS HIER AUCH!
-
-                               htmlContent += "<div class=\"viaBusstop\">via <span class=\"ovalBox blue busline\">Neumarkt</span> mit \n";
-                               htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> \n";
-                               htmlContent += "<span class=\"ovalBox red busline\">"+zielLines[0]+"</span> "+tmpDirection2[0]+" \n";
                                htmlContent += "</div>\n";
 
-
-                               // ENDIF ----
-
-
-                               htmlContent += "</div>\n";
 
                                var myPanel = Ext.create('Ext.Panel', {
                                    html: htmlContent
@@ -470,29 +500,31 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
                         if(entfernung1>entfernung2){
                             tmpDirection[i]=direction1[i];
-                            //console.log("e>e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
+                           // console.log("e>e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
 
                         }else{
                             tmpDirection[i]=direction2[i];
-                            //console.log("e<e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
+                           // console.log("e<e2 lineId: "+lines[i]+"nach"+tmpDirection[i]);
 
                         }
                     }
 
                     var dataView = self.getLineTwo();
                     dataView.removeAll();
-                    var htmlContent;
-
+                    var htmlContent = "";
+                    length = lines.length;
                     htmlContent += "<div class=\"connection\">\n";
                     htmlContent += "<div class=\"startBusstop\">\n";
-                    htmlContent += "<span class=\"vonnach\">von</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\">\n";
-                    htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span>\n";
-                    htmlContent += "Linie <img src=\"resources/images/icons/busline_icon.png\" height=\"15px\" width=\"auto\"> <span class=\"ovalBox red busline\">"+lines[0]+"</span> "+tmpDirection[0]+" \n";
+                    htmlContent += "<img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Von</span>\n";
+                    htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span></br>\n";
+                    for(i = 0;i<length;i++){
+                        htmlContent += "<span class=\"ovalBox red busline\">"+lines[i]+"</span> "+tmpDirection[i]+"</br> \n";
+                    }
                     htmlContent += "</div>\n";
 
 
                     htmlContent += "<div class=\"destinationBusstop\">\n";
-                    htmlContent += "<span class=\"vonnach\">nach</span><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"> \n";
+                    htmlContent += "<img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Nach</span> \n";
                     htmlContent += "<span class=\"ovalBox blue busline\">" + zOrt + "</span></div>\n";
                     htmlContent += "</div>\n";
 
@@ -507,68 +539,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
         }
 
-    },
-
-    getLines: function(data) {
-        /*var len = data.length;
-        var content = '';
-        content += '<div class="busline">';
-
-        for(var i=0;i<len;i++){
-            content += '<a href="#">';
-            content += data[i]['LineId'];
-            content += '</a>';
-
-        }
-
-        content += '</div>';
-
-        return content;*/
-    },
-
-    launch: function() {
-
-        Ext.getStore('stops').load();
-        console.log("Store Stops wurde geladen.");
-        this.dbcopy();
-
-
-
-
-        var db = window.sqlitePlugin.openDatabase("vosnavigator.db");
-        this.setDb(db);
-
-
-        console.log("launcher Fahrplaner");
-    },
-
-    dbcopy: function() {
-           window.plugins.sqlDB.remove("vosnavigator.db",function(){
-                console.log("db wurde erfolgreich entfernt");},
-                function(e){
-                    console.log("Error Code = "+JSON.stringify(e));
-                });
-
-            window.plugins.sqlDB.copy("vosnavigator.db",function(){
-                console.log("db wurde erfolgreich kopiert");},
-                function(e){
-                 //db already exists or problem in copying the db file. Check the Log.
-                console.log("Error Code = "+JSON.stringify(e));
-                //e.code = 516 => if db exists
-                });
-
-    },
-
-    entfernung: function(startOrt, zielOrt) {
-
-        var distance = 0.0;
-        var deltaX = 71.5 * (startOrt.lng-zielOrt.lng);
-        var deltaY = 111.3 * (startOrt.lat-zielOrt.lat);
-        if(deltaX!==0||deltaY!==0){
-        distance = Math.sqrt(deltaX*deltaX+deltaY*deltaY)*1000;
-        }
-
-        return distance;
     }
 
 });

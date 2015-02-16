@@ -139,7 +139,7 @@
                     "userConfig": {
                         "baseCls": "transparentWhite",
                         "docked": "top",
-                        "height": 300,
+                        "height": 340,
                         "id": "lineTwo",
                         "margin": "10 0 0 0 ",
                         "scrollable": "vertical",
@@ -169,20 +169,6 @@
                             "designerId": "351b26d4-723f-4223-9345-87f1047b5ec6"
                         }
                     ]
-                },
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "mybutton4",
-                        "text": "MyButton4"
-                    },
-                    "name": "MyButton4",
-                    "designerId": "30f38143-e6e5-45a9-a4c2-be08de423fae"
                 }
             ]
         },
