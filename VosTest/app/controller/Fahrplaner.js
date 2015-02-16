@@ -59,7 +59,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
 
     fahrplanerBackButton: function(button, e, eOpts) {
         this.getFahrplanerView().hide();
-        this.getMainView().show();
+        this.getMainView().show({type:"slide",direction:"right"});
     },
 
     onFocusSearchfieldStart: function(textfield, e, eOpts) {

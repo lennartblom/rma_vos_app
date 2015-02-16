@@ -105,7 +105,7 @@
                 "fn": "fahrplanerBackButton",
                 "implHandler": [
                     "this.getFahrplanerView().hide();",
-                    "this.getMainView().show();"
+                    "this.getMainView().show({type:\"slide\",direction:\"right\"});"
                 ],
                 "name": "tap"
             },

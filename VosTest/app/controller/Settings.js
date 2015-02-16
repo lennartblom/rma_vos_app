@@ -46,7 +46,7 @@ Ext.define('VosNavigator.controller.Settings', {
     settingsBackButton: function(button, e, eOpts) {
 
         this.getSettingsView().hide();
-        this.getMainView().show();
+        this.getMainView().show({type:"slide",direction:"right"});
 
     },
 

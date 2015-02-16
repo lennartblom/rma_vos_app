@@ -25,7 +25,7 @@
                 "implHandler": [
                     "console.log(\"Zurück\");",
                     "this.getMapView().hide();",
-                    "this.getAchView().show();"
+                    "this.getAchView().show({type:\"slide\",direction:\"right\"});"
                 ],
                 "name": "tap"
             },
