@@ -331,7 +331,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                for(i = 0;i<length;i++){
 
                                    htmlContent += "<div class=\"lineListRow\">\n";
-                                   htmlContent += "<div class=\"wrapperLineListLeft\"><div class=\"tableCell\"><span class=\"ovalBox red busline\">"+startLines[i]+"</span></div></div><div class=\"wrapperLineListRight\">"+tmpDirection[i]+"</br> \n";
+                                   htmlContent += "<div class=\"wrapperLineListLeft\"><div class=\"tableCell\"><span class=\"ovalBox red busline\">"+startLines[i]+"</span></div></div><div class=\"wrapperLineListRight\">"+tmpDirection[i]+"\n";
                                    htmlContent += "</div>\n";
                                    htmlContent += "</div>\n";
                                }
@@ -350,7 +350,7 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                for(i = 0;i<length;i++){
 
                                    htmlContent += "<div class=\"lineListRow\">\n";
-                                   htmlContent += "<div class=\"wrapperLineListLeft\"><div class=\"tableCell\"><span class=\"ovalBox red busline\">"+zielLines[i]+"</span> "+tmpDirection2[i]+"</div></div><div class=\"wrapperLineListRight\">"+tmpDirection[i]+"</br> \n";
+                                   htmlContent += "<div class=\"wrapperLineListLeft\"><div class=\"tableCell\"><span class=\"ovalBox red busline\">"+zielLines[i]+"</span> "+tmpDirection2[i]+"</div></div><div class=\"wrapperLineListRight\">"+tmpDirection[i]+" \n";
                                    htmlContent += "</div>\n";
                                    htmlContent += "</div>\n";
                                }
