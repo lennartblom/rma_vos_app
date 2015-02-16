@@ -465,3 +465,10 @@ font-size: 11px;
   color:#fff;
   background-color:#4183D7;
 }
+
+.paddingBoxBorder{
+  padding-left:20px;
+  padding-top:5px;
+  padding-bottom: 5px;
+  border-left: 5px dashed #4183D7;
+}

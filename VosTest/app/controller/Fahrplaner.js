@@ -517,9 +517,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                     htmlContent += "<div class=\"startBusstop\">\n";
                     htmlContent += "<img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Von</span>\n";
                     htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span></br>\n";
+                    htmlContent += "<div class=\"paddingBoxBorder\">\n";
                     for(i = 0;i<length;i++){
                         htmlContent += "<span class=\"ovalBox red busline\">"+lines[i]+"</span> "+tmpDirection[i]+"</br> \n";
                     }
+                    htmlContent += "</div>\n";
                     htmlContent += "</div>\n";
 
 
