@@ -52,7 +52,7 @@
                 "fn": "goalsDetailsBackButton",
                 "implHandler": [
                     "this.getGoalsDetails().hide();",
-                    "this.getGoalsView().show();"
+                    "this.getGoalsView().show({type:\"slide\",direction:\"right\"});"
                 ],
                 "name": "tap"
             },

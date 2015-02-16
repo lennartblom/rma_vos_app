@@ -66,7 +66,7 @@ Ext.define('VosNavigator.controller.Wecker', {
 
     weckerBackButtonTap: function(button, e, eOpts) {
         this.getWeckerView().hide();
-        this.getMainView().show();
+        this.getMainView().show({type:"slide",direction:"right"});
     },
 
     onWeckRadiusChange: function(me, sl, thumb, newValue, oldValue, eOpts) {

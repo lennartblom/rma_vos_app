@@ -36,7 +36,7 @@ Ext.define('VosNavigator.controller.mapViewController', {
     onButtonTap: function(button, e, eOpts) {
         console.log("Zurück");
         this.getMapView().hide();
-        this.getAchView().show();
+        this.getAchView().show({type:"slide",direction:"right"});
     },
 
     onMapMaprender: function(map, gmap, eOpts) {

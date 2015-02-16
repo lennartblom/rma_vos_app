@@ -112,7 +112,7 @@
                 "fn": "weckerBackButtonTap",
                 "implHandler": [
                     "this.getWeckerView().hide();",
-                    "this.getMainView().show();"
+                    "this.getMainView().show({type:\"slide\",direction:\"right\"});"
                 ],
                 "name": "tap"
             },
