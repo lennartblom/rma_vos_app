@@ -4,1959 +4,2239 @@
     "name":"Am Heidekotten",
     "long":8.1092129208,
     "lat":52.2564346684,
-    "visited":false
+    "visited":false,
+    "mk":1
   },
   {
     "id":2,
     "name":"Bahnhof Sutthausen",
     "long":8.0206536487,
     "lat":52.2323309988,
-    "visited":false
+    "visited":false,
+    "mk":2
   },
   {
     "id":4,
     "name":"Belm B51",
     "long":8.1343533773,
     "lat":52.3114378075,
-    "visited":false
+    "visited":false,
+    "mk":3
   },
   {
     "id":5,
     "name":"Bergerskamp",
     "long":8.0481592035,
     "lat":52.2526789233,
-    "visited":false
+    "visited":false,
+    "mk":4
   },
   {
     "id":6,
     "name":"Berningshöhe",
     "long":8.0474919215,
     "lat":52.2502790348,
-    "visited":false
+    "visited":false,
+    "mk":5
   },
   {
     "id":10,
     "name":"Emma",
     "long":8.0369497881,
     "lat":52.2753167697,
-    "visited":false
+    "visited":false,
+    "mk":6
   },
   {
     "id":14,
     "name":"Gewerbegebiet Sutthausen",
     "long":8.0285573724,
     "lat":52.2316193354,
-    "visited":false
+    "visited":false,
+    "mk":7
   },
   {
     "id":16,
     "name":"Haste",
     "long":8.0528187363,
     "lat":52.3086296246,
-    "visited":false
+    "visited":false,
+    "mk":8
   },
   {
     "id":17,
     "name":"Hauptbahnhof",
     "long":8.0593618969,
     "lat":52.2728774196,
-    "visited":false
+    "visited":false,
+    "mk":9
   },
   {
     "id":24,
     "name":"Jägerstraße",
     "long":8.1335913643,
     "lat":52.3070136421,
-    "visited":false
+    "visited":false,
+    "mk":10
   },
   {
     "id":25,
     "name":"Johanniskirche",
     "long":8.0509033728,
     "lat":52.270934535,
-    "visited":false
+    "visited":false,
+    "mk":11
   },
   {
     "id":28,
     "name":"Kreisel Voxtrup",
     "long":8.0955455193,
     "lat":52.2549357576,
-    "visited":false
+    "visited":false,
+    "mk":12
   },
   {
     "id":29,
     "name":"Landessozialamt",
     "long":8.0557350721,
     "lat":52.2617767709,
-    "visited":false
+    "visited":false,
+    "mk":13
   },
   {
     "id":30,
     "name":"Lindenstraße",
     "long":8.1354277684,
     "lat":52.3057745481,
-    "visited":false
+    "visited":false,
+    "mk":14
   },
   {
     "id":31,
     "name":"Lortzingstraße",
     "long":8.1387112689,
     "lat":52.3084826341,
-    "visited":false
+    "visited":false,
+    "mk":15
   },
   {
     "id":32,
     "name":"Molenseten",
     "long":8.108314542,
     "lat":52.2573261391,
-    "visited":false
+    "visited":false,
+    "mk":16
   },
   {
     "id":33,
     "name":"Nahne",
     "long":8.0600628477,
     "lat":52.247263309,
-    "visited":false
+    "visited":false,
+    "mk":17
   },
   {
     "id":34,
     "name":"Nettebad",
     "long":8.0524022833,
     "lat":52.3023950202,
-    "visited":false
+    "visited":false,
+    "mk":18
   },
   {
     "id":35,
     "name":"Neumarkt",
     "long":8.0486774787,
     "lat":52.2725392927,
-    "visited":false
+    "visited":false,
+    "mk":19
   },
   {
     "id":40,
     "name":"Osnabrücker Werkstätten",
     "long":8.0327734144,
     "lat":52.2316873977,
-    "visited":false
+    "visited":false,
+    "mk":20
   },
   {
     "id":42,
     "name":"Roopstraße",
     "long":8.0425921066,
     "lat":52.2844849181,
-    "visited":false
+    "visited":false,
+    "mk":21
   },
   {
     "id":43,
     "name":"Rostocker Straße",
     "long":8.052336999,
     "lat":52.3106574477,
-    "visited":false
+    "visited":false,
+    "mk":22
   },
   {
     "id":45,
     "name":"Schlossstraße",
     "long":8.1453843799,
     "lat":52.3154624354,
-    "visited":false
+    "visited":false,
+    "mk":23
   },
   {
     "id":47,
     "name":"Wachsbleiche",
     "long":8.0404729546,
     "lat":52.2862901808,
-    "visited":false
+    "visited":false,
+    "mk":24
   },
   {
     "id":48,
     "name":"Warnemünder Straße",
     "long":8.0515532705,
     "lat":52.3137440816,
-    "visited":false
+    "visited":false,
+    "mk":25
   },
   {
     "id":49,
     "name":"Dodesheide Waldfriedhof",
     "long":8.0779276107,
     "lat":52.3014460269,
-    "visited":false
+    "visited":false,
+    "mk":26
   },
   {
     "id":50,
     "name":"Agentur für Arbeit",
     "long":8.045303655,
     "lat":52.2675570733,
-    "visited":false
+    "visited":false,
+    "mk":27
   },
   {
     "id":51,
     "name":"Albert-Schweitzer-Straße",
     "long":8.1208361107,
     "lat":52.2736035752,
-    "visited":false
+    "visited":false,
+    "mk":28
   },
   {
     "id":52,
     "name":"Alfred-Delp-Straße",
     "long":8.0163232454,
     "lat":52.265608812,
-    "visited":false
+    "visited":false,
+    "mk":29
   },
   {
     "id":53,
     "name":"Alte Kasse",
     "long":7.9878622959,
     "lat":52.2593253659,
-    "visited":false
+    "visited":false,
+    "mk":30
   },
   {
     "id":54,
     "name":"Alte Poststraße",
     "long":8.0554149091,
     "lat":52.2762016658,
-    "visited":false
+    "visited":false,
+    "mk":31
   },
   {
     "id":55,
     "name":"Am Bürgerpark",
     "long":8.0435815911,
     "lat":52.2878974899,
-    "visited":false
+    "visited":false,
+    "mk":32
   },
   {
     "id":56,
     "name":"Am Funkturm",
     "long":8.0554728883,
     "lat":52.2527882071,
-    "visited":false
+    "visited":false,
+    "mk":33
   },
   {
     "id":57,
     "name":"Am Kniebusch",
     "long":8.0239423876,
     "lat":52.2338734675,
-    "visited":false
+    "visited":false,
+    "mk":34
   },
   {
     "id":58,
     "name":"Am Mühlenkamp",
     "long":8.0928812292,
     "lat":52.2494875945,
-    "visited":false
+    "visited":false,
+    "mk":35
   },
   {
     "id":59,
     "name":"Am Nahner Friedhof",
     "long":8.0602276941,
     "lat":52.2391823325,
-    "visited":false
+    "visited":false,
+    "mk":36
   },
   {
     "id":60,
     "name":"Am Riedenbach",
     "long":8.0602249712,
     "lat":52.2578626905,
-    "visited":false
+    "visited":false,
+    "mk":37
   },
   {
     "id":61,
     "name":"Am Riegelbusch",
     "long":8.1081727829,
     "lat":52.2486084025,
-    "visited":false
+    "visited":false,
+    "mk":38
   },
   {
     "id":62,
     "name":"Am Tannenkamp",
     "long":8.0571420648,
     "lat":52.3000305647,
-    "visited":false
+    "visited":false,
+    "mk":39
   },
   {
     "id":64,
     "name":"An der Landwehr",
     "long":7.9811158658,
     "lat":52.2935003375,
-    "visited":false
+    "visited":false,
+    "mk":40
   },
   {
     "id":65,
     "name":"An der Petersburg",
     "long":8.0595968151,
     "lat":52.2664486413,
-    "visited":false
+    "visited":false,
+    "mk":41
   },
   {
     "id":66,
     "name":"An der Riede",
     "long":7.9517259148,
     "lat":52.2791163551,
-    "visited":false
+    "visited":false,
+    "mk":42
   },
   {
     "id":67,
     "name":"Anton-Storch-Straße",
     "long":8.0373454462,
     "lat":52.2507552339,
-    "visited":false
+    "visited":false,
+    "mk":43
   },
   {
     "id":68,
     "name":"Arndtplatz",
     "long":8.0377399561,
     "lat":52.271828317,
-    "visited":false
+    "visited":false,
+    "mk":44
   },
   {
     "id":69,
     "name":"Artilleriestraße",
     "long":8.0212629155,
     "lat":52.2897676857,
-    "visited":false
+    "visited":false,
+    "mk":45
   },
   {
     "id":70,
     "name":"Atter Strothesiedlung",
     "long":7.9751389507,
     "lat":52.2993101218,
-    "visited":false
+    "visited":false,
+    "mk":46
   },
   {
     "id":71,
     "name":"Attersee",
     "long":7.9441399146,
     "lat":52.2997147304,
-    "visited":false
+    "visited":false,
+    "mk":47
   },
   {
     "id":72,
     "name":"Auf dem Winkel",
     "long":8.1309454779,
     "lat":52.2674686449,
-    "visited":false
+    "visited":false,
+    "mk":48
   },
   {
     "id":73,
     "name":"Auf der Heide",
     "long":8.0922451062,
     "lat":52.2701664834,
-    "visited":false
+    "visited":false,
+    "mk":49
   },
   {
     "id":74,
     "name":"Bahnhof Eversburg",
     "long":8.0025663914,
     "lat":52.3008536101,
-    "visited":false
+    "visited":false,
+    "mk":50
   },
   {
     "id":76,
     "name":"Bahnhofstraße",
     "long":7.9452518429,
     "lat":52.2905244637,
-    "visited":false
+    "visited":false,
+    "mk":51
   },
   {
     "id":77,
     "name":"Barenteich",
     "long":7.9921975515,
     "lat":52.2960640242,
-    "visited":false
+    "visited":false,
+    "mk":52
   },
   {
     "id":78,
     "name":"Bassumer Straße",
     "long":8.0654363111,
     "lat":52.3027988498,
-    "visited":false
+    "visited":false,
+    "mk":53
   },
   {
     "id":79,
     "name":"Belm Schulzentrum",
     "long":8.1337028377,
     "lat":52.2998234122,
-    "visited":false
+    "visited":false,
+    "mk":54
   },
   {
     "id":80,
     "name":"Belm, Am Tie",
     "long":8.1396555201,
     "lat":52.3023186242,
-    "visited":false
+    "visited":false,
+    "mk":55
   },
   {
     "id":81,
     "name":"Belm, Astruper Heide",
     "long":8.1369865286,
     "lat":52.3130227093,
-    "visited":false
+    "visited":false,
+    "mk":56
   },
   {
     "id":82,
     "name":"Belm, Josefkirche",
     "long":8.119194953,
     "lat":52.3028676509,
-    "visited":false
+    "visited":false,
+    "mk":57
   },
   {
     "id":83,
     "name":"Belmer Heide",
     "long":8.113202609,
     "lat":52.3002217759,
-    "visited":false
+    "visited":false,
+    "mk":58
   },
   {
     "id":84,
     "name":"Belmer Straße",
     "long":8.0853504802,
     "lat":52.2771559992,
-    "visited":false
+    "visited":false,
+    "mk":59
   },
   {
     "id":85,
     "name":"Berningstraße",
     "long":8.0531218991,
     "lat":52.3119291052,
-    "visited":false
+    "visited":false,
+    "mk":60
   },
   {
     "id":86,
     "name":"Berufsschulzentrum",
     "long":8.035713727,
     "lat":52.2822751493,
-    "visited":false
+    "visited":false,
+    "mk":61
   },
   {
     "id":87,
     "name":"Birkenallee",
     "long":7.9473043361,
     "lat":52.2848011941,
-    "visited":false
+    "visited":false,
+    "mk":62
   },
   {
     "id":88,
     "name":"Bischof-Lilje-Altenzentrum",
     "long":8.0311809519,
     "lat":52.2640529926,
-    "visited":false
+    "visited":false,
+    "mk":63
   },
   {
     "id":89,
     "name":"Bohmter Straße",
     "long":8.0619737843,
     "lat":52.2799012136,
-    "visited":false
+    "visited":false,
+    "mk":64
   },
   {
     "id":90,
     "name":"Bornheide",
     "long":8.1172758692,
     "lat":52.2836263297,
-    "visited":false
+    "visited":false,
+    "mk":65
   },
   {
     "id":91,
     "name":"Bramscher Straße",
     "long":8.0357787521,
     "lat":52.2995407238,
-    "visited":false
+    "visited":false,
+    "mk":66
   },
   {
     "id":92,
     "name":"Bramstraße",
     "long":8.0373841716,
     "lat":52.2996441686,
-    "visited":false
+    "visited":false,
+    "mk":67
   },
   {
     "id":93,
     "name":"Breslauer Ring",
     "long":8.1278697531,
     "lat":52.2990093057,
-    "visited":false
+    "visited":false,
+    "mk":68
   },
   {
     "id":94,
     "name":"Brinkhofweg",
     "long":8.0396314377,
     "lat":52.2529694933,
-    "visited":false
+    "visited":false,
+    "mk":69
   },
   {
     "id":95,
     "name":"Broxtermannstraße",
     "long":8.0654070766,
     "lat":52.2570754412,
-    "visited":false
+    "visited":false,
+    "mk":70
   },
   {
     "id":96,
     "name":"Bruchweg",
     "long":8.1423295602,
     "lat":52.277301277,
-    "visited":false
+    "visited":false,
+    "mk":71
   },
   {
     "id":97,
     "name":"Bünder Straße",
     "long":8.0614551781,
     "lat":52.2625540999,
-    "visited":false
+    "visited":false,
+    "mk":72
   },
   {
     "id":98,
     "name":"Burenkamp",
     "long":8.0359041823,
     "lat":52.2455406569,
-    "visited":false
+    "visited":false,
+    "mk":73
   },
   {
     "id":99,
     "name":"Burg Gretesch",
     "long":8.1173617996,
     "lat":52.2785032858,
-    "visited":false
+    "visited":false,
+    "mk":74
   },
   {
     "id":100,
     "name":"Caprivistraße",
     "long":8.0227017898,
     "lat":52.2784928502,
-    "visited":false
+    "visited":false,
+    "mk":75
   },
   {
     "id":101,
     "name":"Carl-Lüer-Straße",
     "long":8.083630478,
     "lat":52.2587979303,
-    "visited":false
+    "visited":false,
+    "mk":76
   },
   {
     "id":102,
     "name":"Dammer Hof",
     "long":8.0641781053,
     "lat":52.2959611268,
-    "visited":false
+    "visited":false,
+    "mk":77
   },
   {
     "id":103,
     "name":"Darum",
     "long":8.1538882172,
     "lat":52.2789625965,
-    "visited":false
+    "visited":false,
+    "mk":78
   },
   {
     "id":104,
     "name":"Dialysezentrum",
     "long":8.0052226861,
     "lat":52.2800096255,
-    "visited":false
+    "visited":false,
+    "mk":79
   },
   {
     "id":105,
     "name":"Dieselstraße",
     "long":7.9588896347,
     "lat":52.304360913,
-    "visited":false
+    "visited":false,
+    "mk":80
   },
   {
     "id":106,
     "name":"Dinklager Weg",
     "long":8.0621154297,
     "lat":52.2990030997,
-    "visited":false
+    "visited":false,
+    "mk":81
   },
   {
     "id":107,
     "name":"Dodeshausweg",
     "long":8.069241956,
     "lat":52.2996623497,
-    "visited":false
+    "visited":false,
+    "mk":82
   },
   {
     "id":108,
     "name":"Doppheide",
     "long":8.0890121372,
     "lat":52.2610753559,
-    "visited":false
+    "visited":false,
+    "mk":83
   },
   {
     "id":110,
     "name":"Düstrup",
     "long":8.1120575255,
     "lat":52.2579600526,
-    "visited":false
+    "visited":false,
+    "mk":84
   },
   {
     "id":111,
     "name":"Düteweg",
     "long":7.9505828331,
     "lat":52.2807079329,
-    "visited":false
+    "visited":false,
+    "mk":85
   },
   {
     "id":112,
     "name":"Eberleplatz",
     "long":8.0475408172,
     "lat":52.3061153752,
-    "visited":false
+    "visited":false,
+    "mk":86
   },
   {
     "id":113,
     "name":"Eichenallee",
     "long":8.0977698731,
     "lat":52.2512492759,
-    "visited":false
+    "visited":false,
+    "mk":87
   },
   {
     "id":114,
     "name":"Eikesberg",
     "long":7.9489575109,
     "lat":52.3014558752,
-    "visited":false
+    "visited":false,
+    "mk":88
   },
   {
     "id":115,
     "name":"Ellerstraße-Nord",
     "long":8.0742075889,
     "lat":52.304662023,
-    "visited":false
+    "visited":false,
+    "mk":89
   },
   {
     "id":116,
     "name":"Ellerstraße-Süd",
     "long":8.0674590304,
     "lat":52.2954348509,
-    "visited":false
+    "visited":false,
+    "mk":90
   },
   {
     "id":117,
     "name":"Ernst-Sievers-Straße",
     "long":8.0069026153,
     "lat":52.2713032223,
-    "visited":false
+    "visited":false,
+    "mk":91
   },
   {
     "id":118,
     "name":"Eversburg-Büren",
     "long":7.9894645781,
     "lat":52.3070123051,
-    "visited":false
+    "visited":false,
+    "mk":92
   },
   {
     "id":119,
     "name":"Eversburger Platz",
     "long":8.0142748006,
     "lat":52.294005638,
-    "visited":false
+    "visited":false,
+    "mk":93
   },
   {
     "id":120,
     "name":"Feldkamp",
     "long":7.9878449113,
     "lat":52.3268331605,
-    "visited":false
+    "visited":false,
+    "mk":94
   },
   {
     "id":121,
     "name":"Finanzamt",
     "long":8.0475756089,
     "lat":52.2690137226,
-    "visited":false
+    "visited":false,
+    "mk":95
   },
   {
     "id":122,
     "name":"Finkenweg",
     "long":8.0806615593,
     "lat":52.2735792516,
-    "visited":false
+    "visited":false,
+    "mk":96
   },
   {
     "id":123,
     "name":"Flugplatz Atterheide",
     "long":7.9673169341,
     "lat":52.2928751147,
-    "visited":false
+    "visited":false,
+    "mk":97
   },
   {
     "id":124,
     "name":"Frankenstraße",
     "long":8.060716711,
     "lat":52.27080412,
-    "visited":false
+    "visited":false,
+    "mk":98
   },
   {
     "id":125,
     "name":"Frankfurter Heerstraße",
     "long":8.0676145337,
     "lat":52.2462210197,
-    "visited":false
+    "visited":false,
+    "mk":99
   },
   {
     "id":126,
     "name":"Franziskushospital",
     "long":8.0710462829,
     "lat":52.2350603215,
-    "visited":false
+    "visited":false,
+    "mk":100
   },
   {
     "id":127,
     "name":"Fürstenauer Weg",
     "long":8.0208994283,
     "lat":52.3066379269,
-    "visited":false
+    "visited":false,
+    "mk":101
   },
   {
     "id":128,
     "name":"Gartlager Weg",
     "long":8.0807007141,
     "lat":52.2860997462,
-    "visited":false
+    "visited":false,
+    "mk":102
   },
   {
     "id":129,
     "name":"Gertrudenkirche",
     "long":8.0493933104,
     "lat":52.2824444634,
-    "visited":false
+    "visited":false,
+    "mk":103
   },
   {
     "id":130,
     "name":"Gesmolder Straße",
     "long":8.0758527891,
     "lat":52.2631774999,
-    "visited":false
+    "visited":false,
+    "mk":104
   },
   {
     "id":131,
     "name":"Gewerbegebiet Hellern",
     "long":7.9749054363,
     "lat":52.2667912722,
-    "visited":false
+    "visited":false,
+    "mk":105
   },
   {
     "id":132,
     "name":"Gretesch",
     "long":8.1245164572,
     "lat":52.2808444181,
-    "visited":false
+    "visited":false,
+    "mk":106
   },
   {
     "id":133,
     "name":"Gretescher Weg",
     "long":8.112554343,
     "lat":52.2831729286,
-    "visited":false
+    "visited":false,
+    "mk":107
   },
   {
     "id":135,
     "name":"Große Schulstraße",
     "long":7.9894761645,
     "lat":52.2554728276,
-    "visited":false
+    "visited":false,
+    "mk":108
   },
   {
     "id":136,
     "name":"Große Siebenbürgen",
     "long":8.0020113896,
     "lat":52.3177424385,
-    "visited":false
+    "visited":false,
+    "mk":109
   },
   {
     "id":137,
     "name":"Großer Fledderweg",
     "long":8.0700608497,
     "lat":52.2587899657,
-    "visited":false
+    "visited":false,
+    "mk":110
   },
   {
     "id":138,
     "name":"Gustav-Tweer-Straße",
     "long":8.0454321806,
     "lat":52.260098299,
-    "visited":false
+    "visited":false,
+    "mk":111
   },
   {
     "id":139,
     "name":"Güstrower Straße",
     "long":8.0451745049,
     "lat":52.3107337618,
-    "visited":false
+    "visited":false,
+    "mk":112
   },
   {
     "id":140,
     "name":"Habichtsweg",
     "long":8.1033659772,
     "lat":52.2563496029,
-    "visited":false
+    "visited":false,
+    "mk":113
   },
   {
     "id":141,
     "name":"Hamburger Straße",
     "long":8.0620089275,
     "lat":52.2723467138,
-    "visited":false
+    "visited":false,
+    "mk":114
   },
   {
     "id":142,
     "name":"Händelstraße",
     "long":8.0099374715,
     "lat":52.2818106379,
-    "visited":false
+    "visited":false,
+    "mk":115
   },
   {
     "id":143,
     "name":"Hannoversche Straße",
     "long":8.0776957325,
     "lat":52.2603566299,
-    "visited":false
+    "visited":false,
+    "mk":116
   },
   {
     "id":144,
     "name":"Hans-Calmeyer-Platz",
     "long":8.0274672557,
     "lat":52.2744628813,
-    "visited":false
+    "visited":false,
+    "mk":117
   },
   {
     "id":145,
     "name":"Hardinghausstraße",
     "long":8.0453920427,
     "lat":52.3080745754,
-    "visited":false
+    "visited":false,
+    "mk":118
   },
   {
     "id":146,
     "name":"Hasefriedhof",
     "long":8.040592065,
     "lat":52.2887981606,
-    "visited":false
+    "visited":false,
+    "mk":119
   },
   {
     "id":147,
     "name":"Hasepark",
     "long":8.0689125531,
     "lat":52.2728485235,
-    "visited":false
+    "visited":false,
+    "mk":120
   },
   {
     "id":148,
     "name":"Hasetor",
     "long":8.043814606,
     "lat":52.2816434706,
-    "visited":false
+    "visited":false,
+    "mk":121
   },
   {
     "id":150,
     "name":"Haster Mühle",
     "long":8.0363946871,
     "lat":52.2954170147,
-    "visited":false
+    "visited":false,
+    "mk":122
   },
   {
     "id":151,
     "name":"Hauptzollamt",
     "long":8.081352405,
     "lat":52.2572096631,
-    "visited":false
+    "visited":false,
+    "mk":123
   },
   {
     "id":152,
     "name":"Hauswörmannsweg",
     "long":8.0492118959,
     "lat":52.2537059021,
-    "visited":false
+    "visited":false,
+    "mk":124
   },
   {
     "id":153,
     "name":"Heger Holz",
     "long":8.0081374089,
     "lat":52.2824059179,
-    "visited":false
+    "visited":false,
+    "mk":125
   },
   {
     "id":154,
     "name":"Heidkamp",
     "long":8.007623791,
     "lat":52.2538893775,
-    "visited":false
+    "visited":false,
+    "mk":126
   },
   {
     "id":155,
     "name":"Heiligenweg/Schinkelbad",
     "long":8.0841875716,
     "lat":52.2788540497,
-    "visited":false
+    "visited":false,
+    "mk":127
   },
   {
     "id":156,
     "name":"Hiärm-Grupe-Straße",
     "long":8.023270656,
     "lat":52.2690874766,
-    "visited":false
+    "visited":false,
+    "mk":128
   },
   {
     "id":157,
     "name":"Hochschulen Westerberg",
     "long":8.0259691067,
     "lat":52.282585334,
-    "visited":false
+    "visited":false,
+    "mk":129
   },
   {
     "id":158,
     "name":"Hoetgerstraße",
     "long":8.027766218,
     "lat":52.2622079207,
-    "visited":false
+    "visited":false,
+    "mk":130
   },
   {
     "id":159,
     "name":"Hoffmeyerplatz",
     "long":8.0376981164,
     "lat":52.2675835634,
-    "visited":false
+    "visited":false,
+    "mk":131
   },
   {
     "id":160,
     "name":"Holsten-Mündruper-Straße",
     "long":8.0979100336,
     "lat":52.24928182,
-    "visited":false
+    "visited":false,
+    "mk":132
   },
   {
     "id":161,
     "name":"Hörner Bruch",
     "long":8.0064533285,
     "lat":52.248348293,
-    "visited":false
+    "visited":false,
+    "mk":133
   },
   {
     "id":162,
     "name":"Hügelstraße",
     "long":8.0460466464,
     "lat":52.2934807426,
-    "visited":false
+    "visited":false,
+    "mk":134
   },
   {
     "id":163,
     "name":"Humboldtstraße",
     "long":8.0602269755,
     "lat":52.2754648874,
-    "visited":false
+    "visited":false,
+    "mk":135
   },
   {
     "id":164,
     "name":"Huxmühlenbach",
     "long":8.0874696041,
     "lat":52.2595511697,
-    "visited":false
+    "visited":false,
+    "mk":136
   },
   {
     "id":165,
     "name":"Ickerweg",
     "long":8.0917869068,
     "lat":52.289780568,
-    "visited":false
+    "visited":false,
+    "mk":137
   },
   {
     "id":166,
     "name":"IKEA",
     "long":7.9690008446,
     "lat":52.2656692732,
-    "visited":false
+    "visited":false,
+    "mk":138
   },
   {
     "id":167,
     "name":"In der Dodesheide",
     "long":8.0800070693,
     "lat":52.3051980223,
-    "visited":false
+    "visited":false,
+    "mk":139
   },
   {
     "id":168,
     "name":"Industrie-Museum",
     "long":8.0067797837,
     "lat":52.3157675481,
-    "visited":false
+    "visited":false,
+    "mk":140
   },
   {
     "id":169,
     "name":"Jahnplatz",
     "long":8.0351402452,
     "lat":52.2707299059,
-    "visited":false
+    "visited":false,
+    "mk":141
   },
   {
     "id":170,
     "name":"Jeggener Weg",
     "long":8.0866912003,
     "lat":52.2717877361,
-    "visited":false
+    "visited":false,
+    "mk":142
   },
   {
     "id":171,
     "name":"Johannisfriedhof",
     "long":8.0544327033,
     "lat":52.2594374399,
-    "visited":false
+    "visited":false,
+    "mk":143
   },
   {
     "id":172,
     "name":"Jostesweg",
     "long":8.0248733074,
     "lat":52.2606926893,
-    "visited":false
+    "visited":false,
+    "mk":144
   },
   {
     "id":173,
     "name":"Kalkhügel",
     "long":8.0446051488,
     "lat":52.2632180702,
-    "visited":false
+    "visited":false,
+    "mk":145
   },
   {
     "id":174,
     "name":"Kamp-Promenade",
     "long":8.0448516945,
     "lat":52.2742752713,
-    "visited":false
+    "visited":false,
+    "mk":146
   },
   {
     "id":176,
     "name":"Karl-Adams-Weg",
     "long":8.1358942579,
     "lat":52.3045987931,
-    "visited":false
+    "visited":false,
+    "mk":147
   },
   {
     "id":177,
     "name":"Karl-Luhmann-Heim",
     "long":8.0576732548,
     "lat":52.2898771902,
-    "visited":false
+    "visited":false,
+    "mk":148
   },
   {
     "id":178,
     "name":"Karmannstraße",
     "long":8.0819734019,
     "lat":52.2637797317,
-    "visited":false
+    "visited":false,
+    "mk":149
   },
   {
     "id":179,
     "name":"Kastanienstraße",
     "long":8.0713893846,
     "lat":52.3018321715,
-    "visited":false
+    "visited":false,
+    "mk":150
   },
   {
     "id":180,
     "name":"Kesselschmiede",
     "long":8.0430769713,
     "lat":52.257008022,
-    "visited":false
+    "visited":false,
+    "mk":151
   },
   {
     "id":181,
     "name":"Kinderhospital/Jugendherberge",
     "long":8.0614257777,
     "lat":52.2526559528,
-    "visited":false
+    "visited":false,
+    "mk":152
   },
   {
     "id":182,
     "name":"Kirchstraße",
     "long":7.999228992,
     "lat":52.2964097141,
-    "visited":false
+    "visited":false,
+    "mk":153
   },
   {
     "id":183,
     "name":"Kleine Schulstraße",
     "long":7.9959373808,
     "lat":52.2579584692,
-    "visited":false
+    "visited":false,
+    "mk":154
   },
   {
     "id":184,
     "name":"Klinikum Finkenhügel",
     "long":8.0059802109,
     "lat":52.2771204092,
-    "visited":false
+    "visited":false,
+    "mk":155
   },
   {
     "id":185,
     "name":"Klinikum Gertrudenberg",
     "long":8.0546939914,
     "lat":52.2872733027,
-    "visited":false
+    "visited":false,
+    "mk":156
   },
   {
     "id":186,
     "name":"Klump",
     "long":8.082531026,
     "lat":52.2519529008,
-    "visited":false
+    "visited":false,
+    "mk":157
   },
   {
     "id":187,
     "name":"Kolumbarium",
     "long":8.0771250625,
     "lat":52.25330919,
-    "visited":false
+    "visited":false,
+    "mk":158
   },
   {
     "id":188,
     "name":"Königsberger Straße",
     "long":8.1243141796,
     "lat":52.299993548,
-    "visited":false
+    "visited":false,
+    "mk":159
   },
   {
     "id":189,
     "name":"Konrad-Adenauer-Ring",
     "long":8.057687629,
     "lat":52.2693723878,
-    "visited":false
+    "visited":false,
+    "mk":160
   },
   {
     "id":190,
     "name":"Kornstraße",
     "long":8.0380646719,
     "lat":52.2921316052,
-    "visited":false
+    "visited":false,
+    "mk":161
   },
   {
     "id":191,
     "name":"Kreisel Atterfeld",
     "long":7.9559999563,
     "lat":52.2739058032,
-    "visited":false
+    "visited":false,
+    "mk":162
   },
   {
     "id":192,
     "name":"Kreishaus/Zoo",
     "long":8.0710198277,
     "lat":52.2471625199,
-    "visited":false
+    "visited":false,
+    "mk":163
   },
   {
     "id":193,
     "name":"Kreuzhügel",
     "long":8.1065486071,
     "lat":52.26782357,
-    "visited":false
+    "visited":false,
+    "mk":164
   },
   {
     "id":194,
     "name":"Kromschröderstraße",
     "long":8.0189526567,
     "lat":52.2667660893,
-    "visited":false
+    "visited":false,
+    "mk":165
   },
   {
     "id":195,
     "name":"Küpper-Menke-Stift",
     "long":8.0128280826,
     "lat":52.2877522963,
-    "visited":false
+    "visited":false,
+    "mk":166
   },
   {
     "id":196,
     "name":"Laischaftsstraße",
     "long":8.0426025673,
     "lat":52.2652046244,
-    "visited":false
+    "visited":false,
+    "mk":167
   },
   {
     "id":197,
     "name":"Langenkamp",
     "long":8.0851230058,
     "lat":52.2569960328,
-    "visited":false
+    "visited":false,
+    "mk":168
   },
   {
     "id":198,
     "name":"Liszthof",
     "long":8.0119045308,
     "lat":52.2852976939,
-    "visited":false
+    "visited":false,
+    "mk":169
   },
   {
     "id":199,
     "name":"Lotter Kirchweg",
     "long":8.0108135278,
     "lat":52.2746545619,
-    "visited":false
+    "visited":false,
+    "mk":170
   },
   {
     "id":200,
     "name":"Luisenstraße",
     "long":8.0564683756,
     "lat":52.2774266571,
-    "visited":false
+    "visited":false,
+    "mk":171
   },
   {
     "id":201,
     "name":"Lüstringen-Ost",
     "long":8.1514608153,
     "lat":52.26540807,
-    "visited":false
+    "visited":false,
+    "mk":172
   },
   {
     "id":202,
     "name":"Lüstringer Berg",
     "long":8.136294912,
     "lat":52.2747216272,
-    "visited":false
+    "visited":false,
+    "mk":173
   },
   {
     "id":203,
     "name":"Lüstringer Friedhof",
     "long":8.1476504619,
     "lat":52.2789219068,
-    "visited":false
+    "visited":false,
+    "mk":174
   },
   {
     "id":204,
     "name":"Lutherkirche",
     "long":8.0566901487,
     "lat":52.2597682124,
-    "visited":false
+    "visited":false,
+    "mk":175
   },
   {
     "id":205,
     "name":"Magdalenenstraße",
     "long":8.0505288646,
     "lat":52.2606705942,
-    "visited":false
+    "visited":false,
+    "mk":176
   },
   {
     "id":206,
     "name":"Mehring",
     "long":8.062768187,
     "lat":52.2363237402,
-    "visited":false
+    "visited":false,
+    "mk":177
   },
   {
     "id":207,
     "name":"Moorlandstraße",
     "long":8.044333224,
     "lat":52.2901676338,
-    "visited":false
+    "visited":false,
+    "mk":178
   },
   {
     "id":208,
     "name":"Moorweg",
     "long":7.9928478432,
     "lat":52.330364085,
-    "visited":false
+    "visited":false,
+    "mk":179
   },
   {
     "id":210,
     "name":"Moskaubad",
     "long":8.0344706988,
     "lat":52.2658426886,
-    "visited":false
+    "visited":false,
+    "mk":180
   },
   {
     "id":211,
     "name":"Nahner Feld",
     "long":8.0648743873,
     "lat":52.2474115283,
-    "visited":false
+    "visited":false,
+    "mk":181
   },
   {
     "id":212,
     "name":"Narupstraße",
     "long":8.0765139919,
     "lat":52.2581579442,
-    "visited":false
+    "visited":false,
+    "mk":182
   },
   {
     "id":213,
     "name":"Neumarkter Straße",
     "long":7.9700657595,
     "lat":52.300704565,
-    "visited":false
+    "visited":false,
+    "mk":183
   },
   {
     "id":214,
     "name":"Nikolaizentrum",
     "long":8.0423849903,
     "lat":52.2751652926,
-    "visited":false
+    "visited":false,
+    "mk":184
   },
   {
     "id":215,
     "name":"Nonnenpfad",
     "long":8.0480177975,
     "lat":52.2792581607,
-    "visited":false
+    "visited":false,
+    "mk":185
   },
   {
     "id":216,
     "name":"Nordhausweg",
     "long":8.0037464988,
     "lat":52.2593046177,
-    "visited":false
+    "visited":false,
+    "mk":186
   },
   {
     "id":217,
     "name":"Nordstraße",
     "long":8.1045285193,
     "lat":52.2963734393,
-    "visited":false
+    "visited":false,
+    "mk":187
   },
   {
     "id":218,
     "name":"OKD-Straße",
     "long":8.0062749162,
     "lat":52.2562730921,
-    "visited":false
+    "visited":false,
+    "mk":188
   },
   {
     "id":219,
     "name":"Ölweg",
     "long":8.0988368303,
     "lat":52.280665597,
-    "visited":false
+    "visited":false,
+    "mk":189
   },
   {
     "id":220,
     "name":"osnatel-ARENA",
     "long":8.0702058719,
     "lat":52.2820223107,
-    "visited":false
+    "visited":false,
+    "mk":190
   },
   {
     "id":221,
     "name":"Oststraße",
     "long":8.0709249708,
     "lat":52.2753415256,
-    "visited":false
+    "visited":false,
+    "mk":191
   },
   {
     "id":222,
     "name":"Paracelsus-Klinik",
     "long":8.0103518996,
     "lat":52.2884394891,
-    "visited":false
+    "visited":false,
+    "mk":192
   },
   {
     "id":223,
     "name":"Paradiesweg",
     "long":8.0618638127,
     "lat":52.2484454081,
-    "visited":false
+    "visited":false,
+    "mk":193
   },
   {
     "id":224,
     "name":"Piärkamp",
     "long":8.084654388,
     "lat":52.2630302128,
-    "visited":false
+    "visited":false,
+    "mk":194
   },
   {
     "id":225,
     "name":"Preußenweg",
     "long":7.9451793763,
     "lat":52.2876110596,
-    "visited":false
+    "visited":false,
+    "mk":195
   },
   {
     "id":226,
     "name":"Professor-Porsche-Straße",
     "long":7.9573866564,
     "lat":52.3054107236,
-    "visited":false
+    "visited":false,
+    "mk":196
   },
   {
     "id":227,
     "name":"Quellwiese",
     "long":8.0203513482,
     "lat":52.2615005678,
-    "visited":false
+    "visited":false,
+    "mk":197
   },
   {
     "id":228,
     "name":"Rahenkamp",
     "long":8.1162909576,
     "lat":52.2480233242,
-    "visited":false
+    "visited":false,
+    "mk":198
   },
   {
     "id":229,
     "name":"Reinhold-Tilling-Weg",
     "long":8.0517859945,
     "lat":52.2958412917,
-    "visited":false
+    "visited":false,
+    "mk":199
   },
   {
     "id":230,
     "name":"Rheinische Straße",
     "long":8.0677083486,
     "lat":52.2634009908,
-    "visited":false
+    "visited":false,
+    "mk":200
   },
   {
     "id":231,
     "name":"Richard-Wagner-Straße",
     "long":8.0151988576,
     "lat":52.2745163563,
-    "visited":false
+    "visited":false,
+    "mk":201
   },
   {
     "id":232,
     "name":"Ringstraße",
     "long":8.1245189912,
     "lat":52.3027958155,
-    "visited":false
+    "visited":false,
+    "mk":202
   },
   {
     "id":233,
     "name":"Rißmüllerplatz",
     "long":8.038079181,
     "lat":52.2789221886,
-    "visited":false
+    "visited":false,
+    "mk":203
   },
   {
     "id":235,
     "name":"Robert-Koch-Straße",
     "long":8.0759824607,
     "lat":52.3064720811,
-    "visited":false
+    "visited":false,
+    "mk":204
   },
   {
     "id":236,
     "name":"Rosenburg",
     "long":8.07420806,
     "lat":52.274803309,
-    "visited":false
+    "visited":false,
+    "mk":205
   },
   {
     "id":237,
     "name":"Rosenkranzkirche",
     "long":8.0946399291,
     "lat":52.2826109739,
-    "visited":false
+    "visited":false,
+    "mk":206
   },
   {
     "id":238,
     "name":"Ruller Weg",
     "long":8.0496199519,
     "lat":52.3127070704,
-    "visited":false
+    "visited":false,
+    "mk":207
   },
   {
     "id":239,
     "name":"Sackstraße",
     "long":8.1476214776,
     "lat":52.2660029798,
-    "visited":false
+    "visited":false,
+    "mk":208
   },
   {
     "id":240,
     "name":"Salzmarkt",
     "long":8.052582708,
     "lat":52.2683199508,
-    "visited":false
+    "visited":false,
+    "mk":209
   },
   {
     "id":241,
     "name":"Sandbrink",
     "long":8.1260637167,
     "lat":52.2697211855,
-    "visited":false
+    "visited":false,
+    "mk":210
   },
   {
     "id":243,
     "name":"Sandgrube",
     "long":8.0114758395,
     "lat":52.2649742401,
-    "visited":false
+    "visited":false,
+    "mk":211
   },
   {
     "id":244,
     "name":"Sankt Angela",
     "long":8.0412436976,
     "lat":52.3015234031,
-    "visited":false
+    "visited":false,
+    "mk":212
   },
   {
     "id":245,
     "name":"Schinkel Ost",
     "long":8.1004827149,
     "lat":52.2788032013,
-    "visited":false
+    "visited":false,
+    "mk":213
   },
   {
     "id":246,
     "name":"Schinkelberg",
     "long":8.0881876918,
     "lat":52.2883281583,
-    "visited":false
+    "visited":false,
+    "mk":214
   },
   {
     "id":247,
     "name":"Schinkeler Friedhof",
     "long":8.0889995198,
     "lat":52.2772215027,
-    "visited":false
+    "visited":false,
+    "mk":215
   },
   {
     "id":248,
     "name":"Schinkelstraße",
     "long":8.0656591157,
     "lat":52.275585559,
-    "visited":false
+    "visited":false,
+    "mk":216
   },
   {
     "id":249,
     "name":"Schlesische Straße",
     "long":8.0826487731,
     "lat":52.3031097065,
-    "visited":false
+    "visited":false,
+    "mk":217
   },
   {
     "id":250,
     "name":"Schmiedeweg",
     "long":8.1093573272,
     "lat":52.279828391,
-    "visited":false
+    "visited":false,
+    "mk":218
   },
   {
     "id":251,
     "name":"Schnatgang",
     "long":8.036732699,
     "lat":52.2692629849,
-    "visited":false
+    "visited":false,
+    "mk":219
   },
   {
     "id":252,
     "name":"Schoeller",
     "long":8.1195638872,
     "lat":52.2768652392,
-    "visited":false
+    "visited":false,
+    "mk":220
   },
   {
     "id":253,
     "name":"Schölerberg",
     "long":8.0587908447,
     "lat":52.2560291411,
-    "visited":false
+    "visited":false,
+    "mk":221
   },
   {
     "id":254,
     "name":"Schule Atter",
     "long":7.9526565226,
     "lat":52.2917951915,
-    "visited":false
+    "visited":false,
+    "mk":222
   },
   {
     "id":255,
     "name":"Schule Eversburg",
     "long":7.9970981381,
     "lat":52.303770057,
-    "visited":false
+    "visited":false,
+    "mk":223
   },
   {
     "id":256,
     "name":"Schule Hellern",
     "long":7.984965404,
     "lat":52.2630057056,
-    "visited":false
+    "visited":false,
+    "mk":224
   },
   {
     "id":257,
     "name":"Schule Pye",
     "long":7.9954802362,
     "lat":52.3218505224,
-    "visited":false
+    "visited":false,
+    "mk":225
   },
   {
     "id":258,
     "name":"Schulzentrum Sonnenhügel",
     "long":8.062205217,
     "lat":52.2923831759,
-    "visited":false
+    "visited":false,
+    "mk":226
   },
   {
     "id":259,
     "name":"Schützenstraße",
     "long":8.074537834,
     "lat":52.283359718,
-    "visited":false
+    "visited":false,
+    "mk":227
   },
   {
     "id":260,
     "name":"Sedanplatz",
     "long":8.0274083946,
     "lat":52.2866509774,
-    "visited":false
+    "visited":false,
+    "mk":228
   },
   {
     "id":261,
     "name":"Sportpark",
     "long":8.0175546679,
     "lat":52.3091312077,
-    "visited":false
+    "visited":false,
+    "mk":229
   },
   {
     "id":262,
     "name":"Stahlwerksweg",
     "long":8.0583542847,
     "lat":52.2644746974,
-    "visited":false
+    "visited":false,
+    "mk":230
   },
   {
     "id":263,
     "name":"Stärkefabrik",
     "long":8.0066277661,
     "lat":52.2986819916,
-    "visited":false
+    "visited":false,
+    "mk":231
   },
   {
     "id":264,
     "name":"Storkamp",
     "long":7.9740063687,
     "lat":52.2931132729,
-    "visited":false
+    "visited":false,
+    "mk":232
   },
   {
     "id":265,
     "name":"Stresemannplatz",
     "long":8.0546926501,
     "lat":52.2734233297,
-    "visited":false
+    "visited":false,
+    "mk":233
   },
   {
     "id":266,
     "name":"Strothmannsweg",
     "long":8.1151760062,
     "lat":52.2795280403,
-    "visited":false
+    "visited":false,
+    "mk":234
   },
   {
     "id":267,
     "name":"Stüvenbrede",
     "long":8.072155997,
     "lat":52.2635950845,
-    "visited":false
+    "visited":false,
+    "mk":235
   },
   {
     "id":268,
     "name":"Süberweg",
     "long":8.0146157043,
     "lat":52.3112063301,
-    "visited":false
+    "visited":false,
+    "mk":236
   },
   {
     "id":269,
     "name":"Südstraße",
     "long":8.0968515042,
     "lat":52.2690792148,
-    "visited":false
+    "visited":false,
+    "mk":237
   },
   {
     "id":270,
     "name":"Sutthausen Mitte",
     "long":8.0277489994,
     "lat":52.2364956749,
-    "visited":false
+    "visited":false,
+    "mk":238
   },
   {
     "id":271,
     "name":"Tannenburgstraße",
     "long":8.076138374,
     "lat":52.278076428,
-    "visited":false
+    "visited":false,
+    "mk":239
   },
   {
     "id":272,
     "name":"Teichweg",
     "long":8.0060350924,
     "lat":52.2961853562,
-    "visited":false
+    "visited":false,
+    "mk":240
   },
   {
     "id":273,
     "name":"Telgenkamp",
     "long":8.0126803698,
     "lat":52.2909518451,
-    "visited":false
+    "visited":false,
+    "mk":241
   },
   {
     "id":274,
     "name":"Theater",
     "long":8.043646541,
     "lat":52.2772355579,
-    "visited":false
+    "visited":false,
+    "mk":242
   },
   {
     "id":275,
     "name":"Tiefstraße",
     "long":8.0800235207,
     "lat":52.278793572,
-    "visited":false
+    "visited":false,
+    "mk":243
   },
   {
     "id":276,
     "name":"Uhlandstraße",
     "long":8.0322593343,
     "lat":52.271255384,
-    "visited":false
+    "visited":false,
+    "mk":244
   },
   {
     "id":277,
     "name":"Umweltstiftung",
     "long":8.0325041789,
     "lat":52.2853722337,
-    "visited":false
+    "visited":false,
+    "mk":245
   },
   {
     "id":278,
     "name":"Universität/OsnabrückHalle",
     "long":8.0429719537,
     "lat":52.272073255,
-    "visited":false
+    "visited":false,
+    "mk":246
   },
   {
     "id":279,
     "name":"Up de Heede",
     "long":8.1414170655,
     "lat":52.3149030539,
-    "visited":false
+    "visited":false,
+    "mk":247
   },
   {
     "id":280,
     "name":"Vitihof",
     "long":8.0436614224,
     "lat":52.2795361228,
-    "visited":false
+    "visited":false,
+    "mk":248
   },
   {
     "id":281,
     "name":"Voßkamp",
     "long":8.0054361313,
     "lat":52.274780766,
-    "visited":false
+    "visited":false,
+    "mk":249
   },
   {
     "id":282,
     "name":"Voxtrup",
     "long":8.1230176643,
     "lat":52.2468375744,
-    "visited":false
+    "visited":false,
+    "mk":250
   },
   {
     "id":283,
     "name":"Voxtruper Straße",
     "long":8.0721066574,
     "lat":52.2556255664,
-    "visited":false
+    "visited":false,
+    "mk":251
   },
   {
     "id":284,
     "name":"Waldschule Lüstringen",
     "long":8.1309719572,
     "lat":52.272380275,
-    "visited":false
+    "visited":false,
+    "mk":252
   },
   {
     "id":285,
     "name":"Walkmühlenweg",
     "long":8.0169329385,
     "lat":52.2923679635,
-    "visited":false
+    "visited":false,
+    "mk":253
   },
   {
     "id":286,
     "name":"Wartenbergstraße",
     "long":8.0650039051,
     "lat":52.2607448552,
-    "visited":false
+    "visited":false,
+    "mk":254
   },
   {
     "id":287,
     "name":"Weberstraße",
     "long":8.0905378667,
     "lat":52.2803776202,
-    "visited":false
+    "visited":false,
+    "mk":255
   },
   {
     "id":288,
     "name":"Weißenburger Straße",
     "long":8.0332147661,
     "lat":52.2748401973,
-    "visited":false
+    "visited":false,
+    "mk":256
   },
   {
     "id":289,
     "name":"Werksberg",
     "long":8.1013644444,
     "lat":52.2519847933,
-    "visited":false
+    "visited":false,
+    "mk":257
   },
   {
     "id":290,
     "name":"Wersener Landstraße",
     "long":7.9809483357,
     "lat":52.2974686168,
-    "visited":false
+    "visited":false,
+    "mk":258
   },
   {
     "id":291,
     "name":"Widukindland",
     "long":8.0992861708,
     "lat":52.2934297291,
-    "visited":false
+    "visited":false,
+    "mk":259
   },
   {
     "id":292,
     "name":"Wilhelm-Mentrup-Weg",
     "long":8.0488306222,
     "lat":52.251957793,
-    "visited":false
+    "visited":false,
+    "mk":260
   },
   {
     "id":293,
     "name":"Wilhelm-v.-Euch-Straße",
     "long":8.0459514168,
     "lat":52.3041548259,
-    "visited":false
+    "visited":false,
+    "mk":261
   },
   {
     "id":294,
     "name":"Wulfter Turm",
     "long":8.0322138157,
     "lat":52.2412221651,
-    "visited":false
+    "visited":false,
+    "mk":262
   },
   {
     "id":295,
     "name":"Wüste",
     "long":8.023488509,
     "lat":52.264350471,
-    "visited":false
+    "visited":false,
+    "mk":263
   },
   {
     "id":296,
     "name":"Ziegeleistraße",
     "long":8.126975285,
     "lat":52.2675967729,
-    "visited":false
+    "visited":false,
+    "mk":264
   },
   {
     "id":297,
     "name":"Ziegenbrink",
     "long":8.0520286753,
     "lat":52.2568057177,
-    "visited":false
+    "visited":false,
+    "mk":265
   },
   {
     "id":298,
     "name":"Zum Schäferhof",
     "long":8.0702932295,
     "lat":52.3036170717,
-    "visited":false
+    "visited":false,
+    "mk":266
   },
   {
     "id":299,
     "name":"Kurt-Schumacher-Damm",
     "long":8.0078155167,
     "lat":52.265157146,
-    "visited":false
+    "visited":false,
+    "mk":267
   },
   {
     "id":300,
     "name":"Heger Friedhof",
     "long":8.0036478643,
     "lat":52.2696152713,
-    "visited":false
+    "visited":false,
+    "mk":268
   },
   {
     "id":301,
     "name":"Heger Tor",
     "long":8.0390427595,
     "lat":52.2756814474,
-    "visited":false
+    "visited":false,
+    "mk":269
   },
   {
     "id":302,
     "name":"Landwehrstraße",
     "long":7.9843966556,
     "lat":52.2962605551,
-    "visited":false
+    "visited":false,
+    "mk":270
   },
   {
     "id":303,
     "name":"Spitze",
     "long":8.097238921,
     "lat":52.2544218827,
-    "visited":false
+    "visited":false,
+    "mk":271
   },
   {
     "id":304,
     "name":"Zur Spitze",
     "long":8.0017786744,
     "lat":52.2613591151,
-    "visited":false
+    "visited":false,
+    "mk":272
   },
   {
     "id":305,
     "name":"Berliner Platz",
     "long":8.0519811614,
     "lat":52.275601346,
-    "visited":false
+    "visited":false,
+    "mk":273
   },
   {
     "id":306,
     "name":"Gretescher Turm",
     "long":8.1207686615,
     "lat":52.2699629849,
-    "visited":false
+    "visited":false,
+    "mk":274
   },
   {
     "id":307,
     "name":"Haster Weg",
     "long":8.0599302302,
     "lat":52.3019042487,
-    "visited":false
+    "visited":false,
+    "mk":275
   },
   {
     "id":308,
     "name":"Heinrich-Lübke-Platz",
     "long":8.028203014,
     "lat":52.270970227,
-    "visited":false
+    "visited":false,
+    "mk":276
   },
   {
     "id":309,
     "name":"Hellern",
     "long":7.9819429417,
     "lat":52.2672372019,
-    "visited":false
+    "visited":false,
+    "mk":277
   },
   {
     "id":310,
     "name":"Saarplatz",
     "long":8.0227919799,
     "lat":52.2747706137,
-    "visited":false
+    "visited":false,
+    "mk":278
   },
   {
     "id":311,
     "name":"Uhlhornstraße",
     "long":8.0476528914,
     "lat":52.2618222077,
-    "visited":false
+    "visited":false,
+    "mk":279
   },
   {
     "id":312,
     "name":"Rosenplatz",
     "long":8.053921724,
     "lat":52.2657414743,
-    "visited":false
+    "visited":false,
+    "mk":280
   }
 ]
