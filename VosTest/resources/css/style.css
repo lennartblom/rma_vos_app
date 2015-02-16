@@ -469,8 +469,8 @@ font-size: 11px;
 .paddingBoxBorder{
   padding-left:10px;
   margin-left:10px;
-  padding-top:5px;
-  padding-bottom: 5px;
+  margin-top:5px;
+  margin-bottom: 5px;
   border-left: 3px dashed #4183D7;
 }
 
