@@ -48,9 +48,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
             "button#fahrplanerBackButton": {
                 tap: 'fahrplanerBackButton'
             },
-            "#lineOne": {
-                itemtap: 'onLineOneItemTap'
-            },
             "searchfield#searchfieldStart": {
                 focus: 'onFocusSearchfieldStart'
             },
@@ -65,40 +62,17 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
         this.getMainView().show();
     },
 
-    onLineOneItemTap: function(list, index, item, record) {
-
-
-        /*var dataView = this.getLineTwo();
-        var linesData = record.get('lines');
-        //var quantity = linesArray.getCount();
-
-
-
-        var myPanel = Ext.create('Ext.Panel', {
-            html: "<div class=\"buslineWrapper\"><div class=\"buslinesBoxLeft\"><div class=\"busIcon\" stlye=\"background-image:url(resources/images/icons/bus-icon-150x150.png)\"></div> " + this.getLines(linesData) + "</div><div class=\"buslinesBoxRight\">"+ record.get('name')+ "</div><div class=\"clearing\"></div></div>"
-        });
-
-        dataView.removeAll();
-        dataView.add([myPanel]);*/
-    },
-
     onFocusSearchfieldStart: function(textfield, e, eOpts) {
 
-        //var searchTitle = Ext.getCmp('SearchTitle');
-        //searchTitle.setData({title:"Start"}); // Übergabe an das Label searchTitle
-        //console.log('Search Typ übergabe ::before');
+
         this.getApplication().getController('searchViewController').searchType = 'start';
-        //console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
         this.getFahrplanerView().hide();
     },
 
     onFocusSearchfieldDestination: function(textfield, e, eOpts) {
-        //var searchTitle = Ext.getCmp('SearchTitle');
-        //searchTitle.setData({title:"Ziel"});  // Übergabe an das Label searchTitle
-        //console.log('Search Typ übergabe ::before');
+
         this.getApplication().getController('searchViewController').searchType = 'destination';
-        //console.log('Search Typ übergabe ::after');
         this.getSearchView().show({type:"slide",direction:"up"});
         this.getFahrplanerView().hide();
 
@@ -107,7 +81,9 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     launch: function() {
 
         Ext.getStore('stops').load();
+
         console.log("Store Stops wurde geladen.");
+
         this.dbcopy();
 
 
@@ -121,11 +97,11 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
     },
 
     dbcopy: function() {
-           window.plugins.sqlDB.remove("vosnavigator.db",function(){
+           /*window.plugins.sqlDB.remove("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich entfernt");},
                 function(e){
                     console.log("Error Code = "+JSON.stringify(e));
-                });
+                });*/
 
             window.plugins.sqlDB.copy("vosnavigator.db",function(){
                 console.log("db wurde erfolgreich kopiert");},

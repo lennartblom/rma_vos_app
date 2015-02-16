@@ -40,7 +40,7 @@ Ext.define('VosNavigator.model.stop', {
             },
             {
                 name: 'visited',
-                type: 'boolean'
+                type: 'string'
             }
         ]
     }
