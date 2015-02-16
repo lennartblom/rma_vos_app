@@ -89,9 +89,9 @@ Ext.define('VosNavigator.controller.Main', {
     achButton: function(button, e, eOpts) {
         this.getMainView().hide();
         this.getAchView().show({type:"slide",direction:"left"});
+        var percent = this.getApplication().getController('mapViewController').getPercentProp();
 
-
-        this.getApplication().getController('Achievements').percentageAnimation(82);
+        this.getApplication().getController('Achievements').percentageAnimation(percent);
     }
 
 });
