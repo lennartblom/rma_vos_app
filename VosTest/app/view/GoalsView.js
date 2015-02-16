@@ -99,7 +99,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         itemTpl: [
                                             '<div>{name}</div>'
                                         ],
-                                        store: 'stopsUnvisited'
+                                        store: 'stops'
                                     },
                                     {
                                         xtype: 'label',

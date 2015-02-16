@@ -137,7 +137,7 @@
                                 "itemId": null,
                                 "maxItemCache": 1,
                                 "scrollable": false,
-                                "store": "stopsUnvisited",
+                                "store": null,
                                 "width": "90%"
                             },
                             "name": "MyDataView",

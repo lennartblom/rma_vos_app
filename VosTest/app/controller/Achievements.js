@@ -17,7 +17,7 @@ Ext.define('VosNavigator.controller.Achievements', {
     extend: 'Ext.app.Controller',
 
     config: {
-        dailyGoalsCounter: 0,
+        dailyGoalsCounter: 3,
         reachedBusNetwork: 0,
 
         refs: {

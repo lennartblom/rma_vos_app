@@ -90,8 +90,7 @@ Ext.define('VosNavigator.view.achView', {
                                 itemTpl: [
                                     '<div class="itemWrapper"><div class="content">Erreichte Tagesziele</div><div class="dailyGoalsCounterIcon">{id}</div></div>'
                                 ],
-                                maxItemCache: 1,
-                                store: 'stopsUnvisited'
+                                maxItemCache: 1
                             }
                         ]
                     },
