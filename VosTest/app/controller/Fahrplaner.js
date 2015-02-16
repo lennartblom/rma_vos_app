@@ -350,12 +350,13 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                for(i = 0;i<length;i++){
 
                                    htmlContent += "<div class=\"lineListRow\">\n";
-                                   htmlContent += "<div class=\"wrapperLineListLeft\"><div class=\"tableCell\"><span class=\"ovalBox red busline\">"+zielLines[i]+"</span> "+tmpDirection2[i]+"</div></div><div class=\"wrapperLineListRight\">"+tmpDirection[i]+" \n";
+                                   htmlContent += "<div class=\"wrapperLineListLeft\"><div class=\"tableCell\"><span class=\"ovalBox red busline\">"+zielLines[i]+"</span></div></div><div class=\"wrapperLineListRight\">"+ tmpDirection[i] + " / " +tmpDirection2[i]+" \n";
                                    htmlContent += "</div>\n";
                                    htmlContent += "</div>\n";
                                }
                                htmlContent += "</div>\n";
                                htmlContent += "</div>\n";
+
                                htmlContent += "<div class=\"destinationBusstop\">\n";
                                htmlContent += "</br><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Nach</span> \n";
                                htmlContent += "<span class=\"ovalBox blue busline\">" + zOrt + "</span></div>\n";
