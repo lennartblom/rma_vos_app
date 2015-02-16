@@ -327,6 +327,8 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                htmlContent += "<div class=\"startBusstop\">\n";
                                htmlContent += "<img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Von</span>\n";
                                htmlContent += "<span class=\"ovalBox blue busline\">"+ sOrt +"</span></br>\n";
+
+                               htmlContent += "</div>\n";
                                htmlContent += "<div class=\"paddingBoxBorder\">\n";
                                for(i = 0;i<length;i++){
 
@@ -337,13 +339,12 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                }
 
                                htmlContent += "</div>\n";
-                               htmlContent += "</div>\n";
-                               htmlContent += "</div>\n";
 
                                htmlContent += "<div class=\"destinationBusstop\">\n";
                                htmlContent += "</br><img src=\"resources/images/icons/bus-icon-150x150.png\" height=\"20px\" width=\"auto\"><span class=\"vonnach\">Über</span> \n";
                                htmlContent += "<span class=\"ovalBox blue busline\">Neumarkt</span></div>\n";
 
+                               htmlContent += "</div>\n";
 
                                length = zielLines.length;
                                htmlContent += "<div class=\"connection\">\n";
@@ -355,7 +356,6 @@ Ext.define('VosNavigator.controller.Fahrplaner', {
                                    htmlContent += "</div>\n";
                                    htmlContent += "</div>\n";
                                }
-                               htmlContent += "</div>\n";
                                htmlContent += "</div>\n";
 
                                htmlContent += "<div class=\"destinationBusstop\">\n";
