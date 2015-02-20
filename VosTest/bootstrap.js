@@ -677,21 +677,20 @@ Ext.ClassManager.addNameAlternateMappings({
   "VosNavigator.controller.Main": [],
   "VosNavigator.controller.Settings": [],
   "VosNavigator.controller.Wecker": [],
+  "VosNavigator.controller.goalsDetailsController": [],
+  "VosNavigator.controller.mapViewController": [],
   "VosNavigator.controller.searchViewController": [],
   "VosNavigator.model.sight": [],
   "VosNavigator.model.stop": [],
+  "VosNavigator.store.leer": [],
   "VosNavigator.store.sights": [],
   "VosNavigator.store.stops": [],
   "VosNavigator.view.InitialView": [],
   "VosNavigator.view.MySearchField": [],
   "VosNavigator.view.achView": [],
   "VosNavigator.view.fahrplanerView": [],
-  "VosNavigator.view.goalsDetails": [
-    "backButton"
-  ],
-  "VosNavigator.view.goalsView": [
-    "backButton"
-  ],
+  "VosNavigator.view.goalsDetails": [],
+  "VosNavigator.view.goalsView": [],
   "VosNavigator.view.mainScreen": [],
   "VosNavigator.view.mapView": [],
   "VosNavigator.view.searchView": [],
@@ -1434,9 +1433,12 @@ Ext.ClassManager.addNameAliasMappings({
   "VosNavigator.controller.Main": [],
   "VosNavigator.controller.Settings": [],
   "VosNavigator.controller.Wecker": [],
+  "VosNavigator.controller.goalsDetailsController": [],
+  "VosNavigator.controller.mapViewController": [],
   "VosNavigator.controller.searchViewController": [],
   "VosNavigator.model.sight": [],
   "VosNavigator.model.stop": [],
+  "VosNavigator.store.leer": [],
   "VosNavigator.store.sights": [],
   "VosNavigator.store.stops": [],
   "VosNavigator.view.InitialView": [],
@@ -1445,19 +1447,19 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.achView"
   ],
   "VosNavigator.view.fahrplanerView": [
-    "widget.fahrplanerview"
+    "widget.fahrplanerView"
   ],
   "VosNavigator.view.goalsDetails": [
-    "widget.goalsdetails"
+    "widget.goalsDetails"
   ],
   "VosNavigator.view.goalsView": [
-    "widget.goalsview"
+    "widget.goalsView"
   ],
   "VosNavigator.view.mainScreen": [
     "widget.mainScreen"
   ],
   "VosNavigator.view.mapView": [
-    "widget.mapview"
+    "widget.mapView"
   ],
   "VosNavigator.view.searchView": [
     "widget.searchview"

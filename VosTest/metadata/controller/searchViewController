@@ -99,8 +99,7 @@
                     "    store.filter('name', value);",
                     "}",
                     "",
-                    "dataView.refresh();",
-                    ""
+                    "dataView.refresh();"
                 ],
                 "name": "keyup"
             },

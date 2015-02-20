@@ -56,7 +56,6 @@ Ext.define('VosNavigator.controller.searchViewController', {
         }
 
         dataView.refresh();
-
     },
 
     listTap: function(dataview, index, target, record, e, eOpts) {
