@@ -27,6 +27,7 @@ Ext.define('VosNavigator.view.searchView', {
     config: {
         hidden: true,
         id: 'searchView',
+        hideOnMaskTap: true,
         items: [
             {
                 xtype: 'label',
@@ -49,6 +50,7 @@ Ext.define('VosNavigator.view.searchView', {
                 height: '100%',
                 id: 'searchResultList',
                 itemId: 'searchResultList',
+                width: '100%',
                 itemTpl: [
                     '<div>{name}</div>'
                 ],

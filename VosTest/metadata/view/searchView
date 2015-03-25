@@ -11,6 +11,7 @@
         "designer|userClassName": "searchView",
         "height": null,
         "hidden": true,
+        "hideOnMaskTap": true,
         "id": "searchView",
         "width": null
     },
@@ -78,7 +79,8 @@
                 "height": "100%",
                 "id": "searchResultList",
                 "itemId": "searchResultList",
-                "store": "stops"
+                "store": "stops",
+                "width": "100%"
             },
             "name": "MyList1",
             "designerId": "ed6d779f-965d-4de0-a490-77270e195b8d",
