@@ -87,8 +87,8 @@ Ext.define('VosNavigator.controller.searchViewController', {
         dataview.refresh();
 
         //console.log("ende von if");
-        self.getSearchView().hide();
-        self.getFahrplanerView().show();
+        self.getSearchView().hide({type:"slideOut",duration:500});
+        self.getFahrplanerView().show({type:"slideIn",duration:500});
     },
 
     onSearchfieldClearicontap: function(textfield, e, eOpts) {
