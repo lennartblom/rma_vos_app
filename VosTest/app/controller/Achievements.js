@@ -38,6 +38,9 @@ Ext.define('VosNavigator.controller.Achievements', {
             },
             "dataview#abc": {
                 initialize: 'onDataviewInitialize'
+            },
+            "dataview#weekendTasksDone": {
+                initialize: 'onDataviewInitialize1'
             }
         }
     },
@@ -59,6 +62,24 @@ Ext.define('VosNavigator.controller.Achievements', {
         });
 
         component.add([myPanel]);
+    },
+
+    onDataviewInitialize1: function(component, eOpts) {
+        var $name = [];
+
+        $name.push("Zoo");
+        $name.push("Nettebad");
+        $name.push("Moskaubad");
+        $name.push("Löwenpudel");
+
+        var i=0;
+        for(i;i<$name.length;i++){
+        var myPanel = Ext.create('Ext.Panel', {
+            html: "<div class=\"itemWrapper\"><div class=\"content\">"+ $name[i] +"</div><div class=\"weekendGoalsCup\"></div></div>"
+        });
+
+        component.add([myPanel]);
+        }
     },
 
     launch: function() {

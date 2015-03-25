@@ -298,6 +298,39 @@
             },
             "name": "resetPercentage",
             "designerId": "029ded30-3a6b-49ef-a14e-6399dc332741"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#weekendTasksDone",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewInitialize1",
+                "implHandler": [
+                    "var $name = [];",
+                    "",
+                    "$name.push(\"Zoo\");",
+                    "$name.push(\"Nettebad\");",
+                    "$name.push(\"Moskaubad\");",
+                    "$name.push(\"Löwenpudel\");",
+                    "",
+                    "var i=0;",
+                    "for(i;i<$name.length;i++){",
+                    "var myPanel = Ext.create('Ext.Panel', {",
+                    "    html: \"<div class=\\\"itemWrapper\\\"><div class=\\\"content\\\">\"+ $name[i] +\"</div><div class=\\\"weekendGoalsCup\\\"></div></div>\"",
+                    "});",
+                    "",
+                    "component.add([myPanel]);",
+                    "}"
+                ],
+                "name": "initialize"
+            },
+            "name": "onDataviewInitialize1",
+            "designerId": "01d5eec4-bca7-48d4-b10a-a9a4aa4321cf"
         }
     ]
 }

@@ -209,7 +209,7 @@
                                 "baseCls": "weekendTasksDoneDataview",
                                 "height": "167px",
                                 "id": "weekendTasksDone",
-                                "store": "sights",
+                                "store": null,
                                 "width": "90%"
                             },
                             "name": "MyDataView1",
@@ -225,7 +225,7 @@
                                     "userConfig": {
                                         "designer|displayName": "itemTpl",
                                         "implHandler": [
-                                            "<div class=\"itemWrapper\"><div class=\"content\">{name}</div><div class=\"weekendGoalsCup\"></div></div>"
+                                            ""
                                         ]
                                     },
                                     "name": "itemTpl",

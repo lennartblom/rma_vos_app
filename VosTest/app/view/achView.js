@@ -115,11 +115,7 @@ Ext.define('VosNavigator.view.achView', {
                                 baseCls: 'weekendTasksDoneDataview',
                                 height: '167px',
                                 id: 'weekendTasksDone',
-                                width: '90%',
-                                itemTpl: [
-                                    '<div class="itemWrapper"><div class="content">{name}</div><div class="weekendGoalsCup"></div></div>'
-                                ],
-                                store: 'sights'
+                                width: '90%'
                             },
                             {
                                 xtype: 'label',
