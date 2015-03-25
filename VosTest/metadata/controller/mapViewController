@@ -83,7 +83,9 @@
                 "designer|targetType": "Ext.Map",
                 "fn": "onMapMaprender",
                 "implHandler": [
-                    "var osnabrueck = new google.maps.LatLng(52.2725392927, 8.0486774787);",
+                    "var osnabrueck = new google.maps.LatLng(52.306474, 7.984980);",
+                    "",
+                    "",
                     "var fp = this.getApplication().getController('Fahrplaner');",
                     "var self = this;",
                     "",

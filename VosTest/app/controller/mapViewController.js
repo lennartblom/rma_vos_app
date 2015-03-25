@@ -42,7 +42,9 @@ Ext.define('VosNavigator.controller.mapViewController', {
     },
 
     onMapMaprender: function(map, gmap, eOpts) {
-        var osnabrueck = new google.maps.LatLng(52.2725392927, 8.0486774787);
+        var osnabrueck = new google.maps.LatLng(52.306474, 7.984980);
+
+
         var fp = this.getApplication().getController('Fahrplaner');
         var self = this;
 
