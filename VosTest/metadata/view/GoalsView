@@ -157,7 +157,7 @@
                                         "hidden": false,
                                         "id": "sightsDaily",
                                         "itemCls": "sights_list",
-                                        "store": "stops",
+                                        "store": null,
                                         "top": "25px",
                                         "width": "90%"
                                     },
@@ -174,7 +174,7 @@
                                             "userConfig": {
                                                 "designer|displayName": "itemTpl",
                                                 "implHandler": [
-                                                    "<div>{name}</div>"
+                                                    ""
                                                 ]
                                             },
                                             "name": "itemTpl",

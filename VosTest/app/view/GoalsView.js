@@ -95,11 +95,7 @@ Ext.define('VosNavigator.view.goalsView', {
                                         id: 'sightsDaily',
                                         top: '25px',
                                         width: '90%',
-                                        itemCls: 'sights_list',
-                                        itemTpl: [
-                                            '<div>{name}</div>'
-                                        ],
-                                        store: 'stops'
+                                        itemCls: 'sights_list'
                                     },
                                     {
                                         xtype: 'label',

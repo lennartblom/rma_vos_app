@@ -389,6 +389,29 @@
             },
             "name": "setupDaten",
             "designerId": "bfba36e7-7967-4c75-aae9-f7b13cd6920f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#sightsDaily",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListInitialize",
+                "implHandler": [
+                    "var myPanel = Ext.create('Ext.Panel', {",
+                    "    html: \"<div class=\\\"itemWrapper stops-dailyGoals-single-item\\\"><div class=\\\"content\\\">Alte Poststraße</div></div>\"",
+                    "});",
+                    "",
+                    "component.add([myPanel]);"
+                ],
+                "name": "initialize"
+            },
+            "name": "onListInitialize",
+            "designerId": "b5c368b0-1ff7-4665-b4da-aff9121c16ac"
         }
     ]
 }

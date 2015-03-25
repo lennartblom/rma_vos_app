@@ -47,6 +47,9 @@ Ext.define('VosNavigator.controller.Goals', {
             },
             "list#dataview_weekly_goals": {
                 itemsingletap: 'onListItemSingletap'
+            },
+            "list#sightsDaily": {
+                initialize: 'onListInitialize'
             }
         }
     },
@@ -64,6 +67,14 @@ Ext.define('VosNavigator.controller.Goals', {
         this.getGoalsView().hide();
         this.getGoalsDetails().show();
 
+    },
+
+    onListInitialize: function(component, eOpts) {
+        var myPanel = Ext.create('Ext.Panel', {
+            html: "<div class=\"itemWrapper stops-dailyGoals-single-item\"><div class=\"content\">Alte Poststraße</div></div>"
+        });
+
+        component.add([myPanel]);
     },
 
     initiateDate: function() {

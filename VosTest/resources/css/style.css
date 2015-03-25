@@ -266,6 +266,15 @@ div.goalsDetails{
   padding-left:30px;
 }
 
+.stops-dailyGoals-single-item{
+  margin-bottom:2px;
+  height: 30px;
+  font-weight: 200;
+  padding-top:10px;
+  color:#2f2f2f;
+  padding-left:30px;
+}
+
 .dailyGoalsDataView-item div,
 .dailyGoalsCounterDataView .itemWrapper,
 .weekendTasksDoneDataview .itemWrapper{
