@@ -82,7 +82,7 @@ Ext.define('VosNavigator.view.settingsView', {
                             {
                                 xtype: 'container',
                                 baseCls: 'creditsTable',
-                                height: '240px',
+                                height: '220px',
                                 html: '<table id="creditsTable"> 	<tr> 		<td class="tableHeadline" colspan="3">Entwickler</td> 	</tr> 	<tr> 		<td>Thomas Schalldach</td> 		<td colspan="2">Fabian Brammer</td> 	</tr> 	<tr> 	</tr> 	<tr> 		<td colspan="3">Lennart Blom</td> 	</tr> 	<tr> 		<td class="tableHeadline" colspan="3">Besonderen Dank an Entwickler externer Plugins</td> 	</tr> 	<tr> 		<td class="tableHeadline">Entwickler</td> 		<td colsan="2" class="tableHeadline">Plugin</td> 	</tr> 	<tr> 		<td>brodybits - Chris Brody</td> 		<td>Brodysoft SQLitePlugin</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> 	<tr> 		<td>Sebastián Katzer</td> 		<td>BackgroundMode</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> 	<tr> 		<td>Rahul Pandey</td> 		<td>sqlDB</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> 	<tr> 		<td>Chris Scott</td> 		<td>CDV Background Geo Location</td> 		<td class="gitURL"><a target="_new" href="#"><img src="resources/images/logo/git_logo.png" height="15px" width="auto"></a></td> 	</tr> </table>',
                                 id: 'creditsTable'
                             }
@@ -91,7 +91,7 @@ Ext.define('VosNavigator.view.settingsView', {
                     {
                         xtype: 'container',
                         id: 'settings_form_wrapper',
-                        top: '280px',
+                        top: '260px',
                         width: '100%',
                         items: [
                             {

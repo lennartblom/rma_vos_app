@@ -137,7 +137,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "baseCls": "creditsTable",
-                                "height": "240px",
+                                "height": "220px",
                                 "html": "<table id=\"creditsTable\"> \t<tr> \t\t<td class=\"tableHeadline\" colspan=\"3\">Entwickler</td> \t</tr> \t<tr> \t\t<td>Thomas Schalldach</td> \t\t<td colspan=\"2\">Fabian Brammer</td> \t</tr> \t<tr> \t</tr> \t<tr> \t\t<td colspan=\"3\">Lennart Blom</td> \t</tr> \t<tr> \t\t<td class=\"tableHeadline\" colspan=\"3\">Besonderen Dank an Entwickler externer Plugins</td> \t</tr> \t<tr> \t\t<td class=\"tableHeadline\">Entwickler</td> \t\t<td colsan=\"2\" class=\"tableHeadline\">Plugin</td> \t</tr> \t<tr> \t\t<td>brodybits - Chris Brody</td> \t\t<td>Brodysoft SQLitePlugin</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> \t<tr> \t\t<td>Sebastián Katzer</td> \t\t<td>BackgroundMode</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> \t<tr> \t\t<td>Rahul Pandey</td> \t\t<td>sqlDB</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> \t<tr> \t\t<td>Chris Scott</td> \t\t<td>CDV Background Geo Location</td> \t\t<td class=\"gitURL\"><a target=\"_new\" href=\"#\"><img src=\"resources/images/logo/git_logo.png\" height=\"15px\" width=\"auto\"></a></td> \t</tr> </table>",
                                 "id": "creditsTable"
                             },
@@ -156,7 +156,7 @@
                     "userConfig": {
                         "id": "settings_form_wrapper",
                         "layout": null,
-                        "top": "280px",
+                        "top": "260px",
                         "width": "100%"
                     },
                     "name": "MyContainer15",
